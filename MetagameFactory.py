@@ -6,4 +6,6 @@ class MetagameFactory:
         pass
 
     def read_usage(self):
+        # use flask to get menu
         pass
+
