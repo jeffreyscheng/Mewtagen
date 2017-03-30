@@ -8,7 +8,7 @@ class Dex:
 
 
 class Pokemon:
-    def __init__(self, properties, usage):
+    def __init__(self, properties):
         self.unique_name = properties['name'] + properties['suffix']
         self.dex_name = properties['name']
         self.base_hp = properties['hp']
@@ -18,7 +18,6 @@ class Pokemon:
         self.base_sp_def = properties['spd']
         self.base_spe = properties['spe']
         self.formats = properties['formats']
-        self.usage = usage
 
 
 class Move:
@@ -46,6 +45,7 @@ class Nature:
         self.spa_coefficient = properties['spa']
         self.spd_coefficient = properties['spd']
         self.dpe_coefficient = properties['spe']
+
 
 class Item:
     def __init__(self, properties):

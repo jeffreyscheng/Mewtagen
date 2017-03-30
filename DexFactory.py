@@ -67,7 +67,7 @@ class DexFactory:
     def read_pokemon(self):
         alt_list = [DexFactory.unwrap(poke, 'alts') for poke in self.raw_dex['pokemon']]
         alt_list = [alt for sublist in alt_list for alt in sublist]
-        self.pokemon_list = [Pokemon(alt, 0) for alt in alt_list]
+        self.pokemon_list = [Pokemon(alt) for alt in alt_list]
 
     def read_natures(self):
         self.nature_list = [Nature(nature) for nature in self.raw_dex['natures']]

@@ -1,2 +1,2 @@
 # Dialgarithm
-Python script that generate optimally anti-metagame Pokemon teams using an evolutionary algorithmic approach.
+Python script that generates optimally anti-metagame Pokemon teams using an evolutionary algorithmic approach.
