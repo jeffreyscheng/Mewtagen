@@ -25,3 +25,15 @@ class Moveset:
         #     return math.floor(2 * base + 31 + math.floor(ev / 4)) + 110
         # else:
         #     return (math.floor(2 * base + 31 + math.floor(ev / 4)) + 5) * nature_coeff
+
+    # must be hashable to use as dict keys
+    # def __hash__(self):
+    #     return hash((self.name, self.location))
+    #
+    # def __eq__(self, other):
+    #     return (self.name, self.location) == (other.name, other.location)
+    #
+    # def __ne__(self, other):
+    #     # Not strictly necessary, but to avoid having both x==y and x!=y
+    #     # True at the same time
+    #     return not(self == other)
