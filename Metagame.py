@@ -58,3 +58,5 @@ class Metagame:
         else:
             loser = team1
         # update elos
+        self.dict_of_team_elo[winner] = 1000  # do
+        self.dict_of_team_elo[loser] = 1000  # do
