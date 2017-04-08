@@ -1,5 +1,8 @@
 import random
+import time
 import Team
+import Battle
+
 
 class Metagame:
     def __init__(self, dex, movesets_set, format):
@@ -25,16 +28,33 @@ class Metagame:
             num_teammates = 6
         else:
             num_teammates = 6 - len(core)
-        attempt = []
-        for i in range(0, num_teammates):
-            attempt.append(self.weighted_sample(self.dict_of_movesets_usage))
+        attempt = [weighted_sample(self.dict_of_movesets_usage) for i in range(0, num_teammates)]
         new_team = Team(attempt)
         if new_team.is_valid():
             return new_team
         else:
-            return self.generate_team(core)
-
+            return self.generate_team(core)  # this can be optimized
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        self.dict_of_team_elo = {team:0 for team in []}    # teams should be 2.4 hr / (time per game)
+        self.dict_of_team_elo = {self.generate_team() for i in
+                                 range(0, 1000)}  # teams should be 2.4 hr / (time per game)
+        tick = time.clock()
+        while time.clock() - tick < 24 * 3600:
+            # sort by elo
+            bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
+            # pair off and battle down the line
+            for i in range(0, 500):
+                team1 = bracket[2 * i]
+                team2 = bracket[2 * i + 1]
+                self.run_battle(team1, team2)
+
+    # TODO
+    def run_battle(self, team1, team2):
+        # determine winner
+        winner = Battle.battle(team1, team2)
+        if winner is team1:
+            loser = team2
+        else:
+            loser = team1
+        # update elos
