@@ -1,16 +1,21 @@
 import random
 import time
-import Team
-import Battle
+from Team import Team
+from Battle import Battle
+from MovesetFactory import MovesetFactory
 
 
 class Metagame:
-    def __init__(self, dex, movesets_set, format):
+    def __init__(self, dex, meta_format):
         self.dex = dex
-        self.dict_of_movesets_usage = movesets_set
+        self.format = meta_format
+        self.dict_of_movesets_usage = self.get_movesets_list()
         self.dict_of_team_elo = {}
         self.beta_offense = 0
         self.beta_defense = 0
+
+    def get_movesets_list(self):
+        return MovesetFactory(self.dex, self.format).read_all_movesets()
 
     @staticmethod
     def weighted_sample(population):

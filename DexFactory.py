@@ -26,7 +26,7 @@ class DexFactory:
             self.read_natures()
             self.read_moves()
             self.read_items()
-            new_dex = Dex(self.pokemon_list, self.move_list, self.type_list,
+            new_dex = Dex(self.gen, self.pokemon_list, self.move_list, self.type_list,
                           self.nature_list, self.item_list)
             Writer.save_object(new_dex, self.gen + '_dex.txt')
             return new_dex

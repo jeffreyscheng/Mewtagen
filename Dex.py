@@ -1,5 +1,6 @@
 class Dex:
-    def __init__(self, pokemon_list, move_list, type_list, nature_list, item_list):
+    def __init__(self, gen, pokemon_list, move_list, type_list, nature_list, item_list)
+        self.gen = gen
         self.pokemon_list = pokemon_list
         self.move_list = move_list
         self.type_list = type_list
