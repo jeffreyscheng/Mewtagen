@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import json
 import requests
-
+from DexFactory import DexFactory
 
 class MovesetFactory:
     def __init__(self, dex, meta_format):
@@ -28,3 +28,9 @@ class MovesetFactory:
 
     def read_all_movesets(self):
         return None
+
+with open('lol.txt', 'w+') as output:
+    output.write('lol')
+xy_dex = DexFactory().get_dex('bw') #  TODO: debug this shite
+mf = MovesetFactory(xy_dex, 'OU')
+mf.read_pokemon('Charizard')

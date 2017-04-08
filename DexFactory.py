@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 class DexFactory:
     def __init__(self):
         self.gen = None
-
         self.raw_dex = None
         self.type_list = None
         self.pokemon_list = None
@@ -77,6 +76,3 @@ class DexFactory:
 
     def read_items(self):
         self.item_list = [Item(item) for item in self.raw_dex['items']]
-
-df = DexFactory()
-df.get_dex('xy')

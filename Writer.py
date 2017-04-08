@@ -5,7 +5,7 @@ from pathlib import Path
 class Writer:
     @staticmethod
     def save_object(obj, filename):
-        with open(filename, 'wb') as output:
+        with open(filename, 'w+') as output:
             pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
     @staticmethod

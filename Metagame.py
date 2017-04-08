@@ -53,6 +53,7 @@ class Metagame:
                 team1 = bracket[2 * i]
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
+        # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
 
     # TODO
     def run_battle(self, team1, team2):
