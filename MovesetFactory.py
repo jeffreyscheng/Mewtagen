@@ -3,6 +3,7 @@ import json
 import requests
 from DexFactory import DexFactory
 
+
 class MovesetFactory:
     def __init__(self, dex, meta_format):
         self.dex = dex
@@ -29,8 +30,13 @@ class MovesetFactory:
     def read_all_movesets(self):
         return None
 
-with open('lol.txt', 'w+') as output:
-    output.write('lol')
-xy_dex = DexFactory().get_dex('bw') #  TODO: debug this shite
+# with open('lol.txt', 'w') as output:
+#     print('gotcha')
+#     output.write('incredible')
+
+with open('lol.txt', 'r') as input:
+    print(input.read())
+
+xy_dex = DexFactory().get_dex('bw')  # TODO: debug this shite
 mf = MovesetFactory(xy_dex, 'OU')
 mf.read_pokemon('Charizard')
