@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18cfbf02-6c5e-4424-bb0c-ea271004278c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Dialgarithm.iml" afterPath="$PROJECT_DIR$/.idea/Dialgarithm.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dex.py" afterPath="$PROJECT_DIR$/Dex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DexFactory.py" afterPath="$PROJECT_DIR$/DexFactory.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Moveset.py" afterPath="$PROJECT_DIR$/Moveset.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MovesetFactory.py" afterPath="$PROJECT_DIR$/MovesetFactory.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Writer.py" afterPath="$PROJECT_DIR$/Writer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +53,8 @@
       <file leaf-file-name="DexFactory.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DexFactory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="182">
+              <caret line="27" column="53" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovesetFactory.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MovesetFactory.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovesetFactory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="2" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="496">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -87,18 +87,18 @@
       <file leaf-file-name="Moveset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Moveset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="2" selection-end-column="53" />
+            <state relative-caret-position="446">
+              <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dex.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dex.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="83" lean-forward="false" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
+            <state relative-caret-position="346">
+              <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -136,15 +136,15 @@
         <option value="$PROJECT_DIR$/MetagameFactory.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Temp1_hw9.zip/hw9/hw9.py" />
-        <option value="$PROJECT_DIR$/Moveset.py" />
         <option value="$PROJECT_DIR$/Team.py" />
         <option value="$PROJECT_DIR$/Battle.py" />
         <option value="$PROJECT_DIR$/Dialgarithm.py" />
-        <option value="$PROJECT_DIR$/Dex.py" />
-        <option value="$PROJECT_DIR$/DexFactory.py" />
         <option value="$PROJECT_DIR$/Metagame.py" />
         <option value="$PROJECT_DIR$/Writer.py" />
+        <option value="$PROJECT_DIR$/DexFactory.py" />
         <option value="$PROJECT_DIR$/MovesetFactory.py" />
+        <option value="$PROJECT_DIR$/Moveset.py" />
+        <option value="$PROJECT_DIR$/Dex.py" />
       </list>
     </option>
   </component>
@@ -169,7 +169,20 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Dialgarithm">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,9 +417,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1934" height="1030" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26882845" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26882845" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -708,16 +721,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Battle.py" />
-    <entry file="file://$PROJECT_DIR$/Dex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="83" lean-forward="false" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bw.txt" />
-    <entry file="file://$PROJECT_DIR$/bw_dex.txt" />
     <entry file="file://$PROJECT_DIR$/Metagame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -742,10 +746,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Moveset.py">
+    <entry file="file://$PROJECT_DIR$/bw_dex.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="2" selection-end-column="53" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -760,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DexFactory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="27" column="53" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -770,11 +774,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MovesetFactory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="2" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="496">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Moveset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

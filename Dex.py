@@ -1,11 +1,15 @@
 class Dex:
-    def __init__(self, gen, pokemon_list, move_list, type_list, nature_list, item_list):
+    def __init__(self, gen, pokemon_dict, move_list, type_list, nature_list, item_list):
         self.gen = gen
-        self.pokemon_list = pokemon_list
+        self.pokemon_dict = pokemon_dict
         self.move_list = move_list
         self.type_list = type_list
         self.nature_list = nature_list
         self.item_list = item_list
+
+    def get_pokemon(self, name):
+        return self.pokemon_dict[name]
+
 
 
 class Pokemon:
@@ -15,10 +19,13 @@ class Pokemon:
         self.base_hp = properties['hp']
         self.base_atk = properties['atk']
         self.base_def = properties['def']
-        self.base_sp_atk = properties['spa']
-        self.base_sp_def = properties['spd']
+        self.base_spa = properties['spa']
+        self.base_spd = properties['spd']
         self.base_spe = properties['spe']
         self.formats = properties['formats']
+
+    def get_base_stat(self, name):
+        return self.__dict__['base_' + name]
 
 
 class Move:

@@ -10,7 +10,7 @@ class DexFactory:
         self.gen = None
         self.raw_dex = None
         self.type_list = None
-        self.pokemon_list = None
+        self.pokemon_dict = None
         self.nature_list = None
         self.move_list = None
         self.item_list = None
@@ -25,7 +25,7 @@ class DexFactory:
             self.read_natures()
             self.read_moves()
             self.read_items()
-            new_dex = Dex(self.gen, self.pokemon_list, self.move_list, self.type_list,
+            new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
                           self.nature_list, self.item_list)
             Writer.save_object(new_dex, self.gen + '_dex.txt')
             return new_dex
@@ -66,7 +66,8 @@ class DexFactory:
     def read_pokemon(self):
         alt_list = [DexFactory.unwrap(poke, 'alts') for poke in self.raw_dex['pokemon']]
         alt_list = [alt for sublist in alt_list for alt in sublist]
-        self.pokemon_list = [Pokemon(alt) for alt in alt_list]
+        pokemon_list = [Pokemon(alt) for alt in alt_list]
+        self.pokemon_dict = {poke.unique_name:poke for poke in pokemon_list}
 
     def read_natures(self):
         self.nature_list = [Nature(nature) for nature in self.raw_dex['natures']]
