@@ -15,8 +15,3 @@ from MetagameFactory import *
 #
 # if __name__ == '__main__'"":
 #     app.run()
-
-Dialgarithm.set_meta('xy', 'OU')
-Dialgarithm.initialize_dex()
-mf = MovesetFactory()
-mf.read_pokemon('Charizard')

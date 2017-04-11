@@ -2,6 +2,7 @@ import json
 import requests
 from Dex import *
 from bs4 import BeautifulSoup
+from Writer import *
 from Dialgarithm import *
 
 
@@ -16,17 +17,22 @@ class DexFactory:
         self.item_list = None
 
     def get_dex(self):
-        self.gen = Dialgarithm.gen
-        self.read_dex()
-        print(self.raw_dex.keys())
-        self.read_types()
-        self.read_pokemon()
-        self.read_natures()
-        self.read_moves()
-        self.read_items()
-        new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
-                      self.nature_list, self.item_list)
-        return new_dex
+        tentative_dex = Writer.load_object(Dialgarithm.gen + '_dex.txt')
+        if tentative_dex is None:
+            self.gen = Dialgarithm.gen
+            self.read_dex()
+            print(self.raw_dex.keys())
+            self.read_types()
+            self.read_pokemon()
+            self.read_natures()
+            self.read_moves()
+            self.read_items()
+            new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
+                          self.nature_list, self.item_list)
+            # Writer.save_object(Dialgarithm.dex, Dialgarithm.gen + '_dex.txt')
+        else:
+            new_dex = tentative_dex
+        Dialgarithm.dex = new_dex
 
     @staticmethod
     def unwrap(old_dict, col):
