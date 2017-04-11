@@ -7,7 +7,6 @@ class Moveset:
 
     def __init__(self, poke, m_set):
         gen = Dialgarithm.gen
-        print(m_set['natures'])
         if len(m_set['natures'][0]) > 0:
             self.nature = Dialgarithm.dex.get_nature(m_set['natures'][0])
         else:

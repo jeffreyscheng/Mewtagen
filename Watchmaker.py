@@ -6,7 +6,6 @@ class Watchmaker:
     def run():
         Dialgarithm.set_meta('xy', 'OU')
         DexFactory().get_dex()
-        mf = MovesetFactory()
-        mf.read_pokemon('Charizard')
+        MovesetFactory().read_all_movesets()
 
 Watchmaker.run()

@@ -27,6 +27,8 @@ class MovesetFactory:
         return moveset_list
 
     def read_all_movesets(self):
-        list_of_pokemon = []
-        list_of_moveset_lists = [self.read_pokemon(name) for name in self.dex.pokemon_dict.keys()]
+        list_of_pokemon = Dialgarithm.dex.format_metagame.format_dict[Format(Dialgarithm.format)]
+        pokemon_names = [pokemon.dex_name for pokemon in list_of_pokemon]
+        list_of_moveset_lists = [self.read_pokemon(name) for name in pokemon_names]
         self.list_of_movesets = [m_set for m_list in list_of_moveset_lists for m_set in m_list]
+        Dialgarithm.moveset_dict = self.list_of_movesets
