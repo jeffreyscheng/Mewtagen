@@ -17,6 +17,6 @@ from MetagameFactory import *
 #     app.run()
 
 Dialgarithm.set_meta('xy', 'OU')
-DexFactory().set_dex()
+Dialgarithm.initialize_dex()
 mf = MovesetFactory()
 mf.read_pokemon('Charizard')

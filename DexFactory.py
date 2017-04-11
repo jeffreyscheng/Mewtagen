@@ -1,6 +1,5 @@
 import json
 import requests
-from Writer import *
 from Dex import *
 from bs4 import BeautifulSoup
 from Dialgarithm import *
@@ -16,24 +15,18 @@ class DexFactory:
         self.move_list = None
         self.item_list = None
 
-    def set_dex(self):
-        gen = Dialgarithm.gen
-        tentative_dex = Writer.load_object(gen + '_dex.txt')
-        if tentative_dex is None:
-            self.gen = gen
-            self.read_dex()
-            self.read_types()
-            self.read_pokemon()
-            self.read_natures()
-            self.read_moves()
-            self.read_items()
-            new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
-                          self.nature_list, self.item_list)
-            Writer.save_object(new_dex, self.gen + '_dex.txt')
-            dex = new_dex
-        else:
-            dex = tentative_dex
-        Dialgarithm.dex = dex
+    def get_dex(self):
+        self.gen = Dialgarithm.gen
+        self.read_dex()
+        print(self.raw_dex.keys())
+        self.read_types()
+        self.read_pokemon()
+        self.read_natures()
+        self.read_moves()
+        self.read_items()
+        new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
+                      self.nature_list, self.item_list)
+        return new_dex
 
     @staticmethod
     def unwrap(old_dict, col):
