@@ -1,15 +1,17 @@
 class Dex:
-    def __init__(self, gen, pokemon_dict, move_list, type_list, nature_list, item_list):
+    def __init__(self, gen, pokemon_dict, move_list, type_list, nature_dict, item_list):
         self.gen = gen
         self.pokemon_dict = pokemon_dict
         self.move_list = move_list
         self.type_list = type_list
-        self.nature_list = nature_list
+        self.nature_dict = nature_dict
         self.item_list = item_list
 
     def get_pokemon(self, name):
         return self.pokemon_dict[name]
 
+    def get_nature(self, name):
+        return self.nature_dict[name]
 
 
 class Pokemon:
@@ -48,11 +50,7 @@ class Type:
 class Nature:
     def __init__(self, properties):
         self.name = properties['name']
-        self.atk_coefficient = properties['atk']
-        self.def_coefficient = properties['def']
-        self.spa_coefficient = properties['spa']
-        self.spd_coefficient = properties['spd']
-        self.dpe_coefficient = properties['spe']
+        self.coefficients = properties
 
 
 class Item:

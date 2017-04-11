@@ -1,12 +1,15 @@
 import math
+from Dialgarithm import *
 
 
 class Moveset:
     default_ivs = [{'atk': 31, 'def': 31, 'spa': 31, 'spd': 31, 'spe': 31, 'hp': 31}]
 
-    def __init__(self, poke, gen, m_set):
+    def __init__(self, poke, m_set):
+        gen = Dialgarithm.gen
+        print(m_set['natures'])
         if len(m_set['natures'][0]) > 0:
-            self.nature = m_set['natures'][0]
+            self.nature = Dialgarithm.dex.get_nature(m_set['natures'][0])
         else:
             self.nature = None
         if len(m_set['ivconfigs']) == 0:
@@ -15,7 +18,6 @@ class Moveset:
             self.ivs = m_set['ivconfigs'][0]
         self.evs = m_set['evconfigs'][0]
         self.pokemon = poke
-        print(poke.unique_name)
         self.gen = gen
         self.moves = [x[0] if len(x) > 0 else 'Splash' for x in m_set['moveslots']]
         self.hp_stat = self.get_stat('hp')
@@ -30,15 +32,14 @@ class Moveset:
     def get_stat(self, name):
         base = self.pokemon.get_base_stat(name)
         ev = self.evs[name]
-        print(self.nature)
         if self.nature is None:
-            nature_coeff = 1
+            nature_coefficient = 1
         else:
-            nature_coeff = 1 # fix
+            nature_coefficient = self.nature.coefficients[name]
         if name == 'hp':
             return math.floor(2 * base + 31 + math.floor(ev / 4)) + 110
         else:
-            return (math.floor(2 * base + 31 + math.floor(ev / 4)) + 5) * nature_coeff
+            return (math.floor(2 * base + 31 + math.floor(ev / 4)) + 5) * nature_coefficient
 
     def __hash__(self):
         return hash((self.name, self.pokemon.dex_name, self.gen))

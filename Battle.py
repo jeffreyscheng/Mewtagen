@@ -1,6 +1,9 @@
+from Dialgarithm import *
+
+
 class Battle:
-    def __init__(self, metagame):
-        self.metagame = metagame
+    def __init__(self):
+        self.metagame = Dialgarithm.metagame
         self.damage_cache = None  # TODO: dict of ordered pairs (attacker, defender) -> damage, read from file
 
     def battle(self, team1, team2):

@@ -3,6 +3,7 @@ import requests
 from Writer import *
 from Dex import *
 from bs4 import BeautifulSoup
+from Dialgarithm import *
 
 
 class DexFactory:
@@ -15,8 +16,9 @@ class DexFactory:
         self.move_list = None
         self.item_list = None
 
-    def get_dex(self, gen):
-        tentative_dex = Writer.load_object('gen' + '_dex.txt')
+    def set_dex(self):
+        gen = Dialgarithm.gen
+        tentative_dex = Writer.load_object(gen + '_dex.txt')
         if tentative_dex is None:
             self.gen = gen
             self.read_dex()
@@ -28,9 +30,10 @@ class DexFactory:
             new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
                           self.nature_list, self.item_list)
             Writer.save_object(new_dex, self.gen + '_dex.txt')
-            return new_dex
+            dex = new_dex
         else:
-            return tentative_dex
+            dex = tentative_dex
+        Dialgarithm.dex = dex
 
     @staticmethod
     def unwrap(old_dict, col):
@@ -67,10 +70,10 @@ class DexFactory:
         alt_list = [DexFactory.unwrap(poke, 'alts') for poke in self.raw_dex['pokemon']]
         alt_list = [alt for sublist in alt_list for alt in sublist]
         pokemon_list = [Pokemon(alt) for alt in alt_list]
-        self.pokemon_dict = {poke.unique_name:poke for poke in pokemon_list}
+        self.pokemon_dict = {poke.unique_name: poke for poke in pokemon_list}
 
     def read_natures(self):
-        self.nature_list = [Nature(nature) for nature in self.raw_dex['natures']]
+        self.nature_list = {nature['name']: Nature(nature) for nature in self.raw_dex['natures']}
 
     def read_moves(self):
         self.move_list = [Move(move) for move in self.raw_dex['moves']]

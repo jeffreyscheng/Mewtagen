@@ -1,14 +1,15 @@
 import random
 import time
-from Team import Team
-from Battle import Battle
-from MovesetFactory import MovesetFactory
+from Team import *
+from Battle import *
+from MovesetFactory import *
+from Dialgarithm import *
 
 
 class Metagame:
-    def __init__(self, dex, meta_format):
-        self.dex = dex
-        self.format = meta_format
+    def __init__(self):
+        self.dex = Dialgarithm.gen
+        self.format = Dialgarithm.format
         self.dict_of_movesets_usage = self.get_movesets_list()
         self.dict_of_team_elo = {}
         self.beta_offense = 0

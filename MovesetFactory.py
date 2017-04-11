@@ -1,14 +1,15 @@
 from bs4 import BeautifulSoup
 import json
 import requests
-from Moveset import Moveset
-from DexFactory import DexFactory
+from Moveset import *
+from DexFactory import *
+from Dialgarithm import *
 
 
 class MovesetFactory:
-    def __init__(self, dex, meta_format):
-        self.dex = dex
-        self.format = meta_format
+    def __init__(self):
+        self.dex = Dialgarithm.dex
+        self.format = Dialgarithm.format
         self.list_of_movesets = []
 
     def read_pokemon(self, name):
@@ -22,14 +23,9 @@ class MovesetFactory:
         for f in formats:
             if f['format'] == self.format:
                 movesets = f['movesets']
-                moveset_list = [Moveset(self.dex.get_pokemon(name), self.format, m_set) for m_set in movesets]
+                moveset_list = [Moveset(self.dex.get_pokemon(name), m_set) for m_set in movesets]
         return moveset_list
 
     def read_all_movesets(self):
-        list_of_moveset_lists = [read_pokemon(name) for name in self.dex.pokemon_dict.keys()]
+        list_of_moveset_lists = [self.read_pokemon(name) for name in self.dex.pokemon_dict.keys()]
         self.list_of_movesets = [m_set for m_list in list_of_moveset_lists for m_set in m_list]
-
-
-xy_dex = DexFactory().get_dex('bw')
-mf = MovesetFactory(xy_dex, 'OU')
-mf.read_pokemon('Charizard')
