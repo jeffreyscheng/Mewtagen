@@ -34,13 +34,13 @@ class MovesetFactory:
 # if run from Pycharm in admin mode -> can read + write to 'ghost' files?
 # if run from commandline -> works perfectly but can't find Pycharm's written files?
 
-# with open('lol.txt', 'w') as output:
-#     print('gotcha')
-#     output.write('incredible')
+with open('lol.txt', 'w+') as output:
+    print('gotcha')
+    output.write('incredible')
 
 # with open('lol.txt', 'r') as input:
 #     print(input.read())
 
-xy_dex = DexFactory().get_dex('bw')  # TODO: debug this shite
-mf = MovesetFactory(xy_dex, 'OU')
-mf.read_pokemon('Charizard')
+# xy_dex = DexFactory().get_dex('bw')  # TODO: debug this shite
+# mf = MovesetFactory(xy_dex, 'OU')
+# mf.read_pokemon('Charizard')

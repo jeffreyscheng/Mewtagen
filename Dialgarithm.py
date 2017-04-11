@@ -1,3 +1,7 @@
 class Dialgarithm:
-    def __init__(self):
-        pass
+    gen = None
+    dex = None
+    moveset_dict = None # -> usage statistics
+    metagame = None
+    recommendations = None
+
