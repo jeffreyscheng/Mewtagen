@@ -10,11 +10,11 @@ class DexFactory:
     def __init__(self):
         self.gen = None
         self.raw_dex = None
-        self.type_list = None
+        self.type_dict = None
         self.pokemon_dict = None
-        self.nature_list = None
-        self.move_list = None
-        self.item_list = None
+        self.nature_dict = None
+        self.move_dict = None
+        self.item_dict = None
 
     def get_dex(self):
         tentative_dex = Writer.load_object('/' + Dialgarithm.gen + 'dex.txt')
@@ -26,8 +26,8 @@ class DexFactory:
             self.read_natures()
             self.read_moves()
             self.read_items()
-            new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
-                          self.nature_list, self.item_list)
+            new_dex = Dex(self.gen, self.pokemon_dict, self.move_dict, self.type_dict,
+                          self.nature_dict, self.item_dict)
             Writer.save_object(new_dex, 'dex.txt')
         else:
             new_dex = tentative_dex
@@ -62,7 +62,8 @@ class DexFactory:
                 atk_effective[response_type[0]] = response_type[1]
             return Type(type_dict['name'], atk_effective)
 
-        self.type_list = [extract_type(type_dict) for type_dict in self.raw_dex['types']]
+        type_list = [extract_type(type_dict) for type_dict in self.raw_dex['types']]
+        self.type_dict = {t.name: t for t in type_list}
 
     def read_pokemon(self):
         alt_list = [DexFactory.unwrap(poke, 'alts') for poke in self.raw_dex['pokemon']]
@@ -71,10 +72,10 @@ class DexFactory:
         self.pokemon_dict = {poke.unique_name: poke for poke in pokemon_list}
 
     def read_natures(self):
-        self.nature_list = {nature['name']: Nature(nature) for nature in self.raw_dex['natures']}
+        self.nature_dict = {nature['name']: Nature(nature) for nature in self.raw_dex['natures']}
 
     def read_moves(self):
-        self.move_list = [Move(move) for move in self.raw_dex['moves']]
+        self.move_dict = {move['name']: Move(move) for move in self.raw_dex['moves']}
 
     def read_items(self):
-        self.item_list = [Item(item) for item in self.raw_dex['items']]
+        self.item_dict = {item['name']: Item(item) for item in self.raw_dex['items']}

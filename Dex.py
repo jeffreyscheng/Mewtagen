@@ -1,11 +1,11 @@
 class Dex:
-    def __init__(self, gen, pokemon_dict, move_list, type_list, nature_dict, item_list):
+    def __init__(self, gen, pokemon_dict, move_dict, type_dict, nature_dict, item_dict):
         self.gen = gen
         self.pokemon_dict = pokemon_dict
-        self.move_list = move_list
-        self.type_list = type_list
+        self.move_dict = move_dict
+        self.type_dict = type_dict
         self.nature_dict = nature_dict
-        self.item_list = item_list
+        self.item_dict = item_dict
         self.format_metagame = FormatMetagame([self.pokemon_dict[key] for key in self.pokemon_dict])
 
     def get_pokemon(self, name):

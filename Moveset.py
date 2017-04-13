@@ -26,7 +26,7 @@ class Moveset:
         self.spd_stat = self.get_stat('spd')
         self.spe_stat = self.get_stat('spe')
         self.usage = 0
-        self.name = m_set['name']
+        self.name = self.pokemon.unique_name + '_' + m_set['name']
 
     def get_stat(self, name):
         base = self.pokemon.get_base_stat(name)
