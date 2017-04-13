@@ -5,6 +5,9 @@ class Battle:
     def __init__(self):
         self.metagame = Dialgarithm.metagame
         self.damage_cache = None  # TODO: dict of ordered pairs (attacker, defender) -> damage, read from file
+        # create a folder for each gen
+        # refactor load from Writer
+        # each folder has xy_dex, xy_movesets, xy_damage_cache
 
     def battle(self, team1, team2):
         return team1

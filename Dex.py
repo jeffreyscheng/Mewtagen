@@ -61,6 +61,8 @@ class Item:
 
 
 class Format:
+    format_list = ['LC', 'PU', 'BL4', 'NU', 'BL3', 'RU', 'BL2', 'UU', 'BL', 'OU', 'Uber', 'AG']
+
     def __init__(self, format_string):
         self.name = format_string
         if format_string == 'LC':

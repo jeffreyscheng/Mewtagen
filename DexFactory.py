@@ -17,11 +17,10 @@ class DexFactory:
         self.item_list = None
 
     def get_dex(self):
-        tentative_dex = Writer.load_object(Dialgarithm.gen + '_dex.txt')
+        tentative_dex = Writer.load_object('/' + Dialgarithm.gen + 'dex.txt')
         if tentative_dex is None:
             self.gen = Dialgarithm.gen
             self.read_dex()
-            print(self.raw_dex.keys())
             self.read_types()
             self.read_pokemon()
             self.read_natures()
@@ -29,7 +28,7 @@ class DexFactory:
             self.read_items()
             new_dex = Dex(self.gen, self.pokemon_dict, self.move_list, self.type_list,
                           self.nature_list, self.item_list)
-            # Writer.save_object(Dialgarithm.dex, Dialgarithm.gen + '_dex.txt')
+            Writer.save_object(new_dex, 'dex.txt')
         else:
             new_dex = tentative_dex
         Dialgarithm.dex = new_dex

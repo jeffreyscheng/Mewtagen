@@ -1,17 +1,25 @@
+import os
 import pickle
 from pathlib import Path
+
+import errno
+
+from Dialgarithm import *
 
 
 class Writer:
     @staticmethod
     def save_object(obj, filename):
-        with open(filename, 'wb') as output:
+        full_filename = Dialgarithm.gen + '/' + filename
+        os.makedirs(os.path.dirname(full_filename), exist_ok=True)
+        with open(full_filename, 'wb') as output:
             pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
     @staticmethod
     def load_object(filename):
-        my_file = Path(filename)
+        full_filename = Dialgarithm.gen + '/' + filename
+        my_file = Path(full_filename)
         if my_file.is_file():
-            return pickle.load(open(filename, "rb"))
+            return pickle.load(open(full_filename, "rb"))
         else:
             return None

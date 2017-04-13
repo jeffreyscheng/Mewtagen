@@ -26,9 +26,18 @@ class MovesetFactory:
                 moveset_list = [Moveset(self.dex.get_pokemon(name), m_set) for m_set in movesets]
         return moveset_list
 
-    def read_all_movesets(self):
-        list_of_pokemon = Dialgarithm.dex.format_metagame.format_dict[Format(Dialgarithm.format)]
-        pokemon_names = [pokemon.dex_name for pokemon in list_of_pokemon]
-        list_of_moveset_lists = [self.read_pokemon(name) for name in pokemon_names]
-        self.list_of_movesets = [m_set for m_list in list_of_moveset_lists for m_set in m_list]
+    def get_movesets(self):
+        tentative_movesets = Writer.load_object('movesets.txt')
+        if tentative_movesets is None:
+            format_dict = Dialgarithm.dex.format_metagame.format_dict
+            meta_format = Dialgarithm.format
+            list_of_pokemon = [format_dict[Format(form)] for form in Format.format_list
+                               if form <= meta_format]
+            list_of_pokemon = [pokemon for mini_list in list_of_pokemon for pokemon in mini_list]
+            pokemon_names = [pokemon.dex_name for pokemon in list_of_pokemon]
+            list_of_moveset_lists = [self.read_pokemon(name) for name in pokemon_names]
+            self.list_of_movesets = [m_set for m_list in list_of_moveset_lists for m_set in m_list]
+            Writer.save_object(self.list_of_movesets, 'movesets.txt')
+        else:
+            self.list_of_movesets = tentative_movesets
         Dialgarithm.moveset_dict = self.list_of_movesets
