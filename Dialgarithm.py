@@ -30,5 +30,5 @@ class Dialgarithm:
                 print('invalid gen!')
             Dialgarithm.format = gen_format[4:]
         else:
-            Dialgarithm.gen = 'sm'
+            Dialgarithm.gen = 'xy'
             Dialgarithm.format = gen_format
