@@ -46,26 +46,3 @@ class MovesetFactory:
         else:
             self.list_of_movesets = tentative_movesets
         Dialgarithm.moveset_dict = self.list_of_movesets
-
-    def get_usage(self):
-        # parse Dialgarithm.link
-        usage_url = 'http://www.smogon.com/stats/2017-02/' + Dialgarithm.link
-        print(usage_url)
-        soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
-        usage_string = soup.text
-        usage_rows = usage_string.split('\n')
-        usage_rows = usage_rows[5:len(usage_rows) - 2]
-        parsed_usage = [row.split('|') for row in usage_rows]
-
-        def strip_row(row):
-            return [element.strip() for element in row]
-        parsed_usage = [strip_row(row) for row in parsed_usage]
-        parsed_usage = list(filter(None, parsed_usage))
-        print(parsed_usage)
-        parsed_usage = {row[1]: row[2] for row in parsed_usage}
-        print(parsed_usage)
-        return 0
-        # get usage of pokemon
-        # divide by len(value of dict)
-        # assign to each pkmn
-        # return list of movesets
