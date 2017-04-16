@@ -1,9 +1,6 @@
 import os
 import pickle
 from pathlib import Path
-
-import errno
-
 from Dialgarithm import *
 
 

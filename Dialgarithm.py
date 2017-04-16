@@ -4,6 +4,7 @@ class Dialgarithm:
     format = None
     dex = None
     moveset_dict = None  # -> usage statistics
+    usage_dict = None
     metagame = None
     recommendations = None
 
