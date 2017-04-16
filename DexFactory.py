@@ -17,7 +17,7 @@ class DexFactory:
         self.item_dict = None
 
     def get_dex(self):
-        tentative_dex = Writer.load_object('/' + Dialgarithm.gen + 'dex.txt')
+        tentative_dex = Writer.load_object('dex.txt')
         if tentative_dex is None:
             self.gen = Dialgarithm.gen
             self.read_dex()

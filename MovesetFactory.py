@@ -43,16 +43,14 @@ class MovesetFactory:
                 if pokemon.unique_name not in Dialgarithm.usage_dict.keys():
                     print('NOT FOUND')
                     print(pokemon.unique_name)
-                    return None
+                    return []
                 else:
                     usage = Dialgarithm.usage_dict[pokemon.unique_name]
                     options = pokemon_to_moveset[pokemon.unique_name]
                     return [attach_usage(moveset, usage / len(options)) for moveset in options]
 
             nested_list = [add_usage(pokemon) for pokemon in list_of_pokemon]
-            self.list_of_movesets = [m_set for m_sets in nested_list for m_set in m_sets]
-            Writer.save_object(self.list_of_movesets, 'movesets.txt')
-            Dialgarithm.moveset_dict = self.list_of_movesets
+            Dialgarithm.moveset_dict = [m_set for m_sets in nested_list for m_set in m_sets]
+            Writer.save_object(Dialgarithm.moveset_dict, 'movesets.txt')
         else:
-            self.list_of_movesets = tentative_movesets
-        Dialgarithm.moveset_dict = self.list_of_movesets
+            Dialgarithm.moveset_dict = tentative_movesets

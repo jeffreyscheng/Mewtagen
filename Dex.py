@@ -17,7 +17,11 @@ class Dex:
 
 class Pokemon:
     def __init__(self, properties):
-        self.unique_name = properties['name'] + '-' + properties['suffix']
+        suffix = ''
+        if properties['suffix'] is not None:
+            if len(properties['suffix']) > 0:
+                suffix = '-' + properties['suffix']
+        self.unique_name = properties['name'] + suffix
         self.dex_name = properties['name']
         self.base_hp = properties['hp']
         self.base_atk = properties['atk']
