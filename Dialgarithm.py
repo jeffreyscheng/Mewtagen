@@ -1,9 +1,12 @@
+from Dex import *
+
+
 class Dialgarithm:
     link = None
     gen = None
     format = None
     dex = None
-    moveset_dict = None  # -> usage statistics
+    moveset_list = None
     usage_dict = None
     metagame = None
     recommendations = None
@@ -29,7 +32,7 @@ class Dialgarithm:
                 Dialgarithm.gen = 'sm'
             else:
                 print('invalid gen!')
-            Dialgarithm.format = gen_format[4:]
+            Dialgarithm.format = Format(gen_format[4:])
         else:
             Dialgarithm.gen = 'xy'
-            Dialgarithm.format = gen_format
+            Dialgarithm.format = Format(gen_format)

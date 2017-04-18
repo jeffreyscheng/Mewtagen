@@ -8,7 +8,6 @@ class MovesetFactory:
         self.dex = Dialgarithm.dex
         self.format = Dialgarithm.format
         self.list_of_movesets = []
-        # self.cardinality_dict = None
 
     def read_pokemon(self, name):
         moveset_list = []
@@ -19,7 +18,7 @@ class MovesetFactory:
         pokemon_string = pokemon_string[pokemon_string.find(r'{'):]
         formats = json.loads(pokemon_string)['injectRpcs'][2][1]['strategies']
         for f in formats:
-            if f['format'] == self.format:
+            if Format(f['format']) <= self.format:
                 movesets = f['movesets']
                 moveset_list = [Moveset(self.dex.get_pokemon(name), m_set) for m_set in movesets]
         print('Read: ' + name)
@@ -31,9 +30,10 @@ class MovesetFactory:
             format_dict = Dialgarithm.dex.format_metagame.format_dict
             meta_format = Dialgarithm.format
             list_of_pokemon = [format_dict[Format(form)] for form in Format.format_list
-                               if form <= meta_format]
+                               if Format(form) <= meta_format]
             list_of_pokemon = [pokemon for mini_list in list_of_pokemon for pokemon in mini_list]
-            pokemon_to_moveset = {pokemon.unique_name: self.read_pokemon(pokemon.dex_name) for pokemon in list_of_pokemon}
+            pokemon_to_moveset = {pokemon.unique_name: self.read_pokemon(pokemon.dex_name)
+                                  for pokemon in list_of_pokemon}
 
             def attach_usage(moveset, usage):
                 moveset.usage = usage
@@ -47,10 +47,11 @@ class MovesetFactory:
                 else:
                     usage = Dialgarithm.usage_dict[pokemon.unique_name]
                     options = pokemon_to_moveset[pokemon.unique_name]
+                    print([attach_usage(moveset, usage / len(options)) for moveset in options])
                     return [attach_usage(moveset, usage / len(options)) for moveset in options]
 
             nested_list = [add_usage(pokemon) for pokemon in list_of_pokemon]
-            Dialgarithm.moveset_dict = [m_set for m_sets in nested_list for m_set in m_sets]
-            Writer.save_object(Dialgarithm.moveset_dict, 'movesets.txt')
+            Dialgarithm.moveset_list = [m_set for m_sets in nested_list for m_set in m_sets]
+            Writer.save_object(Dialgarithm.moveset_list, 'movesets.txt')
         else:
-            Dialgarithm.moveset_dict = tentative_movesets
+            Dialgarithm.moveset_list = tentative_movesets

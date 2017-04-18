@@ -10,13 +10,11 @@ class Metagame:
     def __init__(self):
         self.dex = Dialgarithm.gen
         self.format = Dialgarithm.format
-        self.dict_of_movesets_usage = self.get_movesets_list()
+        self.dict_of_movesets_usage = {m_set: m_set.usage for m_set in Dialgarithm.moveset_list}
+        print(self.dict_of_movesets_usage)
         self.dict_of_team_elo = {}
         self.beta_offense = 0
         self.beta_defense = 0
-
-    def get_movesets_list(self):
-        return MovesetFactory(self.dex, self.format).read_all_movesets()
 
     @staticmethod
     def weighted_sample(population):
@@ -34,7 +32,7 @@ class Metagame:
             num_teammates = 6
         else:
             num_teammates = 6 - len(core)
-        attempt = [weighted_sample(self.dict_of_movesets_usage) for i in range(0, num_teammates)]
+        attempt = [Metagame.weighted_sample(self.dict_of_movesets_usage) for i in range(0, num_teammates)]
         new_team = Team(attempt)
         if new_team.is_valid():
             return new_team
@@ -46,7 +44,8 @@ class Metagame:
         self.dict_of_team_elo = {self.generate_team() for i in
                                  range(0, 1000)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        while time.clock() - tick < 24 * 3600:
+        seconds_spent = 60
+        while time.clock() - tick < seconds_spent:
             # sort by elo
             bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
             # pair off and battle down the line
@@ -54,7 +53,7 @@ class Metagame:
                 team1 = bracket[2 * i]
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
-        # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
+                # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
 
     # TODO
     def run_battle(self, team1, team2):

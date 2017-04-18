@@ -67,7 +67,8 @@ class Item:
 class Format:
     format_list = ['LC', 'PU', 'BL4', 'NU', 'BL3', 'RU', 'BL2', 'UU', 'BL', 'OU', 'Uber', 'AG']
 
-    def __init__(self, format_string):
+    def __init__(self, form_string):
+        format_string = form_string.upper()
         self.name = format_string
         if format_string == 'LC':
             self.rank = -1
@@ -89,14 +90,12 @@ class Format:
             self.rank = 7
         elif format_string == 'OU':
             self.rank = 8
-        elif format_string == 'Uber':
+        elif format_string == 'UBER':
             self.rank = 9
         elif format_string == 'AG' or format_string == 'Limbo':
             self.rank = 10
         else:
             self.rank = 11
-            print("UNKNOWN TIER")
-            print(format_string)
 
     def __lt__(self, other):
         return self.rank < other.rank
