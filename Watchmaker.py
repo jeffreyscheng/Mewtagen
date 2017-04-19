@@ -10,7 +10,11 @@ class Watchmaker:
         DexFactory().get_dex()
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
-        Metagame().precomputation()
+        Battle().get_all_counters()
+        checks = {moveset.name: [x.name for x in Dialgarithm.counters_dict[moveset]] for moveset in Dialgarithm.moveset_list}
+        print(len(checks['Tyranitar_Choice Scarf']))
+        print(len(checks))
+        # Metagame().precomputation()
 
         # next, test metagame generation with initial population + elos
         # each folder has xy_dex, xy_movesets, xy_damage_cache

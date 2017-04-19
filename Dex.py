@@ -48,10 +48,7 @@ class Move:
 class Type:
     def __init__(self, name, atk_effective):
         self.name = name
-        self.atk_dict = atk_effective
-
-    def type_coefficient(self, def_type):
-        return self.atk_dict[def_type]
+        self.effects = atk_effective
 
 
 class Nature:

@@ -107,14 +107,14 @@ class Battle:
         if pair in self.damage_cache:
             return self.damage_cache[pair]
         else:
-            damage_list = [Battle.move_damage(attacker, defender, Move(move)) for move in attacker.moves]
+            damage_list = [Battle.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
+                           for move in attacker.moves]
             return max(damage_list)
 
     @staticmethod
     def move_damage(attacker, defender, move):
-        move_type = Dialgarithm.dex.move_dict[move.type]
-        type_coefficients = [move_type.type_coefficient[Dialgarithm.dex.move_dict[def_type]]
-                             for def_type in defender.pokemon.types]
+        move_type = Dialgarithm.dex.type_dict[move.type]
+        type_coefficients = [move_type.effects[def_type] for def_type in defender.pokemon.types]
         coefficient = np.product(type_coefficients)
 
         # record abilities and items, you dummy
@@ -152,14 +152,15 @@ class Battle:
             return False
         turns_to_kill_yours = math.ceil(yours.hp_stat / damage_to_yours)
         turns_to_kill_theirs = math.ceil(theirs.hp_stat / damage_to_theirs)
-        if turns_to_kill_yours == turns_to_kill_theirs + 1:
-            your_speed = self.get_stat(yours, 'spe')
-            their_speed = self.get_stat(theirs, 'spe')
+        if turns_to_kill_yours == turns_to_kill_theirs - 1:
+            your_speed = yours.spe_stat
+            their_speed = theirs.spe_stat
             return their_speed > your_speed
         else:
-            return turns_to_kill_yours > turns_to_kill_theirs + 1
+            return turns_to_kill_yours < turns_to_kill_theirs - 1
 
     def get_counters_of_moveset(self, moveset):
+        print(moveset.name)
         return [m_set for m_set in Dialgarithm.moveset_list if self.check_counter(moveset, m_set)]
 
     def get_all_counters(self):
