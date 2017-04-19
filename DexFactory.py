@@ -53,6 +53,7 @@ class DexFactory:
         dex_string = soup.script.contents[0]
         dex_string = dex_string[dex_string.find(r'{'):]
         self.raw_dex = json.loads(dex_string)['injectRpcs'][1][1]
+        print(self.raw_dex['pokemon'])
 
     def read_types(self):
 

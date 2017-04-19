@@ -1,5 +1,6 @@
 from UsageReader import *
 from Metagame import *
+from MovesetFactory import *
 
 
 class Watchmaker:
@@ -9,7 +10,7 @@ class Watchmaker:
         DexFactory().get_dex()
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
-        print(Metagame().generate_team())
+        Metagame().precomputation()
 
         # next, test metagame generation with initial population + elos
         # each folder has xy_dex, xy_movesets, xy_damage_cache

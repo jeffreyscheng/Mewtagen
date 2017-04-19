@@ -1,9 +1,8 @@
-import random
 import time
 from Team import *
 from Battle import *
-from MovesetFactory import *
 from Dialgarithm import *
+import pandas as pd
 
 
 class Metagame:
@@ -11,7 +10,6 @@ class Metagame:
         self.dex = Dialgarithm.gen
         self.format = Dialgarithm.format
         self.dict_of_movesets_usage = {m_set: m_set.usage for m_set in Dialgarithm.moveset_list}
-        print(self.dict_of_movesets_usage)
         self.dict_of_team_elo = {}
         self.beta_offense = 0
         self.beta_defense = 0
@@ -41,11 +39,13 @@ class Metagame:
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        self.dict_of_team_elo = {self.generate_team() for i in
+        self.dict_of_team_elo = {self.generate_team(): 1000 for i in
                                  range(0, 1000)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 60
+        seconds_spent = 10
+        counter = 0
         while time.clock() - tick < seconds_spent:
+            counter += 1
             # sort by elo
             bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
             # pair off and battle down the line
@@ -54,15 +54,32 @@ class Metagame:
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
                 # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
+        elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
+        table = pd.DataFrame.from_dict(elo_dict_list)
+        print(table)
+        print(counter)
+
+    @staticmethod
+    def compute_expected(elo1, elo2):
+        return 1 / (1 + 10.0 ** ((elo2 - elo1) / 400.0))
 
     # TODO
     def run_battle(self, team1, team2):
+        elo1 = self.dict_of_team_elo[team1]
+        elo2 = self.dict_of_team_elo[team2]
+        expected_1 = Metagame.compute_expected(elo1, elo2)
+        expected_2 = Metagame.compute_expected(elo2, elo1)
         # determine winner
-        winner = Battle.battle(team1, team2)
-        if winner is team1:
-            loser = team2
+        winner = Battle().battle(team1, team2)
+        if elo1 > 1500 or elo2 < 500:
+            k = 16
         else:
-            loser = team1
-        # update elos
-        self.dict_of_team_elo[winner] = 1000  # do
-        self.dict_of_team_elo[loser] = 1000  # do
+            k = 32
+        if winner is team1:
+            s_1 = 1
+            s_2 = 0
+        else:
+            s_1 = 0
+            s_2 = 1
+        self.dict_of_team_elo[team1] += k * (s_1 - expected_1)
+        self.dict_of_team_elo[team2] += k * (s_2 - expected_2)

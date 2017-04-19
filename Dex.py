@@ -30,6 +30,7 @@ class Pokemon:
         self.base_spd = properties['spd']
         self.base_spe = properties['spe']
         self.formats = properties['formats']
+        self.types = properties['types']
 
     def get_base_stat(self, name):
         return self.__dict__['base_' + name]
@@ -41,6 +42,7 @@ class Move:
         self.base_power = properties['power']
         self.accuracy = properties['accuracy']
         self.category = properties['category']
+        self.type = properties['type']
 
 
 class Type:
