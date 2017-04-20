@@ -12,6 +12,9 @@ class Team:
         list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]
         return np.unique(list_of_names).size == len(list_of_names)
 
+    def is_fainted(self):
+        return self.party[self.current] == 0
+
     def is_blacked_out(self):
         return len([health for mon, health in self.party if health > 0]) > 0
 

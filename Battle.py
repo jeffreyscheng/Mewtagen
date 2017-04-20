@@ -19,12 +19,12 @@ class Battle:
         team2.heal()
         team1.current = random.choice(team1.party.keys())
         team2.current = random.choice(team2.party.keys())
-        counters_to_team1 = {moveset1: [moveset2 for moveset2 in team2.party.keys() if moveset2
-                                        in Dialgarithm.counters_dict[moveset1]] for moveset1 in team1.party.keys()}
-        counters_to_team2 = {moveset1: [moveset2 for moveset2 in team1.party.keys() if moveset2
-                                        in Dialgarithm.counters_dict[moveset1]] for moveset1 in team2.party.keys()}
 
-        def move_turn(curr1, curr2):
+        while (not team1.is_blacked_out()) and (not team2.is_blacked_out()):
+            if team1.is_fainted():
+                team1.switch()
+            if team2.is_fainted():
+                team2.switch()
             bool_1_counters_2 = team1.current in Dialgarithm.counters_dict[team2.current]
             bool_2_counters_1 = team2.current in Dialgarithm.counters_dict[team1.current]
 
@@ -40,84 +40,28 @@ class Battle:
                 else:
                     team1_moves_first = random.choice([0,1])
                 if team1_moves_first:
-                    pass
+                    team2.damage_current(self.deal_damage(team1.current, team2.current))
+                    if not team2.is_fainted():
+                        team1.damage_current(self.deal_damage(team2.current, team1.current))
                 else:
-                    pass
+                    team2.damage_current(self.deal_damage(team1.current, team2.current))
+                    if not team2.is_fainted():
+                        team1.damage_current(self.deal_damage(team2.current, team1.current))
 
             # Case 2: 1 stays, 2 switches
             elif bool_1_counters_2:
+                team1.switch()
+                team1.damage_current(self.deal_damage(team2.current, team1.current))
 
             # Case 3: 2 stays, 1 leaves
             elif bool_2_counters_1:
+                team2.switch()
+                team2.damage_current(self.deal_damage(team1.current, team2.current))
 
             # Case 4: both switch
             # I don't think this should ever happen?
             else:
                 raise RuntimeError("two mons counter each other, both switch?")
-
-
-
-        #     if bool_1_counters_2:
-        #         # curr1 stays in for sure, curr2 may switch out
-        #         if len(counters_to_team1[curr1]) > 0:
-        #             check = random.randint(1, 10)
-        #             if check < 10:
-        #                 curr2 = random.choice(counters_to_team1[curr1])
-        #                 turn_team2_used = True
-        #     else:
-        #         if len(counters_to_team2[curr2]) > 0:
-        #             check = random.randint(1, 10)
-        #             if check < 10:
-        #                 curr1 = random.choice(counters_to_team2[curr2])
-        #                 turn_team1_used = True
-        #
-        #     def team_1_attacks(c1, c2):
-        #         team2_health[c2] -= self.deal_damage(team1[c1], team2[c2]) / self.get_stat(team2[c2], 'hp')
-        #         if team2_health[c2] <= 0:
-        #             team2_health[c2] = 0
-        #             try:
-        #                 counters_to_team1[curr1].remove(c2)
-        #             except ValueError:
-        #                 pass
-        #             if sum(team2_health) > 0:
-        #                 if len(counters_to_team1[curr1]) > 0:
-        #                     c2 = random.choice(counters_to_team1[curr1])
-        #                 else:
-        #                     c2 = next(x[0] for x in enumerate(team2_health) if x[1] > 0)
-        #         return c1, c2
-        #
-        #     def team_2_attacks(c1, c2):
-        #         team1_health[c1] -= self.deal_damage(team2[c2], team1[c1]) / self.get_stat(team1[c1], 'hp')
-        #         if team1_health[c1] <= 0:
-        #             team1_health[c1] = 0
-        #             try:
-        #                 counters_to_team2[curr2].remove(c1)
-        #             except ValueError:
-        #                 pass
-        #             if sum(team1_health) > 0:
-        #                 if len(counters_to_team2[curr2]) > 0:
-        #                     c1 = random.choice(counters_to_team2[curr2])
-        #                 else:
-        #                     c1 = next(x[0] for x in enumerate(team1_health) if x[1] > 0)
-        #         return c1, c2
-        #
-        #     old_c1 = curr1
-        #     old_c2 = curr2
-        #
-        #     if self.get_stat(team1[curr1], 'spd') > self.get_stat(team2[curr2], 'spd'):
-        #         if not turn_team1_used:
-        #             curr1, curr2 = team_1_attacks(curr1, curr2)
-        #         if old_c2 == curr2 and not turn_team2_used:
-        #             curr1, curr2 = team_2_attacks(curr1, curr2)
-        #     else:
-        #         if not turn_team2_used:
-        #             curr1, curr2 = team_2_attacks(curr1, curr2)
-        #         if old_c1 == curr1 and not turn_team1_used:
-        #             curr1, curr2 = team_1_attacks(curr1, curr2)
-        #     return curr1, curr2
-        #
-        while (not team1.is_blacked_out()) and (not team1.is_blacked_out()):
-            current1, current2 = move_turn(current1, current2)
         return team2.is_blacked_out()
 
     def deal_damage(self, attacker, defender):
@@ -127,7 +71,10 @@ class Battle:
         else:
             damage_list = [Battle.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
                            for move in attacker.moves]
-            return max(damage_list)
+            damage = max(damage_list)
+            tup = attacker, defender
+            self.damage_cache[tup] = damage
+            return damage
 
     @staticmethod
     def move_damage(attacker, defender, move):
