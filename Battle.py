@@ -24,21 +24,39 @@ class Battle:
         counters_to_team2 = {moveset1: [moveset2 for moveset2 in team1.party.keys() if moveset2
                                         in Dialgarithm.counters_dict[moveset1]] for moveset1 in team2.party.keys()}
 
-        # def helper(curr1, curr2):
-        #     tock = time.clock()
-        #     if tock - tick > 30:
-        #         print(team1)
-        #         print(team2)
-        #         print(team1_health)
-        #         print(team2_health)
-        #         print(current1)
-        #         print(current2)
-        #     bool_1_counters_2 = team1[curr1] in self.counters[team2[curr2]]
-        #     # this line literally takes the majority of the time -- optimize, dummy
-        #     # bool_1_counters_2 = self.check_counter(team1[curr1], team2[curr2], team1_health[curr1], team2_health[curr2])
-        #     turn_team1_used = False
-        #     turn_team2_used = False
-        #
+        def move_turn(curr1, curr2):
+            bool_1_counters_2 = team1.current in Dialgarithm.counters_dict[team2.current]
+            bool_2_counters_1 = team2.current in Dialgarithm.counters_dict[team1.current]
+
+            turn_team1_used = False
+            turn_team2_used = False
+
+            # Case 1: both stay
+            if (not bool_1_counters_2) and (not bool_2_counters_1):
+                if team1.current.spe_stat > team2.current.spe_stat:
+                    team1_moves_first = True
+                elif team1.current.spe_stat < team2.current.spe_stat:
+                    team1_moves_first = False
+                else:
+                    team1_moves_first = random.choice([0,1])
+                if team1_moves_first:
+                    pass
+                else:
+                    pass
+
+            # Case 2: 1 stays, 2 switches
+            elif bool_1_counters_2:
+
+            # Case 3: 2 stays, 1 leaves
+            elif bool_2_counters_1:
+
+            # Case 4: both switch
+            # I don't think this should ever happen?
+            else:
+                raise RuntimeError("two mons counter each other, both switch?")
+
+
+
         #     if bool_1_counters_2:
         #         # curr1 stays in for sure, curr2 may switch out
         #         if len(counters_to_team1[curr1]) > 0:
@@ -98,9 +116,9 @@ class Battle:
         #             curr1, curr2 = team_1_attacks(curr1, curr2)
         #     return curr1, curr2
         #
-        # while sum(team1_health) > 0 and sum(team2_health) > 0:
-        #     current1, current2 = helper(current1, current2)
-        # return sum(team1_health) > 0
+        while (not team1.is_blacked_out()) and (not team1.is_blacked_out()):
+            current1, current2 = move_turn(current1, current2)
+        return team2.is_blacked_out()
 
     def deal_damage(self, attacker, defender):
         pair = attacker, defender
@@ -136,12 +154,8 @@ class Battle:
             else:
                 attacker_atk = attacker.spa_stat
                 defender_def = defender.spd_stat
-        damage = (
-                     210 / 250 * attacker_atk / defender_def * move.base_power + 2) * coefficient * move.accuracy / 100.0 * 0.925
-        if damage >= defender.hp_stat:
-            return 1
-        else:
-            return damage / defender.hp_stat
+        damage = (210 / 250 * attacker_atk / defender_def * move.base_power + 2) * coefficient * move.accuracy / 100.0 * 0.925
+        return damage / defender.hp_stat
 
     def check_counter(self, yours, theirs):
         damage_to_yours = self.deal_damage(theirs, yours)
