@@ -7,6 +7,9 @@ class Team:
     def __init__(self, list_of_movesets):
         self.party = {moveset: 1 for moveset in list_of_movesets}
         self.current = None
+        self.ssp = {moveset: 1 / 6 for moveset in list_of_movesets}
+        self.turns_lasted = {moveset: 5 for moveset in list_of_movesets}
+        self.damage_output = {moveset: 0 for moveset in list_of_movesets}
 
     def is_valid(self):
         list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]

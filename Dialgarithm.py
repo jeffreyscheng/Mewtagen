@@ -9,6 +9,7 @@ class Dialgarithm:
     moveset_dict = None
     usage_dict = None
     counters_dict = None
+    damage_cache = None
     metagame = None
     recommendations = None
 

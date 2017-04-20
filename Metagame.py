@@ -40,21 +40,27 @@ class Metagame:
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
+        number_of_teams = 200
+        starting_elo = 1000
         self.dict_of_team_elo = {self.generate_team(): 1000 for i in
-                                 range(0, 1000)}  # teams should be 2.4 hr / (time per game)
+                                 range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
         seconds_spent = 10
         counter = 0
+
+        # each cycle takes roughly 15 seconds
+
         while time.clock() - tick < seconds_spent:
             counter += 1
             # sort by elo
             bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
             # pair off and battle down the line
-            for i in range(0, 500):
+            for i in range(0, number_of_teams // 2):
                 team1 = bracket[2 * i]
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
                 # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
+        Writer.save_object(Dialgarithm.damage_cache, 'damage.txt')
         elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
         table = pd.DataFrame.from_dict(elo_dict_list)
         print(table)

@@ -8,11 +8,11 @@ import time
 
 class Battle:
     def __init__(self):
-        tentative_cache = Writer.load_object('damage_cache.txt')
+        tentative_cache = Writer.load_object('damage.txt')
         if tentative_cache is None:
-            self.damage_cache = {}
+            Dialgarithm.damage_cache = {}
         else:
-            self.damage_cache = tentative_cache
+            Dialgarithm.damage_cache = tentative_cache
         self.moveset_list = [mon for name, mon in Dialgarithm.moveset_dict.items()]
 
     def battle(self, team1, team2):
@@ -74,7 +74,6 @@ class Battle:
                 print(team1.current.name)
                 print(team2.current.name)
                 raise RuntimeError("two mons counter each other, both switch?")
-        Writer.save_object(self.damage_cache, 'damage.txt')
         tock = time.clock();
         print('BATTLE FINISHED IN: ' + str(tock - tick) + ' seconds.')
         if team1.still_playing():
@@ -84,14 +83,14 @@ class Battle:
 
     def deal_damage(self, attacker, defender):
         pair = attacker, defender
-        if pair in self.damage_cache:
-            return self.damage_cache[pair]
+        if pair in Dialgarithm.damage_cache:
+            return Dialgarithm.damage_cache[pair]
         else:
             damage_list = [Battle.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
             tup = attacker, defender
-            self.damage_cache[tup] = damage
+            Dialgarithm.damage_cache[tup] = damage
             return damage
 
     @staticmethod
