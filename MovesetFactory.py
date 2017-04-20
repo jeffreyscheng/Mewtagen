@@ -51,7 +51,7 @@ class MovesetFactory:
                     return [attach_usage(moveset, usage / len(options)) for moveset in options]
 
             nested_list = [add_usage(pokemon) for pokemon in list_of_pokemon]
-            Dialgarithm.moveset_list = [m_set for m_sets in nested_list for m_set in m_sets]
-            Writer.save_object(Dialgarithm.moveset_list, 'movesets.txt')
+            Dialgarithm.moveset_dict = {m_set.name: m_set for m_sets in nested_list for m_set in m_sets}
+            Writer.save_object(Dialgarithm.moveset_dict, 'movesets.txt')
         else:
-            Dialgarithm.moveset_list = tentative_movesets
+            Dialgarithm.moveset_dict = tentative_movesets

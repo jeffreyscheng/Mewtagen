@@ -15,11 +15,11 @@ class Team:
     def is_fainted(self):
         return self.party[self.current] == 0
 
-    def is_blacked_out(self):
-        return len([health for mon, health in self.party if health > 0]) > 0
+    def still_playing(self):
+        return len([health for mon, health in self.party.items() if health > 0]) > 0
 
     def heal(self):
-        self.party = {moveset: 1 for moveset in self.party.keys()}
+        self.party = {moveset: 1 for moveset in list(self.party.keys())}
         self.current = None
 
     def damage_current(self, damage):
@@ -27,7 +27,15 @@ class Team:
         if self.party[self.current] < 0:
             self.party[self.current] = 0
 
-    def switch(self, opponent):
+    def has_living_counter(self, opponent):
+        return len([mon for mon, health in self.party.items() if
+                          mon in Dialgarithm.counters_dict[opponent] and health > 0]) > 0
+
+    def switch(self, opponent=None):
+        if opponent is None:
+            alive = [mon for mon, health in self.party.items() if health > 0]
+            self.current = random.choice(alive)
+            return
         alive_counters = [mon for mon, health in self.party.items() if mon in Dialgarithm.counters_dict[opponent] and health > 0]
         if len(alive_counters) > 0:
             self.current = random.choice(alive_counters)
@@ -35,3 +43,5 @@ class Team:
             alive = [mon for mon, health in self.party.items() if health > 0]
             self.current = random.choice(alive)
 
+    def __str__(self):
+        return ', '.join([mon.name for mon in self.party])

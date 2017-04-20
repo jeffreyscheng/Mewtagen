@@ -9,7 +9,8 @@ class Metagame:
     def __init__(self):
         self.dex = Dialgarithm.gen
         self.format = Dialgarithm.format
-        self.dict_of_movesets_usage = {m_set: m_set.usage for m_set in Dialgarithm.moveset_list}
+        self.dict_of_movesets_usage =\
+            {m_set: m_set.usage for m_set in [mon for name, mon in Dialgarithm.moveset_dict.items()]}
         self.dict_of_team_elo = {}
         self.beta_offense = 0
         self.beta_defense = 0
