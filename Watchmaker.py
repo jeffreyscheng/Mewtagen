@@ -12,7 +12,9 @@ class Watchmaker:
         MovesetFactory().get_movesets()
         b = Battle()
         b.get_all_counters()
-        Metagame().precomputation()
+        # Metagame().precomputation()
+        t = Metagame().generate_team()
+        t.set_ssp()
 
         # next, test metagame generation with initial population + elos
         # each folder has xy_dex, xy_movesets, xy_damage_cache
