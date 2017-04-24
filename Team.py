@@ -3,19 +3,23 @@ import numpy as np
 import pandas as pd
 import random
 from Dialgarithm import *
+from numpy.linalg import matrix_power
 
 
 class Team:
     def __init__(self, list_of_movesets):
         self.party = {moveset: 1 for moveset in list_of_movesets}
         self.current = None
-        self.ssp = {moveset: 1 / 6 for moveset in list_of_movesets}
+        self.transition_matrix = None
+        self.ssp = None
         self.turns_lasted = {moveset: 5 for moveset in list_of_movesets}
         self.damage_output = {moveset: 0 for moveset in list_of_movesets}
 
     def is_valid(self):
         list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]
-        return np.unique(list_of_names).size == 6
+        unique = np.unique(list_of_names).size == 6
+        no_ditto = 'Ditto' not in [mon.pokemon.dex_name for mon in self.party.keys()]
+        return unique and no_ditto
 
     def is_fainted(self):
         return self.party[self.current] == 0
@@ -74,52 +78,22 @@ class Team:
                 if row == column:
                     transition_mat.loc[row, column] = self_loop
                 else:
-                    counters_column_not_row = [mon for mon in Dialgarithm.counters_dict[column_moveset]
-                                               if mon not in Dialgarithm.counters_dict[row_moveset]]
-                    transition_mat.loc[row, column] = self.get_usage_sum(counters_column_not_row)
+                    counters_row_not_column = [mon for mon in Dialgarithm.counters_dict[row_moveset]
+                                               if mon not in Dialgarithm.counters_dict[column_moveset]]
+                    transition_mat.loc[row, column] = self.get_usage_sum(counters_row_not_column)
+            if sum(transition_mat.loc[row, :]) - self_loop == 0:
+                print(row)
+                raise ValueError("Divide by zero!")
             normalization_factor = (1 - self_loop) / (sum(transition_mat.loc[row, :]) - self_loop)
-            print(self_loop + (sum(transition_mat.loc[row, :]) - self_loop) * normalization_factor)
             for column in team_names:
                 if row != column:
                     transition_mat.loc[row, column] *= normalization_factor
 
-        for row in team_names:
-            print(sum(transition_mat.loc[row, :]))
-            if math.isnan(sum(transition_mat.loc[row, :])):
-                print([mon.name for mon in self.party.keys()])
-                raise ValueError
+        self.transition_matrix = transition_mat
+        stationary = matrix_power(transition_mat, 100)
+        stationary = stationary[0]
+        df = pd.DataFrame(data=stationary, index=team_names)
+        self.ssp = df.transpose().to_dict(orient='list')
+        self.ssp = {key: value[0] for key, value in self.ssp.items()}
+        print(self.ssp)
 
-                # transition matrix = M
-                # transition_mat = np.matrix([
-                #     [.9, .075, 0.025],
-                #     [0.15, 0.8, 0.05],
-                #     [0.25, 0.25, 0.5]])
-                # eigenvalues, eigenvectors = eig(transition_mat, right=False, left=True)
-                # stationary = np.array(eigenvectors[:, np.where(np.abs(eigenvalues - 1.) < 1e-8)[0][0]].flat)
-                # stationary = stationary / np.sum(stationary)
-                # print(stationary)
-
-
-
-
-
-
-
-
-                # for row in damage_graph.index:
-                #     num_counters = len(self.counters[row])
-                #     counter_sum = 0
-                #     for col in damage_graph.columns:
-                #         a, b = self.get_switch_costs(row, col)
-                #         damage_graph.loc[row, col] = b
-                #         probability_graph.loc[row, col] = a
-                #         counter_sum += a
-                #     for col in probability_graph.columns:
-                #         if row != col:
-                #             card = probability_graph.loc[row, col]
-                #             probability_graph.loc[row, col] = card / counter_sum * num_counters / num_sets
-                #         if row == col:
-                #             probability_graph.loc[row, col] = 1 - num_counters / num_sets
-                # steady_state = probability_graph
-                # for i in range(10):
-                #     steady_state = steady_state.dot(probability_graph)

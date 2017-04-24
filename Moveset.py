@@ -6,6 +6,17 @@ class Moveset:
     default_ivs = [{'atk': 31, 'def': 31, 'spa': 31, 'spd': 31, 'spe': 31, 'hp': 31}]
 
     def __init__(self, poke, m_set):
+        suffix = ''
+        if len(m_set['items']) > 0:
+            self.item = Dialgarithm.dex.item_dict[m_set['items'][0]]
+            if self.item.name.find('ite') > -1 and self.item.name != 'White Herb' and self.item.name != 'Eviolite':
+                if poke.dex_name in ['Charizard', 'Mewtwo']:
+                    if self.item.name.find('X') > -1:
+                        suffix = '-Mega-X'
+                    else:
+                        suffix = '-Mega-Y'
+                else:
+                    suffix = '-Mega'
         gen = Dialgarithm.gen
         if len(m_set['natures'][0]) > 0:
             self.nature = Dialgarithm.dex.get_nature(m_set['natures'][0])
@@ -16,7 +27,7 @@ class Moveset:
         else:
             self.ivs = m_set['ivconfigs'][0]
         self.evs = m_set['evconfigs'][0]
-        self.pokemon = poke
+        self.pokemon = Dialgarithm.dex.pokemon_dict[poke.unique_name + suffix]
         self.gen = gen
         self.moves = [x[0] if len(x) > 0 else 'Splash' for x in m_set['moveslots']]
         self.hp_stat = self.get_stat('hp')

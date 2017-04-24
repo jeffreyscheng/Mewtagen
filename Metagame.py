@@ -45,7 +45,7 @@ class Metagame:
         self.dict_of_team_elo = {self.generate_team(): 1000 for i in
                                  range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 600
+        seconds_spent = 60
         counter = 0
 
         # each cycle takes roughly 15 seconds
