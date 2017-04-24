@@ -2,8 +2,8 @@ import math
 import numpy as np
 import pandas as pd
 import random
-from Dialgarithm import *
 from numpy.linalg import matrix_power
+from Damage import *
 
 
 class Team:
@@ -12,12 +12,11 @@ class Team:
         self.current = None
         self.transition_matrix = None
         self.ssp = None
-        self.turns_lasted = {moveset: 5 for moveset in list_of_movesets}
-        self.damage_output = {moveset: 0 for moveset in list_of_movesets}
+        self.switch_costs = None
 
     def is_valid(self):
         list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]
-        unique = np.unique(list_of_names).size == 6
+        unique = len(list(set(list_of_names))) == 6
         no_ditto = 'Ditto' not in [mon.pokemon.dex_name for mon in self.party.keys()]
         return unique and no_ditto
 
@@ -64,11 +63,23 @@ class Team:
             raise ValueError("usage greater than 1")
         return ans
 
+    @staticmethod
+    def get_weighted_switch_damage(bailer, victim):
+        contributions = [Dialgarithm.usage_dict[mon] * Damage.deal_damage()]
+
+    def analyze(self):
+        self.set_ssp()
+        self.set_switch_costs()
+
     def set_ssp(self):
 
         team_names = [mon.name for mon in self.party.keys()]
 
         arr = np.zeros((6, 6))
+        if len(team_names) < 6:
+            print(team_names)
+            print(self.party)
+            raise ValueError("Fewer than 6 team members!")
         transition_mat = pd.DataFrame(data=arr, index=team_names, columns=team_names)
         for row in team_names:
             row_moveset = Dialgarithm.moveset_dict[row]
@@ -97,3 +108,11 @@ class Team:
         self.ssp = {key: value[0] for key, value in self.ssp.items()}
         print(self.ssp)
 
+    def set_switch_costs(self):
+        team_names = [mon.name for mon in self.party.keys()]
+        arr = np.zeros((6, 6))
+        switch_matrix = pd.DataFrame(data=arr, index=team_names, columns=team_names)
+        for row in team_names:
+            for column in team_names:
+                if row == column:
+                    pass

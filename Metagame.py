@@ -1,5 +1,3 @@
-import time
-from Team import *
 from Battle import *
 from Dialgarithm import *
 import pandas as pd
@@ -34,6 +32,9 @@ class Metagame:
         attempt = [Metagame.weighted_sample(self.dict_of_movesets_usage) for i in range(0, num_teammates)]
         new_team = Team(attempt)
         if new_team.is_valid():
+            if len(list(set([mon.pokemon.dex_name for mon in attempt]))) < 6:
+                print([mon.pokemon.dex_name for mon in attempt])
+                raise ValueError("Not a valid team!")
             return new_team
         else:
             return self.generate_team(core)  # this can be optimized
@@ -77,7 +78,7 @@ class Metagame:
         expected_1 = Metagame.compute_expected(elo1, elo2)
         expected_2 = Metagame.compute_expected(elo2, elo1)
         # determine winner
-        winner = Battle().battle(team1, team2)
+        winner = Battle.battle(team1, team2)
         if elo1 > 1500 or elo2 < 500:
             k = 16
         else:

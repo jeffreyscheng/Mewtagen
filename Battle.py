@@ -1,21 +1,13 @@
-from Writer import *
 from Team import *
+from Damage import *
 import random
-import math
-import numpy as np
 import time
 
 
 class Battle:
-    def __init__(self):
-        tentative_cache = Writer.load_object('damage.txt')
-        if tentative_cache is None:
-            Dialgarithm.damage_cache = {}
-        else:
-            Dialgarithm.damage_cache = tentative_cache
-        self.moveset_list = [mon for name, mon in Dialgarithm.moveset_dict.items()]
 
-    def battle(self, team1, team2):
+    @staticmethod
+    def battle(team1, team2):
         tick = time.clock();
         team1.heal()
         team2.heal()
@@ -38,13 +30,13 @@ class Battle:
                 else:
                     team1_moves_first = random.choice([0, 1])
                 if team1_moves_first:
-                    team2.damage_current(self.deal_damage(team1.current, team2.current))
+                    team2.damage_current(Damage.deal_damage(team1.current, team2.current))
                     if not team2.is_fainted():
-                        team1.damage_current(self.deal_damage(team2.current, team1.current))
+                        team1.damage_current(Damage.deal_damage(team2.current, team1.current))
                 else:
-                    team1.damage_current(self.deal_damage(team2.current, team1.current))
+                    team1.damage_current(Damage.deal_damage(team2.current, team1.current))
                     if not team1.is_fainted():
-                        team2.damage_current(self.deal_damage(team1.current, team2.current))
+                        team2.damage_current(Damage.deal_damage(team1.current, team2.current))
 
             # Case 1: both stay
             if (not bool_1_counters_2) and (not bool_2_counters_1):
@@ -54,7 +46,7 @@ class Battle:
             elif bool_1_counters_2:
                 if team2.has_living_counter(team1.current):
                     team2.switch(team1.current)
-                    team2.damage_current(self.deal_damage(team1.current, team2.current))
+                    team2.damage_current(Damage.deal_damage(team1.current, team2.current))
                 else:
                     normal_damage()
 
@@ -62,7 +54,7 @@ class Battle:
             elif bool_2_counters_1:
                 if team1.has_living_counter(team2.current):
                     team1.switch(team2.current)
-                    team1.damage_current(self.deal_damage(team2.current, team1.current))
+                    team1.damage_current(Damage.deal_damage(team2.current, team1.current))
                 else:
                     normal_damage()
 
@@ -79,96 +71,3 @@ class Battle:
             return team1
         else:
             return team2
-
-    def deal_damage(self, attacker, defender):
-        pair = attacker, defender
-        if pair in Dialgarithm.damage_cache:
-            return Dialgarithm.damage_cache[pair]
-        else:
-            damage_list = [Battle.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
-                           for move in attacker.moves]
-            damage = max(damage_list)
-            tup = attacker, defender
-            Dialgarithm.damage_cache[tup] = damage
-            return damage
-
-    def get_damage_switch(self, attacker, switcher, defender):
-        pair = attacker, defender
-        if pair in Dialgarithm.damage_cache:
-            return Dialgarithm.damage_cache[pair]
-        else:
-            m_dict = Dialgarithm.dex.move_dict
-            damage_dict = {m_dict[move]: Battle.move_damage(attacker, defender, m_dict[move])
-                           for move in attacker.moves}
-            best_move = max(damage_dict, key=damage_dict.get)
-            damage = self.move_damage(attacker, defender, best_move)
-            tup = attacker, switcher, defender
-            Dialgarithm.switch_cache[tup] = damage
-            return damage
-
-    @staticmethod
-    def move_damage(attacker, defender, move):
-        if move.name == 'Seismic Toss':
-            return 100 / defender.hp_stat
-        move_type = Dialgarithm.dex.type_dict[move.type]
-        type_coefficients = [move_type.effects[def_type] for def_type in defender.pokemon.types]
-        coefficient = np.product(type_coefficients)
-
-        # record abilities and items, you dummy
-
-        if move.category == 'Physical':
-            if move.name == 'Foul Play':
-                attacker_atk = defender.atk_stat
-                defender_def = defender.def_stat
-            elif move.name == 'Knock Off':
-                attacker_atk = 1.5 * attacker.atk_stat
-                defender_def = defender.def_stat
-            else:
-                attacker_atk = attacker.atk_stat
-                defender_def = defender.def_stat
-        else:
-            if move.name == 'Psyshock':
-                attacker_atk = attacker.spa_stat
-                defender_def = defender.def_stat
-            else:
-                attacker_atk = attacker.spa_stat
-                defender_def = defender.spd_stat
-        damage = (
-                     210 / 250 * attacker_atk / defender_def * move.base_power + 2) * coefficient * move.accuracy / 100.0 * 0.925
-        return damage / defender.hp_stat
-
-    def check_counter(self, yours, theirs):
-        damage_to_yours = self.deal_damage(theirs, yours)
-        damage_to_theirs = self.deal_damage(yours, theirs)
-        if damage_to_theirs == 0:
-            return True
-        elif damage_to_yours == 0:
-            return False
-        turns_to_kill_yours = math.ceil(yours.hp_stat / damage_to_yours)
-        turns_to_kill_theirs = math.ceil(theirs.hp_stat / damage_to_theirs)
-        if turns_to_kill_yours == turns_to_kill_theirs - 1:
-            your_speed = yours.spe_stat
-            their_speed = theirs.spe_stat
-            return their_speed > your_speed
-        else:
-            return turns_to_kill_yours < turns_to_kill_theirs - 1
-
-    def get_counters_of_moveset(self, moveset):
-        print(moveset.name)
-        return [m_set for m_set in self.moveset_list if self.check_counter(moveset, m_set)]
-
-    def get_all_counters(self):
-        tentative_counters = Writer.load_object('counters.txt')
-        if tentative_counters is None:
-            Dialgarithm.counters_dict = {moveset: self.get_counters_of_moveset(moveset) for moveset in
-                                         self.moveset_list}
-            Writer.save_object(Dialgarithm.counters_dict, 'counters.txt')
-        else:
-            Dialgarithm.counters_dict = tentative_counters
-
-    def get_switches(self):
-        tentative_switches = Writer.load_object('switches.txt')
-        if tentative_switches is None:
-            Dialgarithm.switch_cache = {}
-        else:
-            Dialgarithm.switch_cache = tentative_switches

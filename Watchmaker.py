@@ -10,8 +10,7 @@ class Watchmaker:
         DexFactory().get_dex()
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
-        b = Battle()
-        b.get_all_counters()
+        Damage.get_all_counters()
         chansey = Dialgarithm.moveset_dict['Infernape_Physically Defensive']
         print(len(Dialgarithm.counters_dict[chansey]))
         print(len(Dialgarithm.counters_dict.keys()))
