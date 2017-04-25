@@ -14,6 +14,7 @@ class Metagame:
     def generate_team(self, core=[]):
         num_teammates = 6 - len(core)
         attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
+        attempt += core
         new_team = Team(attempt)
         if new_team.is_valid():
             if len(list(set([mon.pokemon.dex_name for mon in attempt]))) < 6:
@@ -60,7 +61,9 @@ class Metagame:
             self.dict_of_team_elo = new_population
 
         print("DONE BATTLING, ANALYZING")
-        [t.analyze() for t in self.dict_of_team_elo]
+        suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:10]
+        print(suggestions)
+        [t.analyze() for t in suggestions]
         elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
         table = pd.DataFrame.from_dict(elo_dict_list)
         table['Offense'] = table['Team'].map(lambda x: Team.get_expected_damage(x))
