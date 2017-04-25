@@ -62,13 +62,16 @@ class Metagame:
 
         print("DONE BATTLING, ANALYZING")
         suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:10]
-        print(suggestions)
-        [t.analyze() for t in suggestions]
-        elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
-        table = pd.DataFrame.from_dict(elo_dict_list)
-        table['Offense'] = table['Team'].map(lambda x: Team.get_expected_damage(x))
-        table['Defense'] = table['Team'].map(lambda x: Team.get_expected_turns_lasted(x))
-        print(table)
+        suggestions = [t.party.keys() for t in suggestions]
+        print("SUGGESTIONS:")
+        for suggestion in suggestions:
+            print([mon.name for mon in suggestion if mon not in Dialgarithm.core])
+        # [t.analyze() for t in suggestions]
+        # elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
+        # table = pd.DataFrame.from_dict(elo_dict_list)
+        # table['Offense'] = table['Team'].map(lambda x: Team.get_expected_damage(x))
+        # table['Defense'] = table['Team'].map(lambda x: Team.get_expected_turns_lasted(x))
+        # print(table)
 
     @staticmethod
     def compute_expected(elo1, elo2):
