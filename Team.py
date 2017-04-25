@@ -33,6 +33,8 @@ class Team:
         self.current = None
 
     def damage_current(self, damage):
+        if np.isnan(damage):
+            raise ValueError("NaN damage!")
         self.party[self.current] -= damage
         if self.party[self.current] < 0:
             self.party[self.current] = 0
@@ -119,4 +121,11 @@ class Team:
             for column in self.team_names:
                 column_moveset = Dialgarithm.moveset_dict[column]
                 switch_matrix.loc[row, column] = Damage.get_weighted_switch_damage(row_moveset, column_moveset)
-        Writer.save_pickled_object(Dialgarithm.switch_cache, 'switch.txt')
+
+    @staticmethod
+    def get_expected_damage(team):
+        return 0
+
+    @staticmethod
+    def get_expected_turns_lasted(team):
+        return 0

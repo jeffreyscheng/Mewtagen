@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18cfbf02-6c5e-4424-bb0c-ea271004278c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xy/switch.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Damage.py" afterPath="$PROJECT_DIR$/Damage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DexFactory.py" afterPath="$PROJECT_DIR$/DexFactory.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Metagame.py" afterPath="$PROJECT_DIR$/Metagame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MovesetFactory.py" afterPath="$PROJECT_DIR$/MovesetFactory.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Team.py" afterPath="$PROJECT_DIR$/Team.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UsageReader.py" afterPath="$PROJECT_DIR$/UsageReader.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Watchmaker.py" afterPath="$PROJECT_DIR$/Watchmaker.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Writer.py" afterPath="$PROJECT_DIR$/Writer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy/switch.txt" afterPath="$PROJECT_DIR$/xy/switch.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +21,7 @@
     <SUITE FILE_PATH="coverage/Dialgarithm$MovesetFactory.coverage" NAME="MovesetFactory Coverage Results" MODIFIED="1491934627008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dialgarithm$Battle.coverage" NAME="Battle Coverage Results" MODIFIED="1492713493189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dialgarithm$UsageReader.coverage" NAME="UsageReader Coverage Results" MODIFIED="1492372887944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Dialgarithm$Watchmaker.coverage" NAME="Watchmaker Coverage Results" MODIFIED="1493095770688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dialgarithm$Watchmaker.coverage" NAME="Watchmaker Coverage Results" MODIFIED="1493098196116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dialgarithm$main.coverage" NAME="main Coverage Results" MODIFIED="1491940063914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dialgarithm$DecoratorPractice.coverage" NAME="DecoratorPractice Coverage Results" MODIFIED="1492540127852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dialgarithm$Team.coverage" NAME="Team Coverage Results" MODIFIED="1492974429798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -49,10 +46,36 @@
       <file leaf-file-name="Battle.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Battle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="21" column="74" lean-forward="true" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+            <state relative-caret-position="684">
+              <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Damage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Damage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#2929#4323#0" expanded="false" />
+                <element signature="e#4398#5647#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Watchmaker.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Watchmaker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +84,8 @@
       <file leaf-file-name="Team.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Team.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="120" column="55" lean-forward="false" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
+            <state relative-caret-position="384">
+              <caret line="122" column="111" lean-forward="false" selection-start-line="122" selection-start-column="111" selection-end-line="122" selection-end-column="111" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -73,8 +96,8 @@
       <file leaf-file-name="Writer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Writer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="505">
+              <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -82,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Metagame.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Metagame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Metagame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-666">
-              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="450">
+              <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -105,10 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Dialgarithm.moveset_dict</find>
-      <find>feraligatr</find>
-      <find>unknown</find>
-      <find>read_types</find>
       <find>read_TYPES</find>
       <find>unknow</find>
       <find>UNKNOWN</find>
@@ -128,20 +147,24 @@
       <find>self</find>
       <find>list_of_movesets</find>
       <find>[row,</find>
-      <find>Batt</find>
       <find>vaporeon</find>
       <find>sunflora</find>
       <find>0.0</find>
       <find>9</find>
-      <find>print</find>
       <find>Dialgarithm.damage_cache</find>
+      <find>.damage_current</find>
+      <find>nan</find>
+      <find>csv</find>
+      <find>writer</find>
+      <find>print</find>
+      <find>Batt</find>
     </findStrings>
     <replaceStrings>
       <replace>DexFactory</replace>
       <replace>self.team_names</replace>
       <replace>Damage.get_moveset_list()</replace>
-      <replace>Damage.deal_damage</replace>
       <replace>Dialgarithm.moveset_list</replace>
+      <replace>Damage.deal_damage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -165,14 +188,14 @@
         <option value="$PROJECT_DIR$/Dex.py" />
         <option value="$PROJECT_DIR$/xy/damage.txt" />
         <option value="$PROJECT_DIR$/Moveset.py" />
-        <option value="$PROJECT_DIR$/Battle.py" />
-        <option value="$PROJECT_DIR$/Metagame.py" />
         <option value="$PROJECT_DIR$/Dialgarithm.py" />
         <option value="$PROJECT_DIR$/MovesetFactory.py" />
         <option value="$PROJECT_DIR$/xy/switch.txt" />
+        <option value="$PROJECT_DIR$/Battle.py" />
         <option value="$PROJECT_DIR$/Writer.py" />
         <option value="$PROJECT_DIR$/Damage.py" />
         <option value="$PROJECT_DIR$/Team.py" />
+        <option value="$PROJECT_DIR$/Metagame.py" />
         <option value="$PROJECT_DIR$/Watchmaker.py" />
       </list>
     </option>
@@ -614,7 +637,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32077625" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32077625" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32077625" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.284375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -861,21 +884,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xy/switch.txt">
+    <entry file="file://$PROJECT_DIR$/MovesetFactory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="584">
+          <caret line="56" column="93" lean-forward="false" selection-start-line="56" selection-start-column="93" selection-end-line="56" selection-end-column="93" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Writer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,55 +900,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovesetFactory.py">
+    <entry file="file://$PROJECT_DIR$/xy/switch.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="56" column="93" lean-forward="false" selection-start-line="56" selection-start-column="93" selection-end-line="56" selection-end-column="93" />
+        <state relative-caret-position="150">
+          <caret line="1" column="419" lean-forward="true" selection-start-line="1" selection-start-column="419" selection-end-line="1" selection-end-column="419" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Team.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="120" column="55" lean-forward="false" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
+        <state relative-caret-position="384">
+          <caret line="122" column="111" lean-forward="false" selection-start-line="122" selection-start-column="111" selection-end-line="122" selection-end-column="111" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Watchmaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Damage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="35" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#245#378#0" expanded="false" />
-            <element signature="e#434#863#0" expanded="false" />
-            <element signature="e#915#1386#0" expanded="false" />
-            <element signature="e#1974#2473#0" expanded="false" />
-            <element signature="e#2558#2880#0" expanded="false" />
-            <element signature="e#2962#4352#0" expanded="false" />
-            <element signature="e#4427#5676#0" expanded="false" />
+            <element signature="e#2929#4323#0" expanded="false" />
+            <element signature="e#4398#5647#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Battle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="21" column="74" lean-forward="true" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+        <state relative-caret-position="684">
+          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -944,10 +952,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Metagame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-666">
-          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="450">
+          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Watchmaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

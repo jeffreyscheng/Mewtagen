@@ -13,8 +13,8 @@ class Damage:
 
     @staticmethod
     def end():
-        Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.csv')
-        Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.csv')
+        Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.txt')
+        Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.txt')
 
     @staticmethod
     def get_all_counters():
@@ -28,7 +28,7 @@ class Damage:
 
     @staticmethod
     def get_switches():
-        tentative_switches = Writer.load_csv_object('switch.csv')
+        tentative_switches = Writer.load_csv_object('switch.txt')
         if tentative_switches is None:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))
@@ -40,7 +40,7 @@ class Damage:
 
     @staticmethod
     def read_damage_cache():
-        tentative_cache = Writer.load_csv_object('damage.csv')
+        tentative_cache = Writer.load_csv_object('damage.txt')
         if tentative_cache is None:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))
@@ -52,20 +52,19 @@ class Damage:
 
     @staticmethod
     def deal_damage(attacker, defender):
-        if Dialgarithm.damage_cache.loc[attacker.name, defender.name] != np.nan:
+        if not np.isnan(Dialgarithm.damage_cache.loc[attacker.name, defender.name]):
             return Dialgarithm.damage_cache.loc[attacker.name, defender.name]
         else:
             damage_list = [Damage.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
-            tup = attacker, defender
             Dialgarithm.damage_cache.loc[attacker.name, defender.name] = damage
             return damage
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
         m_dict = Dialgarithm.dex.move_dict
-        damage_dict = {m_dict[move]: Damage.move_damage(attacker, defender, m_dict[move])
+        damage_dict = {m_dict[move]: Damage.move_damage(attacker, switcher, m_dict[move])
                        for move in attacker.moves}
         best_move = max(damage_dict, key=damage_dict.get)
         damage = Damage.move_damage(attacker, defender, best_move)
@@ -73,7 +72,7 @@ class Damage:
 
     @staticmethod
     def get_weighted_switch_damage(outgoing, victim):
-        if Dialgarithm.switch_cache.loc[outgoing.name, victim.name] != np.nan:
+        if not np.isnan(Dialgarithm.switch_cache.loc[outgoing.name, victim.name]):
             return Dialgarithm.switch_cache.loc[outgoing.name, victim.name]
         else:
             if outgoing == victim:

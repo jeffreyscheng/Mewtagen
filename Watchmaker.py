@@ -12,6 +12,8 @@ class Watchmaker:
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
         Damage.start()
+        tick = time.clock()
+        print('PRECOMPUTING')
         Metagame().precomputation()
         tock = time.clock()
         print(tock - tick)

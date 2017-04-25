@@ -33,6 +33,6 @@ class Writer:
         full_filename = Dialgarithm.gen + '/' + filename
         my_file = Path(full_filename)
         if my_file.is_file():
-            return pd.read_csv(my_file)
+            return pd.DataFrame.from_csv(my_file)
         else:
             return None
