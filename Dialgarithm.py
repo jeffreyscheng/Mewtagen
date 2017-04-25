@@ -2,6 +2,7 @@ from Dex import *
 
 
 class Dialgarithm:
+    core = []
     link = None
     gen = None
     format = None

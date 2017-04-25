@@ -1,12 +1,12 @@
-import math
-import numpy as np
-import pandas as pd
 import random
 from numpy.linalg import matrix_power
 from Damage import *
 
 
 class Team:
+
+    mutate_prob = 0.05
+
     def __init__(self, list_of_movesets):
         self.party = {moveset: 1 for moveset in list_of_movesets}
         self.team_names = [mon.name for mon in self.party.keys()]
@@ -129,3 +129,32 @@ class Team:
     @staticmethod
     def get_expected_turns_lasted(team):
         return 0
+
+    @staticmethod
+    def weighted_sample():
+        dict_of_movesets_usage =\
+            {m_set: m_set.usage for m_set in [mon for name, mon in Dialgarithm.moveset_dict.items()]}
+        total = sum([dict_of_movesets_usage[key] for key in dict_of_movesets_usage])
+        r = random.uniform(0, total)
+        runner = 0
+        for key, value in dict_of_movesets_usage.items():
+            if runner + value >= r:
+                return key
+            runner += value
+        assert False, "Shouldn't get here"
+
+    def reproduce(self):
+        def mutate(pokemon):
+            if pokemon in Dialgarithm.core:
+                return pokemon
+            elif random.random() < Team.mutate_prob:
+                return Team.weighted_sample()
+            else:
+                return pokemon
+        candidate = Team([mutate(mon) for mon in self.party.keys()])
+        if candidate.is_valid():
+            return candidate
+        else:
+            return self.reproduce()
+
+
