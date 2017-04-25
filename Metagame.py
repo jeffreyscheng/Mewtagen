@@ -26,12 +26,12 @@ class Metagame:
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        number_of_teams = 10
+        number_of_teams = 500
         starting_elo = 1000
         self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): 1000 for i in
                                  range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 60
+        seconds_spent = 30 * 60
         counter = 0
 
         def sample_by_elo(elo_distribution):
@@ -61,16 +61,18 @@ class Metagame:
             self.dict_of_team_elo = new_population
 
         print("DONE BATTLING, ANALYZING")
+        [t.analyze() for t in self.dict_of_team_elo.keys()]
         suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:10]
         suggestions = [t.party.keys() for t in suggestions]
         print("SUGGESTIONS:")
         for suggestion in suggestions:
             print([mon.name for mon in suggestion if mon not in Dialgarithm.core])
         # [t.analyze() for t in suggestions]
-        # elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
-        # table = pd.DataFrame.from_dict(elo_dict_list)
-        # table['Offense'] = table['Team'].map(lambda x: Team.get_expected_damage(x))
-        # table['Defense'] = table['Team'].map(lambda x: Team.get_expected_turns_lasted(x))
+        elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
+        table = pd.DataFrame.from_dict(elo_dict_list)
+        Writer.save_pickled_object(table, 'table_4.25.txt')
+        check = Writer.load_pickled_object('table_4.25.txt')
+        print(check)
         # print(table)
 
     @staticmethod
