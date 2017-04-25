@@ -72,12 +72,20 @@ class Team:
             return Dialgarithm.switch_cache[tup]
         else:
             if outgoing == victim:
-                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
-                                 for mon in Dialgarithm.moveset_list]
+                contributions = [
+                    (Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
+                    for mon in Dialgarithm.moveset_list]
             else:
-                contributions = [(Dialgarithm.usage_dict[mon], Damage.get_damage_switch(mon, outgoing, victim))
+                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
+                                  Damage.get_damage_switch(mon, outgoing, victim))
                                  for mon in Dialgarithm.counters_dict[outgoing] if
                                  mon not in Dialgarithm.counters_dict[victim]]
+                if sum([a for a, b in contributions]) == 0:
+                    # just to make sure stuff doesn't break if one counter set is a superset of another
+                    contributions = [
+                        (Dialgarithm.usage_dict[mon.pokemon.unique_name],
+                         Damage.get_damage_switch(mon, outgoing, victim))
+                        for mon in Dialgarithm.moveset_list]
             weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
             Dialgarithm.switch_cache[tup] = weighted_damage
             return weighted_damage
@@ -127,11 +135,13 @@ class Team:
         df = pd.DataFrame(data=stationary, index=self.team_names)
         self.ssp = df.transpose().to_dict(orient='list')
         self.ssp = {key: value[0] for key, value in self.ssp.items()}
-        print(self.ssp)
 
     def set_switch_costs(self):
         arr = np.zeros((6, 6))
         switch_matrix = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
         for row in self.team_names:
+            row_moveset = Dialgarithm.moveset_dict[row]
             for column in self.team_names:
-                switch_matrix.loc[row, column] = self.get_weighted_switch_damage(row, column)
+                column_moveset = Dialgarithm.moveset_dict[column]
+                switch_matrix.loc[row, column] = self.get_weighted_switch_damage(row_moveset, column_moveset)
+        Writer.save_object(Dialgarithm.switch_cache, 'switch.txt')

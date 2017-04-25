@@ -1,5 +1,6 @@
 from Writer import *
 import math
+import numpy as np
 
 
 class Damage:
@@ -86,12 +87,13 @@ class Damage:
             their_speed = theirs.spe_stat
             return their_speed > your_speed
         else:
-            return turns_to_kill_yours < turns_to_kill_theirs - 1
+            return turns_to_kill_theirs > turns_to_kill_yours + 1
 
     @staticmethod
     def get_counters_of_moveset(moveset):
         print(moveset.name)
-        return [m_set for m_set in Dialgarithm.moveset_list if Damage.check_counter(moveset, m_set)]
+        counters = [m_set for m_set in Dialgarithm.moveset_list if Damage.check_counter(moveset, m_set)]
+        return counters
 
     @staticmethod
     def get_all_counters():

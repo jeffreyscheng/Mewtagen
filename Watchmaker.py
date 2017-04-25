@@ -1,6 +1,7 @@
 from UsageReader import *
 from MovesetFactory import *
 from Metagame import *
+import time
 
 
 class Watchmaker:
@@ -10,15 +11,17 @@ class Watchmaker:
         DexFactory().get_dex()
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
+        Damage.read_damage_cache()
         Damage.get_all_counters()
         Damage.get_switches()
-        chansey = Dialgarithm.moveset_dict['Infernape_Physically Defensive']
-        print(len(Dialgarithm.counters_dict[chansey]))
-        print(len(Dialgarithm.counters_dict.keys()))
         # Metagame().precomputation()
+
+        tick = time.clock()
         for i in range(0, 100):
             t = Metagame().generate_team()
             t.analyze()
+        tock = time.clock()
+        print(tock - tick)
 
         # next, test metagame generation with initial population + elos
         # each folder has xy_dex, xy_movesets, xy_damage_cache
