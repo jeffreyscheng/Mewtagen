@@ -24,7 +24,7 @@ class MovesetFactory:
         return moveset_list
 
     def get_movesets(self):
-        tentative_movesets = Writer.load_object('movesets.txt')
+        tentative_movesets = Writer.load_pickled_object('movesets.txt')
         if tentative_movesets is None:
             format_dict = Dialgarithm.dex.format_metagame.format_dict
             meta_format = Dialgarithm.format
@@ -51,7 +51,7 @@ class MovesetFactory:
 
             nested_list = [add_usage(pokemon) for pokemon in list_of_pokemon]
             Dialgarithm.moveset_dict = {m_set.name: m_set for m_sets in nested_list for m_set in m_sets}
-            Writer.save_object(Dialgarithm.moveset_dict, 'movesets.txt')
+            Writer.save_pickled_object(Dialgarithm.moveset_dict, 'movesets.txt')
         else:
             Dialgarithm.moveset_dict = tentative_movesets
         Dialgarithm.moveset_list = [value for key, value in Dialgarithm.moveset_dict.items()]

@@ -6,40 +6,94 @@ import numpy as np
 class Damage:
 
     @staticmethod
+    def start():
+        Damage.read_damage_cache()
+        Damage.get_all_counters()
+        Damage.get_switches()
+
+    @staticmethod
+    def end():
+        Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.csv')
+        Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.csv')
+
+    @staticmethod
+    def get_all_counters():
+        tentative_counters = Writer.load_pickled_object('counters.txt')
+        if tentative_counters is None:
+            Dialgarithm.counters_dict = {moveset: Damage.get_counters_of_moveset(moveset) for moveset in
+                                         Dialgarithm.moveset_list}
+            Writer.save_pickled_object(Dialgarithm.counters_dict, 'counters.txt')
+        else:
+            Dialgarithm.counters_dict = tentative_counters
+
+    @staticmethod
+    def get_switches():
+        tentative_switches = Writer.load_csv_object('switch.csv')
+        if tentative_switches is None:
+            n = len(Dialgarithm.moveset_list)
+            arr = np.zeros((n, n))
+            arr[:] = np.nan
+            Dialgarithm.switch_cache = pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
+                                                    columns=Dialgarithm.moveset_dict.keys())
+        else:
+            Dialgarithm.switch_cache = tentative_switches
+
+    @staticmethod
     def read_damage_cache():
-        tentative_cache = Writer.load_object('damage.txt')
+        tentative_cache = Writer.load_csv_object('damage.csv')
         if tentative_cache is None:
-            Dialgarithm.damage_cache = {}
+            n = len(Dialgarithm.moveset_list)
+            arr = np.zeros((n, n))
+            arr[:] = np.nan
+            Dialgarithm.damage_cache = pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
+                                                    columns=Dialgarithm.moveset_dict.keys())
         else:
             Dialgarithm.damage_cache = tentative_cache
 
     @staticmethod
     def deal_damage(attacker, defender):
-        pair = attacker, defender
-        if pair in Dialgarithm.damage_cache:
-            return Dialgarithm.damage_cache[pair]
+        if Dialgarithm.damage_cache.loc[attacker.name, defender.name] != np.nan:
+            return Dialgarithm.damage_cache.loc[attacker.name, defender.name]
         else:
             damage_list = [Damage.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
             tup = attacker, defender
-            Dialgarithm.damage_cache[tup] = damage
+            Dialgarithm.damage_cache.loc[attacker.name, defender.name] = damage
             return damage
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
-        pair = attacker, defender
-        if pair in Dialgarithm.damage_cache:
-            return Dialgarithm.damage_cache[pair]
+        m_dict = Dialgarithm.dex.move_dict
+        damage_dict = {m_dict[move]: Damage.move_damage(attacker, defender, m_dict[move])
+                       for move in attacker.moves}
+        best_move = max(damage_dict, key=damage_dict.get)
+        damage = Damage.move_damage(attacker, defender, best_move)
+        return damage
+
+    @staticmethod
+    def get_weighted_switch_damage(outgoing, victim):
+        if Dialgarithm.switch_cache.loc[outgoing.name, victim.name] != np.nan:
+            return Dialgarithm.switch_cache.loc[outgoing.name, victim.name]
         else:
-            m_dict = Dialgarithm.dex.move_dict
-            damage_dict = {m_dict[move]: Damage.move_damage(attacker, defender, m_dict[move])
-                           for move in attacker.moves}
-            best_move = max(damage_dict, key=damage_dict.get)
-            damage = Damage.move_damage(attacker, defender, best_move)
-            tup = attacker, switcher, defender
-            Dialgarithm.switch_cache[tup] = damage
-            return damage
+            if outgoing == victim:
+                contributions = [
+                    (Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
+                    for mon in Dialgarithm.moveset_list]
+            else:
+                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
+                                  Damage.get_damage_switch(mon, outgoing, victim))
+                                 for mon in Dialgarithm.counters_dict[outgoing] if
+                                 mon not in Dialgarithm.counters_dict[victim]]
+                if sum([a for a, b in contributions]) == 0:
+                    # just to make sure stuff doesn't break if one counter set is a superset of another
+                    contributions = [
+                        (Dialgarithm.usage_dict[mon.pokemon.unique_name],
+                         Damage.get_damage_switch(mon, outgoing, victim))
+                        for mon in Dialgarithm.moveset_list]
+            weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
+            Dialgarithm.switch_cache.loc[outgoing.name, victim.name] = weighted_damage
+            return weighted_damage
 
     @staticmethod
     def move_damage(attacker, defender, move):
@@ -94,21 +148,3 @@ class Damage:
         print(moveset.name)
         counters = [m_set for m_set in Dialgarithm.moveset_list if Damage.check_counter(moveset, m_set)]
         return counters
-
-    @staticmethod
-    def get_all_counters():
-        tentative_counters = Writer.load_object('counters.txt')
-        if tentative_counters is None:
-            Dialgarithm.counters_dict = {moveset: Damage.get_counters_of_moveset(moveset) for moveset in
-                                         Dialgarithm.moveset_list}
-            Writer.save_object(Dialgarithm.counters_dict, 'counters.txt')
-        else:
-            Dialgarithm.counters_dict = tentative_counters
-
-    @staticmethod
-    def get_switches():
-        tentative_switches = Writer.load_object('switches.txt')
-        if tentative_switches is None:
-            Dialgarithm.switch_cache = {}
-        else:
-            Dialgarithm.switch_cache = tentative_switches

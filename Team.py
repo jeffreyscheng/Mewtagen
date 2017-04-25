@@ -65,31 +65,6 @@ class Team:
             raise ValueError("usage greater than 1")
         return ans
 
-    @staticmethod
-    def get_weighted_switch_damage(outgoing, victim):
-        tup = outgoing, victim
-        if tup in Dialgarithm.switch_cache:
-            return Dialgarithm.switch_cache[tup]
-        else:
-            if outgoing == victim:
-                contributions = [
-                    (Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
-                    for mon in Dialgarithm.moveset_list]
-            else:
-                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
-                                  Damage.get_damage_switch(mon, outgoing, victim))
-                                 for mon in Dialgarithm.counters_dict[outgoing] if
-                                 mon not in Dialgarithm.counters_dict[victim]]
-                if sum([a for a, b in contributions]) == 0:
-                    # just to make sure stuff doesn't break if one counter set is a superset of another
-                    contributions = [
-                        (Dialgarithm.usage_dict[mon.pokemon.unique_name],
-                         Damage.get_damage_switch(mon, outgoing, victim))
-                        for mon in Dialgarithm.moveset_list]
-            weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
-            Dialgarithm.switch_cache[tup] = weighted_damage
-            return weighted_damage
-
     def analyze(self):
         self.set_counters()
         self.set_ssp()
@@ -143,5 +118,5 @@ class Team:
             row_moveset = Dialgarithm.moveset_dict[row]
             for column in self.team_names:
                 column_moveset = Dialgarithm.moveset_dict[column]
-                switch_matrix.loc[row, column] = self.get_weighted_switch_damage(row_moveset, column_moveset)
-        Writer.save_object(Dialgarithm.switch_cache, 'switch.txt')
+                switch_matrix.loc[row, column] = Damage.get_weighted_switch_damage(row_moveset, column_moveset)
+        Writer.save_pickled_object(Dialgarithm.switch_cache, 'switch.txt')

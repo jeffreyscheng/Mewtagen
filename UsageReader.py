@@ -6,7 +6,7 @@ from Writer import *
 class UsageReader:
     @staticmethod
     def get_usage():
-        tentative_usage = Writer.load_object('usage.txt')
+        tentative_usage = Writer.load_pickled_object('usage.txt')
         if tentative_usage is None:
             usage_url = 'http://www.smogon.com/stats/'
             soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
@@ -25,6 +25,6 @@ class UsageReader:
             parsed_usage = [strip_row(row) for row in parsed_usage]
             parsed_usage = {row[1]: float(row[2]) / 600 for row in parsed_usage}
             Dialgarithm.usage_dict = parsed_usage
-            Writer.save_object(parsed_usage, 'usage.txt')
+            Writer.save_pickled_object(parsed_usage, 'usage.txt')
         else:
             Dialgarithm.usage_dict = tentative_usage

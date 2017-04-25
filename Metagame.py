@@ -61,7 +61,7 @@ class Metagame:
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
                 # pandas df with Team / Elo / Expected Damage Output / Expected Damage Input
-        Writer.save_object(Dialgarithm.damage_cache, 'damage.txt')
+        Writer.save_pickled_object(Dialgarithm.damage_cache, 'damage.txt')
         elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
         table = pd.DataFrame.from_dict(elo_dict_list)
         print(table)

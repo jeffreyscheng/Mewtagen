@@ -11,17 +11,12 @@ class Watchmaker:
         DexFactory().get_dex()
         UsageReader.get_usage()
         MovesetFactory().get_movesets()
-        Damage.read_damage_cache()
-        Damage.get_all_counters()
-        Damage.get_switches()
-        # Metagame().precomputation()
-
-        tick = time.clock()
-        for i in range(0, 100):
-            t = Metagame().generate_team()
-            t.analyze()
+        Damage.start()
+        Metagame().precomputation()
         tock = time.clock()
         print(tock - tick)
+
+        Damage.end()
 
         # next, test metagame generation with initial population + elos
         # each folder has xy_dex, xy_movesets, xy_damage_cache
