@@ -13,8 +13,8 @@ class Damage:
 
     @staticmethod
     def end():
-        Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.txt')
-        Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.txt')
+        Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.csv')
+        Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.csv')
 
     @staticmethod
     def get_all_counters():
@@ -28,7 +28,7 @@ class Damage:
 
     @staticmethod
     def get_switches():
-        tentative_switches = Writer.load_csv_object('switch.txt')
+        tentative_switches = Writer.load_csv_object('switch.csv')
         if tentative_switches is None:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))
@@ -40,7 +40,7 @@ class Damage:
 
     @staticmethod
     def read_damage_cache():
-        tentative_cache = Writer.load_csv_object('damage.txt')
+        tentative_cache = Writer.load_csv_object('damage.csv')
         if tentative_cache is None:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))

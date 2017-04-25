@@ -52,13 +52,11 @@ class Metagame:
         # each cycle takes roughly 15 seconds
         print("BEGINNING CYCLES")
         while time.clock() - tick < seconds_spent:
-            print("CYCLE!")
             counter += 1
             # sort by elo
             bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
             # pair off and battle down the line
             for i in range(0, number_of_teams // 2):
-                print("BATTLE!")
                 team1 = bracket[2 * i]
                 team2 = bracket[2 * i + 1]
                 self.run_battle(team1, team2)
@@ -70,7 +68,6 @@ class Metagame:
         table['Offense'] = table['Team'].map(lambda x: Team.get_expected_damage(x))
         table['Defense'] = table['Team'].map(lambda x: Team.get_expected_turns_lasted(x))
         print(table)
-        print(counter)
 
     @staticmethod
     def compute_expected(elo1, elo2):
