@@ -3,15 +3,6 @@ import math
 
 
 class Damage:
-    moveset_list = None
-
-    @staticmethod
-    def get_moveset_list():
-        if Damage.get_moveset_list() is None:
-            Damage.moveset_list = [mon for name, mon in Dialgarithm.moveset_dict.items()]
-            return Damage.moveset_list
-        else:
-            return Damage.moveset_list
 
     @staticmethod
     def read_damage_cache():
@@ -100,14 +91,14 @@ class Damage:
     @staticmethod
     def get_counters_of_moveset(moveset):
         print(moveset.name)
-        return [m_set for m_set in Damage.get_moveset_list() if self.check_counter(moveset, m_set)]
+        return [m_set for m_set in Dialgarithm.moveset_list if Damage.check_counter(moveset, m_set)]
 
     @staticmethod
     def get_all_counters():
         tentative_counters = Writer.load_object('counters.txt')
         if tentative_counters is None:
             Dialgarithm.counters_dict = {moveset: Damage.get_counters_of_moveset(moveset) for moveset in
-                                         Damage.get_moveset_list()}
+                                         Dialgarithm.moveset_list}
             Writer.save_object(Dialgarithm.counters_dict, 'counters.txt')
         else:
             Dialgarithm.counters_dict = tentative_counters

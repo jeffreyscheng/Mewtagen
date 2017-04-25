@@ -7,7 +7,6 @@ class MovesetFactory:
     def __init__(self):
         self.dex = Dialgarithm.dex
         self.format = Dialgarithm.format
-        self.list_of_movesets = []
 
     def read_pokemon(self, name):
         moveset_list = []
@@ -55,3 +54,4 @@ class MovesetFactory:
             Writer.save_object(Dialgarithm.moveset_dict, 'movesets.txt')
         else:
             Dialgarithm.moveset_dict = tentative_movesets
+        Dialgarithm.moveset_list = [value for key, value in Dialgarithm.moveset_dict.items()]

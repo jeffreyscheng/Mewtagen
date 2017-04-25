@@ -7,6 +7,7 @@ class Dialgarithm:
     format = None
     dex = None
     moveset_dict = None
+    moveset_list = None
     usage_dict = None
     counters_dict = None
     damage_cache = None

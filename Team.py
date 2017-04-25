@@ -9,7 +9,9 @@ from Damage import *
 class Team:
     def __init__(self, list_of_movesets):
         self.party = {moveset: 1 for moveset in list_of_movesets}
+        self.team_names = [mon.name for mon in self.party.keys()]
         self.current = None
+        self.counter_matrix = None
         self.transition_matrix = None
         self.ssp = None
         self.switch_costs = None
@@ -64,55 +66,72 @@ class Team:
         return ans
 
     @staticmethod
-    def get_weighted_switch_damage(bailer, victim):
-        contributions = [Dialgarithm.usage_dict[mon] * Damage.deal_damage()]
+    def get_weighted_switch_damage(outgoing, victim):
+        tup = outgoing, victim
+        if tup in Dialgarithm.switch_cache:
+            return Dialgarithm.switch_cache[tup]
+        else:
+            if outgoing == victim:
+                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
+                                 for mon in Dialgarithm.moveset_list]
+            else:
+                contributions = [(Dialgarithm.usage_dict[mon], Damage.get_damage_switch(mon, outgoing, victim))
+                                 for mon in Dialgarithm.counters_dict[outgoing] if
+                                 mon not in Dialgarithm.counters_dict[victim]]
+            weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
+            Dialgarithm.switch_cache[tup] = weighted_damage
+            return weighted_damage
 
     def analyze(self):
+        self.set_counters()
         self.set_ssp()
         self.set_switch_costs()
 
-    def set_ssp(self):
-
-        team_names = [mon.name for mon in self.party.keys()]
-
+    def set_counters(self):
         arr = np.zeros((6, 6))
-        if len(team_names) < 6:
-            print(team_names)
+        self.counter_matrix = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
+        self.counter_matrix = self.counter_matrix.astype('object')
+        for row in self.team_names:
+            row_moveset = Dialgarithm.moveset_dict[row]
+            for column in self.team_names:
+                column_moveset = Dialgarithm.moveset_dict[column]
+                self.counter_matrix.loc[row, column] = [mon for mon in Dialgarithm.counters_dict[row_moveset]
+                                                        if mon not in Dialgarithm.counters_dict[column_moveset]]
+
+    def set_ssp(self):
+        arr = np.zeros((6, 6))
+        if len(self.team_names) < 6:
+            print(self.team_names)
             print(self.party)
             raise ValueError("Fewer than 6 team members!")
-        transition_mat = pd.DataFrame(data=arr, index=team_names, columns=team_names)
-        for row in team_names:
+        transition_mat = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
+        for row in self.team_names:
             row_moveset = Dialgarithm.moveset_dict[row]
             self_loop = 1 - self.get_usage_sum(Dialgarithm.counters_dict[row_moveset])
-            for column in team_names:
-                column_moveset = Dialgarithm.moveset_dict[column]
+            for column in self.team_names:
                 if row == column:
                     transition_mat.loc[row, column] = self_loop
                 else:
-                    counters_row_not_column = [mon for mon in Dialgarithm.counters_dict[row_moveset]
-                                               if mon not in Dialgarithm.counters_dict[column_moveset]]
-                    transition_mat.loc[row, column] = self.get_usage_sum(counters_row_not_column)
+                    transition_mat.loc[row, column] = self.get_usage_sum(self.counter_matrix.loc[row, column])
             if sum(transition_mat.loc[row, :]) - self_loop == 0:
                 print(row)
                 raise ValueError("Divide by zero!")
             normalization_factor = (1 - self_loop) / (sum(transition_mat.loc[row, :]) - self_loop)
-            for column in team_names:
+            for column in self.team_names:
                 if row != column:
                     transition_mat.loc[row, column] *= normalization_factor
 
         self.transition_matrix = transition_mat
         stationary = matrix_power(transition_mat, 100)
         stationary = stationary[0]
-        df = pd.DataFrame(data=stationary, index=team_names)
+        df = pd.DataFrame(data=stationary, index=self.team_names)
         self.ssp = df.transpose().to_dict(orient='list')
         self.ssp = {key: value[0] for key, value in self.ssp.items()}
         print(self.ssp)
 
     def set_switch_costs(self):
-        team_names = [mon.name for mon in self.party.keys()]
         arr = np.zeros((6, 6))
-        switch_matrix = pd.DataFrame(data=arr, index=team_names, columns=team_names)
-        for row in team_names:
-            for column in team_names:
-                if row == column:
-                    pass
+        switch_matrix = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
+        for row in self.team_names:
+            for column in self.team_names:
+                switch_matrix.loc[row, column] = self.get_weighted_switch_damage(row, column)
