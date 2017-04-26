@@ -4,15 +4,17 @@ import numpy as np
 
 
 class Damage:
-
     @staticmethod
     def start():
         Damage.read_damage_cache()
         Damage.get_all_counters()
         Damage.get_switches()
+        Damage.get_attack()
 
     @staticmethod
     def end():
+        Writer.save_pickled_object(Dialgarithm.attack_cache, 'attack.txt')
+        Writer.save_pickled_object(Dialgarithm.time_list, 'time_list.txt')
         Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.csv')
         Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.csv')
 
@@ -37,6 +39,14 @@ class Damage:
                                                     columns=Dialgarithm.moveset_dict.keys())
         else:
             Dialgarithm.switch_cache = tentative_switches
+
+    @staticmethod
+    def get_attack():
+        tentative_attack = Writer.load_pickled_object('attack.txt')
+        if tentative_attack is None:
+            Dialgarithm.attack_cache = {}
+        else:
+            Dialgarithm.attack_cache = tentative_attack
 
     @staticmethod
     def read_damage_cache():
@@ -76,9 +86,10 @@ class Damage:
             return Dialgarithm.switch_cache.loc[outgoing.name, victim.name]
         else:
             if outgoing == victim:
+                # outgoing_set = Dialgarithm.moveset_dict[outgoing]
                 contributions = [
                     (Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
-                    for mon in Dialgarithm.moveset_list]
+                    for mon in Dialgarithm.moveset_list if mon not in Dialgarithm.counters_dict[outgoing]]
             else:
                 contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
                                   Damage.get_damage_switch(mon, outgoing, victim))
@@ -93,6 +104,19 @@ class Damage:
             weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
             Dialgarithm.switch_cache.loc[outgoing.name, victim.name] = weighted_damage
             return weighted_damage
+
+    @staticmethod
+    def get_weighted_attack_damage(attacker_name):
+        attacker_set = Dialgarithm.moveset_dict[attacker_name]
+        if attacker_name in Dialgarithm.attack_cache:
+            return Dialgarithm.attack_cache[attacker_name]
+        else:
+            contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
+                              Damage.deal_damage(attacker_set, mon)) for mon in
+                             Dialgarithm.moveset_list]
+            weighted_attack = sum([a * b for a, b in contributions])
+            Dialgarithm.attack_cache[attacker_name] = weighted_attack
+            return weighted_attack
 
     @staticmethod
     def move_damage(attacker, defender, move):

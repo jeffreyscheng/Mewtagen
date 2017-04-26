@@ -12,9 +12,11 @@ class Dialgarithm:
     usage_dict = None
     counters_dict = None
     damage_cache = None
+    attack_cache = None
     switch_cache = {}
     metagame = None
     recommendations = None
+    time_list = []
 
     @staticmethod
     def set_link(link):

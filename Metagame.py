@@ -26,12 +26,12 @@ class Metagame:
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        number_of_teams = 2000
+        number_of_teams = 1000
         starting_elo = 1000
-        self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): 1000 for i in
+        self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): starting_elo for i in
                                  range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 1800
+        seconds_spent = 3600
         counter = 0
 
         #damage - 1800, switch - 1000
@@ -71,10 +71,7 @@ class Metagame:
         # [t.analyze() for t in suggestions]
         elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
         table = pd.DataFrame.from_dict(elo_dict_list)
-        Writer.save_pickled_object(table, 'table_4.25.2.txt')
-        check = Writer.load_pickled_object('table_4.25.2.txt')
-        print(check)
-        # print(table)
+        print(table)
 
     @staticmethod
     def compute_expected(elo1, elo2):

@@ -3,8 +3,8 @@ from numpy.linalg import matrix_power
 from Damage import *
 import time
 
-class Team:
 
+class Team:
     mutate_prob = 0.05
 
     def __init__(self, list_of_movesets):
@@ -13,8 +13,8 @@ class Team:
         self.current = None
         self.counter_matrix = None
         self.transition_matrix = None
-        self.ssp = None
         self.switch_costs = None
+        self.metrics = None
 
     def is_valid(self):
         list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]
@@ -69,10 +69,22 @@ class Team:
 
     def analyze(self):
         tick = time.clock()
+        arr = np.zeros((6, 6))
+        self.metrics = pd.DataFrame(data=arr, index=self.team_names,
+                                    columns=['teammate', 'ssp', 'dpt_taken',
+                                             'turns_lasted', 'dpt_given', 'total_damage'])
+        self.metrics['teammate'] = self.team_names
         self.set_counters()
         self.set_ssp()
         self.set_switch_costs()
-        print("ANALYZED IN: " + str(time.clock() - tick) + " seconds.")
+        self.set_damage_taken()
+        self.set_turns_lasted()
+        self.set_damage_given()
+        self.set_total_damage()
+        print(self.metrics)
+        elapsed = time.clock() - tick
+        Dialgarithm.time_list.append(elapsed)
+        print("ANALYZED IN: " + str(elapsed) + " seconds.")
 
     def set_counters(self):
         arr = np.zeros((6, 6))
@@ -111,30 +123,42 @@ class Team:
         self.transition_matrix = transition_mat
         stationary = matrix_power(transition_mat, 100)
         stationary = stationary[0]
-        df = pd.DataFrame(data=stationary, index=self.team_names)
-        self.ssp = df.transpose().to_dict(orient='list')
-        self.ssp = {key: value[0] for key, value in self.ssp.items()}
+        self.metrics.loc[:, 'ssp'] = stationary
 
     def set_switch_costs(self):
         arr = np.zeros((6, 6))
-        switch_matrix = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
+        self.switch_costs = pd.DataFrame(data=arr, index=self.team_names, columns=self.team_names)
         for row in self.team_names:
             row_moveset = Dialgarithm.moveset_dict[row]
             for column in self.team_names:
                 column_moveset = Dialgarithm.moveset_dict[column]
-                switch_matrix.loc[row, column] = Damage.get_weighted_switch_damage(row_moveset, column_moveset)
+                self.switch_costs.loc[row, column] = Damage.get_weighted_switch_damage(row_moveset, column_moveset)
 
-    @staticmethod
-    def get_expected_damage(team):
-        return 0
+    def set_damage_taken(self):
+        def get_damage_taken(mon):
+            damages = [(self.switch_costs.loc[mon2, mon], self.metrics.loc[mon2, 'ssp'],
+                        self.transition_matrix.loc[mon2, mon]) for mon2 in self.team_names]
+            return sum([a * b * c for a, b, c in damages] / self.metrics.loc[mon, 'ssp'])
 
-    @staticmethod
-    def get_expected_turns_lasted(team):
-        return 0
+        self.metrics['dpt_taken'] = self.metrics['teammate'].map(lambda x: get_damage_taken(x))
+        # print(self.metrics['dpt_taken'])
+
+    def set_turns_lasted(self):
+        def get_turns_lasted(mon):
+            return 1 / self.metrics.loc[mon, 'dpt_taken']
+        self.metrics['turns_lasted'] = self.metrics['teammate'].map(get_turns_lasted)
+
+    def set_damage_given(self):
+        self.metrics['dpt_given'] = self.metrics['teammate'].map(Damage.get_weighted_attack_damage)
+
+    def set_total_damage(self):
+        def get_total_damage(row):
+            return row['turns_lasted'] * row['dpt_given']
+        self.metrics['total_damage'] = self.metrics.apply(get_total_damage, axis=1)
 
     @staticmethod
     def weighted_sample():
-        dict_of_movesets_usage =\
+        dict_of_movesets_usage = \
             {m_set: m_set.usage for m_set in [mon for name, mon in Dialgarithm.moveset_dict.items()]}
         total = sum([dict_of_movesets_usage[key] for key in dict_of_movesets_usage])
         r = random.uniform(0, total)
@@ -153,10 +177,9 @@ class Team:
                 return Team.weighted_sample()
             else:
                 return pokemon
+
         candidate = Team([mutate(mon) for mon in self.party.keys()])
         if candidate.is_valid():
             return candidate
         else:
             return self.reproduce()
-
-
