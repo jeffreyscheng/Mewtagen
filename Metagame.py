@@ -26,13 +26,15 @@ class Metagame:
 
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        number_of_teams = 500
+        number_of_teams = 2000
         starting_elo = 1000
         self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): 1000 for i in
                                  range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 30 * 60
+        seconds_spent = 1800
         counter = 0
+
+        #damage - 1800, switch - 1000
 
         def sample_by_elo(elo_distribution):
             r = random.uniform(0, 1000 * number_of_teams)
@@ -56,9 +58,8 @@ class Metagame:
                     team2 = bracket[2 * i + 1]
                     self.run_battle(team1, team2)
             print("NEW POPULATION")
-            new_population = {sample_by_elo(self.dict_of_team_elo).reproduce(): 1000 for i in
-                              range(0, number_of_teams)}
-            self.dict_of_team_elo = new_population
+            winners = [sample_by_elo(self.dict_of_team_elo) for i in range(0, number_of_teams)]
+            self.dict_of_team_elo = {team.reproduce(): self.dict_of_team_elo[team] for team in winners}
 
         print("DONE BATTLING, ANALYZING")
         [t.analyze() for t in self.dict_of_team_elo.keys()]
@@ -70,8 +71,8 @@ class Metagame:
         # [t.analyze() for t in suggestions]
         elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
         table = pd.DataFrame.from_dict(elo_dict_list)
-        Writer.save_pickled_object(table, 'table_4.25.txt')
-        check = Writer.load_pickled_object('table_4.25.txt')
+        Writer.save_pickled_object(table, 'table_4.25.2.txt')
+        check = Writer.load_pickled_object('table_4.25.2.txt')
         print(check)
         # print(table)
 

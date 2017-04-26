@@ -1,7 +1,7 @@
 import random
 from numpy.linalg import matrix_power
 from Damage import *
-
+import time
 
 class Team:
 
@@ -68,9 +68,11 @@ class Team:
         return ans
 
     def analyze(self):
+        tick = time.clock()
         self.set_counters()
         self.set_ssp()
         self.set_switch_costs()
+        print("ANALYZED IN: " + str(time.clock() - tick) + " seconds.")
 
     def set_counters(self):
         arr = np.zeros((6, 6))
