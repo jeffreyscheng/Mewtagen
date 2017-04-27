@@ -22,9 +22,11 @@ class Damage:
     def get_all_counters():
         tentative_counters = Writer.load_pickled_object('counters.txt')
         if tentative_counters is None:
-            Dialgarithm.counters_dict = {moveset: Damage.get_counters_of_moveset(moveset) for moveset in
-                                         Dialgarithm.moveset_list}
-            Writer.save_pickled_object(Dialgarithm.counters_dict, 'counters.txt')
+            Dialgarithm.counters_dict =\
+                {moveset: Damage.get_counters_of_moveset(moveset)
+                 for moveset in Dialgarithm.moveset_list}
+            Writer.save_pickled_object(Dialgarithm.counters_dict,
+                                       'counters.txt')
         else:
             Dialgarithm.counters_dict = tentative_counters
 
@@ -35,8 +37,9 @@ class Damage:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))
             arr[:] = np.nan
-            Dialgarithm.switch_cache = pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
-                                                    columns=Dialgarithm.moveset_dict.keys())
+            Dialgarithm.switch_cache =\
+                pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
+                             columns=Dialgarithm.moveset_dict.keys())
         else:
             Dialgarithm.switch_cache = tentative_switches
 
@@ -55,17 +58,21 @@ class Damage:
             n = len(Dialgarithm.moveset_list)
             arr = np.zeros((n, n))
             arr[:] = np.nan
-            Dialgarithm.damage_cache = pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
-                                                    columns=Dialgarithm.moveset_dict.keys())
+            Dialgarithm.damage_cache =\
+                pd.DataFrame(data=arr, index=Dialgarithm.moveset_dict.keys(),
+                             columns=Dialgarithm.moveset_dict.keys())
         else:
             Dialgarithm.damage_cache = tentative_cache
 
     @staticmethod
     def deal_damage(attacker, defender):
-        if not np.isnan(Dialgarithm.damage_cache.loc[attacker.name, defender.name]):
+        if not np.isnan(Dialgarithm.damage_cache.loc[attacker.name,
+                                                     defender.name]):
             return Dialgarithm.damage_cache.loc[attacker.name, defender.name]
         else:
-            damage_list = [Damage.move_damage(attacker, defender, Dialgarithm.dex.move_dict[move])
+            damage_list = [Damage.move_damage(attacker,
+                                              defender,
+                                              Dialgarithm.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
             Dialgarithm.damage_cache.loc[attacker.name, defender.name] = damage
@@ -74,7 +81,9 @@ class Damage:
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
         m_dict = Dialgarithm.dex.move_dict
-        damage_dict = {m_dict[move]: Damage.move_damage(attacker, switcher, m_dict[move])
+        damage_dict = {m_dict[move]: Damage.move_damage(attacker,
+                                                        switcher,
+                                                        m_dict[move])
                        for move in attacker.moves}
         best_move = max(damage_dict, key=damage_dict.get)
         damage = Damage.move_damage(attacker, defender, best_move)
@@ -82,27 +91,36 @@ class Damage:
 
     @staticmethod
     def get_weighted_switch_damage(outgoing, victim):
-        if not np.isnan(Dialgarithm.switch_cache.loc[outgoing.name, victim.name]):
+        if not np.isnan(Dialgarithm.switch_cache.loc[outgoing.name,
+                                                     victim.name]):
             return Dialgarithm.switch_cache.loc[outgoing.name, victim.name]
         else:
+            u = Dialgarithm.usage_dict
+            c = Dialgarithm.counters_dict
             if outgoing == victim:
                 # outgoing_set = Dialgarithm.moveset_dict[outgoing]
                 contributions = [
-                    (Dialgarithm.usage_dict[mon.pokemon.unique_name], Damage.get_damage_switch(mon, outgoing, victim))
-                    for mon in Dialgarithm.moveset_list if mon not in Dialgarithm.counters_dict[outgoing]]
+                    (u[mon.pokemon.unique_name],
+                     Damage.get_damage_switch(mon, outgoing, victim))
+                    for mon in Dialgarithm.moveset_list
+                    if mon not in Dialgarithm.counters_dict[outgoing]]
             else:
-                contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
-                                  Damage.get_damage_switch(mon, outgoing, victim))
-                                 for mon in Dialgarithm.counters_dict[outgoing] if
-                                 mon not in Dialgarithm.counters_dict[victim]]
+                contributions = [(u[mon.pokemon.unique_name],
+                                  Damage.get_damage_switch(mon,
+                                                           outgoing,
+                                                           victim))
+                                 for mon in c[outgoing] if
+                                 mon not in c[victim]]
                 if sum([a for a, b in contributions]) == 0:
-                    # just to make sure stuff doesn't break if one counter set is a superset of another
                     contributions = [
                         (Dialgarithm.usage_dict[mon.pokemon.unique_name],
                          Damage.get_damage_switch(mon, outgoing, victim))
                         for mon in Dialgarithm.moveset_list]
-            weighted_damage = sum([a * b for a, b in contributions]) / sum([a for a, b in contributions])
-            Dialgarithm.switch_cache.loc[outgoing.name, victim.name] = weighted_damage
+            numerator = sum([a * b for a, b in contributions])
+            denominator = sum([a for a, b in contributions])
+            weighted_damage = numerator / denominator
+            s = Dialgarithm.switch_cache
+            s.loc[outgoing.name, victim.name] = weighted_damage
             return weighted_damage
 
     @staticmethod
@@ -111,9 +129,10 @@ class Damage:
         if attacker_name in Dialgarithm.attack_cache:
             return Dialgarithm.attack_cache[attacker_name]
         else:
-            contributions = [(Dialgarithm.usage_dict[mon.pokemon.unique_name],
-                              Damage.deal_damage(attacker_set, mon)) for mon in
-                             Dialgarithm.moveset_list]
+            u = Dialgarithm.usage_dict
+            contributions = [(u[mon.pokemon.unique_name],
+                              Damage.deal_damage(attacker_set, mon))
+                             for mon in Dialgarithm.moveset_list]
             weighted_attack = sum([a * b for a, b in contributions])
             Dialgarithm.attack_cache[attacker_name] = weighted_attack
             return weighted_attack
@@ -123,7 +142,8 @@ class Damage:
         if move.name == 'Seismic Toss':
             return 100 / defender.hp_stat
         move_type = Dialgarithm.dex.type_dict[move.type]
-        type_coefficients = [move_type.effects[def_type] for def_type in defender.pokemon.types]
+        type_coefficients = [move_type.effects[def_type]
+                             for def_type in defender.pokemon.types]
         coefficient = np.product(type_coefficients)
 
         # record abilities and items, you dummy
@@ -146,7 +166,8 @@ class Damage:
                 attacker_atk = attacker.spa_stat
                 defender_def = defender.spd_stat
         special_factors = coefficient * move.accuracy / 100.0 * 0.925
-        damage = (210 / 250 * attacker_atk / defender_def * move.base_power + 2) * special_factors
+        power_factors = attacker_atk / defender_def * move.base_power
+        damage = (210 / 250 * power_factors + 2) * special_factors
         return damage / defender.hp_stat
 
     @staticmethod
@@ -169,5 +190,6 @@ class Damage:
     @staticmethod
     def get_counters_of_moveset(moveset):
         print(moveset.name)
-        counters = [m_set for m_set in Dialgarithm.moveset_list if Damage.check_counter(moveset, m_set)]
+        counters = [m_set for m_set in Dialgarithm.moveset_list
+                    if Damage.check_counter(moveset, m_set)]
         return counters

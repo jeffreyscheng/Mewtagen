@@ -3,13 +3,16 @@ from Dialgarithm import *
 
 
 class Moveset:
-    default_ivs = [{'atk': 31, 'def': 31, 'spa': 31, 'spd': 31, 'spe': 31, 'hp': 31}]
+    default_ivs = [{'atk': 31, 'def': 31, 'spa': 31,
+                    'spd': 31, 'spe': 31, 'hp': 31}]
 
     def __init__(self, poke, m_set):
         suffix = ''
         if len(m_set['items']) > 0:
             self.item = Dialgarithm.dex.item_dict[m_set['items'][0]]
-            if self.item.name.find('ite') > -1 and self.item.name != 'White Herb' and self.item.name != 'Eviolite':
+            herb = self.item.name != 'White Herb'
+            eviolite = self.item.name != 'Eviolite'
+            if self.item.name.find('ite') > -1 and herb and eviolite:
                 if poke.dex_name in ['Charizard', 'Mewtwo']:
                     if self.item.name.find('X') > -1:
                         suffix = '-Mega-X'
@@ -29,7 +32,8 @@ class Moveset:
         self.evs = m_set['evconfigs'][0]
         self.pokemon = Dialgarithm.dex.pokemon_dict[poke.unique_name + suffix]
         self.gen = gen
-        self.moves = [x[0] if len(x) > 0 else 'Splash' for x in m_set['moveslots']]
+        self.moves = [x[0] if len(x) > 0 else 'Splash'
+                      for x in m_set['moveslots']]
         self.hp_stat = self.get_stat('hp')
         self.atk_stat = self.get_stat('atk')
         self.def_stat = self.get_stat('def')
@@ -43,19 +47,23 @@ class Moveset:
         base = self.pokemon.get_base_stat(name)
         ev = self.evs[name]
         if self.nature is None:
-            nature_coefficient = 1
+            nature = 1
         else:
-            nature_coefficient = self.nature.coefficients[name]
+            nature = self.nature.coefficients[name]
+        ev_sum = math.floor(ev / 4)
         if name == 'hp':
-            return math.floor(2 * base + 31 + math.floor(ev / 4)) + 110
+            return math.floor(2 * base + 31 + ev_sum) + 110
         else:
-            return (math.floor(2 * base + 31 + math.floor(ev / 4)) + 5) * nature_coefficient
+            return (math.floor(2 * base + 31 + ev_sum) + 5) * nature
 
     def __hash__(self):
         return hash((self.name, self.pokemon.dex_name, self.gen))
 
     def __eq__(self, other):
-        return self.name == other.name and self.pokemon.dex_name == other.pokemon.dex_name and self.gen == other.gen
+        name = self.name == other.name
+        dex = self.pokemon.dex_name == other.pokemon.dex_name
+        gen = self.gen == other.gen
+        return name and dex and gen
 
     def __ne__(self, other):
         # Not strictly necessary, but to avoid having both x==y and x!=y

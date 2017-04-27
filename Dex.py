@@ -1,12 +1,14 @@
 class Dex:
-    def __init__(self, gen, pokemon_dict, move_dict, type_dict, nature_dict, item_dict):
+    def __init__(self, gen, pokemon_dict, move_dict,
+                 type_dict, nature_dict, item_dict):
         self.gen = gen
         self.pokemon_dict = pokemon_dict
         self.move_dict = move_dict
         self.type_dict = type_dict
         self.nature_dict = nature_dict
         self.item_dict = item_dict
-        self.format_metagame = FormatMetagame([self.pokemon_dict[key] for key in self.pokemon_dict])
+        self.format_metagame = FormatMetagame([self.pokemon_dict[key]
+                                               for key in self.pokemon_dict])
 
     def get_pokemon(self, name):
         return self.pokemon_dict[name]
@@ -64,7 +66,9 @@ class Item:
 
 
 class Format:
-    format_list = ['LC', 'PU', 'BL4', 'NU', 'BL3', 'RU', 'BL2', 'UU', 'BL', 'OU', 'Uber', 'AG']
+    format_list = ['LC', 'PU', 'BL4', 'NU',
+                   'BL3', 'RU', 'BL2', 'UU',
+                   'BL', 'OU', 'Uber', 'AG']
 
     def __init__(self, form_string):
         format_string = form_string.upper()

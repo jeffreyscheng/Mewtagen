@@ -1,3 +1,4 @@
+from Team import *
 from Battle import *
 from Dialgarithm import *
 from functools import wraps
@@ -37,12 +38,15 @@ class Metagame:
 
     @time_function
     def precomputation(self):
-        """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
+        """generates teams, battles them over 24 hours,
+        gets regression from expectations -> Elo"""
         print("GENERATING TEAMS!")
         number_of_teams = Dialgarithm.population_size
         starting_elo = 1000
-        self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): starting_elo for i in
-                                 range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
+        self.dict_of_team_elo =\
+            {self.generate_team(Dialgarithm.core): starting_elo for i
+             in range(0, number_of_teams)}
+        # teams should be 2.4 hr / (time per game)
         tick = time.clock()
         seconds_spent = Dialgarithm.time
         counter = 0
@@ -64,28 +68,28 @@ class Metagame:
             for i in range(0, 30):
                 counter += 1
                 # sort by elo
-                bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
+                bracket = sorted(self.dict_of_team_elo,
+                                 key=self.dict_of_team_elo.get)
                 # pair off and battle down the line
                 for i in range(0, number_of_teams // 2):
                     team1 = bracket[2 * i]
                     team2 = bracket[2 * i + 1]
                     self.run_battle(team1, team2)
             print("NEW POPULATION")
-            winners = [sample_by_elo(self.dict_of_team_elo) for i in range(0, number_of_teams)]
-            self.dict_of_team_elo = {team.reproduce(): self.dict_of_team_elo[team] for team in winners}
+            winners = [sample_by_elo(self.dict_of_team_elo) for i
+                       in range(0, number_of_teams)]
+            self.dict_of_team_elo =\
+                {team.reproduce(): self.dict_of_team_elo[team]
+                 for team in winners}
 
         print("DONE BATTLING, ANALYZING")
         [t.analyze() for t in self.dict_of_team_elo.keys()]
-        suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:3]
-        suggestions = [t.party.keys() for t in suggestions]
+        suggestions = sorted(self.dict_of_team_elo,
+                             key=self.dict_of_team_elo.get)[0:3]
         print("SUGGESTIONS:")
         for suggestion in suggestions:
-            print([mon.name for mon in suggestion if mon not in Dialgarithm.core])
-        # [t.analyze() for t in suggestions]
-        elo_dict_list = [{'Elo': e, 'Team': t} for t, e in self.dict_of_team_elo.items()]
-        table = pd.DataFrame.from_dict(elo_dict_list)
-        print(table)
-
+            suggestion.display()
+            
     @staticmethod
     def compute_expected(elo1, elo2):
         return 1 / (1 + 10.0 ** ((elo2 - elo1) / 400.0))

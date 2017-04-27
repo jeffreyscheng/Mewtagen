@@ -16,7 +16,6 @@ class Dialgarithm:
     switch_cache = {}
     metagame = None
     recommendations = None
-    time_list = []
     population_size = 0
     time = 0
 
