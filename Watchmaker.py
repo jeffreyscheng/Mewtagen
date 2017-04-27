@@ -20,19 +20,12 @@ class Watchmaker:
             name = input("Name of Pokemon " + str(i) + "?\n")
             potential_movesets = [mon for mon in Dialgarithm.moveset_list if mon.pokemon.unique_name == name]
             Dialgarithm.core.append(random.choice(potential_movesets))
+        Dialgarithm.population_size = int(input("Population size?\n"))
+        Dialgarithm.time = int(input("Evolution duration?\n"))
         print("Inputs processed!")
 
         Damage.start()
-        tick = time.clock()
-        print('PRECOMPUTING')
         Metagame().precomputation()
-        tock = time.clock()
-        print(tock - tick)
-
         Damage.end()
-
-        # next, test metagame generation with initial population + elos
-        # each folder has xy_dex, xy_movesets, xy_damage_cache
-
 
 Watchmaker.run()

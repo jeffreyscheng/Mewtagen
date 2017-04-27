@@ -14,7 +14,7 @@ class Damage:
     @staticmethod
     def end():
         Writer.save_pickled_object(Dialgarithm.attack_cache, 'attack.txt')
-        Writer.save_pickled_object(Dialgarithm.time_list, 'time_list.txt')
+        # Writer.save_pickled_object(Dialgarithm.time_list, 'time_list.txt')
         Writer.save_csv_object(Dialgarithm.damage_cache, 'damage.csv')
         Writer.save_csv_object(Dialgarithm.switch_cache, 'switch.csv')
 

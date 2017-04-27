@@ -17,6 +17,8 @@ class Dialgarithm:
     metagame = None
     recommendations = None
     time_list = []
+    population_size = 0
+    time = 0
 
     @staticmethod
     def set_link(link):

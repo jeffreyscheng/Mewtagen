@@ -1,5 +1,6 @@
 from Battle import *
 from Dialgarithm import *
+from functools import wraps
 import pandas as pd
 
 
@@ -24,17 +25,29 @@ class Metagame:
         else:
             return self.generate_team(core)  # this can be optimized
 
+    def time_function(f):
+        @wraps(f)
+        def wrapped(inst, *args, **kwargs):
+            tick = time.clock()
+            result = f(inst, *args, **kwargs)
+            print("PROCESS TOOK: " + str(time.clock() - tick))
+            return result
+
+        return wrapped
+
+    @time_function
     def precomputation(self):
         """generates teams, battles them over 24 hours, gets regression from expectations -> Elo"""
-        number_of_teams = 1000
+        print("GENERATING TEAMS!")
+        number_of_teams = Dialgarithm.population_size
         starting_elo = 1000
         self.dict_of_team_elo = {self.generate_team(Dialgarithm.core): starting_elo for i in
                                  range(0, number_of_teams)}  # teams should be 2.4 hr / (time per game)
         tick = time.clock()
-        seconds_spent = 3600
+        seconds_spent = Dialgarithm.time
         counter = 0
 
-        #damage - 1800, switch - 1000
+        # damage - 1800, switch - 1000
 
         def sample_by_elo(elo_distribution):
             r = random.uniform(0, 1000 * number_of_teams)

@@ -83,7 +83,7 @@ class Team:
         self.set_total_damage()
         print(self.metrics)
         elapsed = time.clock() - tick
-        Dialgarithm.time_list.append(elapsed)
+        # Dialgarithm.time_list.append(elapsed)
         print("ANALYZED IN: " + str(elapsed) + " seconds.")
 
     def set_counters(self):
@@ -183,3 +183,10 @@ class Team:
             return candidate
         else:
             return self.reproduce()
+
+    def display(self):
+        for mon in self.party.keys():
+            print('=======')
+            print('Name: ' + mon.name)
+            print('Expected Turns Lasted: ' + self.metrics.loc[mon, 'turns_lasted'])
+            print('Expected Damage Output ' + self.metrics.loc[mon, 'dpt_given'])
