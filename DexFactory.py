@@ -1,6 +1,5 @@
 import json
 import requests
-from Dex import *
 from bs4 import BeautifulSoup
 from Writer import *
 from Dialgarithm import *

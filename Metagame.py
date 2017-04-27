@@ -76,7 +76,7 @@ class Metagame:
 
         print("DONE BATTLING, ANALYZING")
         [t.analyze() for t in self.dict_of_team_elo.keys()]
-        suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:10]
+        suggestions = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)[0:3]
         suggestions = [t.party.keys() for t in suggestions]
         print("SUGGESTIONS:")
         for suggestion in suggestions:

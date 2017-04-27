@@ -1,4 +1,3 @@
-from Team import *
 from Damage import *
 import random
 import time

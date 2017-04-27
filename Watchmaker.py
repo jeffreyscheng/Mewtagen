@@ -1,7 +1,6 @@
 from UsageReader import *
 from MovesetFactory import *
 from Metagame import *
-import time
 import random
 
 
