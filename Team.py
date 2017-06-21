@@ -68,7 +68,8 @@ class Team:
     def get_usage_sum(list_of_movesets):
         list_of_pokemon = list(set([mon.pokemon.unique_name for mon
                                     in list_of_movesets]))
-        ans = sum([Dialgarithm.usage_dict[mon] for mon in list_of_pokemon])
+        ans = sum([Dialgarithm.usage_dict[mon] for mon in
+                   [mon for mon in list_of_pokemon if mon in Dialgarithm.usage_dict]])
         if ans > 1:
             raise ValueError("usage greater than 1")
         return ans

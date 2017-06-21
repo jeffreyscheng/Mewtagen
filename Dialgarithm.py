@@ -44,3 +44,4 @@ class Dialgarithm:
         else:
             Dialgarithm.gen = 'xy'
             Dialgarithm.format = Format(gen_format)
+        Dialgarithm.link = name + "/"

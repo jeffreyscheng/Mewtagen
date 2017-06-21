@@ -6,10 +6,9 @@ import random
 
 class Watchmaker:
     @staticmethod
-    def run():
-        Dialgarithm.set_link('ou-1825.txt')
+    def input():
+        UsageReader.select_meta()
         DexFactory().get_dex()
-        UsageReader.get_usage()
         MovesetFactory().get_movesets()
 
         core_size = int(input("How big is your core? (0-5) \n"))
@@ -30,8 +29,16 @@ class Watchmaker:
         Dialgarithm.time = int(input("Evolution duration?\n"))
         print("Inputs processed!")
 
+    @staticmethod
+    def evolve():
         Damage.start()
         Metagame().precomputation()
         Damage.end()
 
-Watchmaker.run()
+    @staticmethod
+    def output():
+        pass
+
+Watchmaker.input()
+Watchmaker.evolve()
+Watchmaker.output()

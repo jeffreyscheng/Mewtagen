@@ -2,7 +2,6 @@ from Team import *
 from Battle import *
 from Dialgarithm import *
 from functools import wraps
-import pandas as pd
 
 
 class Metagame:
