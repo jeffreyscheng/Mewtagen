@@ -1,11 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
 from .model_local import *
+import os
 from .view import *
 from .Writer import *
 
 
 class UsageReader:
+
+    @staticmethod
+    def initialize_date():
+        # gets most recent date
+        print("initializing stuff")
+
+
+
+
     # gets most recent date and prints metagames
     @staticmethod
     def select_meta():
@@ -14,6 +24,14 @@ class UsageReader:
         soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
         tags = soup('a')
         date_string = tags[-1]['href']
+
+        # initializes date if necessary
+        update = not os.path.isdir("./" + date_string)
+        print(update)
+        if update:
+            os.makedirs("./" + date_string)
+        else:
+            print("already created")
 
         # prints all metagames
         usage_url += date_string

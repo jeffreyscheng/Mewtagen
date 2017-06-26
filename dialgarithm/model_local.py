@@ -2,6 +2,7 @@ from .dex import *
 
 
 class Model:
+    date = None
     core = []
     link = None
     gen = None
@@ -18,6 +19,10 @@ class Model:
     recommendations = None
     population_size = 0
     time = 0
+
+    @staticmethod
+    def set_date():
+        pass
 
     @staticmethod
     def set_link(link):
