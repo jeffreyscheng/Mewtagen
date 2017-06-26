@@ -2,7 +2,7 @@
 from .usage_reader import *
 from .dex_factory import DexFactory
 from .moveset_factory import MovesetFactory
-from .damage import *
+from .elo import *
 # import random
 
 

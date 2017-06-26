@@ -2,11 +2,20 @@ from .dex import *
 
 
 class Model:
+
+    # ids
     date = None
-    core = []
     link = None
+    path = None
     gen = None
     format = None
+
+    # user inputs
+    core = []
+    population_size = 0
+    time = 0
+
+    # meta
     dex = None
     moveset_dict = None
     moveset_list = None
@@ -15,14 +24,14 @@ class Model:
     damage_cache = None
     attack_cache = None
     switch_cache = {}
+
+    # outputs
     metagame = None
     recommendations = None
-    population_size = 0
-    time = 0
 
     @staticmethod
-    def set_date():
-        pass
+    def set_path():
+        Model.path = "./" + Model.date + Model.link
 
     @staticmethod
     def set_link(link):

@@ -8,14 +8,6 @@ from .Writer import *
 
 class UsageReader:
 
-    @staticmethod
-    def initialize_date():
-        # gets most recent date
-        print("initializing stuff")
-
-
-
-
     # gets most recent date and prints metagames
     @staticmethod
     def select_meta():
@@ -24,30 +16,40 @@ class UsageReader:
         soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
         tags = soup('a')
         date_string = tags[-1]['href']
+        Model.date = date_string
 
-        # initializes date if necessary
-        update = not os.path.isdir("./" + date_string)
-        print(update)
-        if update:
-            os.makedirs("./" + date_string)
-        else:
-            print("already created")
-
-        # prints all metagames
         usage_url += date_string
         soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
         tags = soup('a')
         not_metagames = ['../', 'chaos/', 'leads/', 'mega/', 'metagame/', 'monotype/', 'moveset/']
         metagames = [tag['href'] for tag in tags if tag['href'] not in not_metagames]
-        Message.message(str(metagames))
 
         def condition(user_input):
             return user_input in metagames
 
-        tentative_link = Prompt.prompt("Select a metagame (ex: ou-1825.txt)\n", condition)
-        Model.link = tentative_link
-        # save usage_url into db?
-        usage_url += Model.link
+        Message.message(str(metagames))
+        Model.set_link(Prompt.prompt("Select a metagame (ex: ou-1825.txt)\n", condition))
+        Model.set_path()
+
+        # initializes date if necessary
+        update = not os.path.isdir("./" + date_string)
+        if update:
+            UsageReader.initialize_date(metagames)
+        else:
+            Model.usage_dict = Writer.load_pickled_object('usage.txt', Model.path)
+
+    @staticmethod
+    def initialize_date(list_of_metas):
+        os.makedirs("./" + Model.date)
+        for meta in list_of_metas:
+            UsageReader.initialize_meta(meta)
+
+    @staticmethod
+    def initialize_meta(meta):
+        print("initializing " + meta)
+        stripped_meta = meta.split(".")[0]
+        os.makedirs("./" + Model.date + "/" + stripped_meta)
+        usage_url = 'http://www.smogon.com/stats/' + Model.date + "/" + meta
         soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
         usage_string = soup.text
         usage_rows = usage_string.split('\n')
@@ -58,16 +60,19 @@ class UsageReader:
             return list(filter(None, [element.strip('%\n\t\r ') for element in row]))
 
         parsed_usage = [strip_row(row) for row in parsed_usage]
-        parsed_usage = {row[1]: float(row[2]) / 600
-                        for row in parsed_usage}
-        Model.usage_dict = parsed_usage
-        Model.set_link(Model.link)
-        # save json-pickled object to firebase
-        Writer.save_pickled_object(parsed_usage, 'usage.txt')
+        if len(parsed_usage) == 0:
+            Model.usage_dict = {}
+        elif len(parsed_usage) == 1 and not parsed_usage[0]:
+            Model.usage_dict = {}
+        else:
+            parsed_usage = {row[1]: float(row[2]) / 600
+                            for row in parsed_usage}
+            Model.usage_dict = parsed_usage
+        Writer.save_pickled_object(parsed_usage, 'usage.txt', "./" + Model.date + "/" + stripped_meta + "/")
 
     @staticmethod
     def clean_up_usage():
-        usage_dict = Model.usage_dict
-        other_mons = [mon for mon in Model.dex.pokemon_dict.keys() if mon not in usage_dict.keys()]
+        print(Model.usage_dict)
+        other_mons = [mon for mon in Model.dex.pokemon_dict.keys() if mon not in Model.usage_dict.keys()]
         zeros = {mon: 0 for mon in other_mons}
-        Model.usage_dict = {**usage_dict, **zeros}
+        Model.usage_dict = {**Model.usage_dict, **zeros}
