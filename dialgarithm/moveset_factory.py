@@ -1,12 +1,12 @@
-from Moveset import *
-from DexFactory import *
-from Dialgarithm import *
+from .moveset import *
+from .dex_factory import *
+from .model_local import *
 
 
 class MovesetFactory:
     def __init__(self):
-        self.dex = Dialgarithm.dex
-        self.format = Dialgarithm.format
+        self.dex = Model.dex
+        self.format = Model.format
 
     def read_pokemon(self, name):
         moveset_list = []
@@ -28,8 +28,8 @@ class MovesetFactory:
     def get_movesets(self):
         tentative_movesets = Writer.load_pickled_object('movesets.txt')
         if tentative_movesets is None:
-            format_dict = Dialgarithm.dex.format_metagame.format_dict
-            meta_format = Dialgarithm.format
+            format_dict = Model.dex.format_metagame.format_dict
+            meta_format = Model.format
             list_of_pokemon = [format_dict[Format(form)] for form
                                in Format.format_list
                                if Format(form) <= meta_format]
@@ -44,12 +44,12 @@ class MovesetFactory:
                 return moveset
 
             def add_usage(pokemon):
-                if pokemon.unique_name not in Dialgarithm.usage_dict.keys():
+                if pokemon.unique_name not in Model.usage_dict.keys():
                     print('NOT FOUND')
                     print(pokemon.unique_name)
                     return []
                 else:
-                    usage = Dialgarithm.usage_dict[pokemon.unique_name]
+                    usage = Model.usage_dict[pokemon.unique_name]
                     options = pokemon_to_moveset[pokemon.unique_name]
                     print([attach_usage(moveset, usage / len(options))
                            for moveset in options])
@@ -57,11 +57,11 @@ class MovesetFactory:
                             for moveset in options]
 
             nested_list = [add_usage(pokemon) for pokemon in list_of_pokemon]
-            Dialgarithm.moveset_dict = {m_set.name: m_set for m_sets
+            Model.moveset_dict = {m_set.name: m_set for m_sets
                                         in nested_list for m_set in m_sets}
-            Writer.save_pickled_object(Dialgarithm.moveset_dict,
+            Writer.save_pickled_object(Model.moveset_dict,
                                        'movesets.txt')
         else:
-            Dialgarithm.moveset_dict = tentative_movesets
-        Dialgarithm.moveset_list = [value for key, value
-                                    in Dialgarithm.moveset_dict.items()]
+            Model.moveset_dict = tentative_movesets
+        Model.moveset_list = [value for key, value
+                                    in Model.moveset_dict.items()]

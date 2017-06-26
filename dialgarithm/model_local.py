@@ -1,7 +1,7 @@
-from Dex import *
+from .dex import *
 
 
-class Dialgarithm:
+class Model:
     core = []
     link = None
     gen = None
@@ -21,7 +21,7 @@ class Dialgarithm:
 
     @staticmethod
     def set_link(link):
-        Dialgarithm.link = link
+        Model.link = link
         name = link.split('.')[0]
         sections = name.split('-')
         gen_format = sections[0]
@@ -29,19 +29,19 @@ class Dialgarithm:
         if head == 'gen':
             index = int(gen_format[3])
             if index == 3:
-                Dialgarithm.gen = 'rs'
+                Model.gen = 'rs'
             elif index == 4:
-                Dialgarithm.gen = 'dp'
+                Model.gen = 'dp'
             elif index == 5:
-                Dialgarithm.gen = 'bw'
+                Model.gen = 'bw'
             elif index == 6:
-                Dialgarithm.gen = 'xy'
+                Model.gen = 'xy'
             elif index == 7:
-                Dialgarithm.gen = 'sm'
+                Model.gen = 'sm'
             else:
                 print('invalid gen!')
-            Dialgarithm.format = Format(gen_format[4:])
+            Model.format = Format(gen_format[4:])
         else:
-            Dialgarithm.gen = 'xy'
-            Dialgarithm.format = Format(gen_format)
-        Dialgarithm.link = name + "/"
+            Model.gen = 'xy'
+            Model.format = Format(gen_format)
+        Model.link = name + "/"

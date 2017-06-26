@@ -1,8 +1,8 @@
 import json
 import requests
 from bs4 import BeautifulSoup
-from Writer import *
-from Dialgarithm import *
+from .model_local import *
+from .Writer import *
 
 
 class DexFactory:
@@ -18,7 +18,7 @@ class DexFactory:
     def get_dex(self):
         tentative_dex = Writer.load_pickled_object('dex.txt')
         if tentative_dex is None:
-            self.gen = Dialgarithm.gen
+            self.gen = Model.gen
             self.read_dex()
             self.read_types()
             self.read_pokemon()
@@ -30,7 +30,7 @@ class DexFactory:
             Writer.save_pickled_object(new_dex, 'dex.txt')
         else:
             new_dex = tentative_dex
-        Dialgarithm.dex = new_dex
+        Model.dex = new_dex
 
     @staticmethod
     def unwrap(old_dict, col):

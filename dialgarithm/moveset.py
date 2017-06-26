@@ -1,5 +1,5 @@
 import math
-from Dialgarithm import *
+from .model_local import *
 
 
 class Moveset:
@@ -9,7 +9,7 @@ class Moveset:
     def __init__(self, poke, m_set):
         suffix = ''
         if len(m_set['items']) > 0:
-            self.item = Dialgarithm.dex.item_dict[m_set['items'][0]]
+            self.item = Model.dex.item_dict[m_set['items'][0]]
             herb = self.item.name != 'White Herb'
             eviolite = self.item.name != 'Eviolite'
             if self.item.name.find('ite') > -1 and herb and eviolite:
@@ -20,9 +20,9 @@ class Moveset:
                         suffix = '-Mega-Y'
                 else:
                     suffix = '-Mega'
-        gen = Dialgarithm.gen
+        gen = Model.gen
         if len(m_set['natures'][0]) > 0:
-            self.nature = Dialgarithm.dex.get_nature(m_set['natures'][0])
+            self.nature = Model.dex.get_nature(m_set['natures'][0])
         else:
             self.nature = None
         if len(m_set['ivconfigs']) == 0:
@@ -30,7 +30,7 @@ class Moveset:
         else:
             self.ivs = m_set['ivconfigs'][0]
         self.evs = m_set['evconfigs'][0]
-        self.pokemon = Dialgarithm.dex.pokemon_dict[poke.unique_name + suffix]
+        self.pokemon = Model.dex.pokemon_dict[poke.unique_name + suffix]
         self.gen = gen
         self.moves = [x[0] if len(x) > 0 else 'Splash'
                       for x in m_set['moveslots']]

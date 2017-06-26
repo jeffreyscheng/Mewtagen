@@ -1,26 +1,56 @@
 import random
 from numpy.linalg import matrix_power
-from Damage import *
+from .damage import *
+from .model_local import *
 import time
 
 
-class Team:
-    mutate_prob = 0.05
+class SubTeam:
+    def __init__(self, list_of_pokemon):
+        self.members = list_of_pokemon
 
-    def __init__(self, list_of_movesets):
-        self.party = {moveset: 1 for moveset in list_of_movesets}
-        self.team_names = [mon.name for mon in self.party.keys()]
+    # TODO
+    def mutate(self):
+        return self.members
+
+    @staticmethod
+    def prompt_core():
+        core_size = int(input("How big is your core? (0-5) \n"))
+        if core_size < 0 or core_size > 5:
+            raise ValueError("Bad core size!")
+        for i in range(1, core_size + 1):
+            flag = True
+            while flag:
+                name = input("Name of Pokemon " + str(i) + "?\n")
+                potential_movesets = [mon for mon in Model.moveset_list
+                                      if mon.pokemon.unique_name == name]
+                if len(potential_movesets) > 0:
+                    Model.core.append(random.choice(potential_movesets))
+                    flag = False
+                else:
+                    print("Pick a better Pokemon!")
+        Model.population_size = int(input("Population size? (>3) \n"))
+        Model.time = int(input("Evolution duration?\n"))
+        print("Inputs processed!")
+
+
+class Team:
+
+    def __init__(self, core, suggestions):
+        self.core = core
+        self.suggestions = suggestions
+        self.members = core + suggestions
+        self.battler = self.heal()
         self.current = None
-        self.counter_matrix = None
-        self.transition_matrix = None
-        self.switch_costs = None
-        self.metrics = None
+        # self.counter_matrix = None
+        # self.transition_matrix = None
+        # self.switch_costs = None
+        # self.metrics = None
 
     def is_valid(self):
-        list_of_names = [m_set.pokemon.dex_name for m_set in self.party.keys()]
+        list_of_names = [m_set.pokemon.dex_name for m_set in self.members]
         unique = len(list(set(list_of_names))) == 6
-        no_ditto = 'Ditto' not in [mon.pokemon.dex_name
-                                   for mon in self.party.keys()]
+        no_ditto = 'Ditto' not in [mon.pokemon.dex_name for mon in self.members]
         return unique and no_ditto
 
     def is_fainted(self):
@@ -31,8 +61,8 @@ class Team:
                     in self.party.items() if health > 0]) > 0
 
     def heal(self):
-        self.party = {moveset: 1 for moveset in list(self.party.keys())}
         self.current = None
+        return {mon: 1 for mon in self.members}
 
     def damage_current(self, damage):
         if np.isnan(damage):
@@ -44,7 +74,7 @@ class Team:
     def has_living_counter(self, opponent):
         return len([mon for mon, health
                     in self.party.items() if mon
-                    in Dialgarithm.counters_dict[opponent] and
+                    in Model.counters_dict[opponent] and
                     health > 0]) > 0
 
     def switch(self, opponent=None):
@@ -53,7 +83,7 @@ class Team:
             self.current = random.choice(alive)
             return
         alive_counters = [mon for mon, health in self.party.items() if
-                          mon in Dialgarithm.counters_dict[opponent] and
+                          mon in Model.counters_dict[opponent] and
                           health > 0]
         if len(alive_counters) > 0:
             self.current = random.choice(alive_counters)
@@ -68,8 +98,8 @@ class Team:
     def get_usage_sum(list_of_movesets):
         list_of_pokemon = list(set([mon.pokemon.unique_name for mon
                                     in list_of_movesets]))
-        ans = sum([Dialgarithm.usage_dict[mon] for mon in
-                   [mon for mon in list_of_pokemon if mon in Dialgarithm.usage_dict]])
+        ans = sum([Model.usage_dict[mon] for mon in
+                   [mon for mon in list_of_pokemon if mon in Model.usage_dict]])
         if ans > 1:
             raise ValueError("usage greater than 1")
         return ans
@@ -99,12 +129,12 @@ class Team:
                          columns=self.team_names)
         self.counter_matrix = self.counter_matrix.astype('object')
         for row in self.team_names:
-            row_moveset = Dialgarithm.moveset_dict[row]
+            row_moveset = Model.moveset_dict[row]
             for column in self.team_names:
-                column_moveset = Dialgarithm.moveset_dict[column]
+                column_moveset = Model.moveset_dict[column]
                 self.counter_matrix.loc[row, column] =\
-                    [mon for mon in Dialgarithm.counters_dict[row_moveset]
-                     if mon not in Dialgarithm.counters_dict[column_moveset]]
+                    [mon for mon in Model.counters_dict[row_moveset]
+                     if mon not in Model.counters_dict[column_moveset]]
 
     def set_ssp(self):
         arr = np.zeros((6, 6))
@@ -116,8 +146,8 @@ class Team:
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=self.team_names)
         for row in self.team_names:
-            row_moveset = Dialgarithm.moveset_dict[row]
-            d = Dialgarithm.counters_dict
+            row_moveset = Model.moveset_dict[row]
+            d = Model.counters_dict
             self_loop = 1 - self.get_usage_sum(d[row_moveset])
             for column in self.team_names:
                 if row == column:
@@ -147,9 +177,9 @@ class Team:
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=self.team_names)
         for row in self.team_names:
-            row_moveset = Dialgarithm.moveset_dict[row]
+            row_moveset = Model.moveset_dict[row]
             for column in self.team_names:
-                column_moveset = Dialgarithm.moveset_dict[column]
+                column_moveset = Model.moveset_dict[column]
                 self.switch_costs.loc[row, column] =\
                     Damage.get_weighted_switch_damage(row_moveset,
                                                       column_moveset)
@@ -187,7 +217,7 @@ class Team:
     def weighted_sample():
         dict_of_movesets_usage = \
             {m_set: m_set.usage for m_set in
-             [mon for name, mon in Dialgarithm.moveset_dict.items()]}
+             [mon for name, mon in Model.moveset_dict.items()]}
         total = sum([dict_of_movesets_usage[key] for key
                      in dict_of_movesets_usage])
         r = random.uniform(0, total)
@@ -199,23 +229,12 @@ class Team:
         assert False, "Shouldn't get here"
 
     def reproduce(self):
-        def mutate(pokemon):
-            if pokemon in Dialgarithm.core:
-                return pokemon
-            elif random.random() < Team.mutate_prob:
-                return Team.weighted_sample()
-            else:
-                return pokemon
-
-        candidate = Team([mutate(mon) for mon in self.party.keys()])
-        if candidate.is_valid():
-            return candidate
-        else:
-            return self.reproduce()
+        # TODO
+        return self
 
     def display(self):
         print('==========')
-        for mon in self.party.keys():
+        for mon in self.members:
             print('OOOOO')
             print('Name: ' + mon.name)
             print('Expected Turns Lasted: ' +

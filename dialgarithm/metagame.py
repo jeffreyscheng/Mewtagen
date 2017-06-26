@@ -1,4 +1,4 @@
-from Team import *
+from .team import *
 from Battle import *
 from Dialgarithm import *
 from functools import wraps
