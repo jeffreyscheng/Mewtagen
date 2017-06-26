@@ -11,6 +11,9 @@ def setup():
     DexFactory().get_dex()
     UsageReader.clean_up_usage()
     MovesetFactory().get_movesets()
+    Damage.read_damage_cache()
+    Damage.get_switches()
+    Damage.get_all_counters()
 
 
 def evolve():

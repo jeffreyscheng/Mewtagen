@@ -26,7 +26,8 @@ class UsageReader:
         def condition(user_input):
             return user_input in metagames
 
-        tentative_link = Prompt.prompt("Select a metagame (ex: ou-1825.txt)\n", condition)
+        # tentative_link = Prompt.prompt("Select a metagame (ex: ou-1825.txt)\n", condition)
+        tentative_link = "ou-1825.txt"
         Model.link = tentative_link
         # save usage_url into db?
         usage_url += Model.link

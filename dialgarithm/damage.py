@@ -1,8 +1,8 @@
 from .Writer import *
 import math
-import numpy as np
 import time
 import random
+import numpy as np
 
 
 class Damage:
@@ -191,7 +191,8 @@ class Damage:
 
     @staticmethod
     def get_counters_of_moveset(moveset):
-        print(moveset.name)
+        print("COUNTERING" + moveset.name)
+        # print(Model.moveset_list)
         counters = [m_set for m_set in Model.moveset_list
                     if Damage.check_counter(moveset, m_set)]
         return counters
@@ -201,8 +202,8 @@ class Damage:
         tick = time.clock()
         team1.heal()
         team2.heal()
-        team1.current = random.choice(list(team1.battler.keys()))
-        team2.current = random.choice(list(team2.battler.keys()))
+        team1.current = random.choice(list(team1.party.keys()))
+        team2.current = random.choice(list(team2.party.keys()))
 
         while team1.still_playing() and team2.still_playing():
             if team1.is_fainted() or team1.current is None:
@@ -210,6 +211,7 @@ class Damage:
             if team2.is_fainted() or team2.current is None:
                 team2.switch()
             d = Model.counters_dict
+            # print(team2.current)
             bool_1_counters_2 = team1.current in d[team2.current]
             bool_2_counters_1 = team2.current in d[team1.current]
 
@@ -268,3 +270,4 @@ class Damage:
             return team1
         else:
             return team2
+

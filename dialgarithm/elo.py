@@ -3,6 +3,7 @@
 
 from .team import *
 from .model_local import *
+import random
 from functools import wraps
 
 
@@ -18,7 +19,7 @@ class Elo:
         num_teammates = 6 - len(core)
         attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
         attempt += core
-        new_team = Team([], attempt)
+        new_team = Team(attempt)
         if new_team.is_valid():
             if len(list(set([mon.pokemon.dex_name for mon in attempt]))) < 6:
                 print([mon.pokemon.dex_name for mon in attempt])
@@ -31,13 +32,13 @@ class Elo:
         """generates teams, battles them over 24 hours,
         gets regression from expectations -> Elo"""
         print("GENERATING TEAMS!")
-        number_of_teams = 10  # change to 100,000
+        number_of_teams = 100000  # change to 100,000
         starting_elo = 1000
         self.dict_of_team_elo = \
             {self.generate_team([]): (starting_elo, 0, 0) for i
              in range(0, number_of_teams)}
         tick = time.clock()
-        seconds_spent = 10 # change to 3600 * 24 * 7
+        seconds_spent = 3600 * 24 * 7
         counter = 0
 
         # damage - 1800, switch - 1000
@@ -48,8 +49,9 @@ class Elo:
             for i in range(0, 30):
                 counter += 1
                 # sort by elo
-                bracket = sorted(self.dict_of_team_elo,
-                                 key=self.dict_of_team_elo.get)
+                bracket = sorted(self.dict_of_team_elo, key=self.dict_of_team_elo.get)
+                if random.random() > 0.9:
+                    random.shuffle(bracket)
                 # pair off and battle down the line
                 for i in range(0, number_of_teams // 2):
                     team1 = bracket[2 * i]
