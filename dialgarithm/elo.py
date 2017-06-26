@@ -32,13 +32,13 @@ class Elo:
         """generates teams, battles them over 24 hours,
         gets regression from expectations -> Elo"""
         print("GENERATING TEAMS!")
-        number_of_teams = 100000  # change to 100,000
+        number_of_teams = 10  # change to 100,000
         starting_elo = 1000
         self.dict_of_team_elo = \
             {self.generate_team([]): (starting_elo, 0, 0) for i
              in range(0, number_of_teams)}
         tick = time.clock()
-        seconds_spent = 3600 * 24 * 7
+        seconds_spent = 10  # 3600 * 24 * 7
         counter = 0
 
         # damage - 1800, switch - 1000
@@ -58,6 +58,7 @@ class Elo:
                     team2 = bracket[2 * i + 1]
                     self.run_battle(team1, team2)
         print(self.dict_of_team_elo)
+        Writer.save_pickled_object(self.dict_of_team_elo, "elo.txt")
 
     @staticmethod
     def compute_expected(elo1, elo2):
