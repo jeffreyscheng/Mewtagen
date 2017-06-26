@@ -16,7 +16,7 @@ class Metagame:
         num_teammates = 6 - len(core)
         attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
         attempt += core
-        new_team = Team(attempt)
+        new_team = Team([], attempt)
         if new_team.is_valid():
             if len(list(set([mon.pokemon.dex_name for mon in attempt]))) < 6:
                 print([mon.pokemon.dex_name for mon in attempt])

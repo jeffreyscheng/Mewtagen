@@ -2,6 +2,7 @@ import random
 from numpy.linalg import matrix_power
 from .damage import *
 from .model_local import *
+from .Writer import *
 import time
 
 
@@ -42,10 +43,10 @@ class Team:
         self.members = core + suggestions
         self.battler = self.heal()
         self.current = None
-        # self.counter_matrix = None
-        # self.transition_matrix = None
-        # self.switch_costs = None
-        # self.metrics = None
+        self.counter_matrix = None
+        self.transition_matrix = None
+        self.switch_costs = None
+        self.metrics = None
 
     def is_valid(self):
         list_of_names = [m_set.pokemon.dex_name for m_set in self.members]
@@ -54,11 +55,11 @@ class Team:
         return unique and no_ditto
 
     def is_fainted(self):
-        return self.party[self.current] == 0
+        return self.battler[self.current] == 0
 
     def still_playing(self):
         return len([health for mon, health
-                    in self.party.items() if health > 0]) > 0
+                    in self.battler.items() if health > 0]) > 0
 
     def heal(self):
         self.current = None
@@ -67,32 +68,32 @@ class Team:
     def damage_current(self, damage):
         if np.isnan(damage):
             raise ValueError("NaN damage!")
-        self.party[self.current] -= damage
-        if self.party[self.current] < 0:
-            self.party[self.current] = 0
+        self.battler[self.current] -= damage
+        if self.battler[self.current] < 0:
+            self.battler[self.current] = 0
 
     def has_living_counter(self, opponent):
         return len([mon for mon, health
-                    in self.party.items() if mon
+                    in self.battler.items() if mon
                     in Model.counters_dict[opponent] and
                     health > 0]) > 0
 
     def switch(self, opponent=None):
         if opponent is None:
-            alive = [mon for mon, health in self.party.items() if health > 0]
+            alive = [mon for mon, health in self.battler.items() if health > 0]
             self.current = random.choice(alive)
             return
-        alive_counters = [mon for mon, health in self.party.items() if
+        alive_counters = [mon for mon, health in self.battler.items() if
                           mon in Model.counters_dict[opponent] and
                           health > 0]
         if len(alive_counters) > 0:
             self.current = random.choice(alive_counters)
         else:
-            alive = [mon for mon, health in self.party.items() if health > 0]
+            alive = [mon for mon, health in self.battler.items() if health > 0]
             self.current = random.choice(alive)
 
     def __str__(self):
-        return ', '.join([mon.name for mon in self.party])
+        return ', '.join([mon.name for mon in self.battler])
 
     @staticmethod
     def get_usage_sum(list_of_movesets):
@@ -140,7 +141,7 @@ class Team:
         arr = np.zeros((6, 6))
         if len(self.team_names) < 6:
             print(self.team_names)
-            print(self.party)
+            print(self.battler)
             raise ValueError("Fewer than 6 team members!")
         transition_mat =\
             pd.DataFrame(data=arr, index=self.team_names,
