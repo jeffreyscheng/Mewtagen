@@ -1,53 +1,50 @@
 from .metagame import *
+import numpy as np
+
 
 class Evolve:
-    population_size = 500
-    generations = 100
-    population = {}
+    population_size = 10
+    num_generations = 10
+    population = []
+    starting_elo = 1000
+    matches = 50
 
-    def evolve(self):
+    @staticmethod
+    def evolve():
         print("GENERATING TEAMS!")
-        number_of_teams = 500
-        starting_elo = 1000
-        population = {Metagame.generate_team(Model.core): starting_elo for _ in range(0, number_of_teams)}
-        seconds_spent = Model.time
-        counter = 0
+        Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Evolve.population_size)]
+        for generation in range(0, Evolve.num_generations):
+            Evolve.next_generation()
+        print(Evolve.population)
+
+    @staticmethod
+    def next_generation():
+
+        # grab |matches| sample of norms
+        norm_choices = [key for key in Metagame.elo_dict]
+        norms = np.random.choice(norm_choices, Evolve.matches)
+
+        # battles all norms against team, returns elo
+        def fitness(team):
+            elo = Evolve.starting_elo
+            for norm in norms:
+                winner = Damage.battle(team, norm)
+                norm_elo = Metagame.elo_dict[norm]
+                team1_winner = winner == team
+                elo = Elo.update_elo(elo, norm_elo, team1_winner)
+            return Elo.win_prob(elo)
+
+        fitness_dict = {team: fitness(team) for team in Evolve.population}
 
         # damage - 1800, switch - 1000
 
-        def sample_by_elo(elo_distribution):
-            r = random.uniform(0, 1000 * number_of_teams)
-            runner = 0
-            for key, value in elo_distribution.items():
-                if runner + value >= r:
-                    return key
-                runner += value
-            assert False, "Shouldn't get here"
+        choices = [key for key in fitness_dict]
+        weights = [fitness_dict[key] for key in fitness_dict]
+        total_weight = sum(weights)
+        weights = [weight / total_weight for weight in weights]
 
-        # each cycle takes roughly 15 seconds
-        print("BEGINNING CYCLES")
-        while time.clock() - tick < seconds_spent:
-            for i in range(0, 30):
-                counter += 1
-                # sort by elo
-                bracket = sorted(population,
-                                 key=population.get)
-                # pair off and battle down the line
-                for i in range(0, number_of_teams // 2):
-                    team1 = bracket[2 * i]
-                    team2 = bracket[2 * i + 1]
-                    self.run_battle(team1, team2)
-            print("NEW POPULATION")
-            winners = [sample_by_elo(population) for i
-                       in range(0, number_of_teams)]
-            population = \
-                {team.reproduce(): population[team]
-                 for team in winners}
+        def get_newborn():
+            parents = np.random.choice(choices, 2, p=weights)
+            return parents[0].reproduce(parents[1])
 
-        print("DONE BATTLING, ANALYZING")
-        [t.analyze() for t in population.keys()]
-        suggestions = sorted(population,
-                             key=population.get)[0:3]
-        print("SUGGESTIONS:")
-        for suggestion in suggestions:
-            suggestion.display()
+        Evolve.population = [get_newborn() for _ in range(0, Evolve.population_size)]

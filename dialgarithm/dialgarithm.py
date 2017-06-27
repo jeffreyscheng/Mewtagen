@@ -22,8 +22,8 @@ def setup():
     Metagame.generate_norms()
 
 
-# def evolve():
-#     Evolve().evolve()
+def evolve():
+    Evolve().evolve()
 
 
 def output():

@@ -44,7 +44,7 @@ class Metagame:
             Writer.save_pickled_object(Metagame.elo_dict, 'norms.txt')
             print(Metagame.elo_dict)
         else:
-            Model.norms = tentative_norms
+            Metagame.elo_dict = tentative_norms
 
     @staticmethod
     def run_battle(team1, team2):

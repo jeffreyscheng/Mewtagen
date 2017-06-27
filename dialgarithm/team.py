@@ -15,6 +15,13 @@ class SubTeam:
         return self.members
 
     @staticmethod
+    def crossover(sub1, sub2):
+        length = len(sub1)
+        point = random.randint(0, length - 1)
+        new_members = sub1.members[0:point] + sub2.members[point:length]
+        return SubTeam(new_members).mutate()
+
+    @staticmethod
     def prompt_core():
         core_size = int(input("How big is your core? (0-5) \n"))
         if core_size < 0 or core_size > 5:
@@ -36,7 +43,6 @@ class SubTeam:
 
 
 class Team:
-
     def __init__(self, core, suggestions):
         self.core = core
         self.suggestions = suggestions
@@ -108,7 +114,7 @@ class Team:
     def analyze(self):
         tick = time.clock()
         arr = np.zeros((6, 6))
-        self.metrics =\
+        self.metrics = \
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=['teammate', 'ssp', 'dpt_taken',
                                   'turns_lasted', 'dpt_given', 'total_damage'])
@@ -125,7 +131,7 @@ class Team:
 
     def set_counters(self):
         arr = np.zeros((6, 6))
-        self.counter_matrix =\
+        self.counter_matrix = \
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=self.team_names)
         self.counter_matrix = self.counter_matrix.astype('object')
@@ -133,7 +139,7 @@ class Team:
             row_moveset = Model.moveset_dict[row]
             for column in self.team_names:
                 column_moveset = Model.moveset_dict[column]
-                self.counter_matrix.loc[row, column] =\
+                self.counter_matrix.loc[row, column] = \
                     [mon for mon in Model.counters_dict[row_moveset]
                      if mon not in Model.counters_dict[column_moveset]]
 
@@ -143,7 +149,7 @@ class Team:
             print(self.team_names)
             print(self.battler)
             raise ValueError("Fewer than 6 team members!")
-        transition_mat =\
+        transition_mat = \
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=self.team_names)
         for row in self.team_names:
@@ -154,13 +160,13 @@ class Team:
                 if row == column:
                     transition_mat.loc[row, column] = self_loop
                 else:
-                    transition_mat.loc[row, column] =\
+                    transition_mat.loc[row, column] = \
                         self.get_usage_sum(self.counter_matrix.loc[row,
                                                                    column])
             if sum(transition_mat.loc[row, :]) - self_loop == 0:
                 print(row)
                 raise ValueError("Divide by zero!")
-            normalization_factor = (1 - self_loop) /\
+            normalization_factor = (1 - self_loop) / \
                                    (sum(transition_mat.loc[row, :]) -
                                     self_loop)
             for column in self.team_names:
@@ -174,14 +180,14 @@ class Team:
 
     def set_switch_costs(self):
         arr = np.zeros((6, 6))
-        self.switch_costs =\
+        self.switch_costs = \
             pd.DataFrame(data=arr, index=self.team_names,
                          columns=self.team_names)
         for row in self.team_names:
             row_moveset = Model.moveset_dict[row]
             for column in self.team_names:
                 column_moveset = Model.moveset_dict[column]
-                self.switch_costs.loc[row, column] =\
+                self.switch_costs.loc[row, column] = \
                     Damage.get_weighted_switch_damage(row_moveset,
                                                       column_moveset)
 
@@ -194,24 +200,26 @@ class Team:
             return sum([a * b * c for a, b, c in damages] /
                        self.metrics.loc[mon, 'ssp'])
 
-        self.metrics['dpt_taken'] =\
+        self.metrics['dpt_taken'] = \
             self.metrics['teammate'].map(lambda x: get_damage_taken(x))
         # print(self.metrics['dpt_taken'])
 
     def set_turns_lasted(self):
         def get_turns_lasted(mon):
             return 1 / self.metrics.loc[mon, 'dpt_taken']
-        self.metrics['turns_lasted'] =\
+
+        self.metrics['turns_lasted'] = \
             self.metrics['teammate'].map(get_turns_lasted)
 
     def set_damage_given(self):
-        self.metrics['dpt_given'] =\
+        self.metrics['dpt_given'] = \
             self.metrics['teammate'].map(Damage.get_weighted_attack_damage)
 
     def set_total_damage(self):
         def get_total_damage(row):
             return row['turns_lasted'] * row['dpt_given']
-        self.metrics['total_damage'] =\
+
+        self.metrics['total_damage'] = \
             self.metrics.apply(get_total_damage, axis=1)
 
     @staticmethod
@@ -229,9 +237,9 @@ class Team:
             runner += value
         assert False, "Shouldn't get here"
 
-    def reproduce(self):
-        # TODO
-        return self
+    @staticmethod
+    def reproduce(team1, team2):
+        return team1
 
     def display(self):
         print('==========')
