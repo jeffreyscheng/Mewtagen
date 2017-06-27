@@ -2,7 +2,11 @@
 from .usage_reader import *
 from .dex_factory import DexFactory
 from .moveset_factory import MovesetFactory
-from .elo import *
+from .damage import *
+from .metagame import *
+from .evolve import *
+
+
 # import random
 
 
@@ -14,10 +18,12 @@ def setup():
     Damage.read_damage_cache()
     Damage.get_switches()
     Damage.get_all_counters()
+    # generate normies if necessary
+    Metagame.generate_norms()
 
 
-def evolve():
-    pass
+# def evolve():
+#     Evolve().evolve()
 
 
 def output():

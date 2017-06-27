@@ -12,8 +12,6 @@ class Model:
 
     # user inputs
     core = []
-    population_size = 0
-    time = 0
 
     # meta
     dex = None

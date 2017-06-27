@@ -7,6 +7,7 @@ from .Writer import *
 
 
 class UsageReader:
+    updating = False
 
     # gets most recent date and prints metagames
     @staticmethod
@@ -32,8 +33,8 @@ class UsageReader:
         Model.set_path()
 
         # initializes date if necessary
-        update = not os.path.isdir("./" + date_string)
-        if update:
+        needs_update = not os.path.isdir("./" + date_string)
+        if needs_update and UsageReader.updating:
             UsageReader.initialize_date(metagames)
         else:
             Model.usage_dict = Writer.load_pickled_object('usage.txt', Model.path)
@@ -72,7 +73,6 @@ class UsageReader:
 
     @staticmethod
     def clean_up_usage():
-        print(Model.usage_dict)
         other_mons = [mon for mon in Model.dex.pokemon_dict.keys() if mon not in Model.usage_dict.keys()]
         zeros = {mon: 0 for mon in other_mons}
         Model.usage_dict = {**Model.usage_dict, **zeros}
