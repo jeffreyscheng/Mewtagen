@@ -98,6 +98,10 @@ class Team:
             alive = [mon for mon, health in self.battler.items() if health > 0]
             self.current = random.choice(alive)
 
+    # TODO -- must return new Team object with constructor
+    def get_elite(self):
+        pass
+
     def __str__(self):
         return ', '.join([mon.name for mon in self.battler])
 
@@ -238,6 +242,7 @@ class Team:
             runner += value
         assert False, "Shouldn't get here"
 
+    # TODO -- must return new Team object with constructor
     @staticmethod
     def reproduce(team1, team2):
         return team1

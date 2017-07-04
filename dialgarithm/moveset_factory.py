@@ -1,7 +1,6 @@
 from .moveset import *
 from .dex_factory import *
 from .model_local import *
-from time import sleep
 
 
 class MovesetFactory:
@@ -10,8 +9,6 @@ class MovesetFactory:
         self.format = Model.format
 
     def read_pokemon(self, name):
-        sleep(1)
-        moveset_list = []
         # read in json object
         pokemon_url = 'http://www.smogon.com/dex/' + self.dex.gen +\
                       '/pokemon/' + name
@@ -19,11 +16,11 @@ class MovesetFactory:
         pokemon_string = soup.script.contents[0]
         pokemon_string = pokemon_string[pokemon_string.find(r'{'):]
         formats = json.loads(pokemon_string)['injectRpcs'][2][1]['strategies']
+        moveset_list = []
         for f in formats:
             if Format(f['format']) <= self.format:
                 movesets = f['movesets']
-                moveset_list = [Moveset(self.dex.get_pokemon(name), m_set)
-                                for m_set in movesets]
+                moveset_list += [Moveset(self.dex.get_pokemon(name), m_set) for m_set in movesets]
         print('Read: ' + name)
         return moveset_list
 

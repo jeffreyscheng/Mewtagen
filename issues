@@ -1,6 +1,10 @@
-Charizard Mega not working
 http error: python-requests-exceptions-connectionerror-max-retries-exceeded-with-url
 Team refactor into subteams
 refactor prompts into Dialgarithm
-mutability of movesets and subteams
+mutability of teams -- don't want elite team that also reproduces to get mutated
+    solution: deep copy of elite team?
 train constants
+proving that elo works
+
+push txt files to Firebase
+make Flask app lol

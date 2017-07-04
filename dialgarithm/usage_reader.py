@@ -7,7 +7,7 @@ from .Writer import *
 
 
 class UsageReader:
-    updating = False
+    updating = True
 
     # gets most recent date and prints metagames
     @staticmethod

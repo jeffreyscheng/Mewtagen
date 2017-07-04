@@ -7,6 +7,12 @@ def setup():
     UsageReader.select_meta()
     DexFactory().get_dex()
     UsageReader.clean_up_usage()
+
+    char_list = MovesetFactory().read_pokemon('Charizard')
+    print([char.name for char in char_list])
+    print([char.pokemon.unique_name for char in char_list])
+    print("done")
+
     MovesetFactory().get_movesets()
     Damage.read_damage_cache()
     Damage.get_switches()
@@ -45,3 +51,5 @@ def evolve():
 
 def output():
     pass
+
+setup()
