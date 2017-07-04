@@ -20,27 +20,6 @@ class SubTeam:
         new_members = sub1.members[0:point] + sub2.members[point:length]
         return SubTeam(new_members).mutate()
 
-    # TODO: move this somewhere sensible? prolly Dialgarithm
-    @staticmethod
-    def prompt_core():
-        core_size = int(input("How big is your core? (0-5) \n"))
-        if core_size < 0 or core_size > 5:
-            raise ValueError("Bad core size!")
-        for i in range(1, core_size + 1):
-            flag = True
-            while flag:
-                name = input("Name of Pokemon " + str(i) + "?\n")
-                potential_movesets = [mon for mon in Model.moveset_list
-                                      if mon.pokemon.unique_name == name]
-                if len(potential_movesets) > 0:
-                    Model.core.append(random.choice(potential_movesets))
-                    flag = False
-                else:
-                    print("Pick a better Pokemon!")
-        Model.population_size = int(input("Population size? (>3) \n"))
-        Model.time = int(input("Evolution duration?\n"))
-        print("Inputs processed!")
-
 
 class Team:
     def __init__(self, core, suggestions):

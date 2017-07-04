@@ -65,3 +65,4 @@ def output():
     pass
 
 setup()
+evolve()
