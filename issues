@@ -1,10 +1,12 @@
-http error: python-requests-exceptions-connectionerror-max-retries-exceeded-with-url
 Team refactor into subteams
 refactor prompts into Dialgarithm
 mutability of teams -- don't want elite team that also reproduces to get mutated
     solution: deep copy of elite team?
-train constants
-proving that elo works
+train constants with grid search / genetic 2 / bayesian optimization
+proving that elo works # on it
+damage calculator treats some types as strings
+
+build component parts: find similar movesets (literal mutation)
 
 push txt files to Firebase
 make Flask app lol

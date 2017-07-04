@@ -75,21 +75,15 @@ class Moveset:
     # TODO: cache
     def mutate(self):
         if np.random.random() < Moveset.mutation_prob:
-            print("here!")
-            # if self in Model.mutation_dict:
-            #     mutation_probability = Model.mutation_dict[self]
-            # else:
-            weights = {self: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
-            print(weights)
-            total = np.sum([weights[key] for key in weights])
-            mutation_probability = {key: value / total for key, value in weights.items()}
-            Model.mutation_dict[self] = mutation_probability
-
-            #
+            if self in Model.mutation_dict:
+                mutation_probability = Model.mutation_dict[self]
+            else:
+                weights = {mon: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
+                total = np.sum([weights[key] for key in weights])
+                mutation_probability = {key: value / total for key, value in weights.items()}
+                Model.mutation_dict[self] = mutation_probability
             options = [key for key in mutation_probability]
             probabilities = [mutation_probability[key] for key in mutation_probability]
-            test = sorted(probabilities)
-            print(test)
             return np.random.choice(options, p=probabilities)
         else:
             return self

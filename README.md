@@ -1,7 +1,7 @@
 # Dialgarithm
 
 ## How to use the app:
-    `python run.py`
+    python run.py
 
 ## What it does:
 
@@ -86,8 +86,8 @@ The probability of mutating from moveset A to moveset B (given that a mutation h
 
 I defined similarity as the product (J<sub>s<sub>A</sub>,s<sub>B</sub></sub>)<sup>7</sup> * (J<sub>t<sub>A</sub>,t<sub>B</sub></sub>)<sup>4</sup>,
 
-where J~s~A~,s~B~~ is the Jaccard similarity index of the post-ev statistics vectors of A and B
-and J~t~A~,t~B~~ is the Jaccard similarity index of the defensive type effectiveness vectors of A and B.
+where J<sub>s<sub>A</sub>,s<sub>B</sub></sub> is the Jaccard similarity index of the post-ev statistics vectors of A and B
+and J<sub>t<sub>A</sub>,t<sub>B</sub></sub> is the Jaccard similarity index of the defensive type effectiveness vectors of A and B.
 
 This definition has no theoretical basis.  I created 9 tiers of similarity on two axes [same defensive type, similar defensive type, different defensive type] X [same build, similar build, different build], and arbitrarily said that movesets from one tier should be twice as likely as movesets from the tier below.
 I then optimized the exponents to force-fit this arbitrary definition.

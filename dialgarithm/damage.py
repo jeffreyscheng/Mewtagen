@@ -145,6 +145,10 @@ class Damage:
         type_coefficients = [move_type.effects[def_type]
                              for def_type in defender.pokemon.types]
         coefficient = np.product(type_coefficients)
+        if move_type.name in attacker.pokemon.types:
+            stab = 1.5
+        else:
+            stab = 1
 
         # record abilities and items, you dummy
 
@@ -165,9 +169,9 @@ class Damage:
             else:
                 attacker_atk = attacker.spa_stat
                 defender_def = defender.spd_stat
-        special_factors = coefficient * move.accuracy / 100.0 * 0.925
+        special_factors = coefficient * move.accuracy / 100.0 * stab
         power_factors = attacker_atk / defender_def * move.base_power
-        damage = (210 / 250 * power_factors + 2) * special_factors
+        damage = (42 * power_factors / 50 + 2) * special_factors * 0.925 # .925 = avg rand
         return damage / defender.hp_stat
 
     @staticmethod
@@ -178,8 +182,8 @@ class Damage:
             return True
         elif damage_to_yours == 0:
             return False
-        turns_to_kill_yours = math.ceil(yours.hp_stat / damage_to_yours)
-        turns_to_kill_theirs = math.ceil(theirs.hp_stat / damage_to_theirs)
+        turns_to_kill_yours = math.ceil(1 / damage_to_yours)
+        turns_to_kill_theirs = math.ceil(1 / damage_to_theirs)
         if turns_to_kill_yours == turns_to_kill_theirs - 1:
             your_speed = yours.spe_stat
             their_speed = theirs.spe_stat
