@@ -1,6 +1,7 @@
 from .moveset import *
 from .dex_factory import *
 from .model_local import *
+from time import sleep
 
 
 class MovesetFactory:
@@ -9,6 +10,7 @@ class MovesetFactory:
         self.format = Model.format
 
     def read_pokemon(self, name):
+        sleep(1)
         moveset_list = []
         # read in json object
         pokemon_url = 'http://www.smogon.com/dex/' + self.dex.gen +\

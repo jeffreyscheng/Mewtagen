@@ -92,8 +92,7 @@ class Damage:
 
     @staticmethod
     def get_weighted_switch_damage(outgoing, victim):
-        if not np.isnan(Model.switch_cache.loc[outgoing.name,
-                                                     victim.name]):
+        if not np.isnan(Model.switch_cache.loc[outgoing.name, victim.name]):
             return Model.switch_cache.loc[outgoing.name, victim.name]
         else:
             u = Model.usage_dict

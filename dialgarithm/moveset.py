@@ -4,6 +4,7 @@ from .model_local import *
 
 
 class Moveset:
+    mutation_prob = 0.50
     default_ivs = [{'atk': 31, 'def': 31, 'spa': 31,
                     'spd': 31, 'spe': 31, 'hp': 31}]
 
@@ -69,20 +70,30 @@ class Moveset:
     def __ne__(self, other):
         # Not strictly necessary, but to avoid having both x==y and x!=y
         # True at the same time
-        return not (self == other)
+        return not self.__eq__(other)
 
     # TODO: cache
     def mutate(self):
-        if self in Model.mutation_dict:
-            mutation_probability = Model.mutation_dict[self]
-        else:
-            weights = {self: Moveset.similarity(self, mon) for mon in Model.moveset_list}
+        if np.random.random() < Moveset.mutation_prob:
+            print("here!")
+            # if self in Model.mutation_dict:
+            #     mutation_probability = Model.mutation_dict[self]
+            # else:
+            weights = {self: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
+            print(weights)
             total = np.sum([weights[key] for key in weights])
             mutation_probability = {key: value / total for key, value in weights.items()}
             Model.mutation_dict[self] = mutation_probability
-        options = [key for key in mutation_probability]
-        probabilities = [mutation_probability[key] for key in mutation_probability]
-        return np.random.choice(options, p=probabilities)
+
+            #
+            options = [key for key in mutation_probability]
+            probabilities = [mutation_probability[key] for key in mutation_probability]
+            test = sorted(probabilities)
+            print(test)
+            return np.random.choice(options, p=probabilities)
+        else:
+            return self
+
 
     @staticmethod
     def similarity(moveset1, moveset2):
@@ -99,7 +110,7 @@ class Moveset:
         for type_key in Model.dex.type_dict:
             move_type = Model.dex.type_dict[type_key]
             type_coefficients1 = np.product([move_type.effects[def_type] for def_type in moveset1.pokemon.types])
-            type_coefficients2 = np.proudct([move_type.effects[def_type] for def_type in moveset2.pokemon.types])
+            type_coefficients2 = np.product([move_type.effects[def_type] for def_type in moveset2.pokemon.types])
             if type_coefficients1 == type_coefficients2:
                 type_coefficient += 1
         type_coefficient /= 18
@@ -107,7 +118,7 @@ class Moveset:
 
     # FOR TESTING ONLY
     @staticmethod
-    def _get_moveset_by_name(name):
+    def get_moveset_by_name(name):
         return Model.moveset_dict[name]
 
 

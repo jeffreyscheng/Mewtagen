@@ -1,7 +1,7 @@
 import unittest
 
 
-class DialgarithmTests(unittest.TestCase):
+class UnitTests(unittest.TestCase):
     def setUp(self):
         pass
 

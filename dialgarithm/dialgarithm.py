@@ -1,7 +1,7 @@
 # from .model_local import Model
 from .usage_reader import *
-from .dex_factory import DexFactory
-from .moveset_factory import MovesetFactory
+from .dex_factory import *
+from .moveset_factory import *
 from .damage import *
 from .metagame import *
 from .evolve import *
@@ -20,6 +20,12 @@ def setup():
     Damage.get_all_counters()
     # generate normies if necessary
     Metagame.generate_norms()
+
+    print([mon.name for mon in Model.moveset_list])
+    dragonite = Moveset.get_moveset_by_name('Dragonite_Dragon Dance')
+    for i in range(50):
+        dragonite.mutate()
+        print(dragonite.name)
 
 
 def evolve():
