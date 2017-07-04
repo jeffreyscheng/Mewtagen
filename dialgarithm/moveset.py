@@ -1,4 +1,5 @@
 import math
+import numpy as np
 from .model_local import *
 
 
@@ -69,3 +70,32 @@ class Moveset:
         # Not strictly necessary, but to avoid having both x==y and x!=y
         # True at the same time
         return not (self == other)
+
+    @staticmethod
+    def similarity(moveset1, moveset2):
+        # calculate Jaccard index
+        min_total = 0
+        max_total = 0
+        attributes = ['hp_stat', 'atk_stat', 'def_stat', 'spa_stat', 'spd_stat', 'spe_stat']
+        for attribute in attributes:
+            min_total += min(getattr(moveset1, attribute), getattr(moveset2, attribute))
+            max_total += max(getattr(moveset1, attribute), getattr(moveset2, attribute))
+        jaccard = min_total
+        # calculate type coefficient
+        type_coefficient = 0
+        for type_key in Model.dex.type_dict:
+            move_type = Model.dex.type_dict[type_key]
+            type_coefficients1 = np.product([move_type.effects[def_type] for def_type in moveset1.pokemon.types])
+            type_coefficients2 = np.proudct([move_type.effects[def_type] for def_type in moveset2.pokemon.types])
+            if type_coefficients1 == type_coefficients2:
+                type_coefficient += 1
+        type_coefficient /= 18
+        return (jaccard ** 7) * (type_coefficient ** 4)
+
+    # FOR TESTING ONLY
+    @staticmethod
+    def _get_moveset_by_name(name):
+        return Model.moveset_dict[name]
+
+
+

@@ -68,8 +68,7 @@ class Damage:
 
     @staticmethod
     def deal_damage(attacker, defender):
-        if not np.isnan(Model.damage_cache.loc[attacker.name,
-                                                     defender.name]):
+        if not np.isnan(Model.damage_cache.loc[attacker.name, defender.name]):
             return Model.damage_cache.loc[attacker.name, defender.name]
         else:
             damage_list = [Damage.move_damage(attacker,
