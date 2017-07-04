@@ -84,7 +84,7 @@ The non-core genes are then subjected to the potential of mutation.
 
 The probability of mutating from moveset A to moveset B (given that a mutation happens) is weighted by the similarity of A and B.
 
-I defined similarity as the product (J<sub>s<sub>A<\sub>,s<sub>B<\sub><\sub>)<sup>7<\sup> * (J<sub>t<sub>A<\sub>,t<sub>B<\sub><\sub>)<sup>4<\sup>,
+I defined similarity as the product (J<sub>s<sub>A</sub>,s<sub>B</sub></sub>)<sup>7</sup> * (J<sub>t<sub>A</sub>,t<sub>B</sub></sub>)<sup>4</sup>,
 
 where J~s~A~,s~B~~ is the Jaccard similarity index of the post-ev statistics vectors of A and B
 and J~t~A~,t~B~~ is the Jaccard similarity index of the defensive type effectiveness vectors of A and B.
