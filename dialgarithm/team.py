@@ -10,9 +10,8 @@ class SubTeam:
     def __init__(self, list_of_pokemon):
         self.members = list_of_pokemon
 
-    # TODO
     def mutate(self):
-        return self.members
+        self.members = [mon.mutate() for mon in self.members]
 
     @staticmethod
     def crossover(sub1, sub2):
@@ -21,6 +20,7 @@ class SubTeam:
         new_members = sub1.members[0:point] + sub2.members[point:length]
         return SubTeam(new_members).mutate()
 
+    # TODO: move this somewhere sensible? prolly Dialgarithm
     @staticmethod
     def prompt_core():
         core_size = int(input("How big is your core? (0-5) \n"))

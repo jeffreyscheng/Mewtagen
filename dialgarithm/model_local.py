@@ -19,6 +19,7 @@ class Model:
     moveset_list = None
     usage_dict = None
     counters_dict = None
+    mutation_dict = {}
     damage_cache = None
     attack_cache = None
     switch_cache = {}

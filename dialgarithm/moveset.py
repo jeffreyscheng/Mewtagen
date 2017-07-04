@@ -71,6 +71,19 @@ class Moveset:
         # True at the same time
         return not (self == other)
 
+    # TODO: cache
+    def mutate(self):
+        if self in Model.mutation_dict:
+            mutation_probability = Model.mutation_dict[self]
+        else:
+            weights = {self: Moveset.similarity(self, mon) for mon in Model.moveset_list}
+            total = np.sum([weights[key] for key in weights])
+            mutation_probability = {key: value / total for key, value in weights.items()}
+            Model.mutation_dict[self] = mutation_probability
+        options = [key for key in mutation_probability]
+        probabilities = [mutation_probability[key] for key in mutation_probability]
+        return np.random.choice(options, p=probabilities)
+
     @staticmethod
     def similarity(moveset1, moveset2):
         # calculate Jaccard index
