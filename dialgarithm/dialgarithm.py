@@ -26,7 +26,7 @@ def evolve():
 
 
 def output():
-    pass
+    Damage.end()
 
 
 def prompt_core():

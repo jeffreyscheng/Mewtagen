@@ -1,0 +1,44 @@
+Team 1 started with Excadrill_Bulky Spinner
+Team 2 started with Bisharp_Swords Dance
+Normal damage:
+Team 2's Bisharp_Swords Dance attacks Excadrill_Bulky Spinner first for 0.666089991156 damage.
+Team 1's Excadrill_Bulky Spinner survives and attacks Bisharp_Swords Dance second for 1.13467934046 damage.
+Team 2 switched to Hydreigon_Choice Scarf
+Normal damage:
+Team 2's Hydreigon_Choice Scarf attacks Excadrill_Bulky Spinner first for 0.465735598133 damage.
+Team 1's Excadrill_Bulky Spinner fainted.
+Team 1 switched to Dugtrio_Trapper
+Team 1 switches, Team 2 stays
+Team 1's Dugtrio_Trapper attacks Hydreigon_Choice Scarf first for 0.437199642127 damage.
+Team 2's Hydreigon_Choice Scarf survives and attacks Dugtrio_Trapper second for 1.28612523094 damage.
+Team 1 switched to Rotom-Wash_Physically Defensive Pivot
+Team 1 switches, Team 2 stays
+Team 2's Hydreigon_Choice Scarf attacks Rotom-Wash_Physically Defensive Pivot first for 0.656582706271 damage.
+Team 1's Rotom-Wash_Physically Defensive Pivot survives and attacks Hydreigon_Choice Scarf second for 0.182559815951 damage.
+Team 1 switches, Team 2 stays
+Team 2's Hydreigon_Choice Scarf attacks Rotom-Wash_Physically Defensive Pivot first for 0.656582706271 damage.
+Team 1's Rotom-Wash_Physically Defensive Pivot fainted.
+Team 1 switched to Amoonguss_Pivot
+Team 1 switches, Team 2 stays
+Team 2's Hydreigon_Choice Scarf attacks Amoonguss_Pivot first for 0.509993897594 damage.
+Team 1's Amoonguss_Pivot survives and attacks Hydreigon_Choice Scarf second for 0.132117523006 damage.
+Team 1 switches, Team 2 stays
+Team 2's Hydreigon_Choice Scarf attacks Amoonguss_Pivot first for 0.509993897594 damage.
+Team 1's Amoonguss_Pivot fainted.
+Team 1 switched to Medicham-Mega_All-out Attacker
+Normal damage:
+Team 2's Hydreigon_Choice Scarf attacks Medicham-Mega_All-out Attacker first for 0.894716856378 damage.
+Team 1's Medicham-Mega_All-out Attacker survives and attacks Hydreigon_Choice Scarf second for 1.28917902607 damage.
+Team 2 switched to Dugtrio_Trapper
+Normal damage:
+Team 2's Dugtrio_Trapper attacks Medicham-Mega_All-out Attacker first for 0.569361152757 damage.
+Team 1's Medicham-Mega_All-out Attacker fainted.
+Team 1 switched to Venusaur_Sun Sweeper
+Normal damage:
+Team 2's Dugtrio_Trapper attacks Venusaur_Sun Sweeper first for 0.503244930691 damage.
+Team 1's Venusaur_Sun Sweeper survives and attacks Dugtrio_Trapper second for 1.5659167403 damage.
+Team 2 switched to Starmie_Utility
+Normal damage:
+Team 2's Starmie_Utility attacks Venusaur_Sun Sweeper first for 0.74173788521 damage.
+Team 1's Venusaur_Sun Sweeper fainted.
+Team 2 won!

@@ -4,6 +4,9 @@ damage calculator treats some types as strings
 allow core members to have variety of movesets
 scramble the subteams with each mutation?
 force 2-4 as core?
+use Glicko?
+log the fucking battles -- why isn't anyone losing???
+refactor team to drop fainted pokemon from battler, include logger, return True/False instead of team pointer
 
 build component parts: find similar movesets (literal mutation)
 

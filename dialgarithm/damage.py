@@ -16,7 +16,6 @@ class Damage:
     @staticmethod
     def end():
         Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
-        # Writer.save_pickled_object(Model.time_list, 'time_list.txt')
         Writer.save_csv_object(Model.damage_cache, 'damage.csv')
         Writer.save_csv_object(Model.switch_cache, 'switch.csv')
 
@@ -199,18 +198,22 @@ class Damage:
         return counters
 
     @staticmethod
-    def battle(team1, team2):
+    def battle(team1, team2, log=False):
         tick = time.clock()
         team1.heal()
         team2.heal()
-        team1.current = random.choice(list(team1.battler.keys()))
-        team2.current = random.choice(list(team2.battler.keys()))
+        team1.switch()
+        team2.switch()
+        # Writer.log("Team 1 started with", team1.current.name)
+        # Writer.log("Team 2 started with", team2.current.name)
 
         while team1.still_playing() and team2.still_playing():
             if team1.is_fainted() or team1.current is None:
                 team1.switch()
+                # Writer.log("Team 1 switched to", team1.current.name)
             if team2.is_fainted() or team2.current is None:
                 team2.switch()
+                # Writer.log("Team 2 switched to", team2.current.name)
             d = Model.counters_dict
             bool_1_counters_2 = team1.current in d[team2.current]
             bool_2_counters_1 = team2.current in d[team1.current]
@@ -223,37 +226,57 @@ class Damage:
                 else:
                     team1_moves_first = random.choice([0, 1])
                 if team1_moves_first:
-                    team2.damage_current(Damage.deal_damage(team1.current,
-                                                            team2.current))
+                    team2.damage_current(Damage.deal_damage(team1.current, team2.current))
+                    # Writer.log("Team 1's", team1.current.name, "attacks", team2.current.name, "first for",
+                    #            str(Damage.deal_damage(team1.current, team2.current)), "damage.")
                     if not team2.is_fainted():
                         team1.damage_current(Damage.deal_damage(team2.current,
                                                                 team1.current))
+                        # Writer.log("Team 2's", team2.current.name, "survives and attacks", team1.current.name,
+                        #            "second for", str(Damage.deal_damage(team2.current, team1.current)), "damage.")
+                    # else:
+                        # Writer.log("Team 2's", team2.current.name, "fainted.")
                 else:
+                    # Writer.log("Team 2's", team2.current.name, "attacks", team1.current.name, "first for",
+                    #            str(Damage.deal_damage(team2.current, team1.current)), "damage.")
                     team1.damage_current(Damage.deal_damage(team2.current,
                                                             team1.current))
                     if not team1.is_fainted():
+                        # Writer.log("Team 1's", team1.current.name, "survives and attacks", team2.current.name,
+                        #            "second for", str(Damage.deal_damage(team1.current, team2.current)), "damage.")
                         team2.damage_current(Damage.deal_damage(team1.current,
                                                                 team2.current))
+                    # else:
+                        # Writer.log("Team 1's", team1.current.name, "fainted.")
+
 
             # Case 1: both stay
             if (not bool_1_counters_2) and (not bool_2_counters_1):
+                # Writer.log("Normal damage:")
                 normal_damage()
 
             # Case 2: 1 stays, 2 switches
             elif bool_1_counters_2:
+                # Writer.log("Team 1 stays, Team 2 switches")
                 if team2.has_living_counter(team1.current):
                     team2.switch(team1.current)
-                    team2.damage_current(Damage.deal_damage(team1.current,
-                                                            team2.current))
+                    # Writer.log("Team 2 switches to", team2.current.name)
+                    team2.damage_current(Damage.deal_damage(team1.current, team2.current))
+                    # Writer.log("Team 1's", team1.current.name, "deals",
+                    #            str(Damage.deal_damage(team1.current, team2.current)), "to", team2.current.name)
                 else:
                     normal_damage()
 
             # Case 3: 2 stays, 1 leaves
             elif bool_2_counters_1:
+                # Writer.log("Team 1 switches, Team 2 stays")
                 if team1.has_living_counter(team2.current):
+                    # Writer.log("Team 1 switches to", team1.current.name)
                     team1.switch(team2.current)
                     team1.damage_current(Damage.deal_damage(team2.current,
                                                             team1.current))
+                    # Writer.log("Team 2's", team2.current.name, "deals",
+                    #            str(Damage.deal_damage(team2.current, team1.current)), "to", team1.current.name)
                 else:
                     normal_damage()
 
@@ -267,6 +290,8 @@ class Damage:
         tock = time.clock()
         print('BATTLE FINISHED IN: ' + str(tock - tick) + ' seconds.')
         if team1.still_playing():
-            return team1
+            # Writer.log("Team 1 won!")
+            return True
         else:
-            return team2
+            # Writer.log("Team 2 won!")
+            return False

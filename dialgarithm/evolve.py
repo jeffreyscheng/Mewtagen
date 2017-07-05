@@ -3,12 +3,12 @@ import numpy as np
 
 
 class Evolve:
-    population_size = 100
-    num_generations = 100
+    population_size = 10
+    num_generations = 10
     population = []
     fitness_dict = {}
     starting_elo = 1000
-    matches = 50
+    matches = 10
 
     @staticmethod
     def evolve():
@@ -16,7 +16,8 @@ class Evolve:
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Evolve.population_size)]
         for generation in range(0, Evolve.num_generations):
             Evolve.next_generation()
-        Evolve.final_evaluation()
+        print(Evolve.population)
+        # Evolve.final_evaluation()
 
     @staticmethod
     def next_generation():
@@ -31,8 +32,7 @@ class Evolve:
             for norm in norms:
                 winner = Damage.battle(team, norm)
                 norm_elo = Metagame.elo_dict[norm]
-                team1_winner = winner == team
-                elo = Elo.update_elo(elo, norm_elo, team1_winner)
+                elo = Elo.update_elo(elo, norm_elo, winner)
             return Elo.win_prob(elo)
 
         Evolve.fitness_dict = {team: fitness(team) for team in Evolve.population}
@@ -57,23 +57,22 @@ class Evolve:
         elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         return [team.get_elite() for team in elites]
 
-    @staticmethod
-    def final_evaluation():
-        # grab |matches| sample of norms
-        norm_choices = [key for key in Metagame.elo_dict]
-        norms = np.random.choice(norm_choices, Evolve.matches)
-
-        # battles all norms against team, returns elo
-        def fitness(team):
-            for i in range(0, 50):
-                elo = Evolve.starting_elo
-                for norm in norms:
-                    winner = Damage.battle(team, norm)
-                    norm_elo = Metagame.elo_dict[norm]
-                    team1_winner = winner == team
-                    elo = Elo.update_elo(elo, norm_elo, team1_winner)
-                return Elo.win_prob(elo)
-        Evolve.fitness_dict = {team: fitness(team) for team in Evolve.population}
-        elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get)[:10]
-        for team in elites:
-            print(team, Evolve.fitness_dict[team])
+    # @staticmethod
+    # def final_evaluation():
+    #     # grab |matches| sample of norms
+    #     norm_choices = [key for key in Metagame.elo_dict]
+    #     norms = np.random.choice(norm_choices, Evolve.matches)
+    #
+    #     # battles all norms against team, returns elo
+    #     def fitness(team):
+    #         elo = Evolve.starting_elo
+    #         for i in range(0, 50):
+    #             for norm in norms:
+    #                 winner = Damage.battle(team, norm)
+    #                 norm_elo = Metagame.elo_dict[norm]
+    #                 elo = Elo.update_elo(elo, norm_elo, winner)
+    #         return Elo.win_prob(elo)
+    #     Evolve.fitness_dict = {team: fitness(team) for team in Evolve.population}
+    #     elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get)[:10]
+    #     for team in elites:
+    #         print(team, Evolve.fitness_dict[team])

@@ -1,5 +1,6 @@
 from dialgarithm.dialgarithm import *
 
+
 # import random
 
 
@@ -33,11 +34,11 @@ def setup():
     print(len(Model.moveset_list))
 
     # DAMAGE TEST
-    # print("DAMAGE TEST:")
-    # print("TYRANITAR ON STEELIX")
-    # print(Damage.deal_damage(tyranitar, steelix)) # should be 0.45 ish
-    # print("TYRANITAR ON PIDGEOT-MEGA")
-    # print(Damage.deal_damage(tyranitar, pidgeot)) # should be 1.14 ish
+    print("DAMAGE TEST:")
+    print("TYRANITAR ON STEELIX")
+    print(Damage.deal_damage(tyranitar, steelix))  # should be 0.45 ish
+    print("TYRANITAR ON PIDGEOT-MEGA")
+    print(Damage.deal_damage(tyranitar, pidgeot))  # should be 1.14 ish
 
     # COUNTERS TEST
     # print("tyranitar'S COUNTERS:")
@@ -50,11 +51,18 @@ def setup():
 
 
     # MOVESET MUTATION TEST
-    for i in range(50):
-        newb = tyranitar.mutate()
-        print(newb.name)
+    # for i in range(50):
+    #     newb = tyranitar.mutate()
+    #     print(newb.name)
 
+    # checking that teams can actually lose
+    team1 = Metagame.generate_team([])
+    print(team1)
+    team2 = Metagame.generate_team([])
+    print(team2)
+    print(Damage.battle(team1, team2))
     # TODO: winning team test -- check overfitting?
+    Damage.end()
 
 
 def evolve():
@@ -64,5 +72,6 @@ def evolve():
 def output():
     pass
 
+
 setup()
-evolve()
+# evolve()

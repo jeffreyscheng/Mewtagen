@@ -31,7 +31,7 @@ class Team:
         self.core = core
         self.suggestions = suggestions
         self.members = core.members + self.suggestions.members
-        self.battler = self.heal()
+        self.battler = {mon: 1 for mon in self.members}
         self.current = None
         # self.counter_matrix = None
         # self.transition_matrix = None
@@ -69,7 +69,7 @@ class Team:
 
     def heal(self):
         self.current = None
-        return {mon: 1 for mon in self.members}
+        self.battler = {mon: 1 for mon in self.members}
 
     def damage_current(self, damage):
         if np.isnan(damage):

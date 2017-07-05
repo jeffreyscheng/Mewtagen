@@ -52,3 +52,9 @@ class Writer:
             return pd.DataFrame.from_csv(my_file)
         else:
             return None
+
+    @staticmethod
+    def log(*args):
+        message = ' '.join(args) + '\n'
+        with open("log.txt", "a") as log_file:
+            log_file.write(message)
