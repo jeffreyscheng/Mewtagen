@@ -39,7 +39,7 @@ class Writer:
         path = Writer.check_path(path)
         if not os.path.exists("/" + path):
             os.makedirs("/" + path)
-        full_filename = Model.gen + '/' + filename
+        full_filename = path + filename
         os.makedirs(os.path.dirname(full_filename), exist_ok=True)
         obj.to_csv(full_filename)
 
