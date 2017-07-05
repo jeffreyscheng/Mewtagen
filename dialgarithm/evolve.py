@@ -3,8 +3,8 @@ import numpy as np
 
 
 class Evolve:
-    population_size = 10
-    num_generations = 10
+    population_size = 100
+    num_generations = 100
     population = []
     starting_elo = 1000
     matches = 50
@@ -15,7 +15,8 @@ class Evolve:
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Evolve.population_size)]
         for generation in range(0, Evolve.num_generations):
             Evolve.next_generation()
-        print(Evolve.population)
+        for team in Evolve.population:
+            print(team)
 
     @staticmethod
     def next_generation():
@@ -45,6 +46,13 @@ class Evolve:
 
         def get_newborn():
             parents = np.random.choice(choices, 2, p=weights)
-            return parents[0].reproduce(parents[1])
+            return Team.reproduce(parents[0], parents[1])
 
-        Evolve.population = [get_newborn() for _ in range(0, Evolve.population_size)]
+        elites = Evolve.get_elites(fitness_dict)
+        mutants = [get_newborn() for _ in range(0, Evolve.population_size - len(elites))]
+        Evolve.population = elites + mutants
+
+    @staticmethod
+    def get_elites(fitness_dict):
+        elites = sorted(fitness_dict, key=fitness_dict.get, reverse=True)[:10]
+        return [team.get_elite() for team in elites]

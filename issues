@@ -1,10 +1,8 @@
-Team refactor into subteams
-refactor prompts into Dialgarithm
-mutability of teams -- don't want elite team that also reproduces to get mutated
-    solution: deep copy of elite team?
 train constants with grid search / genetic 2 / bayesian optimization
 proving that elo works # on it
 damage calculator treats some types as strings
+allow core members to have variety of movesets
+scramble the subteams with each mutation?
 
 build component parts: find similar movesets (literal mutation)
 

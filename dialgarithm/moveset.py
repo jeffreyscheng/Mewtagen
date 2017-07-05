@@ -4,7 +4,7 @@ from .model_local import *
 
 
 class Moveset:
-    mutation_prob = 0.50
+    mutation_prob = 0.05
     default_ivs = [{'atk': 31, 'def': 31, 'spa': 31,
                     'spd': 31, 'spe': 31, 'hp': 31}]
 

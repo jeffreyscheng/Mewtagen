@@ -40,10 +40,14 @@ def prompt_core():
             potential_movesets = [mon for mon in Model.moveset_list
                                   if mon.pokemon.unique_name == name]
             if len(potential_movesets) > 0:
-                Model.core.append(random.choice(potential_movesets))
-                flag = False
+                if name == 'Ditto':
+                    print('Ditto not supported.  Try again!')
+                    flag = True
+                else:
+                    Model.core.append(random.choice(potential_movesets))
+                    flag = False
             else:
-                print("No Smogon analysis for this Pokemon!\nIt probably sucks!")
+                print("No Smogon analysis for this Pokemon!\nIt probably sucks!  Try again!")
     # Model.population_size = int(input("Population size? (>3) \n"))
     # Model.time = int(input("Evolution duration?\n"))
     print("Inputs processed!")

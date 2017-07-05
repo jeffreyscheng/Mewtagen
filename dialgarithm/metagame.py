@@ -5,10 +5,10 @@ from .model_local import *
 class Metagame:
     elo_start = 1000
     k = 32
-    generation = 0
-    mutation_rate = 0.01
-    crossover = 0.8
-    elitism = 0.1
+    # generation = 0
+    # crossover = 0.8
+    # elitism = 0.1
+    # mutation_rate = 0.01
 
     elo_dict = {}
 
@@ -16,10 +16,9 @@ class Metagame:
     def generate_team(core=[]):
         num_teammates = 6 - len(core)
         attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
-        attempt += core
-        new_team = Team([], attempt)
+        new_team = Team(SubTeam(core), SubTeam(attempt))
         if new_team.is_valid():
-            if len(list(set([mon.pokemon.dex_name for mon in attempt]))) < 6:
+            if len(list(set([mon.pokemon.dex_name for mon in attempt]))) + len(core) < 6:
                 print([mon.pokemon.dex_name for mon in attempt])
                 raise ValueError("Not a valid team!")
             return new_team
