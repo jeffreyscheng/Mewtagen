@@ -1,14 +1,31 @@
-train constants with grid search / genetic 2 / bayesian optimization
-proving that elo works # on it
-damage calculator treats some types as strings
+change damage cache to be key-value (is it even fucking worth it to cache?)
+push txt files to Firebase
+
 allow core members to have variety of movesets
+    refactor SubTeam into Suggestions and Core
+train constants with grid search / genetic 2 / bayesian optimization
 scramble the subteams with each mutation?
 force 2-4 as core?
 use Glicko?
-log the fucking battles -- why isn't anyone losing???
-refactor team to drop fainted pokemon from battler, include logger, return True/False instead of team pointer
 
+TWO CHROMOSOME MODEL!  First chromosome: core, second chromosome: suggestions
 build component parts: find similar movesets (literal mutation)
+dog breeder: given a single team, mutate into better team?
 
-push txt files to Firebase
 make Flask app lol
+
+# add to bottom of html?
+
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBB9A7t-JWyUGfmNxXu2-p8FswKVhqGZdw",
+    authDomain: "dialgarithm.firebaseapp.com",
+    databaseURL: "https://dialgarithm.firebaseio.com",
+    projectId: "dialgarithm",
+    storageBucket: "",
+    messagingSenderId: "869040073470"
+  };
+  firebase.initializeApp(config);
+</script>

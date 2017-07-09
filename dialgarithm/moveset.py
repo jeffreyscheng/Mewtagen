@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import time
 from .model_local import *
 
 
@@ -74,6 +75,7 @@ class Moveset:
 
     # TODO: cache
     def mutate(self):
+        tick = time.clock()
         if np.random.random() < Moveset.mutation_prob:
             if self in Model.mutation_dict:
                 mutation_probability = Model.mutation_dict[self]
@@ -84,6 +86,8 @@ class Moveset:
                 Model.mutation_dict[self] = mutation_probability
             options = [key for key in mutation_probability]
             probabilities = [mutation_probability[key] for key in mutation_probability]
+            tock = time.clock()
+            print("MUTATION TOOK", tock - tick)
             return np.random.choice(options, p=probabilities)
         else:
             return self

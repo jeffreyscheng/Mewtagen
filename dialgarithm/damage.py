@@ -15,9 +15,9 @@ class Damage:
 
     @staticmethod
     def end():
-        Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
-        Writer.save_csv_object(Model.damage_cache, 'damage.csv')
-        Writer.save_csv_object(Model.switch_cache, 'switch.csv')
+        # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
+        Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
+        # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
 
     @staticmethod
     def get_all_counters():
@@ -54,28 +54,35 @@ class Damage:
 
     @staticmethod
     def read_damage_cache():
-        tentative_cache = Writer.load_csv_object('damage.csv')
+        tentative_cache = Writer.load_pickled_object('damage.txt')
         if tentative_cache is None:
-            n = len(Model.moveset_list)
-            arr = np.zeros((n, n))
-            arr[:] = np.nan
-            Model.damage_cache =\
-                pd.DataFrame(data=arr, index=Model.moveset_dict.keys(),
-                             columns=Model.moveset_dict.keys())
-        else:
-            Model.damage_cache = tentative_cache
+            # n = len(Model.moveset_list)
+            # arr = np.zeros((n, n))
+            # arr[:] = np.nan
+            # Model.damage_cache =\
+            #     pd.DataFrame(data=arr, index=Model.moveset_dict.keys(),
+            #                  columns=Model.moveset_dict.keys())
+            tick = time.clock()
+            print("Caching...")
+            tentative_cache = {}
+            for mon in Model.moveset_list:
+                for mon2 in Model.moveset_list:
+                    key = mon.name, mon2.name
+                    value = Damage.deal_damage(mon, mon2)
+                    tentative_cache[key] = value
+            print("Caching took", time.clock() - tick)
+        Model.damage_cache = tentative_cache
 
     @staticmethod
     def deal_damage(attacker, defender):
-        if not np.isnan(Model.damage_cache.loc[attacker.name, defender.name]):
-            return Model.damage_cache.loc[attacker.name, defender.name]
+        if Model.damage_cache is not None:
+            return Model.damage_cache(attacker.name, defender.name)
         else:
             damage_list = [Damage.move_damage(attacker,
                                               defender,
                                               Model.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
-            Model.damage_cache.loc[attacker.name, defender.name] = damage
             return damage
 
     @staticmethod
@@ -199,7 +206,6 @@ class Damage:
 
     @staticmethod
     def battle(team1, team2, log=False):
-        tick = time.clock()
         team1.heal()
         team2.heal()
         team1.switch()
@@ -287,11 +293,13 @@ class Damage:
                 print(team1.current.name)
                 print(team2.current.name)
                 raise RuntimeError("two mons counter each other, both switch?")
-        tock = time.clock()
-        print('BATTLE FINISHED IN: ' + str(tock - tick) + ' seconds.')
         if team1.still_playing():
             # Writer.log("Team 1 won!")
             return True
         else:
             # Writer.log("Team 2 won!")
             return False
+
+    @staticmethod
+    def rand_bat(team1, team2):
+        return random.random() > 0.5
