@@ -90,24 +90,10 @@ class Moveset:
         else:
             return self
 
-    def core_mutate(self):
-        if np.random.random() < Model.mutation_prob:
-            weights = Model.mutation_dict[self]
-            dex_movesets = [key for key in Model.mutation_dict
-                            if key.pokemon.unique_name == self.pokemon.unique_name
-                            and key != self]
-            weights = [Model.mutation_dict[key] for key in dex_movesets]
-            total = sum(weights)
-            trimmed_weights = [weight / total for weight in weights]
-            return np.random.choice(dex_movesets, trimmed_weights)
-        else:
-            return self
-
     def compute_mutation(self):
         weights = {mon: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
         total = np.sum([weights[key] for key in weights])
         return {key: value / total for key, value in weights.items()}
-
 
     @staticmethod
     def similarity(moveset1, moveset2):
@@ -134,6 +120,3 @@ class Moveset:
     @staticmethod
     def get_moveset_by_name(name):
         return Model.moveset_dict[name]
-
-
-

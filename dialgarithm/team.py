@@ -3,10 +3,21 @@ from numpy.linalg import matrix_power
 from .damage import *
 from .model_local import *
 from .Writer import *
+from abc import ABC, abstractmethod
 import time
 
 
-class SubTeam:
+class SubTeam(ABC):
+    @abstractmethod
+    def mutate(self):
+        pass
+
+    @abstractmethod
+    def crossover(self):
+        pass
+
+
+class Suggestion:
     def __init__(self, list_of_pokemon):
         self.members = list_of_pokemon
 
@@ -24,7 +35,7 @@ class SubTeam:
         new_members = sub1.members[0:point] + sub2.members[point:length]
         if len(new_members) != length:
             raise ValueError("chromosome length grew!")
-        return SubTeam(new_members)
+        return Suggestion(new_members)
 
 
 class Core:
@@ -32,8 +43,12 @@ class Core:
         self.members = list_of_pokemon
 
     def mutate(self):
-        self.members = [mon.mutate() for mon in self.members]
-        self.members = random.shuffle(self.members)
+        def mutate_single(index):
+            if np.random.random() < Model.mutation_prob:
+                return np.random.choice(Model.core[index])
+            else:
+                return self.members[index]
+        self.members = [mutate_single(i) for i in range(0, 6)]
 
     def __str__(self):
         return ', '.join([mon.name for mon in self.members])
@@ -45,7 +60,7 @@ class Core:
         new_members = sub1.members[0:point] + sub2.members[point:length]
         if len(new_members) != length:
             raise ValueError("chromosome length grew!")
-        return SubTeam(new_members)
+        return Core(new_members)
 
 
 class Team:
@@ -126,11 +141,13 @@ class Team:
     @staticmethod
     def reproduce(team1, team2):
         # TODO: defensively check cores
-        new_suggestions = SubTeam.crossover(team1.suggestions, team2.suggestions)
-        new_suggestions.mutate()
-        if len(team1.core.members) + len(new_suggestions.members) != 6:
+        new_core = Core.crossover(team1.core, team2.core)
+        new_core.mutate()
+        new_suggestion = Suggestion.crossover(team1.suggestions, team2.suggestions)
+        new_suggestion.mutate()
+        if len(team1.core.members) + len(new_suggestion.members) != 6:
             raise ValueError("Team with bad member count!")
-        return Team(team1.core, new_suggestions)
+        return Team(team1.core, new_suggestion)
 
     def __str__(self):
         return ', '.join([mon.name for mon in self.battler])

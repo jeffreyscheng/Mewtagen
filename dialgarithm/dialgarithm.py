@@ -44,7 +44,7 @@ def prompt_core():
                     print('Ditto not supported.  Try again!')
                     flag = True
                 else:
-                    Model.core.append(random.choice(potential_movesets))
+                    Model.core.append(potential_movesets)
                     flag = False
             else:
                 print("No Smogon analysis for this Pokemon!\nIt probably sucks!  Try again!")

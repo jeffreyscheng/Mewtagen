@@ -2,6 +2,7 @@ from .team import *
 from .damage import *
 from .model_local import *
 
+
 class Metagame:
     elo_start = 1000
     k = 32
@@ -16,7 +17,11 @@ class Metagame:
     def generate_team(core=[]):
         num_teammates = 6 - len(core)
         attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
-        new_team = Team(SubTeam(core), SubTeam(attempt))
+
+        def generate_core():
+            return [np.random.choice(Model.core[i]) for i in range(0, len(Model.core))]
+
+        new_team = Team(Core(generate_core()), Suggestion(attempt))
         if new_team.is_valid():
             if len(list(set([mon.pokemon.dex_name for mon in attempt]))) + len(core) < 6:
                 print([mon.pokemon.dex_name for mon in attempt])
