@@ -10,6 +10,7 @@ class Damage:
     def start():
         Damage.read_damage_cache()
         Damage.get_all_counters()
+        Damage.get_mutations()
         # Damage.get_switches()
         # Damage.get_attack()
 

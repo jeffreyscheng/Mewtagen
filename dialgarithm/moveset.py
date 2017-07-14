@@ -91,7 +91,17 @@ class Moveset:
             return self
 
     def core_mutate(self):
-        pass
+        if np.random.random() < Model.mutation_prob:
+            weights = Model.mutation_dict[self]
+            dex_movesets = [key for key in Model.mutation_dict
+                            if key.pokemon.unique_name == self.pokemon.unique_name
+                            and key != self]
+            weights = [Model.mutation_dict[key] for key in dex_movesets]
+            total = sum(weights)
+            trimmed_weights = [weight / total for weight in weights]
+            return np.random.choice(dex_movesets, trimmed_weights)
+        else:
+            return self
 
     def compute_mutation(self):
         weights = {mon: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}

@@ -3,6 +3,7 @@ allow core members to have variety of movesets
 train constants with grid search / genetic 2 / bayesian optimization
 scramble the subteams with each mutation?
 force 2-4 as core?
+Check legality of team
 use Glicko?
 
 TWO CHROMOSOME MODEL!  First chromosome: core, second chromosome: suggestions
