@@ -21,8 +21,11 @@ class Model:
     counters_dict = None
     mutation_dict = {}
     damage_cache = None
-    attack_cache = None
-    switch_cache = {}
+    # attack_cache = None
+    # switch_cache = {}
+
+    # hyperparameters
+    mutation_prob = 0.1
 
     # outputs
     metagame = None

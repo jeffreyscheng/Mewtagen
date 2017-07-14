@@ -1,6 +1,3 @@
-change damage cache to be key-value (is it even fucking worth it to cache?)
-push txt files to Firebase
-
 allow core members to have variety of movesets
     refactor SubTeam into Suggestions and Core
 train constants with grid search / genetic 2 / bayesian optimization

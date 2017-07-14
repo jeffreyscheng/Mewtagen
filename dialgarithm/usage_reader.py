@@ -9,6 +9,8 @@ from .Writer import *
 class UsageReader:
     updating = True
 
+    # TODO: GET METAS FUNCTIOn FOR PRECOMPUTATION
+
     # gets most recent date and prints metagames
     @staticmethod
     def select_meta():

@@ -10,13 +10,14 @@ class Damage:
     def start():
         Damage.read_damage_cache()
         Damage.get_all_counters()
-        Damage.get_switches()
-        Damage.get_attack()
+        # Damage.get_switches()
+        # Damage.get_attack()
 
     @staticmethod
     def end():
         # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
         Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
+        Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
         # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
 
     @staticmethod
@@ -78,11 +79,13 @@ class Damage:
         if Model.damage_cache is not None:
             return Model.damage_cache(attacker.name, defender.name)
         else:
+            tick = time.clock()
             damage_list = [Damage.move_damage(attacker,
                                               defender,
                                               Model.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
+            print(time.clock() - tick)
             return damage
 
     @staticmethod
@@ -303,3 +306,7 @@ class Damage:
     @staticmethod
     def rand_bat(team1, team2):
         return random.random() > 0.5
+
+    @staticmethod
+    def get_mutations():
+        Model.mutation_dict = {moveset: moveset.compute_mutation() for moveset in Model.moveset_list}

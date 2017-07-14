@@ -73,17 +73,15 @@ class Moveset:
         # True at the same time
         return not self.__eq__(other)
 
-    # TODO: cache
     def mutate(self):
         tick = time.clock()
-        if np.random.random() < Moveset.mutation_prob:
+        if np.random.random() < Model.mutation_prob:
             if self in Model.mutation_dict:
                 mutation_probability = Model.mutation_dict[self]
             else:
-                weights = {mon: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
-                total = np.sum([weights[key] for key in weights])
-                mutation_probability = {key: value / total for key, value in weights.items()}
+                mutation_probability = self.compute_mutation()
                 Model.mutation_dict[self] = mutation_probability
+                raise ValueError("Mutations not precomputed?")
             options = [key for key in mutation_probability]
             probabilities = [mutation_probability[key] for key in mutation_probability]
             tock = time.clock()
@@ -91,6 +89,14 @@ class Moveset:
             return np.random.choice(options, p=probabilities)
         else:
             return self
+
+    def core_mutate(self):
+        pass
+
+    def compute_mutation(self):
+        weights = {mon: Moveset.similarity(self, mon) for mon in Model.moveset_list if mon != self}
+        total = np.sum([weights[key] for key in weights])
+        return {key: value / total for key, value in weights.items()}
 
 
     @staticmethod
