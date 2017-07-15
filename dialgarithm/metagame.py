@@ -34,7 +34,7 @@ class Metagame:
     def generate_norms():
         tentative_norms = Writer.load_pickled_object('norms.txt')
         if tentative_norms is None:
-            number_of_norms = 200
+            number_of_norms = 1000
             Metagame.elo_dict = {Metagame.generate_team(): Metagame.elo_start for _ in range(number_of_norms)}
             for i in range(0, 100):
                 bracket = sorted(Metagame.elo_dict, key=Metagame.elo_dict.get)

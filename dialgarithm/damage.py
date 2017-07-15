@@ -65,20 +65,21 @@ class Damage:
             #     pd.DataFrame(data=arr, index=Model.moveset_dict.keys(),
             #                  columns=Model.moveset_dict.keys())
             tick = time.clock()
-            print("Caching...")
+            print("Caching damage...")
             tentative_cache = {}
             for mon in Model.moveset_list:
                 for mon2 in Model.moveset_list:
                     key = mon.name, mon2.name
                     value = Damage.deal_damage(mon, mon2)
                     tentative_cache[key] = value
-            print("Caching took", time.clock() - tick)
+            print("Damage took", time.clock() - tick)
         Model.damage_cache = tentative_cache
 
     @staticmethod
     def deal_damage(attacker, defender):
         if Model.damage_cache is not None:
-            return Model.damage_cache(attacker.name, defender.name)
+            tuple_key = attacker.name, defender.name
+            return Model.damage_cache[tuple_key]
         else:
             tick = time.clock()
             damage_list = [Damage.move_damage(attacker,
@@ -86,7 +87,6 @@ class Damage:
                                               Model.dex.move_dict[move])
                            for move in attacker.moves]
             damage = max(damage_list)
-            print(time.clock() - tick)
             return damage
 
     @staticmethod
@@ -310,4 +310,11 @@ class Damage:
 
     @staticmethod
     def get_mutations():
-        Model.mutation_dict = {moveset: moveset.compute_mutation() for moveset in Model.moveset_list}
+        tentative_mutations = Writer.load_pickled_object('mutation.txt')
+        if tentative_mutations is None:
+            print("Getting mutations...")
+            tick = time.clock()
+            Model.mutation_dict = {moveset: moveset.compute_mutation() for moveset in Model.moveset_list}
+            print("Mutations took", time.clock() - tick)
+        else:
+            Model.mutation_dict = tentative_mutations
