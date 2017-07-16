@@ -17,8 +17,10 @@ class Damage:
     @staticmethod
     def end():
         # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
-        Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
-        Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
+        if Writer.load_pickled_object('damage.txt') is None:
+            Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
+        if Writer.load_pickled_object('damage.txt') is None:
+            Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
         # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
 
     @staticmethod

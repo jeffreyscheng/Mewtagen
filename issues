@@ -1,5 +1,6 @@
 train constants with grid search / genetic 2 / bayesian optimization
-scramble the subteams with each mutation?
+
+function to precompute damage/mutations for every folder
 check altaria-mega's type???
 force 2-4 as core?
 Check legality of team
