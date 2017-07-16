@@ -74,7 +74,6 @@ class Moveset:
         return not self.__eq__(other)
 
     def mutate(self):
-        tick = time.clock()
         if np.random.random() < Model.mutation_prob:
             if self in Model.mutation_dict:
                 mutation_probability = Model.mutation_dict[self]
@@ -84,8 +83,7 @@ class Moveset:
                 raise ValueError("Mutations not precomputed?")
             options = [key for key in mutation_probability]
             probabilities = [mutation_probability[key] for key in mutation_probability]
-            tock = time.clock()
-            print("MUTATION TOOK", tock - tick)
+
             return np.random.choice(options, p=probabilities)
         else:
             return self

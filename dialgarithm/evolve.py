@@ -3,8 +3,8 @@ import numpy as np
 import math
 
 class Evolve:
-    population_size = 5
-    num_generations = 5
+    population_size = 100
+    num_generations = 10
     population = []
     fitness_dict = {}
     starting_elo = 1000
@@ -17,7 +17,6 @@ class Evolve:
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Evolve.population_size)]
         for generation in range(0, Evolve.num_generations):
             Evolve.next_generation()
-        print(Evolve.population)
         Evolve.final_evaluation()
         print(time.clock() - tick)
 
@@ -67,19 +66,18 @@ class Evolve:
     @staticmethod
     def final_evaluation():
         # grab |matches| sample of norms
-        norm_choices = [key for key in Metagame.elo_dict]
-        norms = np.random.choice(norm_choices, Evolve.matches)
+        norms = [key for key in Metagame.elo_dict]
+        # norms = np.random.choice(norm_choices, Evolve.matches)
 
         # battles all norms against team, returns elo
         def precise_fitness(team):
             elo = Evolve.starting_elo
-            for i in range(0, 50):
-                for norm in norms:
-                    winner = Damage.battle(team, norm)
-                    norm_elo = Metagame.elo_dict[norm]
-                    elo = Elo.update_elo(elo, norm_elo, winner)
+            for norm in norms:
+                winner = Damage.battle(team, norm)
+                norm_elo = Metagame.elo_dict[norm]
+                elo = Elo.update_elo(elo, norm_elo, winner)
             return elo
         Evolve.fitness_dict = {team: precise_fitness(team) for team in Evolve.population}
-        elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get)[:10]
+        elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         for team in elites:
             print(team, Evolve.fitness_dict[team])

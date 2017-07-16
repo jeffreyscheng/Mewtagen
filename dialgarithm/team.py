@@ -48,7 +48,7 @@ class Core:
                 return np.random.choice(Model.core[index])
             else:
                 return self.members[index]
-        self.members = [mutate_single(i) for i in range(0, 6)]
+        self.members = [mutate_single(i) for i in range(0, len(self.members))]
 
     def __str__(self):
         return ', '.join([mon.name for mon in self.members])
@@ -56,7 +56,10 @@ class Core:
     @staticmethod
     def crossover(sub1, sub2):
         length = len(sub1.members)
-        point = random.randint(0, length - 1)
+        if length > 0:
+            point = random.randint(0, length - 1)
+        else:
+            point = 0
         new_members = sub1.members[0:point] + sub2.members[point:length]
         if len(new_members) != length:
             raise ValueError("chromosome length grew!")

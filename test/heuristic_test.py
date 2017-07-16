@@ -20,6 +20,7 @@ def setup():
     Damage.start()
     # generate normies if necessary
     Metagame.generate_norms()
+    # print(sorted([Metagame.elo_dict[key] for key in Metagame.elo_dict]))
 
     tyranitar = Moveset.get_moveset_by_name('Tyranitar_Choice Scarf')
     steelix = Moveset.get_moveset_by_name('Steelix_Tank')
