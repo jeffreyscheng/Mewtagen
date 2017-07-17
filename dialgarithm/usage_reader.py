@@ -11,6 +11,31 @@ class UsageReader:
 
     # TODO: GET METAS FUNCTIOn FOR PRECOMPUTATION
 
+
+    @staticmethod
+    def assign_meta():
+        # gets most recent date
+        usage_url = 'http://www.smogon.com/stats/'
+        soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
+        tags = soup('a')
+        date_string = tags[-1]['href']
+        Model.date = date_string
+
+        usage_url += date_string
+        soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
+        tags = soup('a')
+        not_metagames = ['../', 'chaos/', 'leads/', 'mega/', 'metagame/', 'monotype/', 'moveset/']
+        metagames = [tag['href'] for tag in tags if tag['href'] not in not_metagames]
+        Model.set_link("ou-1825.txt")
+        Model.set_path()
+
+        # initializes date if necessary
+        needs_update = not os.path.isdir("./" + date_string)
+        if needs_update and UsageReader.updating:
+            UsageReader.initialize_date(metagames)
+        else:
+            Model.usage_dict = Writer.load_pickled_object('usage.txt', Model.path)
+
     # gets most recent date and prints metagames
     @staticmethod
     def select_meta():

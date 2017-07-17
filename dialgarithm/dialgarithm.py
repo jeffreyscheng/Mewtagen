@@ -9,8 +9,7 @@ from .evolve import *
 
 # import random
 
-
-def setup():
+def setup_with_user_input():
     UsageReader.select_meta()
     DexFactory().get_dex()
     UsageReader.clean_up_usage()
@@ -19,6 +18,17 @@ def setup():
     # generate normies if necessary
     Metagame.generate_norms()
     prompt_core()
+
+
+def setup_without_user_input():
+    UsageReader.assign_meta()
+    DexFactory().get_dex()
+    UsageReader.clean_up_usage()
+    MovesetFactory().get_movesets()
+    Damage.start()
+    # generate normies if necessary
+    Metagame.generate_norms()
+    Model.core = []
 
 
 def evolve():

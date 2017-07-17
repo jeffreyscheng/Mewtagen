@@ -7,15 +7,16 @@ from scipy.optimize import minimize
 
 
 class Bayes:
-
     @staticmethod
     def run_parameter_set(population_size, matches, starting_mutation_rate, mutation_delta):
         Model.set_hyperparameters(population_size, matches, starting_mutation_rate, mutation_delta)
-        def run_attempt()
-            setup()
+
+        def run_attempt():
+            setup_without_user_input()
             evolve()
             output()
             return Evolve.get_best()
+
         attempts = sorted([run_attempt() for _ in range(0, 5)])
         return attempts[2]
 
@@ -88,7 +89,7 @@ class Bayes:
         best_acquisition_value = 1
         n_params = bounds.shape[0]
         param_array = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(n_restarts, n_params))
-        for starting_point in np.ndenumerate(param_array):
+        for starting_point in np.nditer(param_array):
 
             res = minimize(fun=acquisition_func,
                            x0=starting_point.reshape(1, -1),
@@ -138,9 +139,9 @@ class Bayes:
 
         if x0 is None:
             params_array = np.random.uniform(bounds[:, 0], bounds[:, 1], (n_pre_samples, bounds.shape[0]))
-            for params in np.ndenumerate(params_array):
+            for params in list(params_array):
                 x_list.append(params)
-                y_list.append(sample_loss(params))
+                y_list.append(sample_loss(*params))
         else:
             for params in x0:
                 x_list.append(params)
@@ -173,7 +174,7 @@ class Bayes:
                                                                greater_is_better=True, bounds=bounds, n_restarts=100)
 
             # Duplicates will break the GP. In case of a duplicate, we will randomly sample a next query point.
-            if np.any(np.abs(next_sample - xp) <= epsilon):
+            if np.any(x_list, np.abs(next_sample - xp) <= epsilon):
                 next_sample = np.random.uniform(bounds[:, 0], bounds[:, 1], bounds.shape[0])
 
             # Sample loss for new set of parameters
@@ -189,7 +190,8 @@ class Bayes:
 
         return xp, yp
 
-target_time = 10 * 60 # change to 20-24 hours
+
+target_time = 10 * 60  # change to 20-24 hours
 time_per_attempt = 5 * 60
 num_attempts = target_time / time_per_attempt
 param_bounds = np.array([[0, 1000], [0, 1000], [0, 0.2], [-0.05, 0.05]])
