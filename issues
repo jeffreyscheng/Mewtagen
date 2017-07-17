@@ -1,28 +1,11 @@
-use Glicko?
-write results to file so I can check histogram
-make battle faster (?)
-implement mutation
-
-train constants with grid search / genetic 2 / bayesian optimization
-
-function to precompute damage/mutations for every folder
-check altaria-mega's type???
-force 2-4 as core?
-Check legality of team
+2) unit test on altaria-mega's stats and type
+3) implement bayesian-optimization: run 5 times, then take median for every run
+4) run on EC2
+5) during run, work on getting average battle time down to 10/1000
+6) function to precompute damage/mutations for every folder
+7) check legality of team -- if illegal, just mutate again
 
 build component parts: find similar movesets (literal mutation)
 dog breeder: given a single team, mutate into better team?
 
 make Flask app lol
-
-Altaria-Mega_Support, Tyranitar_Choice Scarf, Kyurem_Choice Scarf, Golem_Lead, Thundurus_Thunder Wave + 3 Attacks, Manectric-Mega_Special Attacker 1702.9879537524896
-Altaria-Mega_Special Attacker, Tyranitar_Support, Gardevoir_Choice Specs, Dodrio_Wallbreaker, Charizard-Mega-X_Bulky Will-O-Wisp, Manectric-Mega_Special Attacker 1694.3673877143092
-Altaria-Mega_Support, Tyranitar_Choice Scarf, Kyurem_Choice Scarf, Thundurus_Thunder Wave + 3 Attacks, Golem_Lead, Manectric-Mega_Special Attacker 1669.3344232199127
-Altaria-Mega_Special Attacker, Tyranitar_Support, Kyurem_Choice Specs, Zapdos_Physically Defensive, Manectric-Mega_Special Attacker, Miltank_Physically Defensive 1616.499204242801
-Altaria-Mega_Special Attacker, Tyranitar_Choice Band, Magmortar_Assault Vest Tank, Thundurus_Nasty Plot, Slaking_Wall Breaker, Manectric-Mega_Special Attacker 1610.9203005721645
-Altaria-Mega_Special Attacker, Tyranitar_Support, Gardevoir_Choice Specs, Kyurem-Black_Choice Scarf, Thundurus_Thunder Wave + 3 Attacks, Volcarona_Offensive Quiver Dance 1600.7850537419474
-Altaria-Mega_Special Attacker, Tyranitar_Support, Pangoro_PANDA (All-out Attacker), Kyurem-Black_Choice Scarf, Manectric-Mega_Special Attacker, Talonflame_Offensive Swords Dance 1599.31573390133
-Altaria-Mega_Special Attacker, Tyranitar_Choice Band, Thundurus_Nasty Plot, Arcanine_Offensive, Talonflame_Offensive Swords Dance, Manectric-Mega_Special Attacker 1595.9699186222342
-Altaria-Mega_Support, Tyranitar_Support, Manectric-Mega_Special Attacker, Miltank_Physically Defensive, Zapdos_Physically Defensive, Kyurem_Choice Specs 1586.5144481660475
-Altaria-Mega_Support, Tyranitar_Choice Scarf, Arcanine_Offensive, Blastoise-Mega_Offensive Spinner, Thundurus_Thunder Wave + 3 Attacks, Kyurem_Choice Scarf 1561.8108269926988
-1911.2342974013266

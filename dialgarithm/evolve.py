@@ -15,6 +15,7 @@ class Evolve:
         print("GENERATING TEAMS!")
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Model.population_size)]
         for generation in range(0, Model.num_generations):
+            Model.mutation_prob = Model.starting_mutation_rate + generation * Model.mutation_delta
             Evolve.next_generation()
         Evolve.final_evaluation()
         print(time.clock() - tick)
@@ -66,10 +67,10 @@ class Evolve:
     def final_evaluation():
         # grab |matches| sample of norms
         norm_choices = [key for key in Model.elo_dict]
-        norms = np.random.choice(norm_choices, 2 * Model.matches)
 
         # battles all norms against team, returns elo
-        def precise_fitness(team):
+        def precise_fitness(team, num_norms=len(norm_choices)):
+            norms = np.random.choice(norm_choices, num_norms)
             elo = Evolve.starting_elo
             for norm in norms:
                 winner = Damage.battle(team, norm)
@@ -77,10 +78,16 @@ class Evolve:
                 elo = Elo.update_elo(elo, norm_elo, winner)
             return elo
 
-        Evolve.fitness_dict = {team: precise_fitness(team) for team in Evolve.population}
+        Evolve.fitness_dict = {team: precise_fitness(team, 50) for team in Evolve.population}
         elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         for team in elites:
+            Evolve.fitness_dict[elites] = precise_fitness(team, 200)
             print(team, Evolve.fitness_dict[team])
+
+    @staticmethod
+    def get_best():
+        maximum = max(Evolve.fitness_dict, key=Evolve.fitness_dict.get)
+        return Evolve.fitness_dict[maximum]
 
     @staticmethod
     def write_to_file():

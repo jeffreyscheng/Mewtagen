@@ -1,8 +1,7 @@
 from dialgarithm.dialgarithm import *
-from dialgarithm.train import *
 
-# Train.run_parameter_set(100, 25, .01, .001)
-
+tick = time.clock()
 setup()
 evolve()
 output()
+print("TOTAL TOOK:", time.clock() - tick)
