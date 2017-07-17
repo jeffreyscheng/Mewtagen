@@ -1,5 +1,5 @@
 from dialgarithm.evolve import *
-import math
+from dialgarithm.dialgarithm import *
 import numpy as np
 import sklearn.gaussian_process as gp
 from scipy.stats import norm
@@ -7,30 +7,17 @@ from scipy.optimize import minimize
 
 
 class Bayes:
-    time_per_battle = 20 / 1000  # from EC2 instance and personal laptop
-    target_time = 5 * 60
 
     @staticmethod
     def run_parameter_set(population_size, matches, starting_mutation_rate, mutation_delta):
-        population_size = math.floor(population_size)
-        matches = math.floor(matches)
-        time_for_final_evaluation = Bayes.time_per_battle * population_size * max(25.0, 2 * matches)
-        time_for_evolution = Bayes.target_time - time_for_final_evaluation
-        if time_for_evolution <= 0 or population_size <= 0 or matches <= 0 or starting_mutation_rate <= 0:
-            print("not enough time!")
-            print(time_for_final_evaluation)
-            return 0
-        else:
-            time_per_generation = population_size * matches * Bayes.time_per_battle
-            num_generations = math.floor(time_for_evolution / time_per_generation)
-            print(num_generations)
-
-            # TODO: DO THING SOMETHING FUNCTION
-            def something(a, b, c, d, e):
-                pass
-
-            attempts = sorted([something() for _ in range(0, 5)])
-            return attempts[2]
+        Model.set_hyperparameters(population_size, matches, starting_mutation_rate, mutation_delta)
+        def run_attempt()
+            setup()
+            evolve()
+            output()
+            return Evolve.get_best()
+        attempts = sorted([run_attempt() for _ in range(0, 5)])
+        return attempts[2]
 
     """
     Bayesian optimisation of loss functions.
@@ -72,10 +59,11 @@ class Bayes:
         with np.errstate(divide='ignore'):
             Z = scaling_factor * (mu - loss_optimum) / sigma
             expected_improvement = scaling_factor * (mu - loss_optimum) * norm.cdf(Z) + sigma * norm.pdf(Z)
-            expected_improvement[sigma == 0.0] == 0.0
+            expected_improvement[sigma == 0.0] = 0.0
 
         return -1 * expected_improvement
 
+    @staticmethod
     def sample_next_hyperparameter(acquisition_func, gaussian_process, evaluated_loss, greater_is_better=False,
                                    bounds=(0, 10), n_restarts=25):
         """ sample_next_hyperparameter
@@ -99,8 +87,8 @@ class Bayes:
         best_x = None
         best_acquisition_value = 1
         n_params = bounds.shape[0]
-
-        for starting_point in np.random.uniform(bounds[:, 0], bounds[:, 1], size=(n_restarts, n_params)):
+        param_array = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(n_restarts, n_params))
+        for starting_point in np.ndenumerate(param_array):
 
             res = minimize(fun=acquisition_func,
                            x0=starting_point.reshape(1, -1),
@@ -149,7 +137,8 @@ class Bayes:
         n_params = bounds.shape[0]
 
         if x0 is None:
-            for params in np.random.uniform(bounds[:, 0], bounds[:, 1], (n_pre_samples, bounds.shape[0])):
+            params_array = np.random.uniform(bounds[:, 0], bounds[:, 1], (n_pre_samples, bounds.shape[0]))
+            for params in np.ndenumerate(params_array):
                 x_list.append(params)
                 y_list.append(sample_loss(params))
         else:
@@ -177,11 +166,11 @@ class Bayes:
             # Sample next hyperparameter
             if random_search:
                 x_random = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(random_search, n_params))
-                ei = -1 * expected_improvement(x_random, model, yp, greater_is_better=True, n_params=n_params)
+                ei = -1 * Bayes.expected_improvement(x_random, model, yp, greater_is_better=True, n_params=n_params)
                 next_sample = x_random[np.argmax(ei), :]
             else:
-                next_sample = sample_next_hyperparameter(expected_improvement, model, yp, greater_is_better=True,
-                                                         bounds=bounds, n_restarts=100)
+                next_sample = Bayes.sample_next_hyperparameter(Bayes.expected_improvement, model, yp,
+                                                               greater_is_better=True, bounds=bounds, n_restarts=100)
 
             # Duplicates will break the GP. In case of a duplicate, we will randomly sample a next query point.
             if np.any(np.abs(next_sample - xp) <= epsilon):
@@ -203,4 +192,5 @@ class Bayes:
 target_time = 10 * 60 # change to 20-24 hours
 time_per_attempt = 5 * 60
 num_attempts = target_time / time_per_attempt
-# Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, TODO: bounds)
+param_bounds = np.array([[0, 1000], [0, 1000], [0, 0.2], [-0.05, 0.05]])
+Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)

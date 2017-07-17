@@ -15,7 +15,7 @@ class Evolve:
         print("GENERATING TEAMS!")
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Model.population_size)]
         for generation in range(0, Model.num_generations):
-            Model.mutation_prob = Model.starting_mutation_rate + generation * Model.mutation_delta
+            Model.mutation_prob = max(0, Model.starting_mutation_rate + generation * Model.mutation_delta)
             Evolve.next_generation()
         Evolve.final_evaluation()
         print(time.clock() - tick)
