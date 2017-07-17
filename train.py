@@ -9,9 +9,17 @@ from scipy.optimize import minimize
 class Bayes:
     @staticmethod
     def run_parameter_set(population_size, matches, starting_mutation_rate, mutation_delta):
+        print("Running parameter set")
         Model.set_hyperparameters(population_size, matches, starting_mutation_rate, mutation_delta)
+        if Model.num_generations <= 0:
+            print("Trivial zero")
+            return 0
+        else:
+            print("Nontrivial")
+            print(population_size, matches, starting_mutation_rate, mutation_delta)
 
         def run_attempt():
+            print("Running attempt")
             setup_without_user_input()
             evolve()
             output()
@@ -85,11 +93,12 @@ class Bayes:
             n_restarts: integer.
                 Number of times to run the minimiser with different starting points.
         """
+        print(bounds)
         best_x = None
         best_acquisition_value = 1
         n_params = bounds.shape[0]
         param_array = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(n_restarts, n_params))
-        for starting_point in np.nditer(param_array):
+        for starting_point in list(param_array):
 
             res = minimize(fun=acquisition_func,
                            x0=starting_point.reshape(1, -1),
@@ -187,12 +196,13 @@ class Bayes:
             # Update xp and yp
             xp = np.array(x_list)
             yp = np.array(y_list)
-
+        print("Optimized:")
+        print(xp)
         return xp, yp
 
 
 target_time = 10 * 60  # change to 20-24 hours
 time_per_attempt = 5 * 60
-num_attempts = target_time / time_per_attempt
+num_attempts = math.floor(target_time / time_per_attempt)
 param_bounds = np.array([[0, 1000], [0, 1000], [0, 0.2], [-0.05, 0.05]])
 Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
