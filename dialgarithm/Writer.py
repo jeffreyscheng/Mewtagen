@@ -36,6 +36,7 @@ class Writer:
 
     @staticmethod
     def save_csv_object(obj, filename, path=None):
+        print("LOL")
         path = Writer.check_path(path)
         if not os.path.exists("/" + path):
             os.makedirs("/" + path)

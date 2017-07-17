@@ -1,12 +1,15 @@
+use Glicko?
+write results to file so I can check histogram
+make battle faster (?)
+implement mutation
+
 train constants with grid search / genetic 2 / bayesian optimization
 
 function to precompute damage/mutations for every folder
 check altaria-mega's type???
 force 2-4 as core?
 Check legality of team
-use Glicko?
 
-TWO CHROMOSOME MODEL!  First chromosome: core, second chromosome: suggestions
 build component parts: find similar movesets (literal mutation)
 dog breeder: given a single team, mutate into better team?
 

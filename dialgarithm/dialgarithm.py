@@ -27,6 +27,7 @@ def evolve():
 
 def output():
     Damage.end()
+    Evolve.write_to_file()
 
 
 def prompt_core():

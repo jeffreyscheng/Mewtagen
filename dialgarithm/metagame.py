@@ -16,7 +16,7 @@ class Metagame:
     @staticmethod
     def generate_team(core=[]):
         num_teammates = 6 - len(core)
-        attempt = [Team.weighted_sample() for i in range(0, num_teammates)]
+        attempt = [Team.weighted_sample() for _ in range(0, num_teammates)]
 
         def generate_core():
             return [np.random.choice(Model.core[i]) for i in range(0, len(Model.core))]
@@ -35,9 +35,9 @@ class Metagame:
         tentative_norms = Writer.load_pickled_object('norms.txt')
         if tentative_norms is None:
             number_of_norms = 1000
-            Metagame.elo_dict = {Metagame.generate_team(): Metagame.elo_start for _ in range(number_of_norms)}
+            Model.elo_dict = {Metagame.generate_team(): Metagame.elo_start for _ in range(number_of_norms)}
             for i in range(0, 100):
-                bracket = sorted(Metagame.elo_dict, key=Metagame.elo_dict.get)
+                bracket = sorted(Model.elo_dict, key=Model.elo_dict.get)
                 if i % 10 == 0:
                     random.shuffle(bracket)
                 # pair off and battle down the line
@@ -45,19 +45,18 @@ class Metagame:
                     team1 = bracket[2 * j]
                     team2 = bracket[2 * j + 1]
                     Metagame.run_battle(team1, team2)
-            Writer.save_pickled_object(Metagame.elo_dict, 'norms.txt')
-            print(Metagame.elo_dict)
+            Writer.save_pickled_object(Model.elo_dict, 'norms.txt')
         else:
-            Metagame.elo_dict = tentative_norms
+            Model.elo_dict = tentative_norms
 
     @staticmethod
     def run_battle(team1, team2):
         winner = Damage.battle(team1, team2)
-        elo1 = Metagame.elo_dict[team1]
-        elo2 = Metagame.elo_dict[team2]
+        elo1 = Model.elo_dict[team1]
+        elo2 = Model.elo_dict[team2]
         team1_winner = winner == team1
-        Metagame.elo_dict[team1] = Elo.update_elo(elo1, elo2, team1_winner)
-        Metagame.elo_dict[team2] = Elo.update_elo(elo2, elo1, not team1_winner)
+        Model.elo_dict[team1] = Elo.update_elo(elo1, elo2, team1_winner)
+        Model.elo_dict[team2] = Elo.update_elo(elo2, elo1, not team1_winner)
 
 
 class Elo:

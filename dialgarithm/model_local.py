@@ -21,11 +21,17 @@ class Model:
     counters_dict = None
     mutation_dict = {}
     damage_cache = None
+    elo_dict = None
     # attack_cache = None
     # switch_cache = {}
 
     # hyperparameters
-    mutation_prob = 0.1
+    mutation_prob = 0.02 # TODO: deprecate
+    starting_mutation_rate = 0.02
+    mutation_delta = 0
+    population_size = 1 #100
+    num_generations = 1 #25
+    matches = 10
 
     # outputs
     metagame = None
