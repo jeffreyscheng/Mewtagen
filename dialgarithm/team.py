@@ -9,17 +9,23 @@ import time
 
 class SubTeam(ABC):
     @abstractmethod
-    def mutate(self):
-        pass
+    def __init__(self):
+        self.members = None
 
+    @staticmethod
     @abstractmethod
-    def crossover(self):
+    def reproduce(team1, team2):
         pass
 
+    def check_unique(self):
+        return len(self.members) == len(set([mon.pokemon.dex_name for mon in self.members]))
 
-class Suggestion:
-    def __init__(self, list_of_pokemon):
-        self.members = list_of_pokemon
+
+class Suggestion(SubTeam):
+
+    def __init__(self, list_of_members):
+        super().__init__()
+        self.members = list_of_members
 
     # still need to check mutation for uniques -- refactor as function
     def mutate(self):
@@ -30,22 +36,28 @@ class Suggestion:
         return ', '.join([mon.name for mon in self.members])
 
     @staticmethod
-    def crossover(sub1, sub2):
+    def reproduce(sub1, sub2):
+        # crossover
         length = len(sub1.members)
         intersection = [mon for mon in sub1.members if mon in sub2.members]
         union = sub1.members + sub2.members
         diff = union - intersection
         remaining = np.random.choice(diff, length - len(intersection))
-        attempt = intersection + remaining
-        if len(set([mon.pokemon.dex_name for mon in attempt])) == length:
-            return Suggestion(attempt)
+        attempt = Suggestion(intersection + remaining)
+
+        # mutation
+        attempt.mutate()
+        if attempt.check_unique():
+            return attempt
         else:
-            return Suggestion.crossover(sub1, sub2)
+            return Suggestion.reproduce(sub1, sub2)
 
 
-class Core:
-    def __init__(self, list_of_pokemon):
-        self.members = list_of_pokemon
+class Core(SubTeam):
+
+    def __init__(self, list_of_members):
+        super().__init__()
+        self.members = list_of_members
 
     def mutate(self):
         def mutate_single(index):
@@ -59,20 +71,23 @@ class Core:
         return ', '.join([mon.name for mon in self.members])
 
     @staticmethod
-    def crossover(sub1, sub2):
+    def reproduce(sub1, sub2):
         length = len(sub1.members)
         if length > 0:
             point = random.randint(0, length - 1)
         else:
             point = 0
-        new_members = sub1.members[0:point] + sub2.members[point:length]
-        if len(new_members) != length:
-            raise ValueError("chromosome length grew!")
-        return Core(new_members)
+        attempt = Core(sub1.members[0:point] + sub2.members[point:length])
+        attempt.mutate()
+        if attempt.check_unique():
+            return attempt
+        else:
+            return Core.reproduce(sub1, sub2)
 
 
-class Team:
+class Team(SubTeam):
     def __init__(self, core, suggestions):
+        super().__init__()
         self.core = core
         self.suggestions = suggestions
         self.members = core.members + self.suggestions.members
@@ -148,14 +163,13 @@ class Team:
 
     @staticmethod
     def reproduce(team1, team2):
-        # TODO: defensively check cores
-        new_core = Core.crossover(team1.core, team2.core)
-        new_core.mutate()
-        new_suggestion = Suggestion.crossover(team1.suggestions, team2.suggestions)
-        new_suggestion.mutate()
-        if len(team1.core.members) + len(new_suggestion.members) != 6:
-            raise ValueError("Team with bad member count!")
-        return Team(team1.core, new_suggestion)
+        new_core = Core.reproduce(team1.core, team2.core)
+        new_suggestion = Suggestion.reproduce(team1.suggestions, team2.suggestions)
+        attempt = Team(new_core, new_suggestion)
+        if attempt.check_unique():
+            return attempt
+        else:
+            return Team.reproduce(team1, team2)
 
     def __str__(self):
         return ', '.join([mon.name for mon in self.battler])

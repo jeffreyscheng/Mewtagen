@@ -7,7 +7,7 @@ from .Writer import *
 
 
 class UsageReader:
-    updating = True
+    updating = False
 
     # TODO: GET METAS FUNCTIOn FOR PRECOMPUTATION
 

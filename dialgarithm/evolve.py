@@ -5,6 +5,9 @@ import math
 
 
 class Evolve:
+    battle_time = 0
+    reproduction_time = 0
+
     population = []
     fitness_dict = {}
     starting_elo = 1000
@@ -12,17 +15,20 @@ class Evolve:
     @staticmethod
     def evolve():
         tick = time.clock()
-        print("GENERATING TEAMS!")
+        print("GENERATING INITIAL TEAMS!")
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Model.population_size)]
         for generation in range(0, Model.num_generations):
             Model.mutation_prob = max(0, Model.starting_mutation_rate + generation * Model.mutation_delta)
             Evolve.next_generation()
         Evolve.final_evaluation()
-        print(time.clock() - tick)
+        print("TOTAL TIME IN EVOLUTION:", time.clock() - tick)
+        print("BATTLE TIME:", Evolve.battle_time)
+        print("REPRODUCTION TIME:", Evolve.reproduction_time)
 
     @staticmethod
     def next_generation():
 
+        tack = time.clock()
         # grab |matches| sample of norms
         norm_choices = [key for key in Model.elo_dict]
         norms = np.random.choice(norm_choices, Model.matches)
@@ -36,12 +42,9 @@ class Evolve:
                 elo = Elo.update_elo(elo, norm_elo, winner)
             return Elo.win_prob(elo)
 
-        tick = time.clock()
         Evolve.fitness_dict = {team: fitness(team) for team in Evolve.population}
-        tock = time.clock()
-        print(len(norms) * Model.population_size, "battles completed in:", tock - tick, "seconds.")
-
-        # damage - 1800, switch - 1000
+        tick = time.clock()
+        Evolve.battle_time += tick - tack
 
         choices = [key for key in Evolve.fitness_dict]
         weights = [Evolve.fitness_dict[key] for key in Evolve.fitness_dict]
@@ -55,6 +58,8 @@ class Evolve:
         elites = Evolve.get_elites()
         mutants = [get_newborn() for _ in range(0, Model.population_size - len(elites))]
         Evolve.population = elites + mutants
+        tock = time.clock()
+        Evolve.reproduction_time += tock - tick
 
     @staticmethod
     def get_elites():
@@ -82,6 +87,7 @@ class Evolve:
         elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         for team in elites:
             Evolve.fitness_dict[team] = precise_fitness(team, 200)
+            print("EVOLUTION OUTPUT:")
             print(team, Evolve.fitness_dict[team])
 
     @staticmethod
