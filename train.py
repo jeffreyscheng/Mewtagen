@@ -201,8 +201,7 @@ class Bayes:
         return xp, yp
 
 
-target_time = 10 * 60  # change to 20-24 hours
-time_per_attempt = 5 * 60
-num_attempts = math.floor(target_time / time_per_attempt)
-param_bounds = np.array([[0, 1000], [0, 1000], [0, 0.2], [-0.05, 0.05]])
+training_time = 60
+num_attempts = math.floor(training_time / Model.evolution_time)
+param_bounds = np.array([[0, 10], [0, 10], [0, 0.2], [-0.05, 0.05]])
 Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)

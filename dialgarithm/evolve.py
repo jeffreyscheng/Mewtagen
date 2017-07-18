@@ -81,7 +81,7 @@ class Evolve:
         Evolve.fitness_dict = {team: precise_fitness(team, 50) for team in Evolve.population}
         elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         for team in elites:
-            Evolve.fitness_dict[elites] = precise_fitness(team, 200)
+            Evolve.fitness_dict[team] = precise_fitness(team, 200)
             print(team, Evolve.fitness_dict[team])
 
     @staticmethod

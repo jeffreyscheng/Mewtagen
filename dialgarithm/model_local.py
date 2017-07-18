@@ -1,7 +1,11 @@
 from .dex import *
 import math
 
+
 class Model:
+    # constants
+    time_per_battle = 20 / 1000  # from EC2 instance and personal laptop
+    evolution_time = 20
 
     # ids
     date = None
@@ -69,16 +73,14 @@ class Model:
 
     @staticmethod
     def set_hyperparameters(population_size, matches, smr, delta):
-        time_per_battle = 20 / 1000  # from EC2 instance and personal laptop
-        target_time = 5 * 60
         Model.population_size = math.floor(population_size)
         Model.matches = math.floor(matches)
         Model.starting_mutation_rate = smr
         Model.mutation_delta = delta
         # time_for_final_evaluation = time_per_battle * population_size * max(25.0, 2 * matches)
-        # time_for_evolution = Bayes.target_time - time_for_final_evaluation
+        # time_for_evolution = Bayes.evolution_time - time_for_final_evaluation
         if population_size <= 0 or matches <= 0 or smr <= 0:
             raise ValueError("Negative hyperparameter!")
         else:
-            time_per_generation = population_size * matches * time_per_battle
-            Model.num_generations = math.floor(target_time / time_per_generation)
+            time_per_generation = population_size * matches * Model.time_per_battle
+            Model.num_generations = math.floor(Model.evolution_time / time_per_generation)

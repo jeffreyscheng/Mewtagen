@@ -21,6 +21,7 @@ class Suggestion:
     def __init__(self, list_of_pokemon):
         self.members = list_of_pokemon
 
+    # still need to check mutation for uniques -- refactor as function
     def mutate(self):
         self.members = [mon.mutate() for mon in self.members]
         random.shuffle(self.members)
@@ -31,11 +32,15 @@ class Suggestion:
     @staticmethod
     def crossover(sub1, sub2):
         length = len(sub1.members)
-        point = random.randint(0, length - 1)
-        new_members = sub1.members[0:point] + sub2.members[point:length]
-        if len(new_members) != length:
-            raise ValueError("chromosome length grew!")
-        return Suggestion(new_members)
+        intersection = [mon for mon in sub1.members if mon in sub2.members]
+        union = sub1.members + sub2.members
+        diff = union - intersection
+        remaining = np.random.choice(diff, length - len(intersection))
+        attempt = intersection + remaining
+        if len(set([mon.pokemon.dex_name for mon in attempt])) == length:
+            return Suggestion(attempt)
+        else:
+            return Suggestion.crossover(sub1, sub2)
 
 
 class Core:
