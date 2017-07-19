@@ -87,12 +87,12 @@ class Evolve:
         elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
         for team in elites:
             Evolve.fitness_dict[team] = precise_fitness(team, 200)
-            print("EVOLUTION OUTPUT:")
-            print(team, Evolve.fitness_dict[team])
 
     @staticmethod
     def get_best():
         maximum = max(Evolve.fitness_dict, key=Evolve.fitness_dict.get)
+        print("EVOLUTION OUTPUT:")
+        print(maximum, Evolve.fitness_dict[maximum])
         return Evolve.fitness_dict[maximum]
 
     @staticmethod

@@ -41,9 +41,13 @@ class Suggestion(SubTeam):
         length = len(sub1.members)
         intersection = [mon for mon in sub1.members if mon in sub2.members]
         union = sub1.members + sub2.members
-        diff = union - intersection
-        remaining = np.random.choice(diff, length - len(intersection))
-        attempt = Suggestion(intersection + remaining)
+        diff = [member for member in union if member not in intersection]
+        if len(diff) == 0:
+            remaining = []
+        else:
+            remaining = list(np.random.choice(diff, length - len(intersection)))
+        new_members = intersection + remaining
+        attempt = Suggestion(new_members)
 
         # mutation
         attempt.mutate()

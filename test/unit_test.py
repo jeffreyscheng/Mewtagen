@@ -1,16 +1,18 @@
 import unittest
 from dialgarithm.moveset import *
 from dialgarithm.evolve import *
+from dialgarithm.dialgarithm import *
 
 
 class UnitTests(unittest.TestCase):
     def setUp(self):
-        pass
+        setup_without_user_input()
 
     # sort by id
     def test_mega_altaria(self):
         """ tests that Mega-Altaria's underlying Pokemon is the Mega"""
-        altaria = Moveset.get_moveset_by_name('Altaria-Mega_<insert>')
+        print([mon.name for mon in Model.moveset_list if mon.pokemon.unique_name == "Altaria-Mega"])
+        altaria = Moveset.get_moveset_by_name('Altaria-Mega_Dragon Dance')
         type_names = [types.name for types in altaria.pokemon.types]
         expected = ['Dragon', 'Fairy']
         union = type_names + expected

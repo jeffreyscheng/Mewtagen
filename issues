@@ -1,9 +1,10 @@
+1) precompute switch damages (attacker, switcher, defender): damage
 2) unit test on altaria-mega's stats and type (testing)
 3) implement bayesian-optimization: run 5 times, then take median for every run (testing)
 4) run on EC2
 5) during run, work on getting average battle time down to 10/1000 (diagnosing)
 6) function to precompute damage/mutations for every folder
-7) check legality of team -- if illegal, just mutate again (testing)
+7) check legality of team -- if illegal, just mutate again (done, write unit test)
 
 build component parts: find similar movesets (literal mutation)
 dog breeder: given a single team, mutate into better team?
