@@ -25,8 +25,8 @@ class Bayes:
             output()
             return Evolve.get_best()
 
-        attempts = sorted([run_attempt() for _ in range(0, 5)])
-        return attempts[2]
+        attempts = sorted([run_attempt() for _ in range(0, 1)])
+        return attempts[0]
 
     """
     Bayesian optimisation of loss functions.
@@ -182,12 +182,17 @@ class Bayes:
                 next_sample = Bayes.sample_next_hyperparameter(Bayes.expected_improvement, model, yp,
                                                                greater_is_better=True, bounds=bounds, n_restarts=100)
 
+            print(x_list)
+            shifted_x_list = np.abs(x_list - xp)
+            print(shifted_x_list)
+            print(np.any(shifted_x_list))
+            print("HERE")
             # Duplicates will break the GP. In case of a duplicate, we will randomly sample a next query point.
-            if np.any(x_list, np.abs(next_sample - xp) <= epsilon):
+            if np.any(shifted_x_list):
                 next_sample = np.random.uniform(bounds[:, 0], bounds[:, 1], bounds.shape[0])
 
             # Sample loss for new set of parameters
-            cv_score = sample_loss(next_sample)
+            cv_score = sample_loss(*next_sample)
 
             # Update lists
             x_list.append(next_sample)
@@ -198,10 +203,13 @@ class Bayes:
             yp = np.array(y_list)
         print("Optimized:")
         print(xp)
-        return xp, yp
+        print(yp)
+        pair = xp, yp  # just a list of hyperparameter sets and their results
+        return pair
 
 
-training_time = 60
+training_time = 12 * 3600
 num_attempts = math.floor(training_time / Model.evolution_time)
-param_bounds = np.array([[0, 10], [0, 10], [0, 0.2], [-0.05, 0.05]])
-Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
+param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
+training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
+Writer.save_pickled_object(training_result, "train.txt")

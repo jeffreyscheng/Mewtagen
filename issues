@@ -1,4 +1,6 @@
 1) precompute switch damages (attacker, switcher, defender): damage
+    but only do for possible combos
+    for attacker, switcher not in counters, defender in counters
 2) unit test on altaria-mega's stats and type (testing)
 3) implement bayesian-optimization: run 5 times, then take median for every run (testing)
 4) run on EC2

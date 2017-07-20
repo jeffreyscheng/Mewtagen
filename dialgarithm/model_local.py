@@ -5,7 +5,7 @@ import math
 class Model:
     # constants
     time_per_battle = 20 / 1000  # from EC2 instance and personal laptop
-    evolution_time = 20
+    evolution_time = 5 * 60
 
     # ids
     date = None
@@ -79,8 +79,8 @@ class Model:
         Model.mutation_delta = delta
         # time_for_final_evaluation = time_per_battle * population_size * max(25.0, 2 * matches)
         # time_for_evolution = Bayes.evolution_time - time_for_final_evaluation
-        if population_size <= 0 or matches <= 0 or smr <= 0:
-            raise ValueError("Negative hyperparameter!")
+        if population_size <= 1 or matches <= 1 or smr <= 0:
+            raise ValueError("Bad hyperparameter!")
         else:
             time_per_generation = population_size * matches * Model.time_per_battle
             Model.num_generations = math.floor(Model.evolution_time / time_per_generation)
