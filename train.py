@@ -1,4 +1,3 @@
-from dialgarithm.evolve import *
 from dialgarithm.dialgarithm import *
 import numpy as np
 import sklearn.gaussian_process as gp
@@ -208,7 +207,7 @@ class Bayes:
         return pair
 
 
-training_time = 18 * 3600
+training_time = 3600
 num_attempts = math.floor(training_time / Model.evolution_time)
 param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
 training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
