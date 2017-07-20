@@ -77,10 +77,10 @@ class Model:
         Model.matches = math.floor(matches)
         Model.starting_mutation_rate = smr
         Model.mutation_delta = delta
-        # time_for_final_evaluation = time_per_battle * population_size * max(25.0, 2 * matches)
-        # time_for_evolution = Bayes.evolution_time - time_for_final_evaluation
+        time_for_final_evaluation = Model.time_per_battle * population_size * 50 + 10 * 200 * Model.time_per_battle
+        time_for_evolution = Model.evolution_time - time_for_final_evaluation
         if population_size <= 1 or matches <= 1 or smr <= 0:
             raise ValueError("Bad hyperparameter!")
         else:
             time_per_generation = population_size * matches * Model.time_per_battle
-            Model.num_generations = math.floor(Model.evolution_time / time_per_generation)
+            Model.num_generations = math.floor(time_for_evolution / time_per_generation)
