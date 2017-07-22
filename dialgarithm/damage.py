@@ -93,8 +93,8 @@ class Damage:
 
     @staticmethod
     def deal_damage(attacker, defender):
-        if Model.damage_cache is not None:
-            tuple_key = attacker.name, defender.name
+        tuple_key = attacker.name, defender.name
+        if tuple_key in Model.damage_cache:
             return Model.damage_cache[tuple_key]
         else:
             damage_list = [Damage.move_damage(attacker,
@@ -106,8 +106,8 @@ class Damage:
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
-        if Model.switch_cache is not None:
-            tuple_key = attacker.name, switcher.name, defender.name
+        tuple_key = attacker.name, switcher.name, defender.name
+        if tuple_key in Model.switch_cache:
             return Model.switch_cache[tuple_key]
         else:
             m_dict = Model.dex.move_dict
