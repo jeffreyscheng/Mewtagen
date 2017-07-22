@@ -80,8 +80,7 @@ class Model:
         Model.mutation_delta = delta
         time_for_final_evaluation = Model.time_per_battle * population_size * 50 + 10 * 200 * Model.time_per_battle
         time_for_evolution = Model.evolution_time - time_for_final_evaluation
-        if population_size <= 1 or matches <= 1 or smr <= 0:
+        time_per_generation = population_size * matches * Model.time_per_battle
+        Model.num_generations = math.floor(time_for_evolution / time_per_generation)
+        if Model.population_size < 1 or Model.matches < 1 or Model.starting_mutation_rate < 0 or Model.starting_mutation_rate + Model.mutation_delta * Model.num_generations < 0:
             raise ValueError("Bad hyperparameter!")
-        else:
-            time_per_generation = population_size * matches * Model.time_per_battle
-            Model.num_generations = math.floor(time_for_evolution / time_per_generation)

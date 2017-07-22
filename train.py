@@ -9,7 +9,10 @@ class Bayes:
     @staticmethod
     def run_parameter_set(population_size, matches, starting_mutation_rate, mutation_delta):
         print("Running parameter set")
-        Model.set_hyperparameters(population_size, matches, starting_mutation_rate, mutation_delta)
+        try:
+            Model.set_hyperparameters(population_size, matches, starting_mutation_rate, mutation_delta)
+        except ValueError:
+            return 0
         if Model.num_generations <= 0:
             print("Trivial zero")
             return 0
@@ -182,9 +185,6 @@ class Bayes:
 
             print(x_list)
             shifted_x_list = np.abs(x_list - xp)
-            print(shifted_x_list)
-            print(np.any(shifted_x_list))
-            print("HERE")
             # Duplicates will break the GP. In case of a duplicate, we will randomly sample a next query point.
             if np.any(shifted_x_list):
                 next_sample = np.random.uniform(bounds[:, 0], bounds[:, 1], bounds.shape[0])
