@@ -25,8 +25,7 @@ class Model:
     counters_dict = None
     mutation_dict = {}
     switch_cache = {}
-    damage_cache = None
-    switch_cache = None
+    damage_cache = {}
     elo_dict = None
 
     # hyperparameters
