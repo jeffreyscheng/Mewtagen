@@ -79,12 +79,15 @@ class Damage:
             print("Caching switch...")
             tentative_cache = {}
             for attacker in Model.moveset_list:
+                tick = time.clock()
+                print(attacker.name)
                 switchers = [mon for mon in Model.moveset_list if mon not in Model.counters_dict[attacker]]
                 defenders = [mon for mon in Model.moveset_list if mon in Model.counters_dict[attacker]]
                 for switcher in switchers:
                     for defender in defenders:
                         key = attacker.name, switcher.name, defender.name
                         tentative_cache[key] = Damage.get_damage_switch(attacker, switcher, defender)
+                print(time.clock() - tick)
             print("Switches took", time.clock() - tick)
         Model.switch_cache = tentative_cache
 
