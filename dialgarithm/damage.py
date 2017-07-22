@@ -60,12 +60,6 @@ class Damage:
     def read_damage_cache():
         tentative_cache = Writer.load_pickled_object('damage.txt')
         if tentative_cache is None:
-            # n = len(Model.moveset_list)
-            # arr = np.zeros((n, n))
-            # arr[:] = np.nan
-            # Model.damage_cache =\
-            #     pd.DataFrame(data=arr, index=Model.moveset_dict.keys(),
-            #                  columns=Model.moveset_dict.keys())
             tick = time.clock()
             print("Caching damage...")
             tentative_cache = {}
@@ -100,7 +94,6 @@ class Damage:
             tuple_key = attacker.name, defender.name
             return Model.damage_cache[tuple_key]
         else:
-            tick = time.clock()
             damage_list = [Damage.move_damage(attacker,
                                               defender,
                                               Model.dex.move_dict[move])

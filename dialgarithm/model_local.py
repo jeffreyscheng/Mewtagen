@@ -26,6 +26,7 @@ class Model:
     mutation_dict = {}
     switch_cache = {}
     damage_cache = None
+    switch_cache = None
     elo_dict = None
 
     # hyperparameters
