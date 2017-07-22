@@ -38,8 +38,8 @@ class Writer:
     def save_csv_object(obj, filename, path=None):
         print("LOL")
         path = Writer.check_path(path)
-        if not os.path.exists("/" + path):
-            os.makedirs("/" + path)
+        if not os.path.exists(path):
+            os.makedirs(path)
         full_filename = path + filename
         os.makedirs(os.path.dirname(full_filename), exist_ok=True)
         obj.to_csv(full_filename)
