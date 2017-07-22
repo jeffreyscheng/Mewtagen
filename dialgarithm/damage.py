@@ -11,6 +11,7 @@ class Damage:
         Damage.read_damage_cache()
         Damage.get_all_counters()
         Damage.get_mutations()
+        Damage.read_switch_cache()
         # Damage.get_switches()
         # Damage.get_attack()
 
@@ -77,6 +78,23 @@ class Damage:
         Model.damage_cache = tentative_cache
 
     @staticmethod
+    def read_switch_cache():
+        tentative_cache = Writer.load_pickled_object('switch.txt')
+        if tentative_cache is None:
+            tick = time.clock()
+            print("Caching switch...")
+            tentative_cache = {}
+            for attacker in Model.moveset_list:
+                switchers = [mon for mon in Model.moveset_list if mon not in Model.counters_dict[attacker]]
+                defenders = [mon for mon in Model.moveset_list if mon in Model.counters_dict[attacker]]
+                for switcher in switchers:
+                    for defender in defenders:
+                        key = attacker.name, switcher.name, defender.name
+                        tentative_cache[key] = Damage.get_damage_switch(attacker, switcher, defender)
+            print("Switches took", time.clock() - tick)
+        Model.switch_cache = tentative_cache
+
+    @staticmethod
     def deal_damage(attacker, defender):
         if Model.damage_cache is not None:
             tuple_key = attacker.name, defender.name
@@ -92,14 +110,18 @@ class Damage:
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
-        m_dict = Model.dex.move_dict
-        damage_dict = {m_dict[move]: Damage.move_damage(attacker,
-                                                        switcher,
-                                                        m_dict[move])
-                       for move in attacker.moves}
-        best_move = max(damage_dict, key=damage_dict.get)
-        damage = Damage.move_damage(attacker, defender, best_move)
-        return damage
+        if Model.switch_cache is not None:
+            tuple_key = attacker.name, switcher.name, defender.name
+            return Model.switch_cache[tuple_key]
+        else:
+            m_dict = Model.dex.move_dict
+            damage_dict = {m_dict[move]: Damage.move_damage(attacker,
+                                                            switcher,
+                                                            m_dict[move])
+                           for move in attacker.moves}
+            best_move = max(damage_dict, key=damage_dict.get)
+            damage = Damage.move_damage(attacker, defender, best_move)
+            return damage
 
     # @staticmethod
     # def get_weighted_switch_damage(outgoing, victim):

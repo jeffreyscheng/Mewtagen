@@ -24,6 +24,7 @@ class Model:
     usage_dict = None
     counters_dict = None
     mutation_dict = {}
+    switch_cache = {}
     damage_cache = None
     elo_dict = None
 
