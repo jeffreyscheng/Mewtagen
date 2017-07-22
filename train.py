@@ -19,7 +19,6 @@ class Bayes:
 
         def run_attempt():
             print("Running attempt")
-            setup_without_user_input()
             evolve()
             output()
             return Evolve.get_best()
@@ -207,7 +206,8 @@ class Bayes:
         return pair
 
 
-training_time = 3600
+setup_without_user_input()
+training_time = 3600 * 10
 num_attempts = math.floor(training_time / Model.evolution_time)
 param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
 training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
