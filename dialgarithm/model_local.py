@@ -3,6 +3,7 @@ import math
 
 
 class Model:
+    # this has been running: 12.0038711684 27.0861221799 0.146702094589 0.0454514591832
     # constants
     time_per_battle = 20 / 1000  # from EC2 instance and personal laptop
     evolution_time = 5 * 60
@@ -24,7 +25,8 @@ class Model:
     usage_dict = None
     counters_dict = None
     mutation_dict = {}
-    switch_cache = {}
+    move_cache = None
+    switch_cache = None
     damage_cache = {}
     elo_dict = None
 

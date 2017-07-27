@@ -15,46 +15,25 @@ class Damage:
         # Damage.get_switches()
         # Damage.get_attack()
 
-    @staticmethod
-    def end():
-        # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
-        # Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
-        # Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
-        # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
-        pass
+    # @staticmethod
+    # def end():
+    #     # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
+    #     # Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
+    #     # Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
+    #     # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
+    #     pass
 
     @staticmethod
     def get_all_counters():
         tentative_counters = Writer.load_pickled_object('counters.txt')
         if tentative_counters is None:
-            Model.counters_dict =\
+            Model.counters_dict = \
                 {moveset: Damage.get_counters_of_moveset(moveset)
                  for moveset in Model.moveset_list}
             Writer.save_pickled_object(Model.counters_dict,
                                        'counters.txt')
         else:
             Model.counters_dict = tentative_counters
-
-    @staticmethod
-    def get_switches():
-        tentative_switches = Writer.load_csv_object('switch.csv')
-        if tentative_switches is None:
-            n = len(Model.moveset_list)
-            arr = np.zeros((n, n))
-            arr[:] = np.nan
-            Model.switch_cache =\
-                pd.DataFrame(data=arr, index=Model.moveset_dict.keys(),
-                             columns=Model.moveset_dict.keys())
-        else:
-            Model.switch_cache = tentative_switches
-
-    @staticmethod
-    def get_attack():
-        tentative_attack = Writer.load_pickled_object('attack.txt')
-        if tentative_attack is None:
-            Model.attack_cache = {}
-        else:
-            Model.attack_cache = tentative_attack
 
     @staticmethod
     def read_damage_cache():
@@ -72,8 +51,36 @@ class Damage:
         Model.damage_cache = tentative_cache
 
     @staticmethod
+    def read_move_cache():
+        tentative_cache = Writer.load_pickled_object('move_cache.txt')
+        if tentative_cache is None:
+            tentative_cache = {}
+            tick = time.clock()
+            print("Caching moves...")
+
+            def get_best_move(attack_mon, switch_mon):
+                m_dict = Model.dex.move_dict
+                damage_dict = {m_dict[move]: Damage.move_damage(attack_mon,
+                                                                switch_mon,
+                                                                m_dict[move])
+                               for move in attack_mon.movess}
+                return max(damage_dict, key=damage_dict.get)
+
+            for attacker in Model.moveset_list:
+                tick = time.clock()
+                print(attacker.name)
+                switchers = [mon for mon in Model.moveset_list if attacker in Model.counters_dict[mon]]
+                for switcher in switchers:
+                    key = attacker.name, switcher.name
+                    tentative_cache[key] = get_best_move(attacker, switcher)
+                print(time.clock() - tick)
+            print("Moves took", time.clock() - tick)
+            Writer.save_pickled_object(tentative_cache, 'move_cache.txt')
+        Model.move_cache = tentative_cache
+
+    @staticmethod
     def read_switch_cache():
-        tentative_cache = Writer.load_pickled_object('switch.txt')
+        tentative_cache = Writer.load_pickled_object('switch_cache.txt')
         if tentative_cache is None:
             tentative_cache = {}
             tick = time.clock()
@@ -81,15 +88,15 @@ class Damage:
             for attacker in Model.moveset_list:
                 tick = time.clock()
                 print(attacker.name)
-                switchers = [mon for mon in Model.moveset_list if attacker in Model.counters_dict[mon]]
                 defenders = [mon for mon in Model.moveset_list if attacker not in Model.counters_dict[mon]]
-                for switcher in switchers:
+                for move in attacker.moves:
                     for defender in defenders:
-                        key = attacker.name, switcher.name, defender.name
-                        tentative_cache[key] = Damage.get_damage_switch(attacker, switcher, defender)
+                        key = attacker.name, move, defender.name
+                        tentative_cache[key] = Damage.move_damage(attacker, defender, move)
                 print(time.clock() - tick)
-                print(len(switchers), len(defenders))
+                print(len(defenders), 'defenders')
             print("Switches took", time.clock() - tick)
+            Writer.save_pickled_object(tentative_cache, 'switch_cache.txt')
         Model.switch_cache = tentative_cache
 
     @staticmethod
@@ -107,18 +114,8 @@ class Damage:
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
-        tuple_key = attacker.name, switcher.name, defender.name
-        if tuple_key in Model.switch_cache:
-            return Model.switch_cache[tuple_key]
-        else:
-            m_dict = Model.dex.move_dict
-            damage_dict = {m_dict[move]: Damage.move_damage(attacker,
-                                                            switcher,
-                                                            m_dict[move])
-                           for move in attacker.moves}
-            best_move = max(damage_dict, key=damage_dict.get)
-            damage = Damage.move_damage(attacker, defender, best_move)
-            return damage
+        move = Model.move_cache[attacker.name, switcher.name]
+        return Model.switch_cache[attacker.name, move, defender.name]
 
     # @staticmethod
     # def get_weighted_switch_damage(outgoing, victim):
@@ -201,7 +198,7 @@ class Damage:
                 defender_def = defender.spd_stat
         special_factors = coefficient * move.accuracy / 100.0 * stab
         power_factors = attacker_atk / defender_def * move.base_power
-        damage = (42 * power_factors / 50 + 2) * special_factors * 0.925 # .925 = avg rand
+        damage = (42 * power_factors / 50 + 2) * special_factors * 0.925  # .925 = avg rand
         return damage / defender.hp_stat
 
     @staticmethod
@@ -264,7 +261,7 @@ class Damage:
                                                                 team1.current))
                         # Writer.log("Team 2's", team2.current.name, "survives and attacks", team1.current.name,
                         #            "second for", str(Damage.deal_damage(team2.current, team1.current)), "damage.")
-                    # else:
+                        # else:
                         # Writer.log("Team 2's", team2.current.name, "fainted.")
                 else:
                     # Writer.log("Team 2's", team2.current.name, "attacks", team1.current.name, "first for",
@@ -276,9 +273,8 @@ class Damage:
                         #            "second for", str(Damage.deal_damage(team1.current, team2.current)), "damage.")
                         team2.damage_current(Damage.deal_damage(team1.current,
                                                                 team2.current))
-                    # else:
+                        # else:
                         # Writer.log("Team 1's", team1.current.name, "fainted.")
-
 
             # Case 1: both stay
             if (not bool_1_counters_2) and (not bool_2_counters_1):
