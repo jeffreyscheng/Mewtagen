@@ -8,20 +8,19 @@ import random
 class Damage:
     @staticmethod
     def start():
-        Damage.read_damage_cache()
+        # Damage.read_damage_cache()
         Damage.get_all_counters()
         Damage.get_mutations()
         # Damage.read_switch_cache()
         # Damage.get_switches()
         # Damage.get_attack()
-
-    # @staticmethod
-    # def end():
-    #     # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
-    #     # Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
-    #     # Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
-    #     # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
-    #     pass
+        # @staticmethod
+        # def end():
+        #     # Writer.save_pickled_object(Model.attack_cache, 'attack.txt')
+        #     # Writer.save_pickled_object(Model.damage_cache, 'damage.txt')
+        #     # Writer.save_pickled_object(Model.mutation_dict, 'mutation.txt')
+        #     # Writer.save_csv_object(Model.switch_cache, 'switch.csv')
+        #     pass
 
     @staticmethod
     def get_all_counters():
@@ -101,16 +100,16 @@ class Damage:
 
     @staticmethod
     def deal_damage(attacker, defender):
-        tuple_key = attacker.name, defender.name
-        if tuple_key in Model.damage_cache:
-            return Model.damage_cache[tuple_key]
-        else:
-            damage_list = [Damage.move_damage(attacker,
-                                              defender,
-                                              Model.dex.move_dict[move])
-                           for move in attacker.moves]
-            damage = max(damage_list)
-            return damage
+        # tuple_key = attacker.name, defender.name
+        # if tuple_key in Model.damage_cache:
+        #     return Model.damage_cache[tuple_key]
+        # else:
+        damage_list = [Damage.move_damage(attacker,
+                                          defender,
+                                          Model.dex.move_dict[move])
+                       for move in attacker.moves]
+        damage = max(damage_list)
+        return damage
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
