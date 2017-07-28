@@ -124,53 +124,6 @@ class Damage:
         best = max(damage_dict, key=damage_dict.get)
         return Damage.move_damage(attacker, defender, best)
 
-    # @staticmethod
-    # def get_weighted_switch_damage(outgoing, victim):
-    #     if not np.isnan(Model.switch_cache.loc[outgoing.name, victim.name]):
-    #         return Model.switch_cache.loc[outgoing.name, victim.name]
-    #     else:
-    #         u = Model.usage_dict
-    #         c = Model.counters_dict
-    #         if outgoing == victim:
-    #             # outgoing_set = Model.moveset_dict[outgoing]
-    #             contributions = [
-    #                 (u[mon.pokemon.unique_name],
-    #                  Damage.get_damage_switch(mon, outgoing, victim))
-    #                 for mon in Model.moveset_list
-    #                 if mon not in Model.counters_dict[outgoing]]
-    #         else:
-    #             contributions = [(u[mon.pokemon.unique_name],
-    #                               Damage.get_damage_switch(mon,
-    #                                                        outgoing,
-    #                                                        victim))
-    #                              for mon in c[outgoing] if
-    #                              mon not in c[victim]]
-    #             if sum([a for a, b in contributions]) == 0:
-    #                 contributions = [
-    #                     (Model.usage_dict[mon.pokemon.unique_name],
-    #                      Damage.get_damage_switch(mon, outgoing, victim))
-    #                     for mon in Model.moveset_list]
-    #         numerator = sum([a * b for a, b in contributions])
-    #         denominator = sum([a for a, b in contributions])
-    #         weighted_damage = numerator / denominator
-    #         s = Model.switch_cache
-    #         s.loc[outgoing.name, victim.name] = weighted_damage
-    #         return weighted_damage
-    #
-    # @staticmethod
-    # def get_weighted_attack_damage(attacker_name):
-    #     attacker_set = Model.moveset_dict[attacker_name]
-    #     if attacker_name in Model.attack_cache:
-    #         return Model.attack_cache[attacker_name]
-    #     else:
-    #         u = Model.usage_dict
-    #         contributions = [(u[mon.pokemon.unique_name],
-    #                           Damage.deal_damage(attacker_set, mon))
-    #                          for mon in Model.moveset_list]
-    #         weighted_attack = sum([a * b for a, b in contributions])
-    #         Model.attack_cache[attacker_name] = weighted_attack
-    #         return weighted_attack
-
     @staticmethod
     def move_damage(attacker, defender, move):
         if move.name == 'Seismic Toss':
