@@ -17,9 +17,11 @@ class Evolve:
         tick = time.clock()
         print("GENERATING INITIAL TEAMS!")
         Evolve.population = [Metagame.generate_team(Model.core) for _ in range(0, Model.population_size)]
+        print("EVOLVING!")
         for generation in range(0, Model.num_generations):
             Model.mutation_prob = max(0, Model.starting_mutation_rate + generation * Model.mutation_delta)
             Evolve.next_generation()
+        print("ELITES!")
         Evolve.final_evaluation()
         print("TOTAL TIME IN EVOLUTION:", time.clock() - tick)
         print("BATTLE TIME:", Evolve.battle_time)

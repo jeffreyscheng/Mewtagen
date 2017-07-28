@@ -175,13 +175,13 @@ class Team(SubTeam):
         new_suggestion = Suggestion.reproduce(team1.suggestions, team2.suggestions)
         attempt = Team(new_core, new_suggestion)
         if attempt.check_unique():
+            return attempt
+        else:
             if time.clock() - Team.global_time > 10:
                 print(team1)
                 print(team2)
                 print(attempt)
                 raise ValueError("Reproduction took hella long")
-            return attempt
-        else:
             return Team.reproduce(team1, team2)
 
     def __str__(self):

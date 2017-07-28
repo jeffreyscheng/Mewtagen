@@ -36,7 +36,7 @@ def evolve():
 
 
 def output():
-    Damage.end()
+    # Damage.end()
     Evolve.write_to_file()
 
 
