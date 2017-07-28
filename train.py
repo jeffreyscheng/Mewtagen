@@ -142,23 +142,29 @@ class Bayes:
                 Precision tolerance for floats.
         """
 
-        x_list = []
-        y_list = []
+        tentative_training = Writer.load_pickled_object('train.txt')
+        if tentative_training is None:
+            x_list = []
+            y_list = []
 
-        n_params = bounds.shape[0]
+            n_params = bounds.shape[0]
 
-        if x0 is None:
-            params_array = np.random.uniform(bounds[:, 0], bounds[:, 1], (n_pre_samples, bounds.shape[0]))
-            for params in list(params_array):
-                x_list.append(params)
-                y_list.append(sample_loss(*params))
+            if x0 is None:
+                params_array = np.random.uniform(bounds[:, 0], bounds[:, 1], (n_pre_samples, bounds.shape[0]))
+                for params in list(params_array):
+                    x_list.append(params)
+                    y_list.append(sample_loss(*params))
+            else:
+                for params in x0:
+                    x_list.append(params)
+                    y_list.append(sample_loss(params))
+
+            xp = np.array(x_list)
+            yp = np.array(y_list)
         else:
-            for params in x0:
-                x_list.append(params)
-                y_list.append(sample_loss(params))
-
-        xp = np.array(x_list)
-        yp = np.array(y_list)
+            xp, yp = tentative_training
+            x_list = xp.tolist()
+            y_list = yp.tolist()
 
         # Create the GP
         if gp_params is not None:
@@ -170,7 +176,8 @@ class Bayes:
                                                 n_restarts_optimizer=10,
                                                 normalize_y=True)
 
-        for n in range(n_iters):
+        iterations = 0
+        while iterations < n_iters:
 
             model.fit(xp, yp)
 
@@ -192,6 +199,9 @@ class Bayes:
             # Sample loss for new set of parameters
             cv_score = sample_loss(*next_sample)
 
+            if cv_score > 0:
+                iterations += 1
+
             # Update lists
             x_list.append(next_sample)
             y_list.append(cv_score)
@@ -207,8 +217,8 @@ class Bayes:
 
 
 setup_without_user_input()
-# training_time = 3600 * 10
-# num_attempts = math.floor(training_time / Model.evolution_time)
-# param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
-# training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
-# Writer.save_pickled_object(training_result, "train.txt")
+training_time = 60 * 6
+num_attempts = math.floor(training_time / Model.evolution_time)
+param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
+training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
+Writer.save_pickled_object(training_result, "train.txt")

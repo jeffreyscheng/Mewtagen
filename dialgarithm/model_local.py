@@ -84,5 +84,5 @@ class Model:
         time_for_evolution = Model.evolution_time - time_for_final_evaluation
         time_per_generation = population_size * matches * Model.time_per_battle
         Model.num_generations = math.floor(time_for_evolution / time_per_generation)
-        if Model.population_size < 1 or Model.matches < 1 or Model.starting_mutation_rate < 0 or Model.starting_mutation_rate + Model.mutation_delta * Model.num_generations < 0:
+        if Model.population_size < 1 or Model.matches < 1 or Model.starting_mutation_rate < 0 or Model.num_generations < 1 or Model.starting_mutation_rate + Model.mutation_delta * Model.num_generations < 0:
             raise ValueError("Bad hyperparameter!")

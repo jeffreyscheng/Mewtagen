@@ -11,7 +11,7 @@ class Damage:
         Damage.read_damage_cache()
         Damage.get_all_counters()
         Damage.get_mutations()
-        Damage.read_switch_cache()
+        # Damage.read_switch_cache()
         # Damage.get_switches()
         # Damage.get_attack()
 
@@ -114,8 +114,15 @@ class Damage:
 
     @staticmethod
     def get_damage_switch(attacker, switcher, defender):
-        move = Model.move_cache[attacker.name, switcher.name]
-        return Model.switch_cache[attacker.name, move, defender.name]
+        # move = Model.move_cache[attacker.name, switcher.name]
+        # return Model.switch_cache[attacker.name, move, defender.name]
+        m_dict = Model.dex.move_dict
+        damage_dict = {m_dict[move]: Damage.move_damage(attack_mon,
+                                                        switch_mon,
+                                                        m_dict[move])
+                       for move in attacker.movess}
+        best = max(damage_dict, key=damage_dict.get)
+        return Damage.move_damage(attacker, defender, best)
 
     # @staticmethod
     # def get_weighted_switch_damage(outgoing, victim):
