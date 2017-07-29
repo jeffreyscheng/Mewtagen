@@ -48,6 +48,7 @@ class Evolve:
 
         Evolve.fitness_dict = {team: fitness(team) for team in Evolve.population}
         tick = time.clock()
+        print(Model.matches * Model.population_size, "battles took", tick - tack)
         Evolve.battle_time += tick - tack
 
         choices = [key for key in Evolve.fitness_dict]
