@@ -19,15 +19,10 @@ class Bayes:
         else:
             print("Nontrivial")
             print(population_size, matches, starting_mutation_rate, mutation_delta)
-
-        def run_attempt():
             print("Running attempt")
             evolve()
             output()
             return Evolve.get_best()
-
-        attempts = sorted([run_attempt() for _ in range(0, 1)])
-        return attempts[0]
 
     """
     Bayesian optimisation of loss functions.
@@ -216,9 +211,12 @@ class Bayes:
         return pair
 
 
+tick = time.clock()
 setup_without_user_input()
-training_time = 60 * 5
+training_time = 3600
 num_attempts = math.floor(training_time / Model.evolution_time)
-param_bounds = np.array([[1, 1000], [1, 50], [0, 0.2], [-0.05, 0.05]])
+param_bounds = np.array([[1, 200], [1, 50], [0, 0.2], [-0.05, 0.05]])
 training_result = Bayes.bayesian_optimisation(num_attempts, Bayes.run_parameter_set, param_bounds)
 Writer.save_pickled_object(training_result, "train.txt")
+print("EXPECTED TIME:", training_time)
+print("ACTUAL TIME:", time.clock() - tick)
