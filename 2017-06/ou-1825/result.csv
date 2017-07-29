@@ -1,179 +1,99 @@
 ,Team,Elo
-0,"Manectric-Mega_Special Attacker, Crobat_BRAVE BAT (Choice Band), Amoonguss_Pivot, Cresselia_Trick Room, Thundurus_Nasty Plot, Talonflame_Offensive Swords Dance",1254.0895865173884
-1,"Talonflame_Revenge Killer, Manectric-Mega_Special Attacker, Crobat_BRAVE BAT (Choice Band), Smeargle_Suicide Lead, Arcanine_Offensive, Cresselia_Defensive",1238.9299025982991
-2,"Amoonguss_Pivot, Weavile_All-out Attacker, Talonflame_Revenge Killer, Crobat_Support, Manectric-Mega_Special Attacker, Landorus-Therian_Choice Scarf",1349.9013697841635
-3,"Weavile_All-out Attacker, Jumpluff_Offensive Utility, Landorus-Therian_Double Dance, Manectric-Mega_Special Attacker, Porygon2_Offensive, Talonflame_Revenge Killer",1297.8945943789179
-4,"Scrafty_Dragon Dance, Thundurus_Nasty Plot, Arcanine_Defensive, Cresselia_Support, Manectric-Mega_Special Attacker, Bronzong_Special Tank",1255.8110365880486
-5,"Talonflame_Offensive Swords Dance, Arcanine_Offensive, Amoonguss_Pivot, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Bronzong_Special Tank",1292.934629185485
-6,"Arcanine_Offensive, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Amoonguss_Pivot, Bronzong_Trick Room Support, Talonflame_Revenge Killer",1301.9209991498647
-7,"Zapdos_Physically Defensive, Bronzong_Offensive Trick Room, Talonflame_Offensive Swords Dance, Landorus-Therian_Choice Scarf, Weavile_All-out Attacker, Ferrothorn_Utility",1213.3037819345327
-8,"Manectric_Special Attacker, Scrafty_Dragon Dance, Arcanine_Offensive, Cresselia_Support, Crobat_Support, Landorus-Therian_Offensive",1290.6941074826402
-9,"Arcanine_Offensive, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Amoonguss_Pivot, Cresselia_Defensive, Sceptile-Mega_Substitute",1284.2629454576938
-10,"Talonflame_Bulky Swords Dance, Amoonguss_Pivot, Manectric-Mega_Special Attacker, Arcanine_Offensive, Ferrothorn_Utility, Regigigas_Tank",1207.5822071362556
-11,"Amoonguss_Pivot, Landorus-Therian_Choice Scarf, Arcanine_Offensive, Zapdos_Physically Defensive, Raichu_All-out Attacker, Scrafty_Dragon Dance",1203.8434757768948
-12,"Talonflame_Revenge Killer, Ferrothorn_Utility, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Whimsicott_Support, Arcanine_Defensive",1169.8987032830971
-13,"Thundurus_Nasty Plot, Zapdos_Physically Defensive, Talonflame_Bulky Swords Dance, Amoonguss_Pivot, Bronzong_Offensive Trick Room, Scrafty_Dragon Dance",1169.2609018255334
-14,"Thundurus_Mixed Attacker, Arcanine_Offensive, Amoonguss_Pivot, Scrafty_Dragon Dance, Smeargle_Suicide Lead, Landorus-Therian_Double Dance",1151.1969912012237
-15,"Amoonguss_Pivot, Bronzong_Trick Room Support, Manectric-Mega_Special Attacker, Landorus-Therian_Offensive, Talonflame_Bulky Swords Dance, Arcanine_Defensive",1301.2495224198294
-16,"Bronzong_Special Tank, Magnezone_Choice Specs, Manectric_Special Attacker, Arcanine_Offensive, Ferrothorn_Utility, Thundurus_Nasty Plot",1134.6701228233073
-17,"Amoonguss_Pivot, Bronzong_Special Tank, Porygon2_Defensive, Furret_Choice Scarf, Smeargle_Lead, Talonflame_Specially Defensive",615.2064555081762
-18,"Manectric-Mega_Special Attacker, Cresselia_Defensive, Weavile_All-out Attacker, Crobat_Support, Arcanine_Offensive, Smeargle_Suicide Lead",1340.5152603898432
-19,"Manectric-Mega_Special Attacker, Crobat_Support, Arcanine_Defensive, Hitmontop_Defensive Rapid Spin, Cresselia_Defensive, Amoonguss_Pivot",1189.4668098323775
-20,"Crobat_BRAVE BAT (Choice Band), Arcanine_Defensive, Talonflame_Revenge Killer, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Amoonguss_Pivot",1296.9946463095366
-21,"Keldeo_Substitute + Calm Mind, Talonflame_Bulky Swords Dance, Octillery_Bulky Special Attacker, Zapdos_Specially Defensive, Manectric_Special Attacker, Smeargle_Suicide Lead",919.500117700615
-22,"Scizor-Mega_Bulky Swords Dance, Bronzong_Offensive Trick Room, Kingler_Agility Sweeper, Talonflame_Revenge Killer, Smeargle_Lead, Zweilous_Specially Defensive",1077.4198123714339
-23,"Thundurus_Nasty Plot, Bronzong_Special Tank, Arcanine_Defensive, Scrafty_Dragon Dance, Talonflame_Specially Defensive, Mantyke_Rain Dance",877.6540789894773
-24,"Smeargle_Suicide Lead, Cresselia_Calm Mind, Luxray_Choice Band, Manectric-Mega_Special Attacker, Ferrothorn_Utility, Magnezone_Choice Specs",1089.7170108129787
-25,"Talonflame_Specially Defensive, Scrafty_Dragon Dance, Charizard_Swords Dance, Cresselia_Calm Mind, Zapdos_Physically Defensive, Arcanine_Offensive",1039.4612427880359
-26,"Landorus-Therian_Defensive, Chatot_Choice Scarf, Amoonguss_Pivot, Roselia_Offensive Spikes, Bronzong_Trick Room Support, Smeargle_Lead",816.9414745337076
-27,"Scrafty_Dragon Dance, Cresselia_Defensive, Arcanine_Defensive, Bronzong_Special Tank, Haxorus_Double Dance, Talonflame_Offensive Swords Dance",1179.015108554077
-28,"Amoonguss_Pivot, Fletchinder_Swords Dance, Ferrothorn_Utility, Landorus-Therian_Choice Scarf, Zapdos_Physically Defensive, Weavile_All-out Attacker",1039.2965677758289
-29,"Cresselia_Defensive, Smeargle_Suicide Lead, Arcanine_Offensive, Bronzong_Offensive Trick Room, Porygon2_Offensive, Ferrothorn_Utility",931.247955023646
-30,"Ferrothorn_Utility, Scrafty_Dragon Dance, Smeargle_Suicide Lead, Weavile_All-out Attacker, Talonflame_Bulky Swords Dance, Bronzong_Defensive",648.8758091031843
-31,"Manaphy_Calm Mind, Arcanine_Defensive, Smeargle_Suicide Lead, Cresselia_Trick Room, Talonflame_Bulky Swords Dance, Scrafty_Dragon Dance",945.4854643306937
-32,"Mesprit_Substitute + Calm Mind, Roselia_Defensive, Serperior_Special Sweeper, Porygon2_Defensive, Ferrothorn_Utility, Landorus-Therian_Offensive",808.2047180996868
-33,"Rapidash_Physical Attacker, Zoroark_Mixed Attacker, Amoonguss_Pivot, Klefki_Support, Thundurus_Mixed Attacker, Arcanine_Offensive",1139.947547516417
-34,"Scrafty_Dragon Dance, Metagross-Mega_All-out Attacker, Landorus-Therian_Defensive, Arcanine_Offensive, Amoonguss_Pivot, Sceptile-Mega_Substitute",1450.8885705928042
-35,"Scrafty_Dragon Dance, Vigoroth_Bulk Up, Kecleon_Mixed Wallbreaker, Amoonguss_Pivot, Walrein_Specially Defensive, Landorus-Therian_Double Dance",715.702720305852
-36,"Cresselia_Support, Porygon2_Offensive, Amoonguss_Pivot, Talonflame_Bulky Swords Dance, Bronzong_Tank, Minccino_Choice Scarf",628.7413376114833
-37,"Arcanine_Defensive, Smeargle_Lead, Amoonguss_Pivot, Talonflame_Revenge Killer, Weavile_All-out Attacker, Bronzong_Special Tank",1026.3902094810348
-38,"Amoonguss_Pivot, Crobat_BRAVE BAT (Choice Band), Landorus-Therian_Defensive, Cresselia_Defensive, Minccino_Life Orb, Arcanine_Defensive",1056.3810035951838
-39,"Smeargle_Suicide Lead, Grumpig_Calm Mind, Talonflame_Offensive Swords Dance, Venusaur-Mega_Defensive, Manectric_Special Attacker, Scrafty_Dragon Dance",1025.3306389634195
-40,"Empoleon_Specially Defensive, Bronzong_Special Tank, Larvesta_Choice Scarf, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Metagross_Assault Vest",1021.4018537217843
-41,"Seismitoad_Defensive, Thundurus_Nasty Plot, Zapdos_Specially Defensive, Raichu_Nasty Plot, Talonflame_Revenge Killer, Suicune_Offensive",1585.2754988763443
-42,"Ferrothorn_Utility, Unown_For Reasons Unown, Camerupt_Choice Specs, Talonflame_Specially Defensive, Arcanine_Offensive, Hitmontop_Defensive Rapid Spin",851.3830038959619
-43,"Nidoqueen_Defensive Entry Hazard Setter, Magnezone_Magnet Rise, Kingdra_Rain Sweeper, Seismitoad_Defensive, Talonflame_Offensive Swords Dance, Amoonguss_Pivot",1245.0522853396596
-44,"Garchomp_Tank Chomp, Arcanine_Defensive, Talonflame_Offensive Swords Dance, Bronzong_Offensive Trick Room, Manaphy_Tail Glow + Rain Dance, Landorus-Therian_Defensive",1449.295765855319
-45,"Arcanine_Defensive, Smeargle_Lead, Cresselia_Defensive, Landorus-Therian_Double Dance, Scrafty_Dragon Dance, Druddigon_Stealth Rock Setter",1124.016796976219
-46,"Cresselia_Defensive, Talonflame_Offensive Swords Dance, Scrafty_Dragon Dance, Smeargle_Suicide Lead, Thundurus_Mixed Attacker, Raichu_All-out Attacker",1209.1396856147128
-47,"Talonflame_Bulky Swords Dance, Weavile_All-out Attacker, Thundurus_Nasty Plot, Landorus-Therian_Offensive, Amoonguss_Pivot, Bronzong_Offensive Trick Room",1068.360989919859
-48,"Talonflame_Revenge Killer, Liepard_Offensive Pivot, Landorus-Therian_Offensive, Weavile_All-out Attacker, Scrafty_Dragon Dance, Bronzong_Offensive Trick Room",1154.6374675621641
-49,"Smeargle_Lead, Klefki_Support, Manectric-Mega_Special Attacker, Ferrothorn_Utility, Weavile_All-out Attacker, Scrafty_Dragon Dance",883.6058810743966
-50,"Amoonguss_Pivot, Manectric_Special Attacker, Ferrothorn_Utility, Jirachi_SubToxic, Vivillon_Setup Sweeper, Bronzong_Trick Room Support",762.306578432528
-51,"Bronzong_Offensive Trick Room, Weavile_All-out Attacker, Altaria_Special Attacker, Smeargle_Lead, Ferrothorn_Utility, Scrafty_Dragon Dance",898.2282289898519
-52,"Arcanine_Offensive, Talonflame_Specially Defensive, Scrafty_Dragon Dance, Chesnaught_Physical Tank, Landorus-Therian_Double Dance, Thundurus_Mixed Attacker",1086.9569812696102
-53,"Arcanine_Offensive, Amoonguss_Pivot, Smeargle_Suicide Lead, Bronzong_Trick Room Support, Scrafty_Dragon Dance, Vileplume_Defensive",907.4578641233572
-54,"Smeargle_Suicide Lead, Arcanine_Offensive, Furfrou_Offensive Pivot, Amoonguss_Pivot, Scrafty_Dragon Dance, Weavile_All-out Attacker",1021.4828522732687
-55,"Ferrothorn_Utility, Scrafty_Dragon Dance, Crobat_Support, Altaria_Bulky Dragon Dance, Thundurus_Nasty Plot, Amoonguss_Pivot",930.6473821910599
-56,"Porygon2_Offensive, Smeargle_Suicide Lead, Tyrantrum_Wallbreaker, Serperior_SubSeed, Crobat_BRAVE BAT (Choice Band), Mantine_Mixed Defensive Defog",921.4737468199318
-57,"Duosion_Trick Room Attacker, Scrafty_Dragon Dance, Amoonguss_Pivot, Bronzong_Special Tank, Carvanha_Special Attacker, Smeargle_Lead",643.917280699762
-58,"Metagross-Mega_All-out Attacker, Liepard_Offensive Support, Mesprit_Offensive Stealth Rock, Espeon_Calm Mind Sweeper, Bronzong_Tank, Landorus-Therian_Defensive",871.2011505703086
-59,"Spiritomb_Offensive Support, Nidoqueen_Offensive Entry Hazard Setter, Mantyke_Rain Dance, Talonflame_Revenge Killer, Manectric_Special Attacker, Scrafty_Dragon Dance",1070.9480862053133
-60,"Amoonguss_Pivot, Bronzong_Offensive Trick Room, Arcanine_Defensive, Ferrothorn_Utility, Jirachi_Specially Defensive, Scraggy_Choice Scarf",757.4841894805185
-61,"Ferrothorn_Utility, Venusaur_Defensive, Scrafty_Dragon Dance, Arcanine_Offensive, Cresselia_Calm Mind, Porygon2_Offensive",1114.2937619476997
-62,"Amoonguss_Pivot, Scrafty_Dragon Dance, Hitmontop_Defensive Rapid Spin, Smeargle_Lead, Magnezone_Choice Scarf, Arcanine_Offensive",936.4850905146959
-63,"Liepard_Weather Support, Cresselia_Defensive, Moltres_Life Orb Attacker, Arcanine_Defensive, Infernape_Lead, Crobat_Support",1087.8620891488629
-64,"Crobat_Support, Smeargle_Lead, Amoonguss_Pivot, Scrafty_Dragon Dance, Ludicolo_Rain Dance Sweeper, Bronzong_Tank",703.6937447787393
-65,"Blastoise-Mega_Offensive Spinner, Porygon2_Offensive, Landorus-Therian_Choice Scarf, Venusaur_Chlorophyll Sweeper, Talonflame_Revenge Killer, Manectric-Mega_Special Attacker",1347.8564291047387
-66,"Scrafty_Dragon Dance, Amoonguss_Pivot, Raichu_All-out Attacker, Snivy_Sub + Berry Juice, Arcanine_Offensive, Zapdos_Physically Defensive",990.5395572052286
-67,"Amoonguss_Pivot, Talonflame_Bulky Swords Dance, Arcanine_Defensive, Scrafty_Dragon Dance, Ferrothorn_Utility, Landorus-Therian_Defensive",1015.0724335749895
-68,"Landorus-Therian_Offensive, Smeargle_Suicide Lead, Cresselia_Calm Mind, Omastar_Choice Specs, Talonflame_Revenge Killer, Lillipup_Thunder Wave Support",1019.856442674634
-69,"Talonflame_Specially Defensive, Articuno_Burd (Offensive), Amoonguss_Pivot, Smeargle_Suicide Lead, Ferrothorn_Utility, Scrafty_Dragon Dance",722.8179224184196
-70,"Thundurus-Therian_Agility, Amoonguss_Pivot, Scrafty_Dragon Dance, Ditto_Imposter, Talonflame_Offensive Swords Dance, Smeargle_Suicide Lead",955.8107034938776
-71,"Cresselia_Trick Room, Bronzong_Special Tank, Amoonguss_Pivot, Manectric-Mega_Special Attacker, Pangoro_Swords Dance, Bouffalant_Substitute",1019.2789343021294
-72,"Smeargle_Suicide Lead, Scrafty_Dragon Dance, Arcanine_Offensive, Abomasnow-Mega_Barack Aboma (Swords Dance), Crobat_Support, Cresselia_Support",941.8649609926396
-73,"Scrafty_Dragon Dance, Arcanine_Defensive, Amoonguss_Pivot, Manectric_Special Attacker, Cresselia_Trick Room, Bronzong_Trick Room Support",1078.3187003294665
-74,"Cresselia_Defensive, Landorus-Therian_Defensive, Bronzong_Special Tank, Arcanine_Defensive, Amoonguss_Pivot, Talonflame_Revenge Killer",1138.8509529641105
-75,"Zapdos_Physically Defensive, Arcanine_Offensive, Rhyperior_Defensive, Rotom-Frost_SubSplit, Talonflame_Bulky Swords Dance, Amoonguss_Pivot",1109.485893684951
-76,"Cresselia_Trick Room, Ferrothorn_Utility, Oddish_Chlorophyll Sweeper, Bronzong_Special Tank, Scrafty_Dragon Dance, Arcanine_Offensive",957.2486296478286
-77,"Amoonguss_Pivot, Landorus-Therian_Offensive, Venusaur_Chlorophyll Sweeper, Bronzong_Trick Room Support, Smeargle_Suicide Lead, Manectric-Mega_Special Attacker",1106.3227681608269
-78,"Smeargle_Suicide Lead, Clefairy_Specially Defensive, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Cresselia_Defensive, Ferrothorn_Utility",1008.1465113688689
-79,"Volcarona_Offensive Quiver Dance, Scrafty_Dragon Dance, Hitmontop_Defensive Rapid Spin, Smeargle_Lead, Thundurus_Nasty Plot, Arcanine_Defensive",1067.0599020011769
-80,"Vileplume_Offensive, Butterfree_Quiver Dance, Scrafty_Dragon Dance, Amoonguss_Pivot, Raichu_All-out Attacker, Talonflame_Offensive Swords Dance",920.3185765732595
-81,"Mandibuzz_Utility Buzzard, Bronzong_Defensive, Weavile_All-out Attacker, Thundurus_Thunder Wave + 3 Attacks, Scrafty_Dragon Dance, Venusaur-Mega_Defensive",1214.567924394917
-82,"Cresselia_Calm Mind, Talonflame_Specially Defensive, Ferrothorn_Utility, Meowth_Nasty Plot, Smeargle_Lead, Manectric-Mega_Special Attacker",728.0813908091619
-83,"Arcanine_Offensive, Floatzel_Life Orb Attacker, Serperior_SubSeed, Metagross_Offensive Stealth Rock, Cresselia_Defensive, Talonflame_Revenge Killer",1373.2113789475256
-84,"Sneasel_All-out Attacker, Bronzong_Defensive, Talonflame_Revenge Killer, Garchomp_Mixed Attacker, Crobat_Support, Amoonguss_Pivot",1119.5799748585816
-85,"Cresselia_Defensive, Ferrothorn_Utility, Metagross-Mega_Rock Polish, Porygon2_Offensive, Arcanine_Defensive, Talonflame_Offensive Swords Dance",1156.3730778552253
-86,"Zapdos_Physically Defensive, Talonflame_Revenge Killer, Cresselia_Trick Room, Scrafty_Dragon Dance, Arcanine_Offensive, Ferrothorn_Utility",1221.3379629645094
-87,"Suicune_RoarCune, Crobat_BRAVE BAT (Choice Band), Vanilluxe_All-out Attacker, Zapdos_Physically Defensive, Scrafty_Dragon Dance, Weavile_All-out Attacker",1260.4088052213617
-88,"Cresselia_Defensive, Smeargle_Lead, Talonflame_Revenge Killer, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Arcanine_Offensive",1243.5293552774497
-89,"Talonflame_Offensive Swords Dance, Crustle_Hazard Setter, Amoonguss_Pivot, Arcanine_Offensive, Chimecho_Defensive Healing Wish, Landorus-Therian_Double Dance",1156.3986243969043
-90,"Klefki_Dual Screens, Porygon2_Defensive, Thundurus_Nasty Plot, Amoonguss_Pivot, Arcanine_Offensive, Talonflame_Bulky Swords Dance",954.7327745073334
-91,"Thundurus_Mixed Attacker, Amoonguss_Pivot, Cresselia_Calm Mind, Suicune_RoarCune, Druddigon_Support, Pyroar_Special Attacker",1054.2467218445702
-92,"Ferrothorn_Utility, Metagross_Assault Vest, Thundurus_Nasty Plot, Manectric_Special Attacker, Bronzong_Tank, Jolteon_All-out Attacker",1111.579828262561
-93,"Jumpluff_Support Puff, Ferrothorn_Utility, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Smeargle_Lead",870.2605937644679
-94,"Smeargle_Lead, Cryogonal_Offensive Rapid Spinner, Porygon2_Offensive, Bronzong_Trick Room Support, Manectric_Special Attacker, Talonflame_Revenge Killer",977.3523319880297
-95,"Venusaur_Chlorophyll Sweeper, Thundurus_Thunder Wave + 3 Attacks, Amoonguss_Pivot, Scrafty_Dragon Dance, Bronzong_Defensive, Manectric-Mega_Special Attacker",1154.422325314929
-96,"Venomoth_Mono Attacker, Arcanine_Offensive, Regice_Tank, Jumpluff_Offensive Utility, Bronzong_Tank, Ferrothorn_Utility",835.0612041965271
-97,"Ferrothorn_Utility, Arcanine_Offensive, Landorus-Therian_Offensive, Smeargle_Lead, Electabuzz_Eviolite, Scrafty_Dragon Dance",981.2755990800943
-98,"Scyther_Choice Band, Regigigas_Tank, Smeargle_Suicide Lead, Ferrothorn_Utility, Thundurus_Nasty Plot, Arcanine_Defensive",1101.6291974265057
-99,"Vileplume_Defensive, Hypno_NastyPass, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Smeargle_Lead, Zapdos_Physically Defensive",917.927434289977
-100,"Cresselia_Defensive, Hitmontop_Defensive Rapid Spin, Manectric_Special Attacker, Ferrothorn_Utility, Arcanine_Defensive, Bronzong_Defensive",878.7575567075347
-101,"Scrafty_Dragon Dance, Amoonguss_Pivot, Arcanine_Defensive, Bronzong_Special Tank, Thundurus_Nasty Plot, Ferrothorn_Utility",956.7439030308957
-102,"Scrafty_Dragon Dance, Metagross_Assault Vest, Thundurus_Nasty Plot, Arcanine_Offensive, Smeargle_Suicide Lead, Shaymin_Life Orb",1123.2099636582734
-103,"Thundurus_Mixed Attacker, Ferrothorn_Utility, Amoonguss_Pivot, Huntail_Shell Smash, Forretress_Defensive Rapid Spin, Scrafty_Dragon Dance",779.6496414204369
-104,"Landorus-Therian_Choice Scarf, Arcanine_Defensive, Rotom_Spell Tag Hex, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Zapdos_Physically Defensive",1288.9982324641721
-105,"Amoonguss_Pivot, Arcanine_Offensive, Scrafty_Dragon Dance, Ferrothorn_Utility, Bronzong_Special Tank, Meloetta_Choice Scarf",958.3977965105003
-106,"Simisear_All-Out-Attacker, Thundurus_Nasty Plot, Cresselia_Calm Mind, Gyarados_Dragon Dance + Three Attacks, Arcanine_Offensive, Scrafty_Dragon Dance",1106.732216502436
-107,"Smeargle_Lead, Jumpluff_Support Puff, Arcanine_Offensive, Talonflame_Bulky Swords Dance, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker",1040.1236563988352
-108,"Thundurus_Nasty Plot, Cresselia_Trick Room, Manectric_Special Attacker, Amoonguss_Pivot, Bronzong_Special Tank, Raikou_Calm Mind",1084.5161340227721
-109,"Amoonguss_Pivot, Scrafty_Dragon Dance, Bronzong_Offensive Trick Room, Arcanine_Defensive, Musharna_Bulky Pivot, Hitmontop_Defensive Rapid Spin",892.5131050648364
-110,"Arcanine_Defensive, Thundurus_Thunder Wave + 3 Attacks, Cresselia_Support, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Bronzong_Trick Room Support",1296.3724941668102
-111,"Camerupt_Choice Specs, Porygon2_Offensive, Crobat_Support, Landorus-Therian_Offensive, Scrafty_Dragon Dance, Talonflame_Revenge Killer",1287.801598450336
-112,"Scrafty_Dragon Dance, Jumpluff_Support Puff, Manectric-Mega_Special Attacker, Ferrothorn_Utility, Talonflame_Revenge Killer, Arcanine_Defensive",1125.7747379669015
-113,"Scrafty_Dragon Dance, Kyurem_Choice Specs, Smeargle_Suicide Lead, Arcanine_Offensive, Magnezone_Magnet Rise, Amoonguss_Pivot",1176.1651158571356
-114,"Weavile_All-out Attacker, Bouffalant_Choice Band, Ferrothorn_Utility, Cresselia_Trick Room, Arcanine_Offensive, Amoonguss_Pivot",1042.215380688707
-115,"Gurdurr_Bulky Attacker, Raikou_Assault Vest, Thundurus_Nasty Plot, Amoonguss_Pivot, Ferrothorn_Utility, Bronzong_Tank",893.8493713587326
-116,"Smeargle_Lead, Talonflame_Offensive Swords Dance, Metagross-Mega_All-out Attacker, Thundurus_Thunder Wave + 3 Attacks, Arcanine_Offensive, Scrafty_Dragon Dance",1303.7978029399728
-117,"Mesprit_Weather Support, Bronzong_Defensive, Thundurus_Nasty Plot, Gallade-Mega_Swords Dance, Amoonguss_Pivot, Manectric-Mega_Special Attacker",1211.2518155724006
-118,"Ferrothorn_Utility, Landorus-Therian_Choice Scarf, Bronzong_Special Tank, Talonflame_Offensive Swords Dance, Smeargle_Lead, Grumpig_Specially Defensive",904.3544589810377
-119,"Weavile_All-out Attacker, Kyurem-Black_Mixed Wallbreaker, Landorus-Therian_Offensive, Smeargle_Lead, Scrafty_Dragon Dance, Garchomp_Swords Dance + Life Orb",1292.127849349351
-120,"Arcanine_Offensive, Clefable_Calm Mind + Magic Guard, Weavile_All-out Attacker, Thundurus_Nasty Plot, Rotom-Frost_SubWisp, Scrafty_Dragon Dance",1170.2696757263052
-121,"Smeargle_Suicide Lead, Weavile_All-out Attacker, Cresselia_Trick Room, Absol_All-Out Attacker, Scrafty_Dragon Dance, Weezing_Mixed Tank",807.5764396288122
-122,"Landorus-Therian_Choice Scarf, Sceptile_Life Orb, Amoonguss_Pivot, Scrafty_Dragon Dance, Arcanine_Offensive, Blastoise-Mega_All-out Attacker",1244.1784327102193
-123,"Throh_Phazer, Amoonguss_Pivot, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Crobat_BRAVE BAT (Choice Band), Smeargle_Suicide Lead",1123.8880503522407
-124,"Smeargle_Suicide Lead, Amoonguss_Pivot, Talonflame_Offensive Swords Dance, Bronzong_Tank, Ferrothorn_Utility, Pachirisu_Pachiraichu",732.0709623090395
-125,"Bronzong_Tank, Scrafty_Dragon Dance, Amoonguss_Pivot, Manectric-Mega_Special Attacker, Arcanine_Defensive, Cobalion_Calm Mind",1137.7620781774451
-126,"Arcanine_Offensive, Landorus-Therian_Defensive, Amoonguss_Pivot, Solrock_Sun Screen, Weavile_All-out Attacker, Lopunny-Mega_All-out Attacker",1421.43764295179
-127,"Landorus-Therian_Double Dance, Cresselia_Trick Room, Magnezone_Choice Scarf, Shellder_Revenge Killer, Arcanine_Defensive, Smeargle_Lead",867.5343899022902
-128,"Scrafty_Dragon Dance, Garchomp_Substitute + Swords Dance, Talonflame_Offensive Swords Dance, Clauncher_Pivot, Metagross-Mega_All-out Attacker, Amoonguss_Pivot",1187.461800192271
-129,"Arcanine_Offensive, Scrafty_Dragon Dance, Talonflame_Offensive Swords Dance, Amoonguss_Pivot, Manectric_Special Attacker, Aerodactyl-Mega_Pursuit Trapper",1213.734723828863
-130,"Ferrothorn_Utility, Jolteon_All-Out Attacking, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Cresselia_Trick Room, Talonflame_Bulky Swords Dance",964.6072497424226
-131,"Rotom-Fan_Expert Belt, Ferrothorn_Utility, Cresselia_Calm Mind, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Bronzong_Trick Room Support",1137.8189144050436
-132,"Amoonguss_Pivot, Manectric-Mega_Special Attacker, Arcanine_Offensive, Landorus-Therian_Double Dance, Thundurus_Mixed Attacker, Smeargle_Suicide Lead",1225.785553616514
-133,"Manectric-Mega_Special Attacker, Talonflame_Bulky Swords Dance, Ferrothorn_Utility, Regice_Rock Polish, Metagross-Mega_All-out Attacker, Bronzong_Trick Room Support",1155.634103737919
-134,"Houndoom-Mega_Utility Attacker, Bronzong_Trick Room Support, Cresselia_Defensive, Amoonguss_Pivot, Infernape_All-Out Attacker, Scrafty_Dragon Dance",1090.405404379507
-135,"Amoonguss_Pivot, Meowstic-M_Dual Screens, Cresselia_Trick Room, Landorus-Therian_Double Dance, Scrafty_Dragon Dance, Talonflame_Offensive Swords Dance",1090.846722145127
-136,"Magmortar_Assault Vest Tank, Vivillon_Quiver Dance, Zebstrika_All-out Attacker, Porygon-Z_Choice Specs, Smeargle_Suicide Lead, Bronzong_Offensive Trick Room",850.2677220123416
-137,"Zapdos_Physically Defensive, Arcanine_Defensive, Articuno_SubRoost, Smeargle_Suicide Lead, Porygon2_Defensive, Cresselia_Trick Room",1084.9322365990781
-138,"Crobat_BRAVE BAT (Choice Band), Arcanine_Offensive, Thundurus_Nasty Plot, Ferrothorn_Utility, Amoonguss_Pivot, Talonflame_Bulky Swords Dance",1159.0808889237937
-139,"Klefki_Spikes, Talonflame_Revenge Killer, Scrafty_Dragon Dance, Porygon2_Defensive, Crobat_Support, Arcanine_Offensive",1258.9698600301142
-140,"Scrafty_Dragon Dance, Bronzong_Tank, Smeargle_Lead, Ferrothorn_Utility, Audino_Wish Passer, Watchog_Wallbreaker",620.2869540316008
-141,"Landorus-Therian_Choice Scarf, Manectric-Mega_Special Attacker, Crobat_Support, Bronzong_Defensive, Arcanine_Offensive, Amoonguss_Pivot",1253.760426113949
-142,"Amoonguss_Pivot, Manectric-Mega_Special Attacker, Moltres_Life Orb Attacker, Arcanine_Offensive, Scrafty_Dragon Dance, Porygon2_Defensive",1286.3239910679276
-143,"Infernape_All-out Attacker, Crobat_Support, Bronzong_Trick Room Support, Cresselia_Calm Mind, Grumpig_Specially Defensive, Relicanth_Choice Band",1161.029251833093
-144,"Weavile_All-out Attacker, Bronzong_Offensive Trick Room, Rufflet_Choice Scarf, Amoonguss_Pivot, Scrafty_Dragon Dance, Zapdos_Physically Defensive",1012.8996442783034
-145,"Electrode_Special Attacker, Amoonguss_Pivot, Weavile_All-out Attacker, Scrafty_Dragon Dance, Smeargle_Suicide Lead, Talonflame_Revenge Killer",1154.799018230327
-146,"Uxie_Defensive Pivot, Liepard_Offensive Pivot, Ferrothorn_Utility, Scrafty_Dragon Dance, Cresselia_Trick Room, Thundurus_Thunder Wave + 3 Attacks",959.705560803927
-147,"Smeargle_Lead, Scrafty_Dragon Dance, Torkoal_Defensive, Hitmontop_Defensive Rapid Spin, Ledian_Dual Screens, Manectric-Mega_Special Attacker",853.6529695590316
-148,"Manaphy_Tail Glow + Rain Dance, Gardevoir-Mega_Wallbreaker, Landorus-Therian_Double Dance, Serperior_SubSeed, Porygon2_Offensive, Scrafty_Dragon Dance",1042.9251749905466
-149,"Bronzong_Trick Room Support, Zapdos_Physically Defensive, Smeargle_Lead, Arcanine_Offensive, Scrafty_Dragon Dance, Amoonguss_Pivot",984.9941830875199
-150,"Thundurus_Mixed Attacker, Scrafty_Dragon Dance, Arcanine_Defensive, Cresselia_Trick Room, Talonflame_Offensive Swords Dance, Smeargle_Suicide Lead",1190.0988575706535
-151,"Amoonguss_Pivot, Zapdos_Physically Defensive, Talonflame_Offensive Swords Dance, Rotom-Fan_Choice Scarf, Weavile_All-out Attacker, Smeargle_Lead",1118.8252897001557
-152,"Scrafty_Dragon Dance, Regigigas_Tank, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Talonflame_Bulky Swords Dance, Houndoom_Nasty Plot",1062.7499778759711
-153,"Volbeat_Weather Supporter, Porygon2_Offensive, Scrafty_Dragon Dance, Hariyama_Choice Band, Ferrothorn_Utility, Bronzong_Tank",677.4125628328621
-154,"Bronzong_Trick Room Support, Landorus-Therian_Choice Scarf, Alomomola_Sunfish Wish, Aromatisse_Mono-Attacker, Talonflame_Offensive Swords Dance, Manectric-Mega_Special Attacker",1282.6455467215715
-155,"Bronzong_Offensive Trick Room, Zangoose_Toxic Orb Attacker, Bisharp_Swords Dance, Aggron-Mega_Tank, Smeargle_Suicide Lead, Weepinbell_Sun Sweeper",753.8082235481901
-156,"Amoonguss_Pivot, Porygon2_Offensive, Ferrothorn_Utility, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Arcanine_Offensive",1015.0942135492014
-157,"Gardevoir_Choice Scarf, Manectric-Mega_Special Attacker, Mightyena_Life Orb Cleaner, Arcanine_Offensive, Meloetta_Substitute + Calm Mind, Smeargle_Suicide Lead",1276.7430477230462
-158,"Scrafty_Dragon Dance, Amoonguss_Pivot, Golem_Lead, Talonflame_Revenge Killer, Arcanine_Defensive, Manectric_Special Attacker",1254.0124549196028
-159,"Scrafty_Dragon Dance, Bronzong_Trick Room Support, Klefki_Spikes, Talonflame_Revenge Killer, Arcanine_Defensive, Smeargle_Lead",1020.2284366813905
-160,"Arcanine_Defensive, Smeargle_Suicide Lead, Thundurus_Thunder Wave + 3 Attacks, Ferrothorn_Utility, Cresselia_Calm Mind, Talonflame_Specially Defensive",888.4517592183404
-161,"Dragonite_Choice Band, Smeargle_Lead, Torterra_Rock Polish, Landorus-Therian_Defensive, Arcanine_Offensive, Audino_Wish Passer",1027.4361992124882
-162,"Bronzong_Offensive Trick Room, Charizard_Life Orb, Amoonguss_Pivot, Talonflame_Bulky Swords Dance, Skarmory_Defensive, Porygon2_Offensive",993.4266873719286
-163,"Amoonguss_Pivot, Arcanine_Offensive, Bronzong_Tank, Metagross_Assault Vest, Ferrothorn_Utility, Zapdos_Physically Defensive",964.7887333638383
-164,"Beheeyem_Choice Specs, Smeargle_Suicide Lead, Talonflame_Specially Defensive, Landorus-Therian_Offensive, Amoonguss_Pivot, Arcanine_Defensive",968.9234751936353
-165,"Smeargle_Suicide Lead, Cresselia_Defensive, Bronzong_Offensive Trick Room, Ferrothorn_Utility, Talonflame_Specially Defensive, Cobalion_Calm Mind",749.6082744845811
-166,"Arcanine_Defensive, Clefable_Unaware + Calm Mind, Amoonguss_Pivot, Ferrothorn_Utility, Whimsicott_Applaud & Attack (Offensive), Weavile_All-out Attacker",888.047759184429
-167,"Arcanine_Offensive, Magnezone_Choice Specs, Ferrothorn_Utility, Scrafty_Dragon Dance, Porygon2_Offensive, Gyarados_Defensive",972.3946753484128
-168,"Tornadus_Defiant Attacker, Raichu_All-out Attacker, Landorus-Therian_Double Dance, Porygon2_Offensive, Ferrothorn_Utility, Manectric-Mega_Special Attacker",1085.3017222634332
-169,"Talonflame_Revenge Killer, Ferrothorn_Utility, Amoonguss_Pivot, Whimsicott_Applaud & Attack (Offensive), Bronzong_Special Tank, Thundurus_Nasty Plot",1015.1666144517718
-170,"Landorus-Therian_Offensive, Zapdos_Specially Defensive, Ferrothorn_Utility, Spiritomb_Mono-attacker, Armaldo_Rapid Spin, Arcanine_Defensive",1178.9603098925872
-171,"Amoonguss_Pivot, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Bronzong_Tank, Porygon2_Defensive, Magnezone_Magnet Rise",1050.273377683575
-172,"Arcanine_Offensive, Jumpluff_Offensive Utility, Sceptile-Mega_Substitute, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Talonflame_Revenge Killer",1512.2787551226731
-173,"Smeargle_Suicide Lead, Scrafty_Dragon Dance, Amoonguss_Pivot, Cresselia_Defensive, Gardevoir-Mega_Wallbreaker, Pangoro_Swords Dance",782.9357707570191
-174,"Camerupt_Choice Specs, Ferrothorn_Utility, Thundurus_Nasty Plot, Talonflame_Offensive Swords Dance, Arcanine_Offensive, Roserade_Offensive Hazards",1178.1473515023902
-175,"Arcanine_Offensive, Smeargle_Suicide Lead, Zapdos_Specially Defensive, Walrein_Specially Defensive, Talonflame_Specially Defensive, Stoutland_Wallbreaker",1038.0487540156284
-176,"Ferrothorn_Utility, Zapdos_Physically Defensive, Tornadus_Bulk Up, Phantump_SubSeeder, Arcanine_Defensive, Charizard_Swords Dance",901.8957893041189
-177,"Glalie-Mega_Wrecking Ball, Arcanine_Offensive, Metagross-Mega_All-out Attacker, Ferrothorn_Utility, Talonflame_Specially Defensive, Garchomp_Offensive Stealth Rock",1264.7626410341074
+0,"Landorus-Therian_Offensive, Thundurus_Mixed Attacker, Thundurus-Therian_Double Dance, Manectric-Mega_Special Attacker, Cresselia_Defensive, Jolteon_All-Out Attacking",1452.624890869964
+1,"Entei_Choice Band, Aggron-Mega_Tank, Talonflame_Offensive Swords Dance, Manectric-Mega_Special Attacker, Bronzong_Defensive, Crobat_Support",1499.125979679784
+2,"Electivire_All-out Attacker, Thundurus_Mixed Attacker, Darmanitan_Wallbreaker, Talonflame_Offensive Swords Dance, Gyarados-Mega_Offensive Dragon Dance, Infernape_Swords Dance",1602.337633164019
+3,"Breloom_Poison Heal Attacker, Manectric-Mega_Special Attacker, Entei_Choice Band, Talonflame_Offensive Swords Dance, Cresselia_Defensive, Bronzong_Defensive",1282.7901930491096
+4,"Ampharos-Mega_All-out Attacker, Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker, Talonflame_Offensive Swords Dance, Quilladin_Offensive Spikes, Cresselia_Defensive",1513.7465472345273
+5,"Gyarados_Substitute + Dragon Dance, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Manectric-Mega_Special Attacker, Shaymin_Life Orb, Talonflame_Offensive Swords Dance",1279.4042258709912
+6,"Tornadus-Therian_Assault Vest Pivot, Scrafty_Dragon Dance, Landorus-Therian_Offensive, Thundurus_Thunder Wave + 3 Attacks, Cresselia_Defensive, Talonflame_Revenge Killer",1282.9252733878443
+7,"Arcanine_Defensive, Cresselia_Defensive, Quilladin_Offensive Spikes, Victini_Choice Band, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker",1286.1947334475801
+8,"Landorus-Therian_Offensive, Dragonite_Dragon Dance, Talonflame_Revenge Killer, Scrafty_Dragon Dance, Thundurus_Thunder Wave + 3 Attacks, Manaphy_Tail Glow + Rain Dance",1267.2451114043995
+9,"Bronzong_Trick Room Support, Froslass_Spikes Lead, Smeargle_Suicide Lead, Rotom_Spell Tag Hex, Hitmontop_Defensive Rapid Spin, Arcanine_Offensive",868.2232244887427
+10,"Ponyta_Utility, Electivire_All-out Attacker, Jirachi_SubToxic, Seviper_Mixed Attacker, Landorus-Therian_Offensive, Arcanine_Defensive",1114.3949384147713
+11,"Weavile_All-out Attacker, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Bronzong_Offensive Trick Room, Doublade_Swords Dance, Mawile_All-out Attacker",1228.677987334987
+12,"Omastar_Offensive Entry Hazards, Ponyta_Utility, Thundurus_Thunder Wave + 3 Attacks, Weavile_All-out Attacker, Spiritomb_Calm Mind, Typhlosion_Choice Specs",1196.674882471292
+13,"Porygon2_Defensive, Weavile_All-out Attacker, Porygon-Z_Choice Specs, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Thundurus_Mixed Attacker",1189.815177209513
+14,"Slurpuff_Belly Drum, Landorus-Therian_Offensive, Cresselia_Calm Mind, Thundurus_Thunder Wave + 3 Attacks, Scrafty_Dragon Dance, Zapdos_Specially Defensive",1233.7300321682312
+15,"Bronzong_Offensive Trick Room, Raichu_All-out Attacker, Swellow_Choice Specs, Thundurus_Mixed Attacker, Arcanine_Offensive, Thundurus-Therian_Double Dance",1221.7895824512257
+16,"Weavile_All-out Attacker, Druddigon_Support, Cresselia_Defensive, Tornadus_Special Attacker, Porygon-Z_Double Dance, Manectric_Special Attacker",1111.7680310973674
+17,"Manectric-Mega_Special Attacker, Noivern_Choice Specs, Electivire_All-out Attacker, Magmortar_Wallbreaker, Amoonguss_Pivot, Bronzong_Tank",1222.9458262056985
+18,"Smeargle_Lead, Magmortar_Wallbreaker, Darmanitan_Wallbreaker, Landorus-Therian_Offensive, Altaria_Defensive, Arcanine_Defensive",993.4537078586121
+19,"Dragonite_Dragon Dance, Scrafty_Dragon Dance, Ampharos-Mega_All-out Attacker, Marowak_Offensive, Bronzong_Defensive, Aggron-Mega_Tank",1069.0547098530906
+20,"Scrafty_Dragon Dance, Crobat_Support, Talonflame_Bulky Swords Dance, Meloetta_Choice Scarf, Arcanine_Defensive, Zebstrika_All-out Attacker",1142.061056577197
+21,"Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Bisharp_Swords Dance, Landorus-Therian_Offensive, Trapinch_Trapper, Jolteon_All-Out Attacking",1087.557910728517
+22,"Scrafty_Dragon Dance, Ferrothorn_Utility, Thundurus_Mixed Attacker, Arcanine_Defensive, Victini_Choice Band, Noivern_Choice Specs",1268.3440173048355
+23,"Ekans_Coil Sweeper, Talonflame_Offensive Swords Dance, Smeargle_Suicide Lead, Cresselia_Defensive, Manaphy_Tail Glow + Rain Dance, Porygon-Z_Choice Specs",1010.9355183962115
+24,"Landorus-Therian_Offensive, Talonflame_Revenge Killer, Tornadus-Therian_Assault Vest Pivot, Cresselia_Defensive, Amoonguss_Pivot, Raichu_Nasty Plot",1128.9476367756004
+25,"Thundurus-Therian_Double Dance, Furfrou_Offensive Pivot, Cresselia_Calm Mind, Talonflame_Offensive Swords Dance, Entei_Choice Band, Aerodactyl-Mega_Offensive",1424.1907141384438
+26,"Voltorb_Offensive, Noivern_Choice Specs, Scrafty_Dragon Dance, Arcanine_Defensive, Thundurus_Thunder Wave + 3 Attacks, Metagross_Assault Vest",1301.6493002532334
+27,"Manectric-Mega_Special Attacker, Entei_Choice Band, Talonflame_Offensive Swords Dance, Weavile_All-out Attacker, Crobat_Support, Scrafty_Dragon Dance",1510.268105473037
+28,"Landorus-Therian_Offensive, Zweilous_Choice Band, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Smeargle_Suicide Lead, Zapdos_Specially Defensive",1224.9480555546322
+29,"Entei_Choice Band, Furfrou_Offensive Pivot, Manectric-Mega_Special Attacker, Talonflame_Offensive Swords Dance, Arcanine_Defensive, Bronzong_Defensive",1258.8940639531247
+30,"Tornadus_Defiant Attacker, Jolteon_All-Out Attacking, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Amoonguss_Pivot, Zapdos_Specially Defensive",1230.919102362155
+31,"Bronzong_Trick Room Support, Lopunny_Offensive Utility, Ampharos-Mega_All-out Attacker, Talonflame_Bulky Swords Dance, Weavile_All-out Attacker, Dragonite_Dragon Dance",1293.5156874926388
+32,"Manectric-Mega_Special Attacker, Torkoal_Offensive Rapid Spin, Victini_Choice Band, Arcanine_Defensive, Scrafty_Dragon Dance, Cresselia_Defensive",1269.582005994146
+33,"Gallade-Mega_Swords Dance, Hitmontop_Defensive Rapid Spin, Talonflame_Offensive Swords Dance, Manectric-Mega_Special Attacker, Cresselia_Calm Mind, Suicune_RoarCune",1387.8729580323325
+34,"Entei_Choice Band, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Ninetales_Nasty Plot, Scraggy_Dragon Dance, Bronzong_Trick Room Support",1293.1620556111804
+35,"Furfrou_Offensive Pivot, Scrafty_Dragon Dance, Talonflame_Offensive Swords Dance, Arcanine_Defensive, Darmanitan_Wallbreaker, Weavile_All-out Attacker",1217.175840373897
+36,"Manectric-Mega_Special Attacker, Entei_Choice Band, Smeargle_Suicide Lead, Bronzong_Tank, Tornadus_Rain Support, Scrafty_Dragon Dance",1151.9342338646554
+37,"Lanturn_Supportive Pivot, Ninetales_Nasty Plot, Regice_Rock Polish, Cresselia_Calm Mind, Scrafty_Dragon Dance, Thundurus_Mixed Attacker",1059.3718270839956
+38,"Voltorb_Offensive, Thundurus_Mixed Attacker, Durant_All-out Attacker, Noivern_Choice Specs, Arcanine_Defensive, Simisear_Nasty Plot",1260.7468498598944
+39,"Swellow_Choice Specs, Scrafty_Dragon Dance, Landorus-Therian_Offensive, Ninetales_Nasty Plot, Thundurus_Thunder Wave + 3 Attacks, Mesprit_Offensive + 3 Attacks",1224.937668047905
+40,"Ponyta_Utility, Tornadus-Therian_Assault Vest Pivot, Jolteon_All-Out Attacking, Magmortar_Wallbreaker, Thundurus_Thunder Wave + 3 Attacks, Amoonguss_Pivot",1140.2090588685396
+41,"Ninetales_Nasty Plot, Talonflame_Offensive Swords Dance, Meloetta_Choice Specs, Darmanitan_Wallbreaker, Landorus-Therian_Offensive, Heatmor_Mixed Attacker",1225.2355733154966
+42,"Landorus-Therian_Choice Scarf, Registeel_Specially Defensive, Weavile_All-out Attacker, Samurott_Mixed Wallbreaker, Arcanine_Defensive, Scrafty_Dragon Dance",1198.2269414929117
+43,"Weavile_All-out Attacker, Scrafty_Dragon Dance, Combusken_Swords Dance, Typhlosion_Choice Specs, Scraggy_Dragon Dance, Arcanine_Defensive",1046.1066624035625
+44,"Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker, Bronzong_Trick Room Support, Timburr_Bulky Attacker, Landorus-Therian_Offensive, Cresselia_Defensive",1282.8360131210234
+45,"Scrafty_Dragon Dance, Omastar_Offensive Entry Hazards, Talonflame_Offensive Swords Dance, Porygon-Z_Choice Specs, Jirachi_SubToxic, Thundurus_Thunder Wave + 3 Attacks",1155.333625936717
+46,"Thundurus_Mixed Attacker, Regice_Rock Polish, Cresselia_Calm Mind, Weavile_All-out Attacker, Scrafty_Dragon Dance, Hariyama_Choice Band",1120.8594911763041
+47,"Blastoise_Defensive Spinner, Talonflame_Revenge Killer, Weavile_All-out Attacker, Hariyama_Choice Band, Scrafty_Dragon Dance, Landorus-Therian_Offensive",1205.7650949788444
+48,"Landorus-Therian_Offensive, Raichu_All-out Attacker, Talonflame_Revenge Killer, Primeape_Choice Band, Manectric-Mega_Special Attacker, Arcanine_Offensive",1305.3731340975557
+49,"Amoonguss_Pivot, Zapdos_Specially Defensive, Manectric-Mega_Special Attacker, Cresselia_Calm Mind, Tornadus-Therian_Life Orb Attacker, Entei_Choice Band",1335.4569580635741
+50,"Thundurus_Thunder Wave + 3 Attacks, Arcanine_Defensive, Jirachi_SubToxic, Seviper_Mixed Attacker, Omastar_Offensive Entry Hazards, Ponyta_Utility",1088.0548202037967
+51,"Magmortar_Wallbreaker, Ninetales_Nasty Plot, Electivire_All-out Attacker, Weavile_All-out Attacker, Manectric-Mega_Special Attacker, Metagross_Assault Vest",1279.426026111558
+52,"Bisharp_Swords Dance, Thundurus_Thunder Wave + 3 Attacks, Magnezone_Choice Scarf, Vanilluxe_Autotomize, Houndoom_Nasty Plot, Skarmory_Defensive",1099.3678089342316
+53,"Porygon-Z_Double Dance, Infernape_Swords Dance, Cresselia_Defensive, Victini_Choice Band, Arcanine_Defensive, Zapdos_Physically Defensive",1271.3450116019399
+54,"Seviper_Mixed Attacker, Cryogonal_Offensive Spinner, Manectric-Mega_Special Attacker, Emolga_Support, Thundurus_Thunder Wave + 3 Attacks, Sunflora_Synthesis + 3 Attacks",1092.1951605874942
+55,"Smeargle_Suicide Lead, Electivire_All-out Attacker, Porygon-Z_Choice Scarf, Zebstrika_All-out Attacker, Diancie-Mega_Rock Polish, Amoonguss_Pivot",949.3351451959855
+56,"Cresselia_Defensive, Weavile_All-out Attacker, Bronzong_Defensive, Manectric-Mega_Special Attacker, Talonflame_Offensive Swords Dance, Typhlosion_Choice Specs",1334.787740864308
+57,"Smeargle_Suicide Lead, Rotom_Spell Tag Hex, Thundurus-Therian_Double Dance, Vanilluxe_All-out Attacker, Absol-Mega_All-out Attacker, Bisharp_Swords Dance",838.3965501551769
+58,"Talonflame_Offensive Swords Dance, Weavile_All-out Attacker, Hariyama_Choice Band, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Gyarados-Mega_Offensive Dragon Dance",1535.0272435331863
+59,"Thundurus_Mixed Attacker, Trapinch_Trapper, Scrafty_Dragon Dance, Landorus-Therian_Choice Scarf, Stoutland_Sand Wallbreaker, Bisharp_Swords Dance",1033.2681752659687
+60,"Cresselia_Calm Mind, Manectric-Mega_Special Attacker, Bronzong_Defensive, Roselia_Offensive Spikes, Talonflame_Offensive Swords Dance, Suicune_RoarCune",1098.6068500003719
+61,"Scrafty_Dragon Dance, Roselia_Offensive Spikes, Golbat_Specially Defensive, Manaphy_Tail Glow + Rain Dance, Manectric-Mega_Special Attacker, Crobat_Support",1186.3886659683526
+62,"Electivire_All-out Attacker, Smeargle_Suicide Lead, Amoonguss_Pivot, Bronzong_Tank, Klefki_Screens, Thundurus_Mixed Attacker",698.0075764820496
+63,"Darmanitan_Wallbreaker, Ampharos-Mega_All-out Attacker, Scrafty_Dragon Dance, Vanilluxe_Autotomize, Arcanine_Defensive, Thundurus_Mixed Attacker",1308.550029391023
+64,"Zapdos_Specially Defensive, Thundurus_Thunder Wave + 3 Attacks, Scrafty_Dragon Dance, Landorus-Therian_Choice Scarf, Roselia_Offensive Spikes, Infernape_All-out Attacker",1207.6250790903346
+65,"Bronzong_Offensive Trick Room, Swellow_Choice Specs, Pyroar_Special Attacker, Landorus-Therian_Offensive, Doublade_Swords Dance, Magnezone_Choice Specs",1079.8148038639963
+66,"Vanilluxe_Autotomize, Thundurus-Therian_Double Dance, Regigigas_Tank, Bronzong_Defensive, Aggron-Mega_Tank, Manectric-Mega_Special Attacker",1198.5889055663515
+67,"Arcanine_Defensive, Scraggy_Dragon Dance, Jirachi_Specially Defensive, Ninetales_Nasty Plot, Scrafty_Dragon Dance, Darmanitan_Wallbreaker",1163.6205294284125
+68,"Manectric-Mega_Special Attacker, Bronzong_Trick Room Support, Weavile_All-out Attacker, Scrafty_Dragon Dance, Porygon-Z_Choice Specs, Talonflame_Revenge Killer",1218.935879737368
+69,"Landorus-Therian_Choice Scarf, Arcanine_Defensive, Scrafty_Dragon Dance, Raichu_Nasty Plot, Garchomp_Tank Chomp, Bronzong_Trick Room Support",1244.75922450596
+70,"Scrafty_Dragon Dance, Arcanine_Offensive, Talonflame_Offensive Swords Dance, Bronzong_Trick Room Support, Hitmontop_Defensive Rapid Spin, Zapdos_Specially Defensive",1194.4453004537502
+71,"Castform_Chasing Rainbows, Weavile_All-out Attacker, Crobat_Support, Aggron-Mega_Tank, Entei_Choice Band, Talonflame_Revenge Killer",1268.6924302128086
+72,"Manaphy_Tail Glow + Rain Dance, Roselia_Offensive Spikes, Crobat_Support, Manectric-Mega_Special Attacker, Landorus-Therian_Offensive, Arcanine_Defensive",1184.684550078849
+73,"Weavile_All-out Attacker, Simisear_Nasty Plot, Altaria_Defensive, Manectric-Mega_Special Attacker, Arcanine_Defensive, Bisharp_Swords Dance",1290.915788012934
+74,"Landorus-Therian_Choice Scarf, Arcanine_Defensive, Klefki_Support, Durant_All-out Attacker, Weavile_All-out Attacker, Talonflame_Offensive Swords Dance",1152.524147665582
+75,"Simipour_Substitute + Nasty Plot, Meloetta_Choice Specs, Scrafty_Dragon Dance, Landorus-Therian_Offensive, Raichu_Nasty Plot, Arcanine_Offensive",1279.1474806740755
+76,"Jirachi_SubToxic, Arcanine_Defensive, Thundurus_Thunder Wave + 3 Attacks, Malamar_RestTalk, Ninetales_Nasty Plot, Scrafty_Dragon Dance",1155.0164910169628
+77,"Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker, Scrafty_Dragon Dance, Arcanine_Offensive, Landorus-Therian_Offensive, Electivire_All-out Attacker",1322.015365223425
+78,"Talonflame_Revenge Killer, Electrode_Special Attacker, Dragonite_Dragon Dance, Scrafty_Dragon Dance, Bronzong_Tank, Electivire_All-out Attacker",1173.2551063452565
+79,"Rotom_Spell Tag Hex, Tornadus-Therian_Life Orb Attacker, Infernape_All-out Attacker, Mesprit_Offensive + 3 Attacks, Zapdos_Specially Defensive, Bronzong_Tank",1101.9316434214418
+80,"Landorus-Therian_Offensive, Weavile_All-out Attacker, Arcanine_Offensive, Pangoro_Swords Dance, Bisharp_Swords Dance, Thundurus_Thunder Wave + 3 Attacks",1216.0032746000156
+81,"Noivern_Choice Specs, Tornadus-Therian_Assault Vest Pivot, Accelgor_Spikes Lead, Ferrothorn_Utility, Scrafty_Dragon Dance, Cresselia_Defensive",1146.2640168770315
+82,"Voltorb_Offensive, Gyarados-Mega_Offensive Dragon Dance, Arcanine_Defensive, Scyther_Choice Band, Magmortar_Wallbreaker, Smeargle_Suicide Lead",1105.7476658813946
+83,"Arcanine_Defensive, Scyther_Choice Band, Weavile_All-out Attacker, Ninetales_Nasty Plot, Ponyta_Utility, Porygon2_Defensive",973.0947932355772
+84,"Thundurus_Mixed Attacker, Smeargle_Suicide Lead, Vanilluxe_Autotomize, Cresselia_Support, Landorus-Therian_Offensive, Scrafty_Dragon Dance",960.7499857139544
+85,"Arcanine_Offensive, Raichu_All-out Attacker, Landorus-Therian_Offensive, Gyarados-Mega_Offensive Dragon Dance, Talonflame_Revenge Killer, Scrafty_Dragon Dance",1318.5949829553856
+86,"Bronzong_Offensive Trick Room, Scrafty_Dragon Dance, Thundurus_Mixed Attacker, Registeel_Specially Defensive, Jirachi_Mixed Attacker, Weavile_All-out Attacker",1009.4332071795176
+87,"Landorus-Therian_Offensive, Cresselia_Defensive, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Tornadus-Therian_Assault Vest Pivot, Thundurus_Thunder Wave + 3 Attacks",1243.8787090819585
+88,"Landorus-Therian_Choice Scarf, Klefki_Support, Metagross_Choice Band, Scrafty_Dragon Dance, Malamar_RestTalk, Talonflame_Revenge Killer",1147.933005477162
+89,"Thundurus-Therian_Double Dance, Darmanitan_Wallbreaker, Scrafty_Dragon Dance, Arcanine_Defensive, Furfrou_Offensive Pivot, Talonflame_Offensive Swords Dance",1172.4379444832437
+90,"Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker, Smeargle_Lead, Vanilluxe_All-out Attacker, Scrafty_Dragon Dance, Arcanine_Offensive",1242.4441509683218
+91,"Entei_Choice Band, Talonflame_Revenge Killer, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Shaymin_Life Orb, Porygon-Z_Choice Specs",1481.0736902051974
+92,"Hitmontop_Defensive Rapid Spin, Bronzong_Trick Room Support, Scrafty_Dragon Dance, Zapdos_Specially Defensive, Mienfoo_Baton Pass, Manectric-Mega_Special Attacker",1300.9852066446947
+93,"Politoed_Support, Scrafty_Dragon Dance, Talonflame_Revenge Killer, Arcanine_Offensive, Rotom-Mow_Choice Specs, Thundurus_Mixed Attacker",1285.308618229535
+94,"Manectric-Mega_Special Attacker, Thundurus_Thunder Wave + 3 Attacks, Luxray_Choice Band, Scrafty_Dragon Dance, Trapinch_Trapper, Landorus-Therian_Offensive",1309.178729113301
+95,"Scrafty_Dragon Dance, Dragonite_Dragon Dance, Bronzong_Trick Room Support, Hariyama_Choice Band, Arcanine_Offensive, Manectric-Mega_Special Attacker",1265.768927953373
+96,"Infernape_Swords Dance, Manectric-Mega_Special Attacker, Scraggy_Dragon Dance, Gyarados-Mega_Offensive Dragon Dance, Scrafty_Dragon Dance, Ambipom_DON'T USE AMBIPOM",1250.9719595429435
+97,"Gyarados-Mega_Offensive Dragon Dance, Gallade-Mega_Swords Dance, Zapdos_Physically Defensive, Infernape_Swords Dance, Registeel_Specially Defensive, Tyranitar_Support",1497.2463062560935
