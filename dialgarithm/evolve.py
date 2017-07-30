@@ -12,6 +12,8 @@ class Evolve:
     fitness_dict = {}
     starting_elo = 1000
 
+    output = None
+
     @staticmethod
     def evolve():
         tick = time.clock()
@@ -89,8 +91,8 @@ class Evolve:
             return elo
 
         Evolve.fitness_dict = {team: precise_fitness(team, 50) for team in Evolve.population}
-        elites = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
-        for team in elites:
+        Evolve.output = sorted(Evolve.fitness_dict, key=Evolve.fitness_dict.get, reverse=True)[:10]
+        for team in Evolve.output:
             Evolve.fitness_dict[team] = precise_fitness(team, 200)
 
     @staticmethod

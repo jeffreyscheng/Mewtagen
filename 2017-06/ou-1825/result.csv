@@ -1,78 +1,183 @@
 ,Team,Elo
-0,"Manectric-Mega_Special Attacker, Regigigas_Tank, Houndoom-Mega_Nasty Plot, Talonflame_Revenge Killer, Victini_Choice Band, Amoonguss_Pivot",1638.6477123808097
-1,"Cresselia_Calm Mind, Kyurem_Life Orb Attacker, Houndoom-Mega_Nasty Plot, Victini_Choice Band, Talonflame_Offensive Swords Dance, Amoonguss_Pivot",1563.9727592372913
-2,"Amoonguss_Pivot, Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker, Scrafty_Dragon Dance, Charizard-Mega-X_Bulky Will-O-Wisp, Talonflame_Offensive Swords Dance",1319.5927673135793
-3,"Manectric-Mega_Special Attacker, Weavile_All-out Attacker, Cresselia_Defensive, Noivern_Taunt + Roost, Togekiss_Defensive, Raikou_Assault Vest",1255.828379386729
-4,"Scrafty_Dragon Dance, Piloswine_Tank, Manectric-Mega_Special Attacker, Weavile_All-out Attacker, Charizard-Mega-X_Bulky Will-O-Wisp, Houndoom-Mega_Utility Attacker",1352.2742083165099
-5,"Amoonguss_Pivot, Talonflame_Revenge Killer, Manectric-Mega_Special Attacker, Tornadus-Therian_Assault Vest Pivot, Arcanine_Offensive, Cresselia_Calm Mind",1351.76098051607
-6,"Charizard-Mega-X_Bulky Will-O-Wisp, Thundurus_Mixed Attacker, Weavile_All-out Attacker, Scrafty_Dragon Dance, Amoonguss_Pivot, Manectric-Mega_Special Attacker",1332.2983337410958
-7,"Spiritomb_Calm Mind, Hitmonchan_Bulk Up, Arcanine_Defensive, Cresselia_Trick Room, Manectric-Mega_Special Attacker, Meloetta_En Pointe",1296.1835135531203
-8,"Gyarados_Dragon Dance + Three Attacks, Grumpig_Offensive Utility, Manectric-Mega_Special Attacker, Talonflame_Revenge Killer, Porygon2_Defensive, Thundurus_Mixed Attacker",1318.7850819103826
-9,"Talonflame_Revenge Killer, Weavile_All-out Attacker, Arcanine_Offensive, Manectric-Mega_Special Attacker, Togekiss_Defensive, Cresselia_Trick Room",1358.3781499761267
-10,"Talonflame_Offensive Swords Dance, Houndoom-Mega_Nasty Plot, Victini_Choice Band, Manectric-Mega_Special Attacker, Kyurem_SubRoost, Amoonguss_Pivot",1356.826070557167
-11,"Talonflame_Offensive Swords Dance, Grumpig_Calm Mind, Victini_Choice Band, Rotom-Fan_Choice Scarf, Azelf_Lead, Froakie_Mixed Attacker",1265.4097272941565
-12,"Celebi_Baton Pass, Floatzel_Special Attacker, Arcanine_Offensive, Crobat_BRAVE BAT (Choice Band), Cresselia_Trick Room, Talonflame_Revenge Killer",1261.6657053090976
-13,"Arcanine_Offensive, Manectric-Mega_Special Attacker, Feraligatr_Dragon Dance, Landorus-Therian_Double Dance, Cresselia_Trick Room, Scrafty_Dragon Dance",1330.1608761711789
-14,"Manectric-Mega_Special Attacker, Weavile_All-out Attacker, Talonflame_Revenge Killer, Bergmite_Rapid Spin Support, Cresselia_Trick Room, Crawdaunt_Swords Dance",1241.3741718421495
-15,"Kingdra_Life Orb Attacker, Vileplume_Defensive, Dragonite_Dragon Dance, Thundurus_Mixed Attacker, Camerupt_Specially Defensive, Talonflame_Offensive Swords Dance",1297.9413429256306
-16,"Amoonguss_Pivot, Landorus-Therian_Defensive, Torchic_Life Orb, Weavile_All-out Attacker, Zapdos_Physically Defensive, Manectric-Mega_Special Attacker",1278.739858014288
-17,"Clefable_Calm Mind + Magic Guard, Yanmega_Speed Boost, Landorus-Therian_Offensive, Amoonguss_Pivot, Arcanine_Offensive, Raikou_Assault Vest",1070.2430132763259
-18,"Camerupt_Specially Defensive, Manectric-Mega_Special Attacker, Regigigas_Tank, Dragonite_Dragon Dance, Victini_Choice Band, Talonflame_Offensive Swords Dance",1356.3083837023103
-19,"Weavile_All-out Attacker, Togekiss_Defensive, Manectric-Mega_Special Attacker, Gyarados_Dragon Dance + Three Attacks, Raikou_Assault Vest, Cresselia_Defensive",1475.3249207164347
-20,"Tornadus-Therian_Assault Vest Pivot, Victini_Choice Band, Cresselia_Calm Mind, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Talonflame_Offensive Swords Dance",1359.8150129518046
-21,"Yanmega_Speed Boost, Manectric-Mega_Special Attacker, Typhlosion_Choice Specs, Bronzong_Tank, Muk_Choice Band, Skarmory_Specially Defensive",1153.0899068109134
-22,"Azelf_Lead, Scrafty_Dragon Dance, Alakazam_Revenge Killer, Glalie-Mega_Wallbreaker, Manectric-Mega_Special Attacker, Thundurus_Mixed Attacker",1337.1032066123516
-23,"Kingdra_Dragon Dance, Weavile_All-out Attacker, Gyarados_Dragon Dance + Three Attacks, Togekiss_Defensive, Manectric-Mega_Special Attacker, Victini_Choice Band",1592.8105968921802
-24,"Rotom-Frost_SubSplit, Talonflame_Revenge Killer, Regigigas_Tank, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Arcanine_Offensive",1334.2212896369783
-25,"Manectric-Mega_Special Attacker, Pidgeot-Mega_All-out Attacker, Weavile_All-out Attacker, Ledian_Dual Screens, Sylveon_Choice Specs, Ursaring_Quick Feet",1150.3381783761686
-26,"Zapdos_Physically Defensive, Manectric-Mega_Special Attacker, Piloswine_Tank, Houndoom-Mega_Utility Attacker, Thundurus_Mixed Attacker, Pidgeot-Mega_All-out Attacker",1348.6667126587538
-27,"Manectric-Mega_Special Attacker, Charizard-Mega-X_Dragon Dance, Arcanine_Defensive, Tornadus_Rain Support, Cresselia_Calm Mind, Lilligant_Choice Scarf",1534.6018347551903
-28,"Weavile_All-out Attacker, Landorus-Therian_Double Dance, Togekiss_Defensive, Noivern_Taunt + Roost, Torkoal_Offensive Rapid Spin, Smeargle_Suicide Lead",1154.443822370842
-29,"Thundurus_Mixed Attacker, Scrafty_Dragon Dance, Amoonguss_Pivot, Venusaur_Sun Sweeper, Weavile_All-out Attacker, Manectric-Mega_Special Attacker",1276.4299444185117
-30,"Thundurus_Mixed Attacker, Manectric-Mega_Special Attacker, Cresselia_Trick Room, Weavile_All-out Attacker, Ferrothorn_Utility, Crawdaunt_Swords Dance",1208.7248465415933
-31,"Smeargle_Suicide Lead, Noivern_Taunt + Roost, Arcanine_Defensive, Manectric-Mega_Special Attacker, Volcanion_All-out Attacker, Spiritomb_Calm Mind",1274.6187815403625
-32,"Manectric-Mega_Special Attacker, Drifblim_Special Attacker, Froakie_Mixed Attacker, Amoonguss_Pivot, Magmortar_Wallbreaker, Thundurus_Mixed Attacker",1178.3015154763368
-33,"Azelf_Lead, Smeargle_Suicide Lead, Thundurus_Mixed Attacker, Manectric-Mega_Special Attacker, Meloetta_En Pointe, Arcanine_Defensive",1317.0191652708297
-34,"Ledian_Dual Screens, Manectric-Mega_Special Attacker, Cresselia_Trick Room, Amoonguss_Pivot, Terrakion_Swords Dance, Talonflame_Offensive Swords Dance",1190.7408424125135
-35,"Amoonguss_Pivot, Landorus-Therian_Double Dance, Manectric-Mega_Special Attacker, Eelektross_Assault Vest, Seismitoad_Rain Sweeper, Cresselia_Trick Room",1314.53243952362
-36,"Scolipede_Offensive, Weavile_All-out Attacker, Manectric-Mega_Special Attacker, Landorus-Therian_Defensive, Spiritomb_Calm Mind, Vileplume_Defensive",1278.8795591707176
-37,"Amoonguss_Pivot, Manectric-Mega_Special Attacker, Talonflame_Offensive Swords Dance, Grumpig_Offensive Utility, Arcanine_Offensive, Aipom_Life Orb",1331.8683645105166
-38,"Arcanine_Offensive, Feraligatr_Dragon Dance, Tornadus-Therian_Assault Vest Pivot, Amoonguss_Pivot, Talonflame_Revenge Killer, Manectric-Mega_Special Attacker",1341.804046283261
-39,"Talonflame_Offensive Swords Dance, Thundurus_Mixed Attacker, Raichu_Nasty Plot, Aerodactyl-Mega_Offensive, Seismitoad_Rain Sweeper, Weavile_All-out Attacker",1358.1266981168537
-40,"Scrafty_Dragon Dance, Talonflame_Revenge Killer, Weavile_All-out Attacker, Celebi_Baton Pass, Manectric-Mega_Special Attacker, Charizard-Mega-X_Bulky Will-O-Wisp",1282.5343589492877
-41,"Darmanitan_Choice Scarf, Talonflame_Revenge Killer, Tornadus-Therian_Assault Vest Pivot, Scrafty_Dragon Dance, Cresselia_Trick Room, Manectric-Mega_Special Attacker",1328.1055741426542
-42,"Weavile_All-out Attacker, Amoonguss_Pivot, Manectric-Mega_Special Attacker, Landorus-Therian_Double Dance, Regigigas_Tank, Garbodor_Defensive Hazard Stack",1228.8250387561036
-43,"Manectric-Mega_Special Attacker, Cresselia_Trick Room, Talonflame_Revenge Killer, Lilligant_Choice Scarf, Thundurus_Mixed Attacker, Kyurem_SubRoost",1352.2713491894642
-44,"Rotom-Wash_Physically Defensive Pivot, Talonflame_Revenge Killer, Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Arcanine_Defensive, Feraligatr_Dragon Dance",1339.9029184245546
-45,"Scrafty_Dragon Dance, Manectric-Mega_Special Attacker, Houndoom-Mega_Nasty Plot, Talonflame_Offensive Swords Dance, Audino-Mega_Mega Tank, Thundurus_Mixed Attacker",1590.8199043751385
-46,"Amoonguss_Pivot, Thundurus_Nasty Plot, Victini_Choice Band, Talonflame_Revenge Killer, Lilligant_Choice Scarf, Manectric-Mega_Special Attacker",1564.4967689252148
-47,"Amoonguss_Pivot, Gliscor_Taunt Stallbreaker, Manectric-Mega_Special Attacker, Porygon2_Offensive, Scrafty_Dragon Dance, Pinsir_Swords Dance",1099.3462031428455
-48,"Thundurus_Mixed Attacker, Crawdaunt_Swords Dance, Cresselia_Trick Room, Darmanitan_Wallbreaker, Landorus-Therian_Double Dance, Zapdos_Physically Defensive",1251.84342251938
-49,"Charizard-Mega-X_Bulky Will-O-Wisp, Manectric-Mega_Special Attacker, Weavile_All-out Attacker, Togekiss_Defensive, Scrafty_Dragon Dance, Cresselia_Trick Room",1303.6239314453856
-50,"Cresselia_Trick Room, Seismitoad_Defensive, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Victini_Choice Band, Zapdos_Physically Defensive",1291.883728609785
-51,"Heliolisk_Special Attacker, Manectric-Mega_Special Attacker, Kyurem_SubRoost, Zapdos_Physically Defensive, Cresselia_Trick Room, Thundurus_Mixed Attacker",1362.6671927090936
-52,"Talonflame_Revenge Killer, Tornadus_Rain Support, Rotom-Fan_Offensive Utility, Amoonguss_Pivot, Manectric-Mega_Special Attacker, Glaceon_Choice Specs",1196.2887857691408
-53,"Manectric-Mega_Special Attacker, Crawdaunt_Swords Dance, Talonflame_Revenge Killer, Mesprit_Choice Specs, Sigilyph_Life Orb Attacker, Regigigas_Tank",1185.445919888603
-54,"Thundurus_Mixed Attacker, Rotom-Frost_Choice Scarf, Manectric-Mega_Special Attacker, Kecleon_Mixed Wallbreaker, Zapdos_Physically Defensive, Pidgeot-Mega_All-out Attacker",1281.5435928297861
-55,"Cresselia_Defensive, Manectric-Mega_Special Attacker, Meloetta_Choice Specs, Rotom-Fan_Offensive Utility, Sylveon_Choice Specs, Talonflame_Revenge Killer",1528.9912232045308
-56,"Cresselia_Calm Mind, Seismitoad_Rain Sweeper, Amoonguss_Pivot, Houndoom-Mega_Nasty Plot, Arcanine_Defensive, Victini_Choice Band",1345.988873612369
-57,"Dugtrio_Trapper, Electivire_All-out Attacker, Kyurem_SubRoost, Scrafty_Dragon Dance, Togekiss_Defensive, Mesprit_Physically Defensive",1150.5597071304578
-58,"Amoonguss_Pivot, Natu_Defensive, Victini_Choice Band, Manectric-Mega_Special Attacker, Regigigas_Tank, Thundurus_Mixed Attacker",1336.683074689586
-59,"Manectric-Mega_Special Attacker, Venusaur-Mega_Defensive, Arcanine_Offensive, Amoonguss_Pivot, Gorebyss_Shell Smash, Landorus-Therian_Double Dance",1240.6095316979645
-60,"Scrafty_Dragon Dance, Cresselia_Calm Mind, Weavile_All-out Attacker, Smeargle_Suicide Lead, Mesprit_Offensive Stealth Rock, Regigigas_Tank",1133.350651576788
-61,"Pinsir_Swords Dance, Manectric-Mega_Special Attacker, Talonflame_Offensive Swords Dance, Raikou_Assault Vest, Crobat_BRAVE BAT (Choice Band), Gliscor_Taunt Stallbreaker",1251.3857292649316
-62,"Weavile_All-out Attacker, Celebi_Baton Pass, Raichu_Nasty Plot, Monferno_Choice Scarf, Crobat_BRAVE BAT (Choice Band), Krookodile_Non-Choice Attacker",1121.9377685052877
-63,"Talonflame_Offensive Swords Dance, Togekiss_Defensive, Weavile_All-out Attacker, Raichu_Nasty Plot, Mesprit_Physically Defensive, Dugtrio_Trapper",1217.1905376218094
-64,"Lilligant_Choice Scarf, Houndoom-Mega_Utility Attacker, Manectric-Mega_Special Attacker, Rotom-Heat_Defensive, Weavile_All-out Attacker, Cresselia_Trick Room",1319.0868052967023
-65,"Manectric-Mega_Special Attacker, Froakie_Mixed Attacker, Tyrantrum_Choice Band, Amoonguss_Pivot, Feraligatr_Dragon Dance, Stoutland_Sand Rush",1153.161224479475
-66,"Weavile_All-out Attacker, Scolipede_Offensive, Manectric-Mega_Special Attacker, Vileplume_Defensive, Xatu_Pivot, Landorus-Therian_Defensive",1252.481506587224
-67,"Talonflame_Offensive Swords Dance, Weavile_All-out Attacker, Amoonguss_Pivot, Kyurem_SubRoost, Manectric-Mega_Special Attacker, Thundurus_Nasty Plot",1567.6555659716842
-68,"Thundurus_Mixed Attacker, Darmanitan_Wallbreaker, Zapdos_Physically Defensive, Houndoom-Mega_Nasty Plot, Seismitoad_Defensive, Cresselia_Trick Room",1358.0294646640646
-69,"Houndoom-Mega_Utility Attacker, Manectric-Mega_Special Attacker, Amoonguss_Pivot, Kyurem_SubRoost, Victini_Choice Band, Talonflame_Offensive Swords Dance",1644.666200090916
-70,"Weavile_All-out Attacker, Ambipom_DON'T USE AMBIPOM, Arcanine_Offensive, Scrafty_Dragon Dance, Piloswine_Tank, Charizard-Mega-X_Bulky Will-O-Wisp",1245.6488411112603
-71,"Houndoom-Mega_Utility Attacker, Manectric-Mega_Special Attacker, Pidgeot-Mega_All-out Attacker, Mamoswine_Wallbreaker, Weavile_All-out Attacker, Talonflame_Revenge Killer",1355.8484210895206
-72,"Omastar_Defensive Entry Hazards, Charizard-Mega-X_Dragon Dance, Lilligant_Choice Scarf, Seismitoad_Rain Sweeper, Manectric-Mega_Special Attacker, Togekiss_Defensive",1309.4297070112352
-73,"Crawdaunt_Swords Dance, Amoonguss_Pivot, Arcanine_Offensive, Thundurus_Mixed Attacker, Manectric-Mega_Special Attacker, Charizard-Mega-X_Bulky Will-O-Wisp",1324.957108203666
-74,"Rotom-Fan_Expert Belt, Talonflame_Revenge Killer, Seismitoad_Rain Sweeper, Arcanine_Defensive, Zapdos_Physically Defensive, Cresselia_Calm Mind",1354.481271991668
-75,"Vileplume_Defensive, Froakie_Mixed Attacker, Talonflame_Offensive Swords Dance, Rotom-Fan_Choice Scarf, Manectric-Mega_Special Attacker, Grumpig_Calm Mind",1134.1231050787917
-76,"Amoonguss_Pivot, Talonflame_Revenge Killer, Manectric-Mega_Special Attacker, Scrafty_Dragon Dance, Charizard-Mega-X_Bulky Will-O-Wisp, Camerupt_Specially Defensive",1310.5014209790938
+0,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Houndoom-Mega_SunnyDoom, Froslass_Spikes Lead, Pidgeot-Mega_Stallbreaker, Garchomp_Swords Dance + Life Orb",1352.9082661931939
+1,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Terrakion_Choice Scarf, Infernape_All-Out Attacker, Donphan_Defensive Spinner, Kyurem-Black_Mixed Wallbreaker",1311.481935854773
+2,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Camerupt-Mega_Wallbreaker, Porygon_Bulky Attacker, Kyurem-Black_Choice Band, Blastoise-Mega_Rapid Spin",1245.2539664154508
+3,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Gallade-Mega_Swords Dance, Hydreigon_Choice Specs, Emboar_Wallbreaker, Aerodactyl-Mega_All-out Attacker",1609.2981553286654
+4,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Swampert-Mega_Rain Sweeper, Slaking_Wall Breaker, Hydreigon_Stallbreaker, Grumpig_Substitute + Calm Mind",1419.790032941703
+5,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Espeon_Choice Specs, Venusaur_Defensive, Mr. Mime_Choice Scarf, Swampert-Mega_Offensive Stealth Rock",1292.0223684095201
+6,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Tornadus_Bulk Up, Articuno_Life Orb, Hitmonlee_Reckless, Garchomp_Offensive Stealth Rock",1161.327594834995
+7,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Hydreigon_Wallbreaker, Rapidash_Physical Attacker, Lopunny-Mega_All-out Attacker, Aerodactyl-Mega_All-out Attacker",1351.7255021080944
+8,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Infernape_Swords Dance, Haxorus_Choice Band, Darmanitan_Wallbreaker, Tyrantrum_Rock Polish",1554.951619485367
+9,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Floatzel_Choice Band, Kyurem_SubRoost, Typhlosion_Choice Specs, Simisear_All-Out-Attacker",1455.6160881554172
+10,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Cresselia_Trick Room, Swampert-Mega_Rain Sweeper, Meloetta_Choice Scarf, Mesprit_Choice Specs",1230.3634882561375
+11,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Ampharos-Mega_All-out Attacker, Kyurem-Black_Mixed Wallbreaker, Scizor-Mega_Bulky Swords Dance, Suicune_Offensive",1258.6946097961745
+12,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Rotom-Mow_Choice Specs, Shellos_Defensive, Absol-Mega_Swords Dance, Malamar_RestTalk",1051.2524357303676
+13,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Venusaur_Chlorophyll Sweeper, Conkeldurr_Assault Vest, Octillery_Bulky Special Attacker, Latios_Life Orb Attacker",1153.4258232048812
+14,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Latios_Calm Mind, Probopass_Steel Trapper, Alakazam-Mega_Mega Alakazam, Scizor-Mega_Pursuit",1316.0359659054316
+15,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Bouffalant_Choice Band, Jirachi_Choice Scarf, Victini_Choice Band, Hydreigon_Life Orb",1621.2395252226395
+16,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Mantine_SubToxic, Mandibuzz_Physically Defensive, Braviary_Physical Attacker, Noivern_Taunt + Roost",1035.9763233713686
+17,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Raikou_Calm Mind, Xatu_Offensive, Snivy_Wallbreaker, Vigoroth_Bulk Up",917.5756220169548
+18,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Heatran_Offensive, Empoleon_Specially Defensive, Gyarados_Substitute + Dragon Dance, Vanilluxe_All-out Attacker",1158.0511941118657
+19,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Tornadus_Defiant Attacker, Mew_Defog, Tyrantrum_Rock Polish, Sylveon_Choice Specs",1128.3569214962417
+20,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Kyurem_Life Orb Attacker, Barboach_Dragon Dance, Entei_All-Out Attacker, Lickilicky_Swords Dance",1273.2076427180505
+21,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Articuno_SubRoost, Politoed_Tank, Bouffalant_Swords Dance, Munchlax_CurseLax",1021.2230336634663
+22,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Thundurus_Thunder Wave + 3 Attacks, Electrike_Choice, Druddigon_Support, Yanmega_Choice Specs",1157.0244389594156
+23,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Cryogonal_Offensive Spinner, Blastoise-Mega_All-out Attacker, Chatot_Choice Scarf, Staryu_Offensive Rapid Spin",1001.7281821207738
+24,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Zygarde_DDRest, Omastar_Offensive Entry Hazards, Masquerain_Quiver Dance, Cresselia_Calm Mind",1094.3352402502776
+25,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Mandibuzz_Physically Defensive, Tyrantrum_Choice Scarf, Dragonite_Choice Band, Ampharos-Mega_Physically Defensive",1323.6790167266308
+26,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Aerodactyl_Suicide Lead, Raichu_All-out Attacker, Weezing_Mixed Tank, Primeape_Choice Band",1155.6018768196961
+27,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Combusken_Swords Dance, Mightyena_Life Orb Cleaner, Cinccino_Physical Attacker, Volcarona_Offensive Quiver Dance",1045.3376929789256
+28,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Cherrim_Offensive Healing Wish, Shelmet_Spikes, Anorith_Life Orb Swords Dance, Raikou_Assault Vest",1025.6143801964977
+29,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Furfrou_Offensive Pivot, Vigoroth_Bulk Up, Haunter_Choice Scarf, Venusaur_Wallbreaker",851.873554803497
+30,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Clefable_Stealth Rock Setter, Basculin_All-out Attacker, Houndoom-Mega_SunnyDoom, Simisear_All-Out-Attacker",1244.441058558484
+31,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Metagross-Mega_All-out Attacker, Politoed_Support, Golem_Sun Lead, Houndoom-Mega_Nasty Plot",1342.1172797873535
+32,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Leavanny_Sticky Web, Regigigas_Tank, Pidgeot-Mega_Stallbreaker, Zygarde_Parashuffler",1176.5872513899446
+33,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Grimer_Bulky Attacker, Kyurem-Black_Mixed Wallbreaker, Hitmonlee_Choice Scarf, Garchomp_Offensive Stealth Rock",1321.1675190263575
+34,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Garchomp_Mixed Attacker, Wormadam-Trash_Utility, Arcanine_Defensive, Unown_For Reasons Unown",1037.8934360101123
+35,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Stoutland_Wallbreaker, Clawitzer_Wallbreaker, Victini_Choice Band, Infernape_Swords Dance",1293.4827660565877
+36,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Heatran_Offensive Stallbreaker, Espeon_Choice Specs, Mr. Mime_Choice Scarf, Roselia_Defensive",1016.9247917883984
+37,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Metagross_Assault Vest, Reuniclus_Trick Room, Liepard_Offensive Pivot, Hoopa_Choice Scarf",1082.3320801167647
+38,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Blastoise-Mega_All-out Attacker, Tauros_All-out Attacker, Prinplup_Utility, Simipour_Mixed Attacker",1105.9730485028163
+39,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Seel_Life Orb, Clefable_Unaware Wall, Kyurem_Life Orb Attacker, Gardevoir_Choice Specs",1115.5774780477605
+40,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Slowking_Defensive, Pancham_Pivot, Persian_Nasty Plot, Venusaur_Wallbreaker",998.5801004097483
+41,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Hydreigon_Choice Scarf, Slaking_Wall Breaker, Heliolisk_Special Attacker, Swampert-Mega_Rain Sweeper",1295.2966613163944
+42,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Tornadus_Defiant Attacker, Toxicroak_Offensive, Raikou_Calm Mind, Garchomp_Swords Dance + Life Orb",1285.1627455325222
+43,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Feraligatr_Swords Dance, Rotom-Heat_Defensive, Samurott_Mixed Wallbreaker, Gabite_Offensive Stealth Rock",1038.474517939011
+44,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Darmanitan_Choice Scarf, Simisear_Nasty Plot, Munna_Baton Pass, Horsea_Swift Swim",1136.8747637510116
+45,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Mesprit_Choice Specs, Darumaka_Choice, Suicune_Substitute + Calm Mind, Phione_Rain Support",1074.7924012389242
+46,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Rotom-Mow_IN THE CUT (Choice Specs), Dunsparce_Stealth Rock, Dusknoir_Choice Band, Latias-Mega_Defensive",1092.6409956463708
+47,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Tyrantrum_Rock Polish, Zweilous_Specially Defensive, Haxorus_Choice Band, Articuno_Burd (Offensive)",1270.1900361363882
+48,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Rotom-Mow_Choice Scarf, Druddigon_Support, Doublade_Swords Dance, Thundurus_Thunder Wave + 3 Attacks",1222.904811824106
+49,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Musharna_Stored Power, Alakazam-Mega_Mega Alakazam, Pidgeot-Mega_Stallbreaker, Tornadus_Bulk Up",1186.8335134072775
+50,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Articuno_SubRoost, Lucario_Life Orb Attacker, Jolteon_All-Out Attacking, Misdreavus_Nasty Plot",1065.8107774277685
+51,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Kingdra_Rain Sweeper, Beautifly_The Ugly Bar- Butterfly, Donphan_Defensive Spinner, Infernape_All-Out Attacker",1067.6822320602507
+52,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Meloetta_Choice Specs, Conkeldurr_Assault Vest, Bouffalant_Choice Band, Alakazam-Mega_Mega Alakazam",1324.676829084087
+53,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Druddigon_Stealth Rock Setter, Sawsbuck_Swords Dance Sweeper, Pinsir_Swords Dance, Kingdra_Critdra",1235.5093013303347
+54,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Swampert-Mega_Rain Sweeper, Haxorus_Double Dance, Landorus-Therian_Offensive, Crawdaunt_Swords Dance",1322.777980105221
+55,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Slowbro_Defensive, Rhyperior_Choice Band, Clefable_Unaware Wall, Manectric-Mega_Special Attacker",1251.4366648569098
+56,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Chinchou_Bulky Attacker, Sylveon_Choice Specs, Zorua_Life Orb Attacker, Rotom-Fan_Choice Scarf",991.7468558148717
+57,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Thundurus_Mixed Attacker, Musharna_Stored Power, Kingler_Agility Sweeper, Sceptile-Mega_All-out Attacker",1267.0502421452347
+58,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Dodrio_Wallbreaker, Vileplume_Defensive, Scolipede_Offensive, Lilligant_Quiver Dance",1129.2384368923067
+59,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Golem_Specially Defensive, Hitmontop_Defensive Rapid Spin, Mismagius_Bulky Support, Donphan_Offensive Spinner",1206.7993389702842
+60,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Porygon_Defensive, Infernape_Nasty Plot, Latios_Choice Specs, Drapion_Choice Scarf",1245.443675896396
+61,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Jirachi_Specially Defensive, Celebi_Baton Pass, Meloetta_Substitute + Calm Mind, Venusaur-Mega_Defensive",1084.381355238308
+62,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Electrode_All-Out Attacker, Meloetta_Choice Specs, Gligar_Standard, Buneary_Switcheroo Support",948.8194148512956
+63,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Volcanion_All-out Attacker, Gogoat_Bulk Up, Vigoroth_Bulk Up, Raichu_Nasty Plot",1082.5018604707554
+64,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Kyurem_Life Orb Attacker, Xatu_Defensive Pivot, Garchomp_Substitute + Swords Dance, Hawlucha_Substitute + Swords Dance",1163.1840066485008
+65,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Quilladin_Offensive Spikes, Articuno_Life Orb, Dragonite_Choice Band, Uxie_Defensive Pivot",1251.7915035345804
+66,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Mamoswine_Wallbreaker, Celebi_Utility, Talonflame_Bulky Swords Dance, Suicune_CroCune",1263.4940502177947
+67,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Leafeon_Choice Scarf, Celebi_Utility, Vileplume_Defensive, Infernape_Swords Dance",1098.8365169730139
+68,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Sylveon_Choice Specs, Whimsicott_Applaud & Attack (Offensive), Froslass_Suicide Spiker, Raichu_All-out Attacker",971.9724799864899
+69,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Flareon_Choice Band, Lopunny-Mega_All-out Attacker, Golem_Sun Lead, Hydreigon_Choice Specs",1512.3172921006965
+70,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Empoleon_Specially Defensive Support, Garchomp_Offensive Stealth Rock, Roselia_Offensive Spikes, Vanilluxe_All-out Attacker",1102.7901250146258
+71,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Forretress_Custap, Magby_Belly Drum, Audino-Mega_Defensive Calm Mind, Spritzee_Defensive",905.4668180664878
+72,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Mantyke_RestTalk, Jirachi_Choice Scarf, Bisharp_Swords Dance, Gyarados_Defensive",1016.8337463149463
+73,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Pinsir_Stealth Rock, Meowstic-F_Competitive(ly Terrible) Sweeper, Blastoise-Mega_All-out Attacker, Electrode_Special Attacker",1183.665512379472
+74,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Houndoom-Mega_SunnyDoom, Registeel_Curse, Slowking_Offensive Trick Room, Hypno_NastyPass",1148.4241839856868
+75,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Meowstic-F_Competitive(ly Terrible) Sweeper, Rotom-Mow_Choice Specs, Goodra_Choice Band, Suicune_SubCM",1251.3070869165413
+76,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Chesnaught_Specially Defensive, Jolteon_SubPass, Meloetta_Offensive Calm Mind, Roserade_Specially Defensive",1083.2932260324378
+77,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Chatot_Choice Specs, Roselia_Focus Sash Lead, Hydreigon_Life Orb, Hawlucha_Substitute + Swords Dance",1142.8002187367047
+78,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Rotom-Fan_Physically Defensive, Karrablast_Choice Scarf, Haxorus_Choice Band, Dodrio_Wallbreaker",1262.296011833045
+79,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Typhlosion_Choice Specs, Octillery_Bulky Special Attacker, Stoutland_Sand Rush, Mr. Mime_Choice Scarf",1190.4949393180132
+80,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Ampharos-Mega_All-out Attacker, Suicune_Offensive, Scizor-Mega_Bulky Swords Dance, Braviary_Bulk Up",1225.5851646974095
+81,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Manectric-Mega_Special Attacker, Dragonite_Dragon Dance, Hydreigon_Choice Scarf, Monferno_All-Out Attacker",1546.7828343231959
+82,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Electivire_All-out Attacker, Hydreigon_Life Orb, Relicanth_Choice Band, Latias-Mega_Calm Mind",1314.0357889253248
+83,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Articuno_Life Orb, Haxorus_Choice Band, Vanilluxe_All-out Attacker, Garchomp-Mega_Mega Swords Dance",1325.6044216830905
+84,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Kabutops_Choice Scarf, Bouffalant_Tank, Metagross_Assault Vest, Vigoroth_Bulk Up",881.6862286920135
+85,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Audino-Mega_Mega Tank, Toxicroak_Nasty Plot, Typhlosion_Choice Specs, Breloom_Poison Heal Attacker",1202.0205324563904
+86,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Typhlosion_Choice Specs, Scyther_Swords Dance, Raikou_Calm Mind, Hippopotas_Sand Support",1179.2606313026793
+87,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Porygon2_Defensive, Porygon-Z_Choice Specs, Hydreigon_Stallbreaker, Infernape_Nasty Plot",1285.8037327505997
+88,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Bronzong_Special Tank, Suicune_Substitute + Calm Mind, Infernape_All-out Attacker, Hawlucha_Substitute + Swords Dance",1119.0831408371716
+89,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Zweilous_Choice Band, Dragonite_Dragon Dance, Porygon-Z_Choice Scarf, Braviary_Bulk Up",1122.2257653873278
+90,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Mesprit_Physically Defensive, Haxorus_Choice Band, Kyurem_Choice Scarf, Azelf_Lead",1637.1680835809557
+91,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Leafeon_Offensive Swords Dance, Rotom-Frost_SubWisp, Torterra_Rock Polish, Cinccino_Physical Attacker",1043.3449358834516
+92,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Emboar_All-out Attacker, Zoroark_Swords Dance, Blastoise-Mega_All-out Attacker, Musharna_Stored Power",1127.1797069073946
+93,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Hydreigon_Wallbreaker, Rotom-Heat_Defensive, Gyarados-Mega_Offensive Dragon Dance, Crawdaunt_Swords Dance",1284.427663471843
+94,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Ampharos-Mega_Physically Defensive, Flareon_Offensive, Escavalier_Assault Vest, Gyarados_Substitute + Dragon Dance",1277.2686954723151
+95,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Zweilous_Choice Band, Goodra_Assault Vest, Magnezone_Magnet Rise, Tyrantrum_Dragon Dance",1019.9508427958347
+96,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Cofagrigus_Offensive, Manaphy_Calm Mind, Seaking_Utility, Suicune_Substitute + Calm Mind",975.1372283277537
+97,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Emolga_Support, Snivy_Wallbreaker, Xatu_Offensive, Bronzong_Defensive",778.1956617342316
+98,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Flareon_Choice Band, Ampharos-Mega_Agility, Phione_Rain Support, Beautifly_The Ugly Bar- Butterfly",1150.3386369477828
+99,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Garchomp_Choice Scarf, Bronzong_Special Tank, Jirachi_Choice Scarf, Dodrio_Choice Scarf",1206.2151007563305
+100,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Garchomp_Swords Dance + Life Orb, Noivern_Taunt + Roost, Uxie_Defensive Pivot, Druddigon_Support",1247.309729717781
+101,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Manaphy_Tail Glow + 3 Attacks, Floatzel_Special Attacker, Kyurem-Black_Choice Band, Blastoise-Mega_Rapid Spin",1310.1221140270225
+102,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Cinccino_Physical Attacker, Swampert-Mega_Offensive Stealth Rock, Octillery_Bulky Special Attacker, Squirtle_Rapid Spinner",1080.9677057295607
+103,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Excadrill_Choice Scarf, Victini_Choice Band, Celebi_Support, Steelix-Mega_Tank",1255.174036947401
+104,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Dunsparce_Stealth Rock, Blastoise_Bulky Spinner, Lapras_Choice Specs, Pinsir_Swords Dance",1059.3275030473394
+105,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Sceptile-Mega_All-out Attacker, Zygarde_Dragon Dance, Dragonair_Rest Talk Sweeper, Aerodactyl-Mega_Bulky Aerodactyl",1316.4749705542586
+106,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Gallade_Bulk Up, Garchomp_Choice Scarf, Diancie_Defensive, Altaria-Mega_King DDD (Defensive Dragon Dance)",1071.4206322100254
+107,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Kyurem-Black_Substitute Attacker, Braviary_Physical Attacker, Infernape_Swords Dance, Staraptor_Choice Band",1312.5048739742363
+108,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Glalie-Mega_Wrecking Ball, Mandibuzz_Physically Defensive, Duskull_Utility, Furfrou_Offensive Pivot",1062.6791876028012
+109,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Swampert-Mega_Offensive Stealth Rock, Gardevoir_Choice Specs, Toxicroak_Offensive, Venusaur_Chlorophyll Sweeper",1315.367645573699
+110,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Sableye_Prankster, Bouffalant_Tank, Mr. Mime_Choice Scarf, Infernape_Swords Dance",1132.0038556656039
+111,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Metagross-Mega_Rock Polish, Aggron-Mega_Curse, Bronzong_Defensive, Abomasnow_Mixed Attacker",1049.7006733858072
+112,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Regice_Tank, Unown_For Reasons Unown, Kyurem_SubRoost, Vileplume_Offensive",1087.7505724598118
+113,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Simipour_Choice Scarf, Simisage_Choice Scarf, Absol_All-Out Attacker, Camerupt_Defensive",1095.6869538382343
+114,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Dusknoir_Offensive, Beautifly_The Ugly Bar- Butterfly, Registeel_Curse, Vanilluxe_All-out Attacker",955.0104204765349
+115,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Samurott_Mixed Wallbreaker, Rotom-Mow_Choice Specs, Electabuzz_Eviolite, Clauncher_Pivot",1033.3570182116184
+116,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Lanturn_Pivot, Mew_Defog, Cresselia_Calm Mind, Musharna_Bulky Pivot",1214.8984370516082
+117,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Gabite_Offensive Stealth Rock, Feraligatr_Swords Dance, Suicune_Substitute + Calm Mind, Rotom-Mow_IN THE CUT (Choice Specs)",969.0983832517428
+118,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Yamask_Support, Politoed_Support, Liepard_Offensive Support, Slowking_Calm Mind",803.5684057863361
+119,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Golem_Sun Lead, Xatu_Pivot, Flareon_Choice Band, Pyroar_Special Attacker",1181.6466730073548
+120,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Hydreigon_Stallbreaker, Suicune_Offensive, Infernape_Choice Band, Simipour_Choice Scarf",1156.582944273157
+121,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Empoleon_Specially Defensive Support, Vanilluxe_All-out Attacker, Oshawott_Croagunk Lure, Articuno_Agility",945.2314016084326
+122,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Munna_Baton Pass, Stoutland_Sand Rush, Piplup_Stealth Rock + Defog, Liepard_Offensive Support",761.3412633271166
+123,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Garchomp_Choice Scarf, Blastoise-Mega_All-out Attacker, Pinsir_Swords Dance, Meloetta_Choice Specs",1304.5990703532718
+124,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Talonflame_Offensive Swords Dance, Infernape_All-Out Attacker, Mamoswine_Sash Lead, Kyurem-Black_Substitute Attacker",1322.3647138688107
+125,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Hydreigon_Stallbreaker, Gourgeist-Small_SubSeed, Flygon_Defog Support, Chikorita_Aromatherapy",1004.0363694511026
+126,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Sylveon_Cleric, Rhyperior_Offensive, Garchomp_Mixed Attacker, Mew_Defog",1151.0217740796706
+127,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Tornadus-Therian_Assault Vest Pivot, Absol_All-Out Attacker, Mesprit_Offensive Stealth Rock, Meloetta_Choice Specs",1167.8961258699003
+128,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Alakazam_Revenge Killer, Samurott_Swords Dance, Musharna_Stored Power, Vaporeon_Wish",1037.8448703057518
+129,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Tornadus-Therian_Assault Vest Pivot, Excadrill_Sand Rush Sweeper, Steelix-Mega_Tank, Fraxure_Dragon Dance",1197.4333641410358
+130,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Rotom-Frost_SubWisp, Gallade_Bulk Up, Articuno_Life Orb, Flygon_Choice Scarf",1084.1672875499294
+131,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Shiftry_Offensive Defogger, Hydreigon_Stallbreaker, Houndoom-Mega_Utility Attacker, Dodrio_Choice Scarf",1234.8371584546119
+132,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Klefki_Spikes, Rhyperior_Choice Band, Rotom-Wash_Physically Defensive Pivot, Meloetta_Substitute + Calm Mind",1185.246550159198
+133,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Tornadus-Therian_Assault Vest Pivot, Mesprit_Offensive + 3 Attacks, Mantyke_RestTalk, Braviary_Physical Attacker",1104.0600550156946
+134,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Haxorus_Swords Dance, Lopunny-Mega_Substitute, Sawsbuck_Choice Scarf, Zygarde_Dragon Dance",1297.06516555629
+135,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Hydreigon_Choice Specs, Absol-Mega_All-out Attacker, Cherrim_Offensive Healing Wish, Mesprit_Choice Scarf",1252.1208708228764
+136,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Omastar_Lead, Fearow_Physical Attacker, Haxorus_Swords Dance, Politoed_Tank",1182.5554317001447
+137,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Tentacruel_Utility, Wailmer_Choice Scarf, Rotom-Fan_Offensive Utility, Chatot_Choice Specs",1000.1278819448889
+138,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Raichu_All-out Attacker, Electivire_All-out Attacker, Gourgeist-Super_Physically Defensive, Parasect_Spore",1021.3125794794078
+139,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Alakazam_Revenge Killer, Abomasnow-Mega_Barack Aboma (Swords Dance), Kyurem-Black_Substitute Attacker, Bronzong_Trick Room Support",1185.6293736762796
+140,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Garchomp_Tank Chomp, Espeon_Calm Mind Sweeper, Sigilyph_Life Orb Attacker, Xatu_Pivot",1137.589731567364
+141,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Bouffalant_Choice Band, Feraligatr_Dragon Dance, Blastoise-Mega_Rapid Spin, Druddigon_All-out Attacker",1118.4625607836806
+142,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Spritzee_Defensive, Emolga_Support, Tentacruel_Offensive, Umbreon_Cleric / Wish Pass",946.1791970823385
+143,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Florges_Defensive Calm Mind, Tornadus_Special Attacker, Cresselia_Defensive, Vileplume_Defensive",1166.3306274087543
+144,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Mantine_Choice Specs, Gastly_Choice Scarf, Articuno_Agility, Unown_For Reasons Unown",839.0860514379995
+145,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Hydreigon_Stallbreaker, Exeggutor_Chlorophyll Sweeper, Entei_Choice Band, Raikou_Choice Specs",1279.0975678070267
+146,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Cryogonal_Offensive Spinner, Staraptor_Choice Band, Darmanitan_Wallbreaker, Magneton_Choice Specs",1158.370583458837
+147,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Emboar_All-out Attacker, Plusle_""Support"", Swampert-Mega_Rain Sweeper, Raticate_Offense",1247.9750383872247
+148,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Houndour_Choice Scarf, Chikorita_Aromatherapy, Camerupt-Mega_Wallbreaker, Garchomp-Mega_Mega Swords Dance",1217.3062181747584
+149,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Rapidash_Physical Attacker, Hydreigon_Wallbreaker, Virizion_Calm Mind, Latios_Life Orb Attacker",1294.9733988714058
+150,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Chatot_Choice Specs, Anorith_Life Orb Swords Dance, Ludicolo_Swift Swim Sweeper, Mienshao_Choice Scarf",1060.9334210060135
+151,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Delphox_Offensive Calm Mind, Victini_Choice Band, Entei_Choice Band, Shaymin_Choice Specs",1349.9644602776657
+152,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Meowstic-M_Dual Screens, Aerodactyl-Mega_Bulky Aerodactyl, Simisage_Mixed Attacker, Escavalier_Swords Dance",1100.2611397208968
+153,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Latios_Choice Scarf, Numel_Simple Sweeper, Emboar_Footloose, Gardevoir_Choice Specs",1129.4735132721328
+154,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Typhlosion_Choice Specs, Magby_Life Orb, Delphox_Offensive Calm Mind, Cacturne_Mixed Attacker",1042.3273007962634
+155,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Duosion_Calm Mind, Unfezant_Tailwind Support, Bouffalant_Choice Band, Donphan_Choice Band",1092.1962451520194
+156,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Garchomp_Swords Dance + Life Orb, Granbull_Offensive, Scizor-Mega_Pursuit, Mienshao_SubPass",1230.9811196410328
+157,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Slowking_Choice Specs, Machop_Choice Scarf, Gallade-Mega_Swords Dance, Kyurem-Black_Choice Scarf",1160.661990712903
+158,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Suicune_CroCune, Grumpig_Specially Defensive, Zygarde_DDRest, Bronzong_Trick Room Support",1275.944090194135
+159,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Meloetta_Substitute + Calm Mind, Swampert-Mega_Offensive Stealth Rock, Zoroark_Nasty Plot, Snorlax_Choice Band",1227.319413204842
+160,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Elekid_Special Attacker, Jirachi_Choice Scarf, Milotic_Defensive, Cresselia_Calm Mind",957.2820718647642
+161,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Gabite_Offensive Stealth Rock, Samurott_Mixed Wallbreaker, Vespiquen_Offensive Utility, Ninjask_Revenge Killer + Pivot",849.8430641664531
+162,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Zygarde_Dragon Dance, Luxray_Choice Band, Dragonite_Choice Band, Noctowl_Defensive Defog",1228.4153966279862
+163,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Hydreigon_Life Orb, Audino_Defensive, Bouffalant_Tank, Finneon_Defog",1124.8825402664875
+164,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Lopunny-Mega_Substitute, Clauncher_Pivot, Thundurus_Nasty Plot, Druddigon_All-out Attacker",1243.8498979642047
+165,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Porygon_Choice Scarf, Kabuto_Support, Politoed_Tank, Mightyena_Life Orb Cleaner",743.6416619490717
+166,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Umbreon_Cleric / Wish Pass, Aerodactyl-Mega_All-out Attacker, Goodra_Choice Specs, Porygon-Z_Choice Specs",1287.4853605456583
+167,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Dodrio_Choice Scarf, Thundurus-Therian_Agility, Vaporeon_Wish, Blastoise-Mega_All-out Attacker",1194.0078635025557
+168,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Beheeyem_Trick Room, Escavalier_Choice Band, Bibarel_Curse, Garchomp_Swords Dance + Life Orb",1109.8872016414236
+169,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Meloetta_Choice Scarf, Victini_Choice Band, Haxorus_Dragon Dance, Starmie_Utility",1563.3248348136726
+170,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Thundurus_Thunder Wave + 3 Attacks, Staraptor_Choice Band, Audino_Defensive, Karrablast_Choice Scarf",1022.1391744989617
+171,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Aerodactyl-Mega_Bulky Aerodactyl, Nidoqueen_Defensive Entry Hazard Setter, Kyurem-Black_Mixed Wallbreaker, Scyther_Swords Dance",1312.5580748345478
+172,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Electrode_Special Attacker, Uxie_Defensive Pivot, Larvesta_Bulky Pivot, Entei_All-Out Attacker",1173.1479710912906
+173,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Meloetta_Choice Scarf, Mesprit_Offensive + 3 Attacks, Snivy_Wallbreaker, Swampert-Mega_Physically Defensive",1234.6526509062917
+174,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Landorus-Therian_Choice Scarf, Furret_Choice Scarf, Watchog_Wallbreaker, Tyrantrum_Choice Band",1076.7381488529088
+175,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Kyurem_SubRoost, Floatzel_Choice Band, Swampert-Mega_Offensive Stealth Rock, Vanilluxe_All-out Attacker",1613.5489300882896
+176,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Latias-Mega_Defensive, Goldeen_Physical Attacker, Emboar_All-out Attacker, Arcanine_Offensive",1281.023742134141
+177,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Support, Simisage_Nasty Plot Sweeper, Blastoise-Mega_Offensive Spinner, Jolteon_All-out Attacker, Scyther_Choice Band Pivot",1235.6833184225463
+178,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Durant_All-out Attacker, Cresselia_Calm Mind, Metagross-Mega_All-out Attacker, Cobalion_Swords Dance",1227.153203061715
+179,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Rhyperior_Choice Band, Golbat_Specially Defensive, Feraligatr_Dragon Dance, Dodrio_Choice Scarf",1063.0659816314974
+180,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Band, Dodrio_Choice Scarf, Carracosta_Defensive, Stoutland_Sand Wallbreaker, Froslass_Spikes Lead",990.4088820507302
+181,"Charizard-Mega-Y_Wallbreaker, Tyranitar_Choice Scarf, Meowstic-F_Competitive(ly Terrible) Sweeper, Exploud_Choice Specs, Porygon2_Defensive, Meloetta_Offensive Calm Mind",1174.4925595033371

@@ -175,6 +175,7 @@ class Team(SubTeam):
         new_suggestion = Suggestion.reproduce(team1.suggestions, team2.suggestions)
         attempt = Team(new_core, new_suggestion)
         if attempt.check_unique():
+            Team.global_time = None
             return attempt
         else:
             if time.clock() - Team.global_time > 10:
