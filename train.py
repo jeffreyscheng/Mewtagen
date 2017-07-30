@@ -213,6 +213,7 @@ class Bayes:
 
 tick = time.clock()
 setup_without_user_input()
+test_speed()
 training_time = 3600 * 2
 num_attempts = math.floor(training_time / Model.evolution_time)
 param_bounds = np.array([[1, 200], [1, 50], [0, 0.2], [-0.05, 0.05]])

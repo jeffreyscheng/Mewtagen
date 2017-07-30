@@ -31,6 +31,16 @@ def setup_without_user_input():
     Model.core = []
 
 
+def test_speed():
+    tick = time.clock()
+    for _ in range(1000):
+        norms = [key for key in Model.elo_dict]
+        a = np.random.choice(norms)
+        b = np.random.choice(norms)
+        Damage.battle(a, b)
+    print("1000 battles took:", time.clock() - tick)
+
+
 def evolve():
     Evolve().evolve()
 
