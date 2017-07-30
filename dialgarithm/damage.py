@@ -186,6 +186,7 @@ class Damage:
 
     @staticmethod
     def battle(team1, team2, log=False):
+        tick = time.clock()
         team1.heal()
         team2.heal()
         team1.switch()
@@ -194,6 +195,9 @@ class Damage:
         # Writer.log("Team 2 started with", team2.current.name)
 
         while team1.still_playing() and team2.still_playing():
+            if time.clock() - tick > 5:
+                print("Battle timed out!")
+                return np.random.random() > 0.5
             if team1.is_fainted() or team1.current is None:
                 team1.switch()
                 # Writer.log("Team 1 switched to", team1.current.name)
