@@ -18,7 +18,7 @@ class SubTeam(ABC):
         pass
 
     def check_unique(self):
-        correct_length = len(self.members) == len(set([mon.pokemon.dex_name for mon in self.members]))
+        correct_length = len(self.members) == len(set([mon.pokemon.dex_name.split('-')[0] for mon in self.members]))
         suffixes = [mon.pokemon.unique_name.find('Mega') != -1 for mon in self.members]
         mega_condition = sum(suffixes) <= 1
         return correct_length and mega_condition
