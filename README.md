@@ -1,11 +1,11 @@
-# Dialgarithm
+# Mewtagen
 
 ## How to use the app:
     python run.py
 
 ## What it does:
 
-Dialgarithm is a "smart" algorithm that takes in an incomplete Pokemon team (<6 team members) and gives suggestions for the remaining teammates.
+Mewtagen is a "smart" algorithm that takes in an incomplete Pokemon team (<6 team members) and gives suggestions for the remaining teammates.
 
 ## How it works (short version):
 
@@ -21,10 +21,9 @@ You tell the algorithm 2 things:
 2. Which Pokemon you want to use
 
 ### Automated Input
-Dialgarithm then crawls Smogon's dex to grab all of the rules, allowed Pokemon, items, moves, etc. for your metagame.
+Mewtagen then crawls Smogon's dex to grab all of the rules, allowed Pokemon, items, moves, etc. for your metagame.
 It then grabs the current month's usage statistics in that metagame.
 Finally, it crawls all of Smogon's analyses for movesets in your metagame.
-
 
 ### Genetic Algorithm
 
