@@ -7,7 +7,7 @@ from .Writer import *
 
 
 class UsageReader:
-    updating = False
+    updating = True
 
     # TODO: GET METAS FUNCTIOn FOR PRECOMPUTATION
 
@@ -45,6 +45,9 @@ class UsageReader:
         soup = BeautifulSoup(requests.get(usage_url).text, 'html.parser')
         tags = soup('a')
         date_string = tags[-1]['href']
+
+        ## TODO: FIX DATES
+        date_string = '2017-06/'
         Model.date = date_string
 
         usage_url += date_string

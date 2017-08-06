@@ -30,10 +30,10 @@ class Model:
     elo_dict = None
 
     # hyperparameters
-    1.81997969e+02
-    1.82801744e+01
-    1.74504010e-01
-    7.80498518e-03
+    # 1.81997969e+02
+    # 1.82801744e+01
+    # 1.74504010e-01
+    # 7.80498518e-03
     starting_mutation_rate = 0.1
     mutation_delta = 0
     population_size = 10
