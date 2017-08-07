@@ -1,7 +1,7 @@
 # Mewtagen
 
 ## How to use the app:
-    python run.py
+    python3 run.py
 
 ## What it does:
 
