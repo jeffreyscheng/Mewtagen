@@ -1,183 +1,85 @@
 ,Team,Elo
-0,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Scyther_Swords Dance, Arcanine_Defensive, Thundurus_Mixed Attacker, Absol-Mega_Swords Dance",1265.0441943179235
-1,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Lickilicky_Swords Dance, Victini_Choice Band, Garchomp-Mega_Mega Swords Dance, Kyurem-Black_Choice Band",1634.5172014068983
-2,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Articuno_Specially Defensive, Manectric-Mega_Special Attacker, Metagross_Assault Vest, Goodra_Choice Band",1305.3526134521592
-3,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Gastrodon_Physically Defensive, Glalie_Spikes Lead, Swampert-Mega_Rain Sweeper, Rotom-Heat_Defensive",1295.726048071793
-4,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Arcanine_Offensive, Victini_MixTini, Shaymin_Life Orb, Zebstrika_All-out Attacker",1431.472224158291
-5,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Exeggutor_Chlorophyll Sweeper, Kyurem-Black_Choice Band, Thundurus_Thunder Wave + 3 Attacks, Raikou_Assault Vest",1303.4467419870127
-6,"Aerodactyl_Life Orb, Tyranitar_Support, Kyurem-Black_Mixed Wallbreaker, Infernape_Lead, Delphox_Offensive Calm Mind, Entei_Choice Band",1342.915013556055
-7,"Aerodactyl_Life Orb, Tyranitar_Support, Lickilicky_Swords Dance, Charizard-Mega-Y_Wallbreaker, Zygarde_Dragon Dance, Kyurem-Black_Choice Band",1525.7953825589761
-8,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Meloetta_Offensive Calm Mind, Grumpig_Offensive Utility, Flareon_Offensive, Tangrowth_Defensive",1126.6622377032616
-9,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Rotom-Heat_Pivot, Mandibuzz_Physically Defensive, Entei_All-Out Attacker, Swampert-Mega_Rain Sweeper",1326.1683725338462
-10,"Aerodactyl_Life Orb, Tyranitar_Support, Alakazam_Revenge Killer, Hydreigon_Choice Scarf, Zweilous_Specially Defensive, Kyurem-Black_Substitute Attacker",1272.489770445829
-11,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Garchomp_Swords Dance + Life Orb, Slurpuff_Belly Drum, Manectric-Mega_Special Attacker, Goodra_Assault Vest",1344.5563235178154
-12,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Kyurem-Black_Choice Band, Landorus-Therian_Double Dance, Swampert-Mega_Rain Sweeper, Victini_MixTini",1628.3951963870943
-13,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Raikou_Calm Mind, Vulpix_Choice Scarf, Rotom-Fan_Physically Defensive, Swampert-Mega_Rain Sweeper",1295.1373252901128
-14,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Simisear_All-Out-Attacker, Monferno_All-Out Attacker, Kyurem_Choice Specs, Raikou_Choice Specs",1305.9644759242954
-15,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Goodra_Choice Band, Hoopa_Substitute Attacker, Pyroar_Special Attacker, Togetic_Nasty Pass",1172.4224304052036
-16,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Tentacruel_Support, Entei_All-Out Attacker, Emboar_All-out Attacker, Landorus-Therian_Defensive",1295.2468723213208
-17,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Cobalion_Swords Dance, Aron_Sticky Web Attacker, Torterra_Bulky Swords Dance, Swampert-Mega_Rain Sweeper",1234.5807391472401
-18,"Aerodactyl_Suicide Lead, Tyranitar_Support, Electrike_Choice, Sawk_Choice Band, Mienshao_Choice Scarf, Zebstrika_All-out Attacker",1156.583365936458
-19,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Cryogonal_Offensive Rapid Spinner, Electrode_All-Out Attacker, Sandshrew_Rapid Spin, Electabuzz_Eviolite",892.6460692907618
-20,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Shaymin_Life Orb, Luxray_Choice Band, Serperior_SubSeed, Emolga_Support",1082.5639144414172
-21,"Aerodactyl_Life Orb, Tyranitar_Support, Granbull_Offensive, Sliggoo_Curse, Spearow_Life Orb Attacker, Ponyta_Utility",882.8817801029338
-22,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Forretress_Custap, Torterra_Choice Band, Primeape_Choice Scarf, Butterfree_Quiver Dance",1112.7784907578516
-23,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Cubchoo_Offensive, Victini_MixTini, Venusaur_Sun Sweeper, Torterra_Bulky Swords Dance",1198.2010638997158
-24,"Aerodactyl_Life Orb, Tyranitar_Support, Floatzel_Choice Band, Gengar_Life Orb Attacker, Suicune_Offensive, Cresselia_Trick Room",1188.1511957494927
-25,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Archen_Offensive, Seel_Life Orb, Swampert-Mega_Curse, Wailord_StallLord",840.3735192419009
-26,"Aerodactyl_Life Orb, Tyranitar_Support, Seviper_Mixed Attacker, Cherrim_Offensive Healing Wish, Metang_Offensive Stealth Rock, Spearow_Life Orb Attacker",941.3047371300827
-27,"Aerodactyl_Life Orb, Tyranitar_Support, Porygon-Z_Double Dance, Dragalge_Wallbreaker, Staryu_Life Orb, Kyurem_Choice Specs",1219.5843942743895
-28,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Entei_All-Out Attacker, Vivillon_Quiver Dance, Dodrio_Wallbreaker, Scyther_Choice Band Pivot",873.4774146942121
-29,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Sandslash_Sand Rush, Zoroark_Nasty Plot, Blastoise-Mega_Rapid Spin, Regigigas_Tank",1132.9028201737606
-30,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Mantine_SubToxic, Absol-Mega_Swords Dance, Zoroark_Swords Dance, Zweilous_Specially Defensive",1139.8213757212966
-31,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Yanmega_Choice Specs, Azelf_Lead, Tyrantrum_Choice Scarf, Moltres_Life Orb Attacker",1340.9440367375971
-32,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Crustle_Crustap, Buneary_Switcheroo Support, Hippopotas_Physically Defensive, Charizard-Mega-X_Bulky Will-O-Wisp",1116.044940710363
-33,"Aerodactyl_Life Orb, Tyranitar_Support, Scyther_Choice Band, Sliggoo_Offensive, Blastoise-Mega_All-out Attacker, Seviper_Mixed Attacker",978.8750719814165
-34,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Registeel_Curse, Basculin_All-out Attacker, Aron_Sticky Web Attacker, Mr. Mime_Special Attacker",695.5125129387155
-35,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Bronzong_Offensive Trick Room, Cresselia_Calm Mind, Darmanitan_Choice Scarf, Swellow_Guts Attacker",1284.1365671318931
-36,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Flareon_Choice Band, Fraxure_Choice Band, Infernape_Lead, Hydreigon_Choice Specs",1186.2094338994552
-37,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Swampert-Mega_Rain Sweeper, Rotom-Heat_Defensive, Glalie_Spikes Lead, Gastrodon_Physically Defensive",1559.6318663855627
-38,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Glalie-Mega_Wallbreaker, Electivire_All-out Attacker, Garchomp_Swords Dance + Life Orb, Pinsir_Swords Dance",1157.2562640006386
-39,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Thundurus-Therian_Double Dance, Breloom_Technician Attacker, Blastoise-Mega_Rapid Spin, Mandibuzz_Physically Defensive",1020.5924134542505
-40,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Victini_MixTini, Altaria_Choice Specs, Thundurus-Therian_Agility, Grumpig_Calm Mind",1221.73432996812
-41,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Dragonite_Choice Band, Kingdra_Choice Specs, Dusclops_Calm Mind, Golduck_Rain Dance",1239.44691215328
-42,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Blastoise-Mega_Offensive Spinner, Goodra_Choice Band, Blissey_Calm Mind, Druddigon_Support",1333.383366839832
-43,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Claydol_Offensive Spinner, Keldeo_Choice Specs, Hitmonchan_Assault Vest, Beartic_Swift Swim Sweeper",1066.820819312965
-44,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Banette-Mega_Prankster, Flygon_Choice Band, Zygarde_Dragon Dance, Sliggoo_Curse",1182.0416355192588
-45,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Golem_Lead, Cresselia_Trick Room, Golduck_Rain Dance, Porygon_Bulky Attacker",1021.2697168572367
-46,"Aerodactyl_Suicide Lead, Tyranitar_Support, Walrein_Specially Defensive, Simipour_Substitute + Nasty Plot, Grumpig_Specially Defensive, Floatzel_Choice Band",695.3076960506806
-47,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Beedrill_Suicide Lead, Vileplume_Defensive, Chesnaught_Physically Defensive, Ariados_Lead",749.6286225141121
-48,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Grumpig_Offensive Utility, Tangrowth_Defensive, Gliscor_Swords Dance Stallbreaker, Dragalge_Offensive Toxic Spikes",1233.9957761254386
-49,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Golduck_Rain Dance, Froakie_Choice Scarf, Metang_Offensive Stealth Rock, Minun_Cheerleader",845.5663907915166
-50,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Articuno_SubRoost, Pidgeot-Mega_Stallbreaker, Typhlosion_Choice Specs, Zangoose_Toxic Orb Attacker",1203.7114269622405
-51,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Suicune_CroCune, Glalie-Mega_Wallbreaker, Haxorus_Swords Dance, Octillery_Bulky Special Attacker",1161.7327124716037
-52,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Glalie_Spikes Lead, Fletchling_Bulky Itemless, Granbull_Bulky Attacker, Galvantula_Life Orb Attacker",917.3460946889203
-53,"Aerodactyl_Suicide Lead, Tyranitar_Support, Audino-Mega_Mixed Defensive Pivot, Cresselia_Trick Room, Staryu_Bulky Rapid Spin, Electivire_All-out Attacker",867.0703157269237
-54,"Aerodactyl_Life Orb, Tyranitar_Support, Galvantula_Life Orb Attacker, Mesprit_Choice Specs, Audino-Mega_Mixed Defensive Pivot, Uxie_Defensive Pivot",948.3500884254346
-55,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Uxie_Defensive Pivot, Banette-Mega_Offensive, Zygarde_SubCoil, Stoutland_Sand Wallbreaker",1077.8280046462442
-56,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Tornadus_Special Attacker, Seismitoad_Offensive Substitute, Dragonair_Rest Talk Sweeper, Samurott_Swords Dance",1117.3987352738015
-57,"Aerodactyl_Life Orb, Tyranitar_Support, Seel_Perish Trapper, Horsea_Swift Swim, Kyurem-Black_Substitute Attacker, Cresselia_Defensive",858.215070128248
-58,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Hitmonlee_Choice Scarf, Serperior_Special Sweeper, Hoppip_Offensive Support, Wormadam_Drag Worm",883.1398645824544
-59,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Kyurem-Black_Choice Band, Exeggutor_Chlorophyll Sweeper, Victini_Choice Band, Raikou_Assault Vest",1623.5603499198396
-60,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Landorus-Therian_Choice Scarf, Hitmonchan_Assault Vest, Suicune_CroCune, Electrike_Choice",1149.3460741661647
-61,"Aerodactyl_Suicide Lead, Tyranitar_Support, Shellos_Defensive, Lucario_Life Orb Attacker, Metagross-Mega_All-out Attacker, Seel_Life Orb",837.5619314984177
-62,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Dragonair_Rest Talk Sweeper, Omastar_Defensive Entry Hazards, Mesprit_Weather Support, Bouffalant_Tank",756.436483846706
-63,"Aerodactyl_Suicide Lead, Tyranitar_Support, Espeon_Calm Mind Sweeper, Rotom-Wash_Physically Defensive Pivot, Cresselia_Calm Mind, Eelektross_Assault Vest",1034.4509602103346
-64,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Golett_Tank, Latios_Calm Mind, Mesprit_Weather Support, Milotic_Defensive",1039.7753082462896
-65,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Lopunny-Mega_Substitute, Arcanine_Offensive, Magnemite_Magnet Pull, Tyrantrum_Dragon Dance",1118.675165264246
-66,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Seviper_Mixed Attacker, Porygon-Z_Choice Specs, Magneton_Choice Scarf, Houndour_Mixed Attacker",824.175322006907
-67,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Medicham_Choice Scarf, Samurott_Mixed Wallbreaker, Miltank_Physically Defensive, Phanpy_Utility",911.8319557550624
-68,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Gurdurr_Bulk Up, Aggron-Mega_Curse, Infernape_Choice Band, Golem_Specially Defensive",1021.3496596515912
-69,"Aerodactyl_Life Orb, Tyranitar_Support, Tyrantrum_Choice Band, Simipour_Choice Scarf, Wartortle_Rapid Spin, Miltank_Physically Defensive",1048.542126169003
-70,"Aerodactyl_Suicide Lead, Tyranitar_Support, Vanilluxe_Autotomize, Cherubi_Chlorophyll Sweeper, Cinccino_Physical Attacker, Raticate_Offense",649.4495910359666
-71,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Cresselia_Defensive, Crawdaunt_Choice Band, Mr. Mime_Choice Specs, Entei_All-Out Attacker",999.6888762179848
-72,"Aerodactyl_Life Orb, Tyranitar_Support, Starmie_Offensive, Noivern_Taunt + Roost, Dusknoir_Choice Band, Magmortar_Assault Vest Tank",1170.925053163594
-73,"Aerodactyl_Life Orb, Tyranitar_Support, Electabuzz_Eviolite, Golem_Lead, Panpour_Nasty Plot, Kingdra_Life Orb Attacker",1003.1932022654491
-74,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Zebstrika_All-out Attacker, Simisage_Choice Scarf, Shaymin_Life Orb, Escavalier_Tank",1082.3402272225812
-75,"Aerodactyl_Suicide Lead, Tyranitar_Support, Escavalier_Choice Band, Cresselia_Trick Room, Cofagrigus_Trick Room, Medicham-Mega_All-out Attacker",1096.6658296914425
-76,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Rotom-Fan_Offensive Utility, Meowstic-M_Dual Screens, Heatmor_Mixed Attacker, Meloetta_Choice Scarf",1057.6073284901543
-77,"Aerodactyl_Life Orb, Tyranitar_Support, Floatzel_Choice Band, Uxie_Defensive Pivot, Espeon_Choice Specs, Cresselia_Trick Room",1167.330661216357
-78,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Escavalier_Tank, Mantyke_Rain Dance, Scyther_Choice Scarf, Abomasnow-Mega_Barack Aboma (Swords Dance)",842.6520626744843
-79,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Infernape_Nasty Plot, Vulpix_Sun Support, Kyurem-Black_Substitute Attacker, Manectric-Mega_Special Attacker",1330.051855615889
-80,"Aerodactyl_Life Orb, Tyranitar_Support, Goodra_Choice Band, Baltoy_Rapid Spin, Ninetales_Nasty Plot, Milotic_Defensive",1034.146207989419
-81,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Lumineon_Defog, Donphan_Defensive Spinner, Simisear_All-Out-Attacker, Kyurem-Black_Mixed Wallbreaker",1212.7860564971043
-82,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Swanna_Offensive Defog, Dragonite_Choice Band, Dusclops_Calm Mind, Victini_MixTini",1280.5248978816483
-83,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Kingdra_Critdra, Sandshrew_Rapid Spin, Diggersby_Physical Attacker, Mantine_Mixed Defensive Defog",1016.013934172354
-84,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Shellder_Shell Smash Sweeper, Mew_Stallbreaker, Meloetta_Choice Specs, Gyarados_Substitute + Dragon Dance",971.2476207070966
-85,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Lopunny-Mega_All-out Attacker, Kyurem_Choice Specs, Kangaskhan_Offensive, Cofagrigus_Defensive",1258.3506668183898
-86,"Aerodactyl_Suicide Lead, Tyranitar_Support, Garchomp-Mega_Mega Swords Dance, Seel_Perish Trapper, Samurott_Mixed Wallbreaker, Suicune_Substitute + Calm Mind",961.9251867434458
-87,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Flygon_Defog Support, Lilligant_Quiver Dance, Stantler_Wallbreaker, Simisear_Nasty Plot",1025.6692751463331
-88,"Aerodactyl_Suicide Lead, Tyranitar_Support, Trevenant_Wallbreaker, Pelipper_Defensive, Kecleon_Mixed Wallbreaker, Blastoise-Mega_Offensive Spinner",868.4214231913935
-89,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Hariyama_Assault Vest, Manectric_Special Attacker, Sceptile-Mega_Swords Dance, Sawk_Choice Band",1134.7287922334067
-90,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Reuniclus_Trick Room, Porygon-Z_Choice Scarf, Volbeat_Weather Supporter, Mandibuzz_Physically Defensive",951.5526988910048
-91,"Aerodactyl_Suicide Lead, Tyranitar_Support, Lanturn_Pivot, Mesprit_Substitute + Calm Mind, Kyurem_Choice Scarf, Alakazam_Revenge Killer",1095.5850187339408
-92,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Cobalion_Calm Mind, Dusclops_Calm Mind, Entei_Choice Band, Rotom-Fan_Physically Defensive",1273.4683931719055
-93,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Minun_Cheerleader, Mesprit_Choice Scarf, Seismitoad_Support, Kyurem-Black_Mixed Wallbreaker",1217.4990935213705
-94,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Flareon_Choice Band, Uxie_Defensive Pivot, Heliolisk_Special Attacker, Rotom-Fan_Choice Scarf",1116.278360947199
-95,"Aerodactyl_Life Orb, Tyranitar_Support, Karrablast_Choice Scarf, Axew_Choice, Krabby_Choice Scarf, Registeel_Curse",836.0121372851243
-96,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Cresselia_Defensive, Deino_Choice Scarf, Clefable_Calm Mind + Magic Guard, Butterfree_Quiver Dance",839.2898477506513
-97,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Lopunny-Mega_Substitute, Tangrowth_Defensive, Camerupt_Defensive, Kricketune_Sticky Web",1029.9195104117655
-98,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Meloetta_Cleric Support, Dragonite_Choice Band, Granbull_Offensive, Sawsbuck_Swords Dance",1197.8223863801263
-99,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Luxray_Choice Band, Entei_Choice Band, Goodra_Assault Vest, Golurk_Stealth Rock",1308.0897689282563
-100,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Gothitelle_Trapper, Quagsire_Unaware Wall, Simisear_All-Out-Attacker, Rapidash_Physical Attacker",1142.075622168404
-101,"Aerodactyl_Suicide Lead, Tyranitar_Support, Rotom-Heat_Pivot, Swampert-Mega_Rain Sweeper, Aurorus_Rock Polish, Diggersby_Choice Scarf",1191.6185754585756
-102,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Magnemite_Magnet Pull, Haxorus_Choice Band, Dragonite_Dragon Dance, Manaphy_Tail Glow + 3 Attacks",1174.8789430066124
-103,"Aerodactyl_Life Orb, Tyranitar_Support, Arcanine_Offensive, Raikou_Choice Specs, Seismitoad_Rain Sweeper, Entei_All-Out Attacker",1324.2247866590667
-104,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Exeggutor_Chlorophyll Sweeper, Diancie_Offensive Trick Room, Glaceon_Choice Specs, Archen_Offensive",985.8333906899701
-105,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Houndoom_Nasty Plot, Swampert-Mega_Rain Sweeper, Regice_Rock Polish, Gigalith_Tank",1269.2935986409245
-106,"Aerodactyl_Life Orb, Tyranitar_Support, Gyarados_Defensive, Dragalge_Choice Specs, Mesprit_Offensive Stealth Rock, Bouffalant_Choice Band",1170.8382969381514
-107,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Muk_Choice Band, Heliolisk_Special Attacker, Porygon2_Offensive, Swalot_Tank",1137.4871394382756
-108,"Aerodactyl_Life Orb, Tyranitar_Support, Camerupt-Mega_Tank, Escavalier_Tank, Grumpig_Offensive Utility, Floatzel_Special Attacker",1235.4266212992632
-109,"Aerodactyl_Suicide Lead, Tyranitar_Support, Pansear_Nasty Plot, Doublade_Mixed Wall, Manaphy_Tail Glow + Rain Dance, Jellicent_Physically Defensive",704.3457265722909
-110,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Infernape_Lead, Manaphy_Tail Glow + Rain Dance, Scizor-Mega_Bulky Swords Dance, Rotom-Frost_SubWisp",1119.363550960411
-111,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Venusaur-Mega_Offensive, Golem_Specially Defensive, Victini_Choice Band, Trevenant_Wallbreaker",1489.3861604597846
-112,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Swablu_Cotton Guard, Cresselia_Trick Room, Emboar_Choice Scarf, Arcanine_Defensive",1152.7797544601717
-113,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Cryogonal_Offensive Rapid Spinner, Nidoking_Wallbreaker, Manectric-Mega_Special Attacker, Regice_Rock Polish",1220.471255308616
-114,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Staraptor_Choice Band, Houndoom_Nasty Plot, Larvesta_Bulky Pivot, Ekans_Coil Sweeper",957.9732304329374
-115,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Landorus-Therian_Defensive, Entei_All-Out Attacker, Emboar_All-out Attacker, Feraligatr_Dragon Dance",1343.2956289049466
-116,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Purrloin_Disruptive Pivot, Pyroar_Special Attacker, Meowstic-M_Dual Screens, Stoutland_Wallbreaker",873.4551699740158
-117,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Poliwrath_Special Attacker, Manectric-Mega_Special Attacker, Metagross_Assault Vest, Landorus-Therian_Choice Scarf",1267.9696538177034
-118,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Gyarados_Dragon Dance + Three Attacks, Roselia_Bulky Spiker, Articuno_Specially Defensive, Manectric-Mega_Special Attacker",1179.586029740014
-119,"Aerodactyl_Life Orb, Tyranitar_Support, Flygon_Choice Scarf, Jolteon_All-Out Attacking, Vaporeon_Wish, Hitmonchan_Assault Vest",1252.2950899690945
-120,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Gyarados_Dragon Dance + Three Attacks, Heliolisk_Special Attacker, Glalie_Spikes Lead, Leafeon_Choice Scarf",1203.178547799054
-121,"Aerodactyl_Life Orb, Tyranitar_Support, Sawsbuck_Swords Dance, Dewgong_Specially Defensive, Ampharos_Cleric, Electrode_All-Out Attacker",927.1350247144168
-122,"Aerodactyl_Life Orb, Tyranitar_Support, Rotom-Frost_SubWisp, Alakazam_Life Orb, Raichu_All-out Attacker, Dragalge_Wallbreaker",1160.8183481748736
-123,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Haxorus_Choice Band, Delibird_Spikes Lead, Cresselia_Defensive, Zweilous_Specially Defensive",1121.0591248257617
-124,"Aerodactyl_Suicide Lead, Tyranitar_Support, Articuno_Burd (Offensive), Infernape_Choice Scarf, Garbodor_Defensive Spikes, Purugly_Physical Attacker",1012.4244834826642
-125,"Aerodactyl_Life Orb, Tyranitar_Support, Electivire_All-out Attacker, Grumpig_Calm Mind, Totodile_Swords Dance, Mesprit_Offensive Stealth Rock",920.590488007256
-126,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Meloetta_En Pointe, Liepard_Nasty Plot, Gastrodon_Physically Defensive, Espeon_Calm Mind Sweeper",1133.1194391056338
-127,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Aipom_Eviolite, Crobat_Support, Regigigas_Tank, Persian_Nasty Plot",1104.650035130049
-128,"Aerodactyl_Life Orb, Tyranitar_Support, Landorus-Therian_Double Dance, Swampert-Mega_Rain Sweeper, Emboar_Footloose, Seviper_Mixed Attacker",1254.1242148656181
-129,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Gourgeist_Choice Scarf, Quilladin_Offensive Spikes, Articuno_Burd (Offensive), Houndoom-Mega_Nasty Plot",1175.1461998355908
-130,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Simipour_Choice Scarf, Charizard-Mega-X_Swords Dance, Goodra_Choice Band, Swellow_Choice Specs",1261.5614545862552
-131,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Liepard_Offensive Pivot, Lucario_Life Orb Attacker, Squirtle_Rapid Spinner, Lopunny-Mega_Substitute",913.7491201707355
-132,"Aerodactyl_Life Orb, Tyranitar_Support, Garchomp_Mixed Attacker, Seviper_Mixed Attacker, Suicune_Substitute + Calm Mind, Blastoise-Mega_Rapid Spin",1147.704973547113
-133,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Kingdra_Life Orb Attacker, Stoutland_Sand Rush, Frillish_Choice Scarf, Furret_Choice Scarf",1025.888353943719
-134,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Magnezone_Magnet Rise, Deerling_Life Orb, Venomoth_Mono Attacker, Onix_Sturdy + Berry Juice",896.624992047922
-135,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Mesprit_Substitute + Calm Mind, Kyurem-Black_Mixed Wallbreaker, Koffing_Defensive, Shellos_Defensive",979.3455251214934
-136,"Aerodactyl_Suicide Lead, Tyranitar_Support, Hippopotas_Physically Defensive, Samurott_Swords Dance, Aurorus_Rock Polish, Porygon-Z_Choice Specs",786.6599499971212
-137,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Tornadus_Rain Support, Gardevoir_Calm Mind, Tauros_All-out Attacker, Crustle_Hazard Setter",1104.207984545936
-138,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Tyrantrum_Wallbreaker, Archeops_BulkyCheops, Haxorus_Dragon Dance, Arcanine_Defensive",1213.477451242768
-139,"Aerodactyl_Life Orb, Tyranitar_Support, Meloetta_Substitute + Calm Mind, Shaymin_Leech Seed, Garchomp_Substitute + Swords Dance, Sawk_Choice Band",1314.2082337539728
-140,"Aerodactyl_Life Orb, Tyranitar_Support, Accelgor_Spikes Lead, Hitmonchan_Assault Vest, Crawdaunt_Choice Band, Manectric_Special Attacker",963.524317119882
-141,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Cresselia_Defensive, Electabuzz_Eviolite, Suicune_Offensive, Feraligatr_Dragon Dance",1101.2026319514116
-142,"Aerodactyl_Life Orb, Tyranitar_Support, Mesprit_Substitute + Calm Mind, Emboar_All-out Attacker, Duskull_Utility, Mienshao_SubPass",963.5995268817973
-143,"Aerodactyl_Suicide Lead, Tyranitar_Support, Kyurem-Black_Substitute Attacker, Mienfoo_Life Orb, Dragonite_Choice Band, Quilladin_Offensive Spikes",1088.400489316789
-144,"Aerodactyl_Suicide Lead, Tyranitar_Support, Roselia_Bulky Spiker, Manaphy_Calm Mind, Golduck_Rain Dance, Goodra_Assault Vest",946.6310669062577
-145,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Mienshao_Life Orb, Zebstrika_All-out Attacker, Kyurem-Black_Mixed Wallbreaker, Sandshrew_Rapid Spin",1316.9807961040622
-146,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Jirachi_Mixed Attacker, Arcanine_Offensive, Mew_Stallbreaker, Scyther_Choice Scarf",1094.8328606866203
-147,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Altaria_Special Attacker, Wartortle_Rapid Spin, Infernape_Choice Band, Audino_Defensive",1037.8627632388805
-148,"Aerodactyl_Life Orb, Tyranitar_Support, Kyurem-Black_Substitute Attacker, Fletchinder_Linda, Dragonair_Rest Talk Sweeper, Flygon_Defog Support",1162.7059692262596
-149,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Musharna_Bulky Pivot, Swalot_Tank, Landorus-Therian_Offensive, Rhyhorn_Tank",991.2297817429296
-150,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Tentacruel_Utility, Mesprit_Offensive Stealth Rock, Porygon-Z_Choice Specs, Dragalge_Wallbreaker",1056.2095148165963
-151,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Suicune_Substitute + Calm Mind, Scizor-Mega_Pursuit, Furfrou_Offensive Pivot, Rotom-Mow_Choice Specs",937.949445964771
-152,"Aerodactyl_Suicide Lead, Tyranitar_Support, Alakazam-Mega_Mega Alakazam, Leafeon_Choice Band, Maractus_Spikes Lead, Floatzel_Life Orb Attacker",1097.1544781210494
-153,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Cloyster_The Janitor (Shell Smash), Zygarde_Dragon Dance, Pidgeot_Offensive Defog, Audino_Defensive",1067.9395743045777
-154,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Snorlax_CurseLax, Spiritomb_Offensive Support, Porygon-Z_Choice Scarf, Glalie_Spikes Lead",975.9624889848529
-155,"Aerodactyl_Suicide Lead, Tyranitar_Support, Suicune_RoarCune, Druddigon_All-out Attacker, Mamoswine_Sash Lead, Goodra_Choice Band",1205.1917134802675
-156,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Ampharos-Mega_Agility, Magmortar_Wallbreaker, Ursaring_Bulk Up, Goodra_Choice Band",1147.7852521753703
-157,"Aerodactyl_Suicide Lead, Tyranitar_Support, Manaphy_Tail Glow + Rain Dance, Zygarde_Dragon Dance, Absol_Swords Dance, Goodra_Assault Vest",1176.662742617603
-158,"Aerodactyl_Life Orb, Tyranitar_Support, Omastar_Offensive Entry Hazards, Electrode_Rain Lead, Jolteon_SubPass, Chatot_Choice Specs",938.8855888252322
-159,"Aerodactyl_Life Orb, Tyranitar_Support, Medicham_Choice Scarf, Lickilicky_Swords Dance, Pidgeot_Offensive Defog, Garchomp_Choice Scarf",1231.6151451845285
-160,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Seismitoad_Offensive Substitute, Cacnea_Swords Dance, Mamoswine_Wallbreaker, Manaphy_Tail Glow + Rain Dance",990.3222001318825
-161,"Aerodactyl_Life Orb, Tyranitar_Support, Garchomp_Choice Scarf, Purugly_Physical Attacker, Flygon_Defog Support, Tornadus_Rain Support",1216.7386231059459
-162,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Infernape_Nasty Plot, Simisear_Nasty Plot, Mamoswine_Wallbreaker, Conkeldurr_Sheer Force Attacker",1268.5767176269899
-163,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Aggron-Mega_Curse, Magmortar_Assault Vest Tank, Arcanine_Offensive, Rotom-Heat_Defensive",1249.5783740118507
-164,"Aerodactyl_Life Orb, Tyranitar_Support, Glalie_Spikes Lead, Blissey_Calm Mind, Suicune_Offensive, Blastoise-Mega_Offensive Spinner",1029.2449189839683
-165,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Entei_Choice Band, Machoke_Bulky Attacker, Mienshao_SubPass, Infernape_Lead",1199.096279114927
-166,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Kyurem-Black_Choice Band, Ninetales_Nasty Plot, Charizard-Mega-X_Dragon Dance, Manaphy_Calm Mind",1590.865952585361
-167,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Granbull_Offensive, Garchomp_Offensive Stealth Rock, Ursaring_Quick Feet, Arbok_Offensive Coil",1207.5359759370183
-168,"Aerodactyl_Life Orb, Tyranitar_Choice Band, Altaria_Special Attacker, Milotic_Defensive, Gabite_Defensive Stealth Rock, Simipour_Choice Scarf",1156.722402593324
-169,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Cacturne_Mixed Wallbreaker, Liepard_Choice Band, Simisage_Choice Scarf, Hippopotas_Physically Defensive",803.5787871783016
-170,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Poliwrath_Special Attacker, Zweilous_Specially Defensive, Hydreigon_Choice Scarf, Entei_Choice Band",1245.7809898907008
-171,"Aerodactyl_Suicide Lead, Tyranitar_Support, Onix_Sturdy + Berry Juice, Starmie_Utility, Relicanth_Choice Band, Leafeon_Choice Band",861.9845186371621
-172,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Cresselia_Defensive, Articuno_SubRoost, Furret_Choice Scarf, Camerupt_Specially Defensive",1046.2119652732886
-173,"Aerodactyl_Life Orb, Tyranitar_Choice Scarf, Garchomp_Offensive Stealth Rock, Entei_Choice Band, Cresselia_Trick Room, Ursaring_Bulk Up",1210.5452948684679
-174,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Manaphy_Tail Glow + Rain Dance, Luvdisc_#LuvdiscWins, Blastoise-Mega_Rapid Spin, Wartortle_Rapid Spin",744.6991253370289
-175,"Aerodactyl_Suicide Lead, Tyranitar_Choice Scarf, Medicham_Life Orb, Entei_All-Out Attacker, Cofagrigus_Trick Room, Pansear_Nasty Plot",1089.167270109755
-176,"Aerodactyl_Life Orb, Tyranitar_Support, Beheeyem_Trick Room, Medicham_Choice Scarf, Haxorus_Dragon Dance, Toxicroak_Bulky Croak",1248.2581532500924
-177,"Aerodactyl_Suicide Lead, Tyranitar_Choice Band, Reuniclus_Calm Mind, Ditto_Imposter, Croagunk_Mixed Utility, Zangoose_Toxic Orb Attacker",688.4841212606331
-178,"Aerodactyl_Suicide Lead, Tyranitar_Support, Emboar_Footloose, Seviper_Mixed Attacker, Suicune_Substitute + Calm Mind, Heatran_Utility",1141.7449758333303
-179,"Aerodactyl_Life Orb, Tyranitar_Support, Gurdurr_Bulk Up, Houndoom_Nasty Plot, Aggron-Mega_Tank, Raikou_Calm Mind",1134.5298945167744
-180,"Aerodactyl_Suicide Lead, Tyranitar_Support, Mienshao_Life Orb, Keldeo_Choice Specs, Gogoat_Bulk Up, Oddish_Eviolite",938.2698727263871
-181,"Aerodactyl_Life Orb, Tyranitar_Support, Kecleon_Mixed Wallbreaker, Cloyster_The Janitor (Shell Smash), Shaymin_Life Orb, Shroomish_Defensive",648.3785393910659
+0,"Haxorus_Swords Dance, Gyarados_Substitute + Dragon Dance, Fearow_Physical Attacker, Scrafty_Dragon Dance, Aerodactyl-Mega_Hone Claws, Weavile_All-out Attacker",1586.1310421988362
+1,"Jolteon_All-out Attacker, Cresselia_Calm Mind, Arcanine_Offensive, Clefable_Calm Mind + Magic Guard, Darmanitan_Wallbreaker, Thundurus_Mixed Attacker",1555.4782829274384
+2,"Landorus-Therian_Choice Scarf, Aerodactyl-Mega_Hone Claws, Eelektross_Assault Vest, Arcanine_Offensive, Gallade_Swords Dance, Scrafty_Dragon Dance",1534.9566367323694
+3,"Rhyperior_Tank, Absol_Swords Dance, Pangoro_Swords Dance, Kyurem_Choice Scarf, Hydreigon_Stallbreaker, Crobat_BRAVE BAT (Choice Band)",1271.7093604714623
+4,"Elgyem_Bulky Attacker, Swanna_Offensive Defog, Raikou_Assault Vest, Arcanine_Offensive, Darmanitan_Wallbreaker, Tornadus-Therian_Assault Vest Pivot",1334.572182536444
+5,"Pancham_Wallbreaker, Meloetta_Cleric Support, Thundurus_Mixed Attacker, Aerodactyl-Mega_Hone Claws, Gallade_Swords Dance, Arcanine_Offensive",1432.9276327984085
+6,"Ninjask_Revenge Killer + Pivot, Goodra_Assault Vest, Talonflame_Revenge Killer, Arcanine_Offensive, Archeops_Offensive, Rotom-Heat_Defensive",1230.8289356485257
+7,"Amoonguss_Pivot, Volcarona_Offensive Quiver Dance, Audino-Mega_Mega Tank, Regirock_Sunny Day Setter, Thundurus_Mixed Attacker, Infernape_Nasty Plot",1491.4209119923592
+8,"Accelgor_Spikes Lead, Zygarde_Parashuffler, Jumpluff_Support Puff, Forretress_Defensive Rapid Spin, Omastar_Lead, Goldeen_Physical Attacker",594.7598009144061
+9,"Bronzong_Offensive Trick Room, Aipom_Life Orb, Floatzel_Choice Band, Absol_Swords Dance, Samurott_Swords Dance, Celebi_Offensive Stealth Rock",997.9070412063655
+10,"Rotom-Fan_Choice Scarf, Kecleon_Mixed Wallbreaker, Noctowl_Defensive Defog, Farfetch'd_Swords Dance, Riolu_Offensive Swords Dance Sweeper, Porygon-Z_Choice Scarf",622.7965211866397
+11,"Talonflame_Offensive Swords Dance, Seismitoad_Defensive, Espeon_Calm Mind Sweeper, Kyurem_Life Orb Attacker, Plusle_""Support"", Tornadus-Therian_Life Orb Attacker",1322.5860356682313
+12,"Kyurem-Black_Choice Band, Beheeyem_Choice Specs, Sharpedo-Mega_Mega Chomp, Stoutland_Wallbreaker, Electabuzz_Eviolite, Vanilluxe_All-out Attacker",1312.3793699333703
+13,"Rotom-Frost_SubSplit, Regirock_Sunny Day Setter, Klinklang_Shift Gear, Qwilfish_Swift Swim, Jirachi_SubToxic, Metagross_Choice Band",1168.1854033498967
+14,"Zoroark_Choice Specs, Duosion_Trick Room Attacker, Scizor-Mega_Offensive Swords Dance, Blastoise_Bulky Spinner, Mr. Mime_Special Attacker, Metagross_Assault Vest",965.1541216061072
+15,"Manectric_Special Attacker, Volcarona_Offensive Quiver Dance, Manaphy_Tail Glow + Rain Dance, Medicham_Choice Scarf, Azelf_Lead, Arcanine_Offensive",1319.7077871443817
+16,"Huntail_Shell Smash, Mienshao_Life Orb, Munchlax_CurseLax, Garchomp_Choice Scarf, Mamoswine_Wallbreaker, Krookodile_Non-Choice Attacker",1194.9808242726265
+17,"Charizard_Life Orb, Jynx_Choice Scarf, Mesprit_Physically Defensive, Poliwrath_Special Attacker, Kyurem-Black_Substitute Attacker, Aerodactyl-Mega_Hone Claws",1275.841359037505
+18,"Whiscash_Dragon Dance, Krookodile_Choice Band, Regirock_Mixed Defensive Tank, Volcarona_Offensive Quiver Dance, Celebi_Nasty Plot, Thundurus_Thunder Wave + 3 Attacks",1326.3683826065658
+19,"Torterra_Bulky Swords Dance, Thundurus_Nasty Plot, Zangoose_Toxic Orb Attacker, Aipom_Life Orb, Bronzong_Trick Room Support, Porygon-Z_Choice Specs",991.1288627174555
+20,"Aerodactyl-Mega_Hone Claws, Crobat_BRAVE BAT (Choice Band), Talonflame_Revenge Killer, Chatot_Choice Specs, Emolga_Support, Gyarados_Substitute + Dragon Dance",1260.8502970382929
+21,"Mamoswine_Wallbreaker, Goodra_Choice Band, Tornadus_Special Attacker, Victini_MixTini, Metagross-Mega_Rock Polish, Mr. Mime_Special Attacker",1238.0836329028152
+22,"Talonflame_Offensive Swords Dance, Absol-Mega_All-out Attacker, Moltres_Life Orb Attacker, Darmanitan_Wallbreaker, Diancie_Bulky Attacker, Articuno_Burd (Offensive)",1323.6872442596468
+23,"Hitmonlee_Wallbreaker, Darmanitan_Choice Scarf, Jolteon_All-out Attacker, Infernape_Nasty Plot, Heliolisk_Special Attacker, Snorlax_Choice Band",1255.5704969827298
+24,"Banette_Offensive Utility, Muk_Assault Vest, Stoutland_Wallbreaker, Meowstic-M_Dual Screens, Raticate_Offense, Farfetch'd_Swords Dance",675.8771058402962
+25,"Rotom-Heat_Defensive, Venusaur_Defensive, Suicune_RoarCune, Azelf_Lead, Manaphy_Tail Glow + Rain Dance, Starmie_Utility",1342.1559625399123
+26,"Sceptile_Life Orb, Yanmega_Choice Specs, Ursaring_Bulk Up, Stoutland_Wallbreaker, Goodra_Assault Vest, Hariyama_Assault Vest",907.228264825936
+27,"Charizard-Mega-Y_Wallbreaker, Drapion_Swords Dance, Scrafty_Dragon Dance, Talonflame_Offensive Swords Dance, Raikou_Calm Mind, Floatzel_Life Orb Attacker",1311.011719205258
+28,"Landorus-Therian_Double Dance, Simipour_Mixed Attacker, Zygarde_DDRest, Charizard-Mega-Y_Wallbreaker, Vespiquen_Offensive Utility, Mesprit_Weather Support",1168.799296986231
+29,"Mesprit_Substitute + Calm Mind, Thundurus-Therian_Agility, Walrein_Specially Defensive, Altaria_Bulky Dragon Dance, Articuno_Agility, Purrloin_Disruptive Pivot",828.1838330270192
+30,"Floatzel_Special Attacker, Audino_Wish Passer, Manaphy_Calm Mind, Conkeldurr_Sheer Force Attacker, Talonflame_Revenge Killer, Galvantula_Life Orb Attacker",1090.1245139792886
+31,"Mandibuzz_Specially Defensive, Arcanine_Offensive, Thundurus-Therian_Double Dance, Venusaur_Sun Sweeper, Tornadus_Rain Support, Amoonguss_Pivot",1132.970941091355
+32,"Castform_Chasing Rainbows, Rotom-Heat_Choice Specs, Clawitzer_Wallbreaker, Shaymin_Life Orb, Mandibuzz_Physically Defensive, Frogadier_All-out Attacker",914.272659387927
+33,"Haxorus_Swords Dance, Watchog_Wallbreaker, Fearow_Physical Attacker, Samurott_Mixed Wallbreaker, Beedrill_Suicide Lead, Flygon_Choice Scarf",997.4898207346207
+34,"Tentacruel_Utility, Chatot_Substitute + Nasty Plot, Regigigas_Tank, Snorlax_CurseLax, Galvantula_Life Orb Attacker, Heliolisk_Special Attacker",860.8643035382831
+35,"Garchomp_Choice Scarf, Mew_Defog, Tornadus_Rain Support, Thundurus_Mixed Attacker, Cryogonal_Offensive Rapid Spinner, Mesprit_Choice Specs",1141.143264300822
+36,"Sylveon_Cleric, Aipom_Life Orb, Haxorus_Stallbreaker, Mesprit_Substitute + Calm Mind, Jolteon_All-out Attacker, Rotom-Heat_Choice Specs",1265.7356180433394
+37,"Thundurus_Nasty Plot, Pidgeot_Offensive Defog, Tornadus_Defiant Attacker, Wartortle_Rapid Spin, Delphox_Speedy Roaster (Choice Scarf), Cradily_Specially Defensive",1023.8975238400741
+38,"Absol-Mega_All-out Attacker, Pinsir_Choice Band, Raikou_Choice Specs, Serperior_SubSeed, Scrafty_Dragon Dance, Samurott_Mixed Wallbreaker",1155.7048727302054
+39,"Fletchinder_Swords Dance, Heracross-Mega_Bulky Wallbreaker, Beheeyem_Defensive Nasty Plot, Mew_Defog, Simisear_Nasty Plot, Tornadus-Therian_Life Orb Attacker",1097.226215315092
+40,"Clefable_Unaware + Calm Mind, Qwilfish_Defensive Spiker, Audino-Mega_Mixed Defensive Pivot, Abra_Focus Sash, Grumpig_Offensive Stallbreaker, Misdreavus_Defensive",603.613710384664
+41,"Munchlax_RestTalk, Dedenne_SubRecycle, Scolipede_Spiker Lead, Venusaur_Defensive, Whiscash_Dragon Dance, Eelektross_Assault Vest",872.4334197693901
+42,"Houndoom-Mega_Nasty Plot, Venusaur_Chlorophyll Sweeper, Castform_Chasing Rainbows, Hydreigon_Choice Specs, Kyurem_Choice Scarf, Mightyena_Life Orb Cleaner",1184.1040419405192
+43,"Vanilluxe_All-out Attacker, Blitzle_Life Orb, Reuniclus_Calm Mind, Kingdra_Critdra, Magmortar_Assault Vest Tank, Mr. Mime_Nasty Plot",953.522440357269
+44,"Arcanine_Offensive, Scrafty_Dragon Dance, Masquerain_Quiver Dance, Dunsparce_Stealth Rock, Mienshao_SubPass, Eelektross_Assault Vest",1067.0809546468101
+45,"Cacnea_Swords Dance, Goodra_Choice Band, Tornadus_Special Attacker, Shaymin_Leech Seed, Vivillon_Quiver Dance, Dusknoir_Offensive",984.2690318449655
+46,"Purugly_Physical Attacker, Onix_Sturdy + Berry Juice, Rhyperior_Tank, Kingdra_Critdra, Stoutland_Wallbreaker, Zygarde_DDRest",1040.2941634931742
+47,"Furret_Choice Scarf, Milotic_Defensive, Tentacruel_Offensive, Goodra_Choice Specs, Gyarados_Substitute + Dragon Dance, Talonflame_Revenge Killer",1296.0581995090477
+48,"Umbreon_Cleric / Wish Pass, Sandile_Bulky Sandile, Typhlosion_Choice Specs, Electivire_All-out Attacker, Mesprit_Offensive Stealth Rock, Diancie_Mono Attacker",948.6516674830735
+49,"Garbodor_Offensive, Lopunny-Mega_Substitute, Drifblim_Mixed Offensive, Arcanine_Offensive, Thundurus_Mixed Attacker, Mienshao_Choice Scarf",1206.8811772659608
+50,"Kyurem_Life Orb Attacker, Glalie_Spikes Lead, Trubbish_Spikes, Lumineon_Defog, Corphish_Wallbreaker, Simisear_Nasty Plot",835.9021571560403
+51,"Primeape_Choice Scarf, Jirachi_Choice Scarf, Bronzong_Offensive Trick Room, Armaldo_Rapid Spin, Infernape_All-out Attacker, Ninjask_Revenge Killer + Pivot",1099.3975539090811
+52,"Lopunny-Mega_All-out Attacker, Gurdurr_Bulk Up, Unfezant_Tailwind Support, Gallade_Swords Dance, Rotom-Mow_IN THE CUT (Choice Scarf), Mienshao_Life Orb",1041.4773455528073
+53,"Roserade_Offensive Hazards, Suicune_Substitute + Calm Mind, Stoutland_Sand Wallbreaker, Zoroark_Choice Specs, Keldeo_Choice Specs, Remoraid_Mixed Choice Scarf",844.2219491287817
+54,"Lickilicky_Swords Dance, Meloetta_Choice Specs, Larvesta_Choice Scarf, Glalie-Mega_Wrecking Ball, Vivillon_Quiver Dance, Drifblim_Special Attacker",1065.796153269283
+55,"Metagross-Mega_Rock Polish, Goodra_Choice Band, Sunflora_Synthesis + 3 Attacks, Magmortar_Assault Vest Tank, Tangrowth_Assault Vest, Bellossom_Sun ""Sweeper""",1005.8880228361851
+56,"Lilligant_Choice Scarf, Floatzel_Life Orb Attacker, Heliolisk_Special Attacker, Hydreigon_Choice Scarf, Swampert_Defensive, Gourgeist-Large_Defensive",1053.7732242387763
+57,"Toxicroak_Swords Dance, Hydreigon_Life Orb, Skuntank_Special Attacking Defog, Uxie_Defensive Pivot, Delphox_Offensive Calm Mind, Mightyena_Life Orb Cleaner",1142.2408402481985
+58,"Machamp_Choice Band, Lopunny-Mega_Substitute, Skuntank_Special Attacking Defog, Goodra_Assault Vest, Trapinch_RestTalk, Kingdra_Rain Sweeper",1003.9277303292336
+59,"Rapidash_Physical Attacker, Leafeon_Offensive Swords Dance, Arcanine_Offensive, Moltres_Life Orb Attacker, Thundurus_Nasty Plot, Vaporeon_Wish",1203.2575129553259
+60,"Infernape_All-Out Attacker, Aerodactyl-Mega_All-out Attacker, Umbreon_Cleric / Wish Pass, Simisage_All-out Attacker, Haxorus_Swords Dance, Scrafty_Dragon Dance",1334.2806957657822
+61,"Mienshao_SubPass, Latios_Calm Mind, Jirachi_SubToxic, Goodra_Choice Band, Zebstrika_All-out Attacker, Bronzong_Trick Room Support",1263.3143503628073
+62,"Garchomp_Substitute + Swords Dance, Ampharos-Mega_All-out Attacker, Articuno_Agility, Zygarde_SubCoil, Ursaring_Quick Feet, Sliggoo_Offensive",1259.4419237312375
+63,"Archen_Fast Support, Eelektross_Assault Vest, Gastly_Life Orb, Aerodactyl-Mega_All-out Attacker, Xatu_Pivot, Kingdra_Choice Specs",1039.7415248319678
+64,"Garbodor_Offensive, Suicune_SubCM, Spiritomb_Physical Attacker, Kyurem-Black_Choice Band, Zoroark_Choice Specs, Keldeo_Substitute + Calm Mind",1134.7313397208043
+65,"Qwilfish_Suicide Lead, Gyarados_Dragon Dance + Three Attacks, Stoutland_Sand Rush, Scrafty_Dragon Dance, Infernape_Swords Dance, Cherrim_Offensive Healing Wish",1133.1242676203285
+66,"Tornadus_Bulk Up, Jolteon_All-out Attacker, Scyther_Choice Band Pivot, Chatot_Choice Specs, Porygon-Z_Choice Scarf, Cresselia_Calm Mind",991.2459855816278
+67,"Houndoom-Mega_Utility Attacker, Luxray_Choice Band, Roselia_Bulky Spiker, Wartortle_Rapid Spin, Porygon_Defensive, Eelektross_Assault Vest",920.8473340610079
+68,"Tornadus_Defiant Attacker, Farfetch'd_Swords Dance, Chesnaught_Physical Tank, Vullaby_Nasty Plot, Croagunk_Mixed Utility, Luxray_Choice Band",805.4758274834439
+69,"Raikou_Assault Vest, Audino-Mega_Mega Tank, Jolteon_All-out Attacker, Darmanitan_Wallbreaker, Golduck_Rain Dance, Articuno_Burd (Offensive)",1553.9008125246505
+70,"Fraxure_Dragon Dance, Blastoise-Mega_All-out Attacker, Mesprit_Substitute + Calm Mind, Tornadus-Therian_Assault Vest Pivot, Delcatty_Delcatty Got Your Tongue?, Sliggoo_Offensive",1050.524790595942
+71,"Meloetta_Cleric Support, Tornadus-Therian_Assault Vest Pivot, Landorus-Therian_Double Dance, Regigigas_Tank, Garchomp-Mega_Mega Swords Dance, Snorlax_Choice Band",1349.5810826054408
+72,"Weavile_All-out Attacker, Houndoom_Nasty Plot, Electabuzz_Eviolite, Cryogonal_Offensive Rapid Spinner, Swanna_Offensive Defog, Torkoal_Defensive",994.2632300163605
+73,"Terrakion_Choice Band, Simipour_Choice Scarf, Thundurus_Mixed Attacker, Meloetta_Choice Scarf, Slaking_Wall Breaker, Galvantula_Life Orb Attacker",1323.7741705482904
+74,"Stoutland_Wallbreaker, Porygon_Choice Scarf, Snorlax_CurseLax, Houndoom-Mega_SunnyDoom, Misdreavus_Defensive, Kyurem-Black_Choice Scarf",963.1950766066344
+75,"Dedenne_SubRecycle, Kingdra_Rain Sweeper, Mew_Stallbreaker, Toxicroak_Nasty Plot, Bronzong_Trick Room Support, Gorebyss_Shell Smash",958.4193491122007
+76,"Infernape_Swords Dance, Meloetta_Cleric Support, Staraptor_Choice Band, Entei_All-Out Attacker, Hitmontop_Defensive Rapid Spin, Rotom-Fan_Expert Belt",1307.7592194345748
+77,"Kabutops_Physical Attacker, Vanilluxe_All-out Attacker, Bouffalant_Swords Dance, Qwilfish_Defensive Spiker, Scrafty_Dragon Dance, Machamp_Choice Band",787.6156184902331
+78,"Entei_All-Out Attacker, Elgyem_Bulky Attacker, Tornadus-Therian_Assault Vest Pivot, Arcanine_Offensive, Aerodactyl-Mega_Offensive, Ursaring_Quick Feet",1150.1018192142444
+79,"Mamoswine_Wallbreaker, Stoutland_Sand Rush, Terrakion_Choice Band, Charizard_Swords Dance, Raticate_Offense, Cresselia_Defensive",1039.873041715217
+80,"Zapdos_Specially Defensive, Scrafty_Dragon Dance, Malamar_RestTalk, Cresselia_Support, Snorlax_Choice Band, Keldeo_Choice Scarf",1091.9793830074366
+81,"Lopunny_Offensive Utility, Tornadus-Therian_Life Orb Attacker, Meloetta_En Pointe, Aipom_Life Orb, Metagross_Assault Vest, Charizard_Life Orb",995.4834059843463
+82,"Leafeon_Choice Scarf, Bouffalant_Swords Dance, Rampardos_Wallbreaker, Mamoswine_Wallbreaker, Donphan_Offensive Spinner, Darmanitan_Wallbreaker",1230.1152865457111
+83,"Drifblim_AcroBlim, Ursaring_Bulk Up, Thundurus_Nasty Plot, Meowth_Nasty Plot, Tornadus_Rain Support, Machamp_Choice Band",837.4747746650324

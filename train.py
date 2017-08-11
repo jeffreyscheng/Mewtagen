@@ -7,7 +7,7 @@ from scipy.optimize import minimize
 
 class Bayes:
 
-    training_time = 3600 * 5
+    training_time = 3600 * 6
     global_time = None
 
     @staticmethod
