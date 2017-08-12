@@ -7,7 +7,7 @@ from scipy.optimize import minimize
 
 class Bayes:
 
-    training_time = 3600 * 6
+    training_time = 3600
     global_time = None
 
     @staticmethod
@@ -208,6 +208,7 @@ class Bayes:
             # Update xp and yp
             xp = np.array(x_list)
             yp = np.array(y_list)
+            print(max(yp))
         print("Optimized:")
         print(xp)
         print(yp)
